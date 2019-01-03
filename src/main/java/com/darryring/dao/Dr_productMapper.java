@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface Dr_productMapper {
 
-    //查询根据父类id所有的商品(带条件)
+    //查询根据父类id所有系列的商品(带条件)
     public List<Map<String,Object>> queryAllProBy(Map<String,Object> map);
 
     //根据商品ID查询商品详情

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.darryring.dao.Dr_user_addressMapper">
+
+    <select id="queryAddress" resultType="Dr_user_address">
+        select * from dr_user_address where userId=#{userId}
+    </select>
+
+    <insert id="insertAddress" parameterType="Dr_user_address">
+        insert into dr_user_address (userId,address,receiver,phone,isDefault) values
+          (#{userId},#{address},#{receiver},#{phone},#{isDefault})
+    </insert>
+
+    <delete id="removeAddress" parameterType="int">
+        DELETE FROM dr_user_address WHERE addressId=#{addressId}
+    </delete>
+
+    <select id="queryAddressByAid" resultType="Dr_user_address">
+        select * from dr_user_address where addressId=#{aid}
+    </select>
+
+    <update id="updateAddress" parameterType="Dr_user_address">
+        update dr_user_address set receiver = #{receiver},
+                                   address = #{address},
+                                   phone = #{phone}
+        where addressId = #{addressId}
+    </update>
+
+</mapper>

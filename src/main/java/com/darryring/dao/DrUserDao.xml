@@ -29,4 +29,13 @@
         select * from dr_user where phone=#{phone}
     </select>
 
+    <!--修改用户信息-->
+    <update id="improve" parameterType="DrUser" keyProperty="userId" keyColumn="userId">UPDATE dr_user SET userName=#{userName},loginName=#{loginName},identityCode=#{identityCode},email=#{email},sex=#{sex},loveWord=#{loveWord}WHERE userId=#{userId} </update>
+
+    <!--修改密码-->
+    <update id="resetPwd" parameterType="DrUser">update dr_user set password = #{password} where userId = #{userId} </update>
+
+    <!--修改密码前判断输入的原密码是否存在-->
+    <select id="queryByPwd" resultType="DrUser">select userName from dr_user where password = #{password} and userId = #{userId} </select>
+
 </mapper>

@@ -1,15 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
- 
+<!DOCTYPE >
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta name="baidu-site-verification" content="l0c5KddqRr" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,12 +11,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="Description" content="" />
     <meta name="Keywords" content="" />
 	<script type="text/javascript" src="js/common.js" id='aws_mjs' aws-account='DarryRing-PC'></script>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="images/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/common.css" />
     <link rel="stylesheet" href="css/MyDr.css" />
     <link rel="stylesheet" type="text/css" href="css/datetimepicker.css"/> 
-    <script type="text/javascript" src="<%=basePath %>qian/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="<%=basePath %>qian/js/indexJQ.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/indexJQ.js"></script>
     <script type="text/javascript">
        $(function(){
     	   //显示个人中心
@@ -35,9 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    	    }).mouseout(function () {
    	    	$(".loginIn").hide();
    	    });
-    	   
     	   //登录验证
-   	 $.post("../UserServlet?action=islogin",callBack);
+   	 	$.post("../UserServlet?action=islogin",callBack);
 		function callBack(data){
 			if(data=="false"){
 				alert("你还未登录，请先登录!");
@@ -54,6 +43,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					}
 				}
 		});
+
+		$("")
+
+
+
        });
     </script> 
 </head>
@@ -68,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div class="acitve_show w1360">
     <div class="leftLogo">
         <a href="/">
-            <img src="<%=basePath %>qian/images/indexPic/logo.png"/>
+            <img src="images/indexPic/logo.png"/>
         </a>
     </div>
     <div class="rightNav">
@@ -78,6 +72,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>     
     	        <a href="/user">
             <div class="themeber fl"></div>
+				</a>
     	    </div>
 </div>
 <!--头部-->
@@ -85,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="fix">
         <div class="dr_logo fl">
             <a href="/">
-                <img src="<%=basePath %>qian/images/indexPic/logo.png"/>
+                <img src="images/indexPic/logo.png"/>
             </a>
         </div>
         <!--店铺定位-->
@@ -96,26 +91,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!--店铺定位 end-->
         <div class="dr_member fr">
             <div class="drmember_sec">
-                <c:choose>
-                    <c:when test="${empty user}">
-                        <div class="dr_member-left fl" id="long_status">
-                            <a href="<%=basePath %>qian/login.jsp">登录</a>
-                            <a href="<%=basePath %>qian/register.jsp" class="drtojoin">注册</a>
-                        </div>
-                   </c:when>
-                   <c:otherwise>
-                   <div class="dr_member-left fl" id="loginInInfo">
-                    <a href="/user" class="userName">欢迎${user.loginName}</a>
+                <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
+                    <a href="/login">登录</a>
+                    <a href="/regist" class="drtojoin">注册</a>
+                </div>
+                   <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
+                       <a href="/user" class="userName">欢迎<span th:text="${user.loginName}"></span></a>
                     <div class="loginIn fix" id="loginInaAtion">
-                        <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+                        <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
                         <a href="usercart.html">购物车</a>
                         <a href="/user/collect">我的收藏</a>
                         <a href="user.html">个人中心</a>
                         <a href="/logout?forword=">退出</a>
                     </div>
                   </div>
-                  </c:otherwise>
-                  </c:choose>
                 <ul class="dr_member-right drLang fl" id="dr-country">
                     <li>
                         <a href="/">中文(简体)</a>
@@ -127,7 +116,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </ul>
                 <div class="dr_member-left fl">
 					<i>
-						<img src="<%=basePath %>qian/images/indexPic/phone.png"/>
+						<img src="images/indexPic/phone.png"/>
 						400 01 13520
 					</i>
 				</div>
@@ -270,7 +259,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="javascript:;">账户设置</a>
 				</li> -->
 				<li >
-					<a href="usershow.html" class = 'active'>个人资料</a>
+					<a th:href="@{/usershow}" class = 'active'>个人资料</a>
 				</li>
 				<li style="display: none">
 					<a href="/user/account" >帐号管理</a>
@@ -285,10 +274,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="/user/account/protocols" >绑定账号</a>
 				</li>
 				<li >
-					<a href="/user/resetPwd" >修改密码</a>
+					<a th:href="@{/password}"  >修改密码</a>
 				</li>
 				<li>
-					<a href="useraddress.html" >地址管理</a>
+					<a  th:href="@{/queryAddress}">地址管理</a>
 				</li>
 			</ul>
 		</li>
@@ -304,12 +293,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!--个人资料-->
 		<div class="Mydata_cort pd20">
 			<h4>个人资料</h4>
-			<form method="post" enctype="multipart/form-data" id="inform" action="<%=basePath%>UserServlet?action=improve">
+			<form method="post" enctype="multipart/form-data" id="inform" action="/improve">
 			<ul class="Mydata_list">	
 				<li>
 					<em>头像</em>
 					<a href="javascript:;" class="myDRTX">
-						<img src="<%=basePath %>${user.touRoute}" id="bgSurface" />
+						<img th:src="${user.touRoute}" id="bgSurface" />
 						<input type="file" id="upload" name="picPath"/>
 						<input type="hidden" name="avatar" class="bgSurface"/>
 						<span>编辑</span>
@@ -318,33 +307,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</li>
 				<li>
 					<em><i>*</i>会员昵称：</em>
-					<input type="text" class="Mydata_txt" value="${user.loginName}" id="nickname" name="nickname" />
+					<input type="text" class="Mydata_txt" th:value="${user.loginName}" id="nickname" name="nickname" />
 					<i>4-16位字符</i>
 				</li>
 				<li>
 					<em><i>*</i>真实姓名：</em>
-					<input type="text" class="Mydata_txt" value="${user.userName}" id="realname" name="realname"/>
+					<input type="text" class="Mydata_txt" th:value="${user.userName}" id="realname" name="realname"/>
 					<i>4-16位字符</i>
 				</li>
 				<li id="gender">
 					<em>性别：</em>
-					<input type="radio"  name="sex" value="男" checked="checked"/><em>男</em>
-					<input type="radio"  name="sex" value="女" /><em>女</em>
+					<p th:if="${user.sex==1}">
+						<input type="radio"  name="sex" value="1" checked="checked"/><em>男</em>
+						<input type="radio"  name="sex" value="2" /><em>女</em>
+					</p>
+					<p th:unless="${user.sex==1}">
+						<input type="radio"  name="sex" value="1" /><em>男</em>
+						<input type="radio"  name="sex" value="2" checked="checked"/><em>女</em>
+					</p>
 				</li>
 				<li id="feeling">
 					<em><i>*</i>身份证号：</em>
-					<input type="text" class="Mydata_txt" value="${user.identityCode}" id="identityCode" name="identityCode"/>
+					<input type="text" class="Mydata_txt" th:value="${user.identityCode}" id="identityCode" name="identityCode"/>
 					<input type="hidden"  name="data[feeling]" />
 					<i>15-18位数字</i>
 				</li>
 				<li>
 					<em><i>*</i>邮箱：</em>
-					<input type="text" class="Mydata_txt" value="${user.email}" id="realname" name="email"/>
+					<input type="text" class="Mydata_txt" th:value="${user.email}" id="email" name="email"/>
 					<i>4-16位字符</i>
 				</li>
 				<li class="loveWord textarea">
 					<em>真爱宣言：</em>
-					<textarea name ='lovesign' id="sign" >${user.loveWord}</textarea>
+                    <textarea th:width="300px" name ='lovesign' id="sign" th:text="${user.loveWord}"></textarea>
 					<i>不超过100字</i>
 				</li>
 			</ul>

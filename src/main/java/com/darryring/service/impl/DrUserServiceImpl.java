@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class DrUserServiceImpl implements DrUserService {
@@ -39,4 +41,19 @@ public class DrUserServiceImpl implements DrUserService {
 
     //根据手机号码判定用户是否存在
     public DrUser findUserByPhone(String phone){ return  drd.findUserByPhone(phone);}
+
+    //更改用户个人资料
+    public int improve(DrUser du){
+        return drd.improve(du);
+    }
+
+    //修改密码
+    public int resetPwd(DrUser user){
+        return drd.resetPwd(user);
+    }
+
+    //修改密码前判断输入的原密码是否存在
+    public List<DrUser> queryByPwd(String pwd, Integer userId){
+        return drd.queryByPwd(pwd,userId);
+    }
 }
