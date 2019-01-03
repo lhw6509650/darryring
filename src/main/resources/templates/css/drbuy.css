@@ -1,0 +1,1654 @@
+.back_whrite {
+    background: #fff;
+    font-family: SimSun
+}
+
+.ringbuy_cort {
+    padding-bottom: 60px
+}
+
+.ringbuy_cort-left {
+    width: 460px;
+    position: relative
+}
+
+.kzyl {
+    background: url(//res.darryring.com/webimg/ringbuy/kzyl.jpg) no-repeat;
+    width: 96px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 404px;
+    font-size: 12px;
+    color: #fff;
+    font-family: "microsoft yahei";
+    display: none
+}
+
+.ringbuy_BigRing {
+    position: relative;
+    height: 460px
+}
+
+.ringbuy_BigRing img {
+    width: 458px
+}
+
+.ringbuy_BigRing li {
+    width: 458px;
+    height: 458px;
+    border: 1px solid #f3f3f3;
+    position: absolute;
+    display: none
+}
+
+.ringbuy_BigRing li:first-child {
+    display: block
+}
+
+.SmallRing-cort {
+    position: relative;
+    height: 60px;
+    padding: 20px 0
+}
+
+.SmallRing-overflow {
+    width: 384px;
+    height: 60px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.SmallRing-overflow ul {
+    width: 404px
+}
+
+.ringbuy_SmallRing li {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 20px
+}
+
+.ringbuy_SmallRing img {
+    width: 100%;
+    vertical-align: middle
+}
+
+.ringbuy_SmallRing .SmallRing_check {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+    /*border: 1px solid #ffa6a6*/
+}
+
+.SmallRing-next, .SmallRing-nextend, .SmallRing-pre, .SmallRing-preend {
+    background: url(//res.darryring.com/webimg/ringbuy/pre_next.png) no-repeat;
+    position: absolute;
+    width: 10px;
+    height: 19px;
+    top: 50%;
+    margin-top: -10px;
+    cursor: pointer;
+    z-index: 0
+}
+
+.SmallRing-preend {
+    background-position: 0 0;
+    left: 15px
+}
+
+.SmallRing-pre {
+    background-position: 0 -19px;
+    left: 15px
+}
+
+.SmallRing-nextend {
+    background-position: -10px -19px;
+    right: 15px
+}
+
+.SmallRing-next {
+    background-position: -10px 0;
+    right: 15px
+}
+
+.ringbuy_cort-right {
+    width: 520px
+}
+
+.ringbuy_cort-right h2, .ringbuy_cort-right h3 {
+    font-family: "microsoft yahei";
+    margin-bottom: 8px
+}
+
+.ringbuy_cort-right h2 {
+    font-size: 24px;
+    color: #000
+}
+
+.ringbuy_cort-right h3 {
+    font-size: 14px;
+    color: #999
+}
+.bigshow{
+    position: absolute;
+    right: 30px;
+    z-index: 1;
+}
+.ringbuy_pirce {
+    overflow: hidden;
+    height: 34px;
+    line-height: 34px;
+    margin: 14px 0
+}
+
+.ringbuy_pirce span {
+    font-family: "microsoft yahei";
+    color: #8b766c;
+    font-size: 24px
+}
+
+.ringbuy_pirce a {
+    font-size: 12px;
+    color: #999
+}
+
+.ringbuy_pirce a:hover {
+    color: #c57d5c
+}
+
+.ringbuy_sale {
+    overflow: hidden;
+    background: #f9f9f9;
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+    padding: 7px 0
+}
+
+.ringbuy_sale li {
+    float: left;
+    height: 23px;
+    line-height: 23px;
+    border-left: 1px dashed #ddd;
+    width: 173px;
+    text-align: center
+}
+
+.ringbuy_sale li:first-child {
+    border: none;
+    width: 170px
+}
+
+.ringbuy_sale a, .ringbuy_sale i, .ringbuy_sale span {
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.ringbuy_sale span {
+    color: #999
+}
+
+.ringbuy_sale i {
+    color: #ffacac
+}
+
+.ringbuy_sale a {
+    color: #8b766c
+}
+
+.ringbuy_Parameter {
+    overflow: hidden;
+    margin-left: -20px;
+    padding-top: 18px
+}
+
+.ringbuy_Parameter li {
+    float: left;
+    height: 20px;
+    width: 240px;
+    margin-left: 30px;
+    margin-bottom: 8px
+}
+
+.ringbuy_Parameter span {
+    font-size: 12px;
+    color: #999;
+    vertical-align: middle
+}
+
+.ringbuy_Parameter i {
+    display: inline-block;
+    background-image: url(//res.darryring.com/webimg/ringbuy/zsjb.png);
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    width: 179px;
+    height: 17px
+}
+
+.haveonering {
+    background-position: 0 -17px
+}
+
+.havetworing {
+    background-position: 0 -34px
+}
+
+.havethreering {
+    background-position: 0 -51px
+}
+
+.havefourring {
+    background-position: 0 -68px
+}
+
+.havefivering {
+    background-position: 0 -85px
+}
+
+.havesixring {
+    background-position: 0 -102px
+}
+
+.ringbuy_Choose {
+    background: #fffdf8;
+    padding: 20px;
+    font-size: 0;
+    padding-right: 0;
+    margin-top: 10px
+}
+
+.ringbuy_Choose span {
+    color: #838383;
+    font-size: 12px;
+    margin-right: 14px;
+    display: inline-block;
+    width: 50px;
+    text-align: left
+}
+
+.ringbuy_Choose-first i, .ringbuy_Choose-sec a {
+    display: inline-block;
+    min-width: 63px;
+    padding: 0 4px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border: 1px solid #aeaeae;
+    background: #fff;
+    cursor: pointer;
+    margin-right: 6px
+}
+
+.ringbuy_Choose-first a {
+    color: #666
+}
+
+.ringbuy_Choose-first i:hover {
+    min-width: 61px;
+    height: 26px;
+    line-height: 26px;
+    border: 2px solid #907c73
+}
+.ringbuy_Choose-list a:hover{
+    min-width: 61px;
+    height: 26px;
+    line-height: 26px;
+    border: 2px solid #907c73
+}
+
+.ringbuy_Choose .chooseit {
+    min-width: 61px;
+    height: 26px;
+    line-height: 26px;
+    border: 2px solid #907c73;
+    background: url(//res.darryring.com/webimg/ringbuy/right.png) no-repeat right bottom
+}
+
+.ringbuy_Choose .noring {
+    border: 1px solid #e3e2e4;
+    color: #e3e2e4
+}
+
+.ringbuy_Choose-first, .ringbuy_Choose-sec {
+     margin-bottom: 14px
+ }
+
+
+.ringbuy_Choose em, .ringbuy_Choose i, .ringbuy_Choose input, .ringbuy_Choose select, .ringbuy_Choose span {
+    vertical-align: middle
+}
+
+.ringbuy_Choose-first em {
+    color: #aeaeae;
+    font-size: 12px;
+    width: 158px;
+    display: inline-block;
+    line-height: 16px
+}
+
+.ringbuy_Choose-sec span {
+    font-size: 12px;
+    margin-top: 10px
+}
+
+.ringbuy_Choose-secright {
+    width: 426px
+}
+
+.ringbuy_Choose-secright a {
+    margin-bottom: 6px;
+    vertical-align: middle;
+
+}
+
+.ringbuy_Choose-sec .ring_gjdz {
+    background: url(//res.darryring.com/webimg/ringbuy/gjdz1.jpg) no-repeat;
+    width: 142px;
+    height: 30px;
+    border: none
+}
+
+.ringbuy_Choose-sec .ring_gjdz:hover {
+    border: none;
+    width: 142px;
+    height: 30px;
+    background: url(//res.darryring.com/webimg/ringbuy/gjdz1.jpg) no-repeat;
+    background-position: 0 -30px
+}
+
+.ringbuy_Choose-sec .ring_tochoose {
+    width: auto;
+    height: auto;
+    color: #838383;
+    background: 0 0;
+    border: none
+}
+
+.ringbuy_Choose-sec .ring_tochoose:hover {
+    width: auto;
+    height: auto;
+    color: #907c73;
+    background: 0 0;
+    border: none
+}
+
+.ringbuy_Choose-third {
+    position: relative
+}
+
+.ringbuy_Choose-third select {
+    padding: 5.5px 0;
+    margin-right: 10px;
+    width: 82px
+}
+
+.ringbuy_Choose-third input {
+    padding: 5.5px 0 5.5px 4px;
+    width: 135px;
+    margin-right: 10px;
+    border: 1px solid #aeaeae
+}
+
+.ringbuy_Choose-third i {
+    display: inline-block;
+    width: 25px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #aeaeae;
+    font-size: 16px;
+    color: #aeaeae;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+.ringbuy_Choose-third em {
+    display: inline-block;
+    width: 64px;
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #907c73;
+    text-align: center;
+    font-size: 12px;
+    color: #907c73;
+    cursor: pointer
+}
+
+.ringbuy_Choose-third p {
+    margin-left: 66px;
+    margin-top: 5px;
+    clear: both
+}
+
+.ringbuy_Choose-third a {
+    font-size: 12px;
+    color: #838383
+}
+
+.ringbuy_Choose-third a:hover {
+    color: #c57d5c
+}
+
+.ipt_wrong {
+    font-size: 12px;
+    color: #ff7372;
+    position: absolute;
+    bottom: 0;
+    left: 156px;
+    display: none
+}
+
+.ringbuy_Button {
+    font-size: 0;
+    font-family: "microsoft yahei";
+    margin: 30px 0 30px 20px
+}
+
+.ringbuy_Button a {
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    vertical-align: middle
+}
+
+.to_shopcart {
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #a98f83;
+    color: #fff
+}
+
+.to_shopcart:hover {
+    background: #8b766c
+}
+
+.to_shopcart span {
+    background: url(//res.darryring.com/webimg/ringbuy/shopcart.png) no-repeat left center;
+    padding-left: 26px
+}
+
+.to_buyit, .to_yynext {
+    width: 178px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #8b766c;
+    color: #8b766c
+}
+
+.ringbuy_Choose-third em:hover, .to_buyit:hover, .to_yynext:hover {
+    color: #fff;
+    background: #8b766c
+}
+
+.ringbuy_Button i {
+    font-size: 14px;
+    color: #8b766c;
+    background: url(//res.darryring.com/webimg/ringbuy/tosc.png) no-repeat left center;
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    line-height: 20px;
+    padding-left: 26px;
+    margin-left: 10px;
+    cursor: pointer
+}
+
+.ringbuy_Button .to_ysc {
+    display: none;
+    background: url(//res.darryring.com/webimg/ringbuy/scg.png) no-repeat left center;
+    color: #d49e85
+}
+
+.ringbuy_Delivery {
+    font-size: 12px;
+    color: #838383;
+    padding-left: 20px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 10px
+}
+
+.ringbuy_Promise {
+    padding: 14px 0 14px 20px;
+    border-bottom: 1px dashed #ddd;
+    font-size: 0
+}
+
+.ringbuy_Promise strong {
+    font-size: 12px;
+    color: #838383;
+    vertical-align: middle;
+    margin-right: 12px
+}
+
+.ringbuy_Promise span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #838383;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 28px;
+    margin-right: 14px
+}
+
+.Promise_first {
+    background: url(//res.darryring.com/webimg/ringbuy/sev_first.png) no-repeat left center
+}
+
+.Promise_sec {
+    background: url(//res.darryring.com/webimg/ringbuy/sev_sec.png) no-repeat left center
+}
+
+.Promise_third {
+    background: url(//res.darryring.com/webimg/ringbuy/sev_third.png) no-repeat left center
+}
+
+.ringbuy_Promise a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #fff;
+    background: #d1c1b4;
+    width: 85px;
+    height: 24px;
+    text-align: center;
+    border-radius: 3px;
+    margin-left: 60px
+}
+
+.ringbuy_Promise a:hover {
+    background: #8b766c
+}
+
+.ringbuy_Promise i {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    background: url(//res.darryring.com/webimg/ringbuy/thekf.gif) no-repeat left center;
+    padding-left: 24px;
+    margin-top: 4px
+}
+
+.ringbuy_hotdp-cort {
+    margin-bottom: 50px;
+    position: relative
+}
+
+.ringbuy_hotdp-topright {
+    font-size: 0;
+    position: absolute;
+    right: 0;
+    bottom: 10px
+}
+
+.ringbuy_hotdp-topright i {
+    background: url(//res.darryring.com/webimg/ringbuy/change.png) no-repeat left center;
+    font-size: 12px;
+    color: #222;
+    padding-left: 20px;
+    cursor: pointer
+}
+
+.ringbuy_hotdp-topright a {
+    font-size: 12px;
+    color: #222;
+    margin-left: 20px
+}
+
+.ringbuy_hotdp-topright i:hover {
+    background: url(//res.darryring.com/webimg/ringbuy/changeing.png) no-repeat left center;
+    color: #c57d5c
+}
+
+.ringbuy_hotdp-topright a:hover {
+    color: #c57d5c
+}
+
+.ringbuy_hotdp-shop {
+    float: left;
+    width: 755px;
+    padding-left: 40px
+}
+
+.ringbuy_hotdp-cp {
+    float: left;
+    text-align: center;
+    width: 130px
+}
+
+.ringbuy_hotdp-cp a {
+    display: block
+}
+
+.ringbuy_hotdp-cp i {
+    background: url(//res.darryring.com/webimg/ringbuy/checkbox.png) no-repeat;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle
+}
+
+.ringbuy_hotdp-cp i {
+    margin-right: 4px
+}
+
+.ringbuy_hotdp-cp .hotdp-cpcheck {
+    background-position: 0 -16px
+}
+
+.ringbuy_hotdp-cp img {
+    width: 130px
+}
+
+.ringbuy_hotdp-cp p {
+    font-size: 12px;
+    color: #888;
+    line-height: 20px
+}
+
+.ringbuy_hotdp-fh {
+    font-family: "microsoft yahei";
+    font-size: 30px;
+    color: #ccc;
+    float: left;
+    margin: 0 20px;
+    padding-top: 40px
+}
+
+.ringbuy_hotdp-price {
+    width: 203px;
+    height: 152px;
+    text-align: center;
+    border-left: 1px dashed #ededed
+}
+
+.ringbuy_hotdp-price p {
+    font-size: 14px;
+    color: #222;
+    line-height: 20px
+}
+
+.ringbuy_hotdp-price p:first-child {
+    padding: 40px 0 16px
+}
+
+.ringbuy_hotdp-price span {
+    font-size: 12px
+}
+
+.ringbuy_hotdp-cp strong, .ringbuy_hotdp-price strong {
+    color: #c57d5c;
+    font-family: "microsoft yahei";
+    vertical-align: middle
+}
+
+.HotDetails_same {
+    display: none;
+    margin-top: 18px;
+    margin-bottom: 26px
+}
+
+.HotDetails_Popularity {
+    margin-top: 10px;
+    width: 747px;
+    height: 190px;
+    overflow: hidden;
+    position: relative
+}
+
+.Popularity_hotdpover {
+    width: 680px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+.Popularity_hotdpover .Orna_hotdp li {
+    margin-right: 22px
+}
+
+.Popularity_left {
+    position: relative;
+    width: 160px;
+    height: 230px;
+    text-align: center
+}
+
+.Popularity_left p {
+    font-size: 12px;
+    color: #888;
+    line-height: 20px
+}
+
+.Popularity_left span {
+    color: #8b766c;
+    font-family: "microsoft yahei"
+}
+
+.Popularity_left a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #fff;
+    opacity: .01;
+    filter: alpha(opacity=.01)
+}
+
+.HotDetails-all .ringbuy_hotdp-fh {
+    padding-top: 58px;
+    color: #d9d9d9;
+    margin-top: 42px
+}
+
+.ringbuy_Details-tab, .ringbuy_hotdp-top {
+    position: relative;
+    text-align: center;
+    border-bottom: 2px solid #eaeceb;
+    font-size: 0;
+    height: 25px;
+    margin-bottom: 40px
+}
+
+.ringbuy_hotdp-top {
+    margin-bottom: 0
+}
+
+.ringbuy_Details-tab span, .ringbuy_hotdp-top span {
+    font-size: 12px;
+    color: #999;
+    display: inline-block;
+    width: 165px;
+    text-align: center;
+    border-left: 2px solid #eaeceb;
+    height: 14px;
+    cursor: pointer
+}
+
+.ringbuy_Details-tab strong, .ringbuy_hotdp-top strong {
+    display: inline-block;
+    width: 130px;
+    margin: 0 auto;
+    height: 25px
+}
+
+.ringbuy_Details-tab span:first-child, .ringbuy_hotdp-top span:first-child {
+    border-left: none
+}
+
+.ringbuy_Details-tab .Details-tab-click strong, .ringbuy_hotdp-top .Details-tab-click strong {
+    border-bottom: 2px solid #222;
+    color: #222
+}
+
+.Details-all {
+    display: none
+}
+
+.Details-first {
+    display: block
+}
+
+.Details_Parameter {
+    overflow: hidden;
+    padding-left: 126px;
+    margin-bottom: 18px
+}
+
+.Details_Parameter li {
+    width: 290px;
+    font-size: 12px;
+    color: #666;
+    float: left;
+    line-height: 26px;
+    margin-bottom: 8px
+}
+
+.Details_Parameter span {
+    color: #999
+}
+
+.ringbuy_img {
+    text-align: center
+}
+
+.Details_asktop {
+    background: #f2f2f2;
+    height: 34px
+}
+
+.Details_asktop-left {
+    font-size: 0;
+    line-height: 34px;
+    margin-left: 12px
+}
+
+.Details_asktop-left span, .Details_asktop-left strong {
+    font-size: 12px;
+    vertical-align: middle;
+    color: #444;
+    margin-left: 14px
+}
+
+.Details_asktop-left strong {
+    margin-right: 10px
+}
+
+.Details_star {
+    font-size: 0
+}
+
+.Details_star i {
+    display: inline-block;
+    background: url(//res.darryring.com/webimg/ringbuy/star.png) no-repeat;
+    width: 14px;
+    height: 13px;
+    margin: 0 2px;
+    vertical-align: middle
+}
+
+.Details_star .thestar_Twinkle {
+    background-position: 0 -13px
+}
+
+.Details_asktop a {
+    display: block;
+    width: 100px;
+    background: #d9b39b;
+    height: 34px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center
+}
+
+.Details_asktop a i {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    background: url(//res.darryring.com/webimg/ringbuy/thekf.png) no-repeat left center;
+    padding-left: 26px;
+    margin-top: 10px
+}
+
+.Details_asktop a:hover {
+    background: #d49e85
+}
+
+.Details_allask li {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f2f2f2
+}
+
+.Details_allask-left {
+    width: 650px
+}
+
+.Details_allask-left p {
+    font-size: 12px;
+    color: #444;
+    line-height: 18px;
+    margin-bottom: 10px
+}
+
+.Details_allask-left a {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 8px;
+    background: #d9b39b;
+    font-size: 12px;
+    color: #fff;
+    vertical-align: middle;
+    border-radius: 3px;
+    margin-left: 12px
+}
+
+.Details_allask-left a:hover {
+    background: #d49e85
+}
+
+.Details_allask-xq {
+    width: 80px
+}
+
+.Details_allask-xq p {
+    line-height: 22px;
+    font-size: 12px;
+    color: #999
+}
+
+.Details_allask-xq span {
+    color: #666
+}
+
+.Details_allask-person {
+    max-width: 170px;
+    text-align: right
+}
+
+.Detail_persontx {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    float: left
+}
+
+.Detail_persontx i {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(//res.darryring.com/webimg/ringbuy/txzp.png) no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0
+}
+
+.Detail_persontx img {
+    width: 18px;
+    height: 18px;
+    vertical-align: middle
+}
+
+.Details_allask-person span {
+    font-size: 12px;
+    color: #c77a61;
+    float: left;
+    margin-top: 2px;
+    margin-left: 5px
+}
+
+.Details_allask-person p {
+    font-size: 12px;
+    color: #aaaaac;
+    margin-top: 6px
+}
+
+.haveimg_slt {
+    margin-top: 10px;
+    overflow: hidden
+}
+
+.haveimg_sltoverflow {
+    overflow: hidden;
+    width: 340px;
+    position: relative
+}
+
+.haveimg_sltall {
+    height: 64px
+}
+
+.haveimg_sltall li {
+    float: left;
+    border: 2px solid #f2f2f2;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    cursor: url(http://static.360buyimg.com/item/main/1.0.6/css/i/big.cur), auto;
+    position: relative;
+    margin-right: 10px
+}
+
+.haveimg_border {
+    border: 2px solid #fff;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center
+}
+
+.haveimg_border img {
+    width: 100%;
+    max-height: 100%;
+    vertical-align: middle
+}
+
+.haveimg_sltall .haveimg_sltall-click {
+    border: 2px solid #c57d5c
+}
+
+.haveimg_sltall .haveimg_sltall-click span {
+    background: url(//res.darryring.com/webimg/ringbuy/bottom.png) no-repeat;
+    display: block;
+    width: 10px;
+    height: 7px;
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    margin-left: -5px
+}
+
+.haveimg_change span {
+    display: block;
+    background-image: url(//res.darryring.com/webimg/ringbuy/slt_change.jpg);
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 29px;
+    cursor: pointer
+}
+
+.haveimg_preend {
+    background-position: 0 0
+}
+
+.haveimg_pre {
+    background-position: -30px 0
+}
+
+.haveimg_nextend {
+    background-position: -30px -29px
+}
+
+.haveimg_next {
+    background-position: 0 -29px
+}
+
+.haveimg_theimg {
+    display: none;
+    width: 400px;
+    position: relative
+}
+
+.haveimg_theimg span {
+    display: inline-block;
+    background: url(//res.darryring.com/webimg/ringbuy/img_prenext.png);
+    width: 30px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    cursor: pointer;
+    z-index: 4
+}
+
+.haveimg_theimg .Bigimg_pre {
+    background-position: 0 0;
+    left: 12px
+}
+
+.haveimg_theimg .Bigimg_next {
+    background-position: -30px 0;
+    right: 12px
+}
+
+.haveimg_bigimg {
+    width: 400px;
+    margin-top: 4px
+}
+
+.haveimg_bigimg li {
+    width: 398px;
+    border: 1px solid #ccc;
+    padding: 0;
+    cursor: url(http://static.360buyimg.com/item/main/1.0.6/css/i/small.cur), auto;
+    display: none
+}
+
+.haveimg_bigimg li:first-child {
+    display: block
+}
+
+.haveimg_bigimg-cort {
+    width: 398px;
+    text-align: center;
+    overflow: hidden
+}
+
+.haveimg_bigimg-cort img {
+    max-width: 100%;
+    vertical-align: middle
+}
+
+.ringbuy_Browse {
+    font-family: "microsoft yahei";
+    margin-top: 40px
+}
+
+.ringbuy_Browse h3 {
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #e4e4e4;
+    padding-bottom: 20px
+}
+
+.ringbuy_Browsering {
+    position: relative;
+    overflow: hidden
+}
+
+.ringbuy_Browsehide {
+    width: 908px;
+    margin: 16px auto 0;
+    overflow: hidden;
+    position: relative
+}
+
+.Browsering {
+    height: 196px
+}
+
+.Browsering img {
+    width: 138px
+}
+
+.Browsering li {
+    float: left;
+    width: 140px;
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+    margin: 0 6px
+}
+
+.Browsering p {
+    line-height: 18px;
+    color: #666
+}
+
+.Browsering a {
+    position: absolute;
+    background: #fff;
+    opacity: .01;
+    filter: alpha(opacity=.01);
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    left: 0;
+    top: 0
+}
+
+.ringbuy_Choose-four i {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    background: #f5f5f5;
+    font-size: 18px;
+    color: #666;
+    border: 1px solid #e2e1e3;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700
+}
+
+.ringbuy_Choose-four em {
+    display: inline-block;
+    border: 1px solid #e2e1e3;
+    border-left: none;
+    border-right: none;
+    background: #fff;
+    width: 42px;
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px
+}
+
+.ringbuy_hotdpover {
+    width: 870px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    height: 190px
+}
+
+.Orna_hotdp li {
+    float: left;
+    width: 130px;
+    margin-right: 50px;
+    text-align: center;
+    position: relative
+}
+
+.Orna_hotdp p {
+    font-size: 12px;
+    color: #888;
+    line-height: 20px
+}
+
+.Orna_hotdp span {
+    color: #8b766c;
+    font-family: "microsoft yahei"
+}
+
+.Orna_hotdp a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #fff;
+    opacity: .01;
+    filter: alpha(opacity=.01)
+}
+
+.Choose-thirdright {
+    width: 392px
+}
+
+.Choose-thirdright p {
+    margin: 0;
+    padding-bottom: 6px
+}
+
+.ringbuy_Choose-third span.fl {
+    margin-top: 8px
+}
+
+.ornabuy-third {
+    margin-top: 14px
+}
+
+.ornabuy-third .ipt_wrong {
+    left: 68px;
+    bottom: -18px
+}
+
+.Details_allask-right {
+    width: 250px
+}
+
+.DA_Reply {
+    width: 650px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed #eae9e9;
+    color: #d9b39b;
+    font-size: 12px;
+    line-height: 20px
+}
+
+.DA_Reply p {
+    width: 98px
+}
+
+.DA_ReplyInfo {
+    width: 550px
+}
+
+.HotDetails_Popularity02 {
+    margin: 0 10px;
+    width: 540px;
+    height: 230px
+}
+
+.HotDetails_Popularity02 .check-dom {
+    margin-right: 4px;
+    vertical-align: middle
+}
+
+.HotDetails_Popularity02 .Popularity_hotdpover {
+    width: 480px
+}
+
+.HotDetails_Popularity02 .Orna_hotdp li {
+    margin-right: 0;
+    width: 158px;
+    height: 228px;
+    border: 1px solid #fff
+}
+
+.HotDetails_Popularity02 .Orna_hotdp li:hover {
+    border: 1px solid #8b766c
+}
+
+.HotDetails_Popularity02 .Orna_hotdp li.disabled, .HotDetails_Popularity02 .Orna_hotdp li.disabled:hover {
+    border: 1px solid #fff
+}
+
+.HotDetails_Popularity02 .Orna_hotdp a {
+    height: 175px
+}
+
+.HotDetails_Popularity02 .Orna_hotdp span {
+    vertical-align: middle
+}
+
+.HotDetails_Popularity02 .SmallRing-pre {
+    left: 0;
+    z-index: 0
+}
+
+.HotDetails_Popularity02 .SmallRing-next {
+    right: 0;
+    z-index: 0
+}
+
+.combination-r {
+    margin: 30px 0 0 18px;
+    float: left;
+    width: 135px;
+    height: 120px;
+    padding: 35px 0 0 30px;
+    text-align: center;
+    border-left: 1px dashed #ededed
+}
+
+.combination-r p {
+    line-height: 24px;
+    text-align: left;
+    color: #222;
+    font-size: 12px
+}
+
+.combination-r span {
+    margin-left: 6px;
+    color: #8b766c;
+    font-size: 18px;
+    font-family: "microsoft yahei";
+    font-weight: 700
+}
+
+.combination-r span i {
+    font-size: 14px
+}
+
+.combination-r a {
+    margin-top: 10px;
+    display: inline-block;
+    width: 80px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    background: #8b766c
+}
+
+.ringbuy_suit {
+    padding: 20px
+}
+
+.ringbuy_suit span.rbs_desc {
+    float: left;
+    font-size: 12px;
+    line-height: 28px
+}
+
+.ringbuy_suit span.rbs_desc i {
+    display: inline-block;
+    width: 2em
+}
+
+.rbs_list {
+    position: relative;
+    float: right;
+    width: 414px
+}
+
+.rbs_item {
+    float: left;
+    width: 92px;
+    height: 28px;
+    margin: 0 10px 10px 0;
+    text-align: center;
+    color: #666;
+    font-size: 12px;
+    line-height: 28px
+}
+
+.rbs_item p {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #aeaeae;
+    z-index: 0
+}
+
+.rbs_view {
+    display: none;
+    position: absolute;
+    right: -27px;
+    top: 29px;
+    background: #fff;
+    min-width: 391px;
+    padding: 24px;
+    border: 1px solid #aeaeae;
+    z-index: 1
+}
+
+.rbs_viewList {
+    border-bottom: 1px dashed #ddd;
+    text-align: center
+}
+
+.rbs_viewItem {
+    float: left;
+    width: 110px;
+    padding-left: 48px;
+    background: url(//res.darryring.com/webimg/ringbuy/add.png) no-repeat 12px 36px
+}
+
+.rbs_viewItem:first-child {
+    background: 0 0;
+    padding-left: 0
+}
+
+.rbs_viewItem img {
+    width: 100%
+}
+
+.rbs_viewInfo {
+    padding-bottom: 14px
+}
+
+.rbs_viewInfo i {
+    color: #c57d5c;
+    font-size: 16px;
+    font-family: "microsoft yahei"
+}
+
+.rbs_viewTitle {
+    height: 44px;
+    padding-bottom: 2px;
+    color: #666;
+    font-size: 12px;
+    line-height: 22px;
+    overflow: hidden
+}
+
+.rbs_item.active p {
+    border: 1px solid #907c73;
+    border-bottom: 1px solid #fff;
+    z-index: 2
+}
+
+.rbs_item.active .rbs_view {
+    display: block
+}
+
+.rbs_viewBtn {
+    margin-top: 20px
+}
+
+.rbs_viewTotal {
+    float: right;
+    padding-top: 10px;
+    margin-right: 50px
+}
+
+.rbs_viewTotal span {
+    color: #c67c59;
+    font-size: 24px;
+    font-family: "microsoft yahei"
+}
+
+.rbs_viewBtn .ringbuy_Button {
+    margin: 0;
+    float: right
+}
+
+.rbs_viewBtn .ringbuy_Button a {
+    margin: 0
+}
+
+.rbs_view.more {
+    width: 790px
+}
+
+.ringbuy_Button i.to_joinGift {
+    background: url(//res.darryring.com/webimg/ringbuy/gift.png) no-repeat left center;
+    color: #c57d5c
+}
+
+.dr_loginIf {
+    background: #fff;
+    width: 246px;
+    padding: 15px;
+    position: fixed;
+    z-index: 11;
+    top: 30%;
+    left: 50%;
+    margin-left: -138px
+}
+
+.dr_loginIf .Popup_close {
+    position: absolute;
+    background: url(//res.darryring.com/webimg/common/tc_close.jpg) no-repeat;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: -50px;
+    z-index: 4;
+    cursor: pointer
+}
+
+.dr_lgBorder {
+    border: 2px solid #5e5d62
+}
+
+.dr_lgBorder li {
+    min-height: 112px;
+    border-top: 1px solid #eee;
+    color: #8b766c;
+    text-align: center;
+    font-size: 0;
+    position: relative
+}
+
+.dr_lgBorder li:first-child {
+    border: none
+}
+
+.dr_lgBorder li:first-child span {
+    padding-left: 35px
+}
+
+.dr_lgBorder li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: .01;
+    filter: alpha(opacity=1)
+}
+
+.dr_lgBorder li span {
+    display: inline-block;
+    width: 36%;
+    font-size: 20px;
+    padding-left: 35px;
+    height: 26px;
+    line-height: 26px;
+    background: url(//res.darryring.com/webimg/common/lg.png) no-repeat left center;
+    margin-top: 30px
+}
+
+.dr_lgBorder li p {
+    margin-top: 10px;
+    font: 14px/14px "microsoft yahei"
+}
+
+.ringbuy_expect {
+    margin-bottom: 20px
+}
+
+.ringbuy_expect a.ringbuy_expect-change {
+    display: inline-block;
+    width: 68px;
+    height: 26px;
+    border: 1px solid #e2e1e3;
+    color: #b6b6b6;
+    margin-right: 20px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 26px
+}
+
+.ringbuy_expect a.ringbuy_expect-change.active {
+    color: #907c73;
+    border: 1px solid #907c73
+}
+
+.ringbuy_expect a.ringbuy_expect-reset {
+    display: none;
+    padding-right: 18px;
+    background: url(//res.darryring.com/webimg/ringbuy/changeing.png) no-repeat right center;
+    color: #c57d5c;
+    height: 28px;
+    vertical-align: middle;
+    line-height: 28px
+}
+
+.ringbuy_expect a.ringbuy_expect-reset.active {
+    display: inline-block
+}
+
+.ringbuy_Choose-secright a.hot {
+    position: relative
+}
+
+.ringbuy_Choose-sec a.hot:hover, .ringbuy_Choose-secright a.chooseit.hot:hover {
+    border: 2px solid #907c73
+}
+
+
+
+.ringbuy_Choose-secright a.chooseit.hot {
+    border: 2px solid #907c73
+}
+.ringbuy_Choose-secright a.hot i {
+    position: absolute;
+    display: inline-block;
+    top: -5px;
+    left: -5px
+}
+
+.ringbuy_Choose-secright a.noring.chooseit{
+    min-width: 63px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #e3e2e4;
+    background: 0 0
+}
+
+
+p.ringbuy_expect-null {
+    display: none;
+    margin-bottom: 6px;
+    color: #666;
+    font-size: 12px;
+    line-height: 34px
+}
+.ringbuy_Choose-list span.changeChoose {
+    display: inline-block;
+    text-decoration: underline;
+    color: #907c73;
+    margin: 0;
+    padding: 0 10px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 30px
+}

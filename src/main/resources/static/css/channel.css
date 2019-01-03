@@ -1,0 +1,400 @@
+.jnrchannel_cort, .tringchannel_cort {
+    background: #fff;
+    padding-bottom: 40px
+}
+
+.tringBanner {
+    background: url(//res.darryring.com/webimg/channel/banner.jpg) no-repeat center;
+    height: 620px
+}
+
+.channel_sec {
+    margin-bottom: 20px
+}
+
+.channelsec_two {
+    background: #f8f8f8
+}
+
+.channelsec_same {
+    position: relative;
+    font-size: 0;
+    height: 48px;
+    line-height: 48px;
+    border-bottom: 1px solid #dfdfdf
+}
+
+.noborder {
+    border: none
+}
+
+.channel_sec .checkAll {
+    position: absolute;
+    z-index: 5;
+    font-size: 14px;
+    color: #666;
+    right: 0;
+    top: 4px
+}
+
+.channel_sec .checkAll:hover {
+    color: #9b745c
+}
+
+.channelsec_same span {
+    font-size: 12px;
+    color: #666;
+    margin-right: 32px;
+    margin-left: 20px
+}
+
+.channelsec_same a {
+    font-size: 12px;
+    color: #000;
+    margin-right: 46px
+}
+
+.channelsec_same a:hover {
+    color: #c67c59
+}
+
+.channelsec_one {
+    text-align: center;
+    font-size: 0;
+    padding: 60px 0
+}
+
+.channelsec_one li {
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    text-align: center;
+    width: 261px;
+    height: 158px;
+    overflow: hidden;
+    margin: 0 80px
+}
+
+.channelsec_one img {
+    margin-top: 4px
+}
+
+.channelsec_one p {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    font-size: 14px;
+    color: #8b766c;
+    margin-top: 8px
+}
+
+.channel_advert, .star_advert, .starjnr_advert {
+    position: relative
+}
+
+.starjnr_advert {
+    margin-top: 74px
+}
+
+.hrefLink {
+    position: absolute;
+    background: #fff;
+    opacity: .01;
+    filter: alpha(opacity=.01);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 3
+}
+
+.channelsec_one img {
+    transition: transform .5s;
+    transform: translateZ(0)
+}
+
+.channelsec_one li:hover img {
+    transform: scale(1.08)
+}
+
+.channel_title {
+    position: relative;
+    height: 96px;
+    line-height: 96px
+}
+
+.channel_title h3 {
+    font-size: 30px;
+    color: #606060
+}
+
+.channel_list {
+    overflow: hidden;
+    margin-left: -36px;
+    margin-top: -27px
+}
+
+.channel_list li {
+    float: left;
+    width: 427px;
+    height: 608px;
+    border: 1px solid #d1d1d1;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    text-align: center;
+    margin-left: 36px;
+    margin-top: 27px
+}
+
+.channel_list img {
+    transition: transform .5s;
+    transform: translateZ(0)
+}
+
+.channel_list li:hover img {
+    transform: scale(1.08)
+}
+
+.Suit_list li:hover .tobuy, .channel_list li:hover .tobuy {
+    background: #8b766c
+}
+
+.channellist_word {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 58px;
+    z-index: 2;
+    text-align: center
+}
+
+.channellist_word h3 {
+    font-size: 18px;
+    color: #8b766c;
+    margin-bottom: 20px
+}
+
+.channel_list .nov_hr {
+    width: 41px;
+    margin: 20px auto 8px;
+    border-top: 1px solid #8b766c
+}
+
+.channel_list p {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 18px
+}
+
+.tobuy {
+    display: block;
+    width: 123px;
+    height: 23px;
+    line-height: 23px;
+    margin: 32px auto 0;
+    font-size: 0;
+    background: #a98f83;
+    color: #fff
+}
+
+.tobuy i, .tobuy span {
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 58px;
+    height: 12px;
+    line-height: 12px;
+    text-align: center
+}
+
+.tobuy span {
+    border-right: 1px solid #fff
+}
+
+.channel_four {
+    padding-bottom: 57px;
+    margin-top: 57px
+}
+
+.Suit_list {
+    overflow: hidden
+}
+
+.Suit_list li {
+    position: relative;
+    float: left
+}
+
+.Suit_list img {
+    transition: transform .5s;
+    transform: translateZ(0)
+}
+
+.Suit_list .suitborder:hover img {
+    transform: scale(1.03)
+}
+
+.suitborder {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #c2c2c2
+}
+
+.Suit_list h3 {
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: #8b766c
+}
+
+.Suit_list p {
+    font-size: 14px;
+    color: #666
+}
+
+.Suit_list .tobuy {
+    font-size: 14px;
+    color: #fff;
+    width: 118px;
+    height: 29px;
+    line-height: 29px
+}
+
+.channel_four .nov_hr {
+    width: 41px;
+    margin: 22px auto 32px;
+    border-top: 1px solid #8b766c
+}
+
+.suitlist_word {
+    position: absolute;
+    text-align: center;
+    z-index: 2
+}
+
+.Suit_first .suitborder {
+    width: 463px;
+    height: 821px
+}
+
+.Suit_sec {
+    margin: 0 16px
+}
+
+.Suit_sec .suitborder {
+    width: 594px;
+    height: 400px;
+    margin-top: 18px
+}
+
+.Suit_sec .suitborder:first-child {
+    margin: 0
+}
+
+.Suit_first .suitlist_word, .Suit_third .suitlist_word {
+    width: 100%;
+    left: 0;
+    bottom: 64px
+}
+
+.Suit_sec .suitlist_word {
+    width: 220px;
+    left: 370px;
+    bottom: 134px
+}
+
+.Suit_third .suitborder {
+    width: 264px;
+    height: 821px
+}
+
+.channel_five {
+    margin-top: 57px
+}
+
+.channel_five .channel_list li {
+    height: 548px
+}
+
+.channel_five .channellist_word {
+    bottom: 72px
+}
+
+.star_advert {
+    background: url(//res.darryring.com/webimg/channel/ad4.jpg) no-repeat center;
+    height: 540px
+}
+
+.jnrchannel_cort .channel_list li {
+    height: 568px
+}
+
+.jnrBanner {
+    background: url(//res.darryring.com/webimg/channel/jnr_banner.jpg) no-repeat center;
+    height: 620px
+}
+
+.secjnr_one li {
+    width: 158px;
+    height: 152px;
+    margin: 0 28px
+}
+
+.constellation_list {
+    overflow: hidden;
+    margin-left: -18px;
+    margin-top: -19px
+}
+
+.constellation_list li {
+    float: left;
+    width: 324px;
+    height: 505px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    position: relative;
+    margin-left: 18px;
+    margin-top: 19px;
+    overflow: hidden
+}
+
+.constellation_list .nov_hr {
+    width: 49px;
+    margin: 14px auto 8px;
+    border-top: 1px solid #000
+}
+
+.constellation_list img {
+    transition: transform .5s;
+    transform: translateZ(0)
+}
+
+.constellation_list li:hover img {
+    transform: scale(1.08)
+}
+
+.constellation_list .channellist_word {
+    bottom: 30px
+}
+
+.constellation_list .channellist_word h3 {
+    font-size: 18px
+}
+
+.constellation_list p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px
+}
+
+.channel_same {
+    position: relative;
+    margin-top: 57px
+}
+
+.starjnr_advert {
+    background: url(//res.darryring.com/webimg/channel/jnr_ad5.jpg) no-repeat center;
+    height: 540px
+}

@@ -1,0 +1,1104 @@
+.drfans_advert {
+    height: 540px;
+    position: relative;
+    width: 100%;
+    margin: 0 auto
+}
+
+.drfans_advertimg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 540px;
+    overflow: hidden
+}
+
+.drfans_advertimg img {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.drfans_bread {
+    font-size: 0;
+    padding-bottom: 28px;
+    text-align: center
+}
+
+.drfans_bread span, .drfans_bread a {
+    font-size: 14px;
+    color: #666
+}
+
+.drfans_bread span {
+    margin: 0 12px 0 18px
+}
+
+.drfans_bread a {
+    display: inline-block;
+    margin-right: 56px
+}
+
+.drfans_bread a.active, .drfans_bread a:hover {
+    color: #c57d5c
+}
+
+.drfans_Img {
+    margin-bottom: 40px
+}
+
+.drfans_ImgSame {
+    font-size: 0;
+    width: 322px
+}
+
+.drfans_ImgSame a {
+    display: block
+}
+
+.drfans_ImgSame a {
+    margin-bottom: 20px
+}
+
+.drfans_ImgLeft {
+    margin-right: 20px
+}
+
+.drfans_ImgBottom {
+    font-size: 0;
+    margin-bottom: 20px
+}
+
+.drfans_ImgBottom a {
+    margin-left: 19px
+}
+
+.drfans_ImgBottom a:first-child {
+    margin: 0
+}
+
+.Thezang {
+    border: 1px solid #e8e8e8;
+    background: #fff;
+    padding: 5px 10px;
+    border-radius: 30px;
+    color: #a2a2a2;
+    cursor: pointer
+}
+
+.Thezang i {
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    padding-left: 24px;
+    background-image: url('//res.darryring.com/webimg/drFans/heart.png');
+    background-repeat: no-repeat;
+    background-position: left 0
+}
+
+.Thezang:hover, .zangit {
+    border-color: #c57d5c;
+    color: #c57d5c
+}
+
+.Thezang:hover i {
+    background-position: left -15px
+}
+
+.drfanscort_all {
+    margin-top: 20px;
+    padding-top: 40px;
+    background: #eeeded
+}
+
+.container {
+    position: relative;
+    padding-top: 34px;
+    padding-bottom: 60px;
+    border-top: 1px solid #fff
+}
+
+.drfans_ImgWord {
+    position: relative;
+    text-align: center;
+    padding: 26px 0 15px
+}
+
+.drfans_ImgWord h3 {
+    font-size: 14px;
+    color: #000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 24px;
+    margin-bottom: 6px
+}
+
+.nov_line {
+    width: 20px;
+    height: 1px;
+    border-bottom: 1px solid #ababab;
+    margin: 13px auto 6px
+}
+
+.drfans_ImgWord p {
+    font-size: 12px;
+    color: #aaa;
+    padding: 0 52px;
+    height: 52px;
+    line-height: 18px;
+    overflow: hidden;
+    text-align: left
+}
+
+.drfans_listBottom {
+    font-size: 0;
+    padding: 25px 0;
+    text-align: center
+}
+
+.drfans_listBottom span {
+    font-size: 12px;
+    color: #a98f83;
+    margin: 0 20px;
+    padding: 5px 10px;
+    display: inline-block;
+    height: 28px;
+    vertical-align: middle
+}
+
+.drfans_listBottom i {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 32px;
+    background: url('//res.darryring.com/webimg/drFans/icon_heart.png') no-repeat left center
+}
+
+.fans_trans i {
+    background: url('//res.darryring.com/webimg/drFans/icon_transmit.png') no-repeat left center
+}
+
+.drfans_Img .drfans_ImgWord {
+    padding: 24px 0 10px
+}
+
+.drfans_share {
+    font-size: 0;
+    text-align: right
+}
+
+.drfans_share span, .drfans_share a {
+    display: inline-block;
+    font-size: 12px;
+    color: #a2a2a2;
+    vertical-align: middle
+}
+
+.drfans_share .Thenews {
+    background: url('//res.darryring.com/webimg/drFans/news.png') no-repeat left center;
+    padding-left: 22px;
+    line-height: 18px
+}
+
+.drfans_list {
+    overflow: hidden;
+    padding-left: 130px;
+    padding-bottom: 52px;
+    border-bottom: 1px solid #fff;
+    margin-left: -17px
+}
+
+.drfans_list li {
+    position: relative;
+    background: #fff;
+    float: left;
+    width: 355px;
+    height: 403px;
+    margin-bottom: 32px;
+    margin-left: 17px
+}
+
+.drfans_listTop {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden
+}
+
+.drfans_listTop img {
+    position: absolute
+}
+
+.drfans_list li:hover .drfans_ImgWord h3, .drfans_list li:hover .drfans_ImgWord h4, .drfans_list li:hover .drfans_ImgWord p {
+    color: #a98f83
+}
+
+.drfans_list li:hover .drfans_ImgWord .nov_line {
+    border-color: #d9d2cf
+}
+
+.drfans_list .hreflink {
+    position: absolute;
+    opacity: .01;
+    filter: alpha(opacity=0.01);
+    background: #fff;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+.fans_loadMore {
+    position: absolute;
+    width: 116px;
+    height: 33px;
+    line-height: 33px;
+    border: 3px solid #fff;
+    font-size: 12px;
+    color: #656565;
+    background: #eeeded;
+    text-align: center;
+    left: 50%;
+    margin-left: -90px;
+    bottom: 42px
+}
+
+.drfans_lookFind {
+    padding-top: 64px
+}
+
+.lookFind_title {
+    text-align: center;
+    padding-bottom: 28px
+}
+
+.lookFind_title p {
+    font-size: 26px;
+    color: #848484;
+    margin-top: 32px
+}
+
+.lookFind_titleBK {
+    background: #dbc7ba;
+    height: 55px;
+    position: relative
+}
+
+.lookFind_titleBK img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -61px 0 0 -61px
+}
+
+.lookFind_list {
+    padding-bottom: 60px
+}
+
+.lookFind_list li {
+    position: relative;
+    float: left;
+    width: 150px;
+    text-align: center;
+    color: #888;
+    font-size: 12px;
+    margin-left: 18px
+}
+
+.lookFind_list li:first-child {
+    margin: 0
+}
+
+.lookFind_list img {
+    width: 148px;
+    height: 148px;
+    border: 1px solid #ececec
+}
+
+.lookFind_list h3 {
+    font-weight: bold;
+    margin-top: 18px
+}
+
+.lookFind_list .nov_line {
+    width: 24px;
+    border-color: #888;
+    margin: 10px auto
+}
+
+.lookFind_list .theMember {
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    background: url('//res.darryring.com/webimg/drFans/member.png') no-repeat;
+    width: 34px;
+    height: 19px;
+    text-align: center;
+    line-height: 16px;
+    right: 6px;
+    top: -2px
+}
+
+.drfans_art {
+    background: #eeeded;
+    padding-bottom: 50px
+}
+
+.drfansL {
+    width: 660px
+}
+
+.drfansArt_bk {
+    background: url('//res.darryring.com/webimg/drFans/actrile_bk.jpg') no-repeat center center;
+    height: 290px;
+    border-top: 4px solid #e8cbbe;
+    position: relative
+}
+
+.drfansArt_Word {
+    text-align: center
+}
+
+.drfansArt_Word h3 {
+    font-size: 30px;
+    color: #565979;
+    margin-top: 96px
+}
+
+.drfansArt_Word .nov_line {
+    width: 70px;
+    margin: 16px auto
+}
+
+.drfansArt_Word p {
+    font-size: 14px;
+    color: #8e8f99
+}
+
+.drfansArt_Word a {
+    display: inline-block;
+    width: 186px;
+    height: 37px;
+    line-height: 37px;
+    text-align: center;
+    font-size: 14px;
+    color: #4c4948;
+    margin-top: 40px;
+    margin-bottom: 8px;
+    border: 1px solid #4c4948
+}
+
+.drfansArt_wrapper {
+    background: #fff;
+    padding: 50px 32px 40px
+}
+
+.drfansArt_wrapper > h3 {
+    font: 600 20px/60px "microsoft yahei";
+    color: #8d8d8d;
+    text-align: center
+}
+
+.drfansArt_wrapper .art_count {
+    padding: 18px 0;
+    text-align: center;
+    height: 14px
+}
+
+.art_count .Thezang {
+    font-size: 12px;
+    vertical-align: middle;
+    border: 0;
+    padding: 0
+}
+
+.drfReadTotal {
+    display: inline-block;
+    height: 15px;
+    line-height: 15px;
+    font-size: 12px;
+    color: #a2a2a2;
+    background: url('//res.darryring.com/webimg/drFans/lookthrough.png') no-repeat center left;
+    padding-left: 28px;
+    vertical-align: middle;
+    margin: 0 20px
+}
+
+.drfansArt_Con {
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: #8d8d8d;
+    line-height: 26px;
+    text-align: justify;
+    padding-bottom: 40px
+}
+
+.drfansArt_Con img {
+    max-width: 100%
+}
+
+.drfansArt_same {
+    padding-bottom: 40px
+}
+
+.drfansArtCort_img {
+    width: 440px;
+    height: 300px
+}
+
+.drfansArtCort_Word {
+    width: 426px;
+    font-size: 12px;
+    color: #8d8d8d;
+    line-height: 22px;
+    margin-top: 60px
+}
+
+.drfansArtCort_Word p {
+    margin-bottom: 18px;
+    text-align: justify
+}
+
+.drfansArt_sale {
+    display: none
+}
+
+.drfansArtsale_title {
+    text-align: center
+}
+
+.Artsale_Top {
+    font-size: 0
+}
+
+.Artsale_Top span, .Artsale_Top i {
+    font-size: 18px;
+    color: #333;
+    vertical-align: middle
+}
+
+.Artsale_Top i {
+    margin: 0 20px
+}
+
+.Artsale_Top span {
+    display: inline-block;
+    border-bottom: 1px solid #666;
+    height: 1px;
+    width: 80px
+}
+
+.drfansArtsale_title p {
+    font-size: 30px;
+    color: #252326;
+    margin-top: 14px
+}
+
+.Artsale_list {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto
+}
+
+.Artsale_list li {
+    text-align: center;
+    position: relative;
+    height: 300px
+}
+
+.Artsale_Img {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    width: 300px;
+    text-align: center
+}
+
+.Artsale_Img img {
+    max-width: 100%
+}
+
+.Artsale_Word {
+    position: absolute;
+    right: 30px;
+    width: 300px;
+    top: 70px
+}
+
+.Artsale_list h4 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 30px
+}
+
+.Artsale_list strong {
+    font-family: arial;
+    font-weight: 100
+}
+
+.Artsale_list p {
+    font-size: 14px;
+    color: #666;
+    background: url('//res.darryring.com/webimg/common/black_icon.png') no-repeat center bottom;
+    padding-bottom: 54px
+}
+
+.toRecord {
+    display: block;
+    width: 212px;
+    height: 28px;
+    text-align: center;
+    font: 14px/28px "microsoft yahei";
+    color: #c57d5c;
+    margin: 34px auto;
+    border: 1px solid #c57d5c
+}
+
+.drfansArt_Con .zanbtn {
+    text-align: center
+}
+
+.drfansR {
+    width: 328px;
+    border-top: 4px solid #e8cbbe
+}
+
+.lbSame {
+    background-color: #fff;
+    padding: 0 14px 14px;
+    margin-bottom: 10px
+}
+
+.lbSame .r_title {
+    height: 64px;
+    font: 24px/64px simsun;
+    color: #252326;
+    text-align: center
+}
+
+.r_proItemLb {
+    height: 488px;
+    position: relative;
+    color: #666;
+    overflow: hidden;
+    background: url('//res.darryring.com/webimg/drFans/bg.jpg') repeat-x
+}
+
+.r_proItemLb ul {
+    height: 488px;
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.r_proItemLb ul li {
+    float: left;
+    width: 300px;
+    height: 100%;
+    text-align: center;
+    position: relative
+}
+
+.r_proItemLb ul li a.hreflink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2
+}
+
+.r_proItemLb .lunboPic {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden
+}
+
+.r_proItemLb .lunboPic img {
+    position: absolute
+}
+
+.r_proItemLb h5 {
+    font: 18px/30px "microsoft yahei";
+    color: #333;
+    margin-top: 10px;
+    padding: 0 20px
+}
+
+.r_proItemLb .nov_line {
+    width: 36px;
+    margin: 8px auto 15px
+}
+
+.r_proItemLb p {
+    font-size: 14px;
+    font-family: simsun;
+    margin-bottom: 25px
+}
+
+.r_proItemLb li span {
+    display: inline-block;
+    width: 126px;
+    border: 1px solid #666;
+    font: 14px/28px "microsoft yahei";
+    text-align: center
+}
+
+.r_proItemLb .arrow {
+    width: 23px;
+    height: 44px;
+    position: absolute;
+    cursor: pointer;
+    top: 50%;
+    margin-top: -22px;
+    z-index: 6
+}
+
+.r_proItemLb .arrow.arrowLeft {
+    left: 20px;
+    background: url('//res.darryring.com/webimg/drFans/arr_left.png') no-repeat center center
+}
+
+.r_proItemLb .arrow.arrowRight {
+    right: 20px;
+    background: url('//res.darryring.com/webimg/drFans/arr_right.png') no-repeat center center
+}
+
+.dr_adv {
+    background-color: #fff;
+    padding: 0 15px 15px;
+    text-align: center
+}
+
+.dr_adv > h4 {
+    font: 18px/55px simsun;
+    color: #333;
+    background: url('//res.darryring.com/webimg/drFans/line.jpg') no-repeat center 28px
+}
+
+.dr_adv > h2 {
+    font-size: 30px;
+    color: #252326;
+    margin-bottom: 36px
+}
+
+.dr_adv .storySame {
+    margin-bottom: 18px;
+    position: relative
+}
+
+.dr_adv .storySame a.hreflink {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2
+}
+
+.dr_adv .storyPic {
+    width: 128px;
+    height: 97px;
+    position: relative;
+    overflow: hidden
+}
+
+.dr_adv .storyPic img {
+    position: absolute
+}
+
+.dr_adv .storyTxt {
+    width: 156px;
+    text-align: left;
+    font: 16px/28px simsun;
+    color: #252326
+}
+
+.dr_adv .storyTxt h5 {
+    font-weight: 600;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.dr_adv .storyTxt p {
+    height: 56px;
+    overflow: hidden
+}
+
+.drfans_com {
+    padding: 40px 0 0
+}
+
+.comCount span {
+    display: inline-block;
+    font: 14px/28px "microsoft yahei";
+    color: #333
+}
+
+.comCount .drfans_share a {
+    display: inline-block;
+    width: 29px;
+    height: 28px;
+    margin-left: 12px;
+    vertical-align: middle
+}
+
+.comCount .drfans_share .share_wb {
+    background-image: url('//res.darryring.com/webimg/drFans/shareIcon.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-left: 0
+}
+
+.drfans_share .share_qq {
+    background-image: url('//res.darryring.com/webimg/drFans/shareIcon.png');
+    background-repeat: no-repeat;
+    background-position: -40px center;
+    margin-left: 0
+}
+
+.drfans_share .share_wx {
+    background-image: url('//res.darryring.com/webimg/drFans/shareIcon.png');
+    background-repeat: no-repeat;
+    background-position: -80px center;
+    margin-left: 0
+}
+
+.comCount .drfans_share a:hover {
+    background-image: url('//res.darryring.com/webimg/drFans/shareIcon2.png')
+}
+
+.comPart .comNone {
+    padding: 100px 0;
+    text-align: center
+}
+
+.comPart .comNone p {
+    font-size: 14px;
+    color: #c0c0c0;
+    margin-top: 20px
+}
+
+.comSame {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0 10px
+}
+
+.comPic {
+    display: inline-block;
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border: 2px solid #eee;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+    vertical-align: top
+}
+
+.comPic img {
+    position: absolute
+}
+
+.comSame .comCon {
+    width: 525px;
+    vertical-align: top
+}
+
+.comSame .comCon .userName {
+    font: 14px/26px "microsoft yahei";
+    color: #c57d5c
+}
+
+.comSame .comCon .comTxt {
+    font: 14px/26px "microsoft yahei";
+    color: #666
+}
+
+.comSame .comCon .comTxt {
+    position: relative
+}
+
+.comSame .comCon .comTxt.active {
+    max-height: 78px;
+    overflow: hidden
+}
+
+.comCon .comTxt span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+    padding: 0 3px;
+    font: 14px/26px "microsoft yahei";
+    color: #dd8860;
+    background-color: #fff;
+    cursor: pointer
+}
+
+.comCon .txtUp {
+    display: none;
+    padding-right: 3px;
+    font: 14px/26px "microsoft yahei";
+    color: #dd8860;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: right
+}
+
+.comSame .comCon .cominfo {
+    padding-right: 16px
+}
+
+.comSame .comCon .comTime {
+    font: 12px/30px "microsoft yahei";
+    color: #999;
+    vertical-align: middle
+}
+
+.comNum {
+    display: inline-block;
+    height: 25px
+}
+
+.comCon .comNum a {
+    color: #a2a2a2;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 12px 0 28px;
+    margin-left: 10px;
+    background-repeat: no-repeat
+}
+
+.comCon .comNum .commentNum {
+    border-right: 1px solid #999;
+    padding-left: 0
+}
+
+.comCon .comNum .zanNum {
+    background-image: url('//res.darryring.com/webimg/drFans/zan.png');
+    background-position: left top
+}
+
+.comCon .comNum .zandone {
+    background-position: left bottom
+}
+
+.comPager {
+    padding: 36px 36px 0;
+    text-align: center
+}
+
+.comPager ul {
+    vertical-align: middle;
+    margin-left: 50px
+}
+
+.comPager ul li {
+    float: left;
+    border: 1px solid #d8d8d8;
+    margin-left: -1px
+}
+
+.comPager ul li a {
+    display: inline-block;
+    height: 34px;
+    padding: 0 12px;
+    font: 12px/34px simsun;
+    color: #666
+}
+
+.comPager ul li.active {
+    background-color: #dbc7ba
+}
+
+.comPager ul li.active a {
+    color: #fff
+}
+
+.comPager span {
+    vertical-align: middle;
+    margin-right: 50px;
+    font: 12px/36px simsun;
+    color: #666
+}
+
+.comForm {
+    margin-top: 36px
+}
+
+.comArea {
+    vertical-align: top;
+    width: 522px;
+    position: relative;
+    padding-bottom: 5px
+}
+
+.comArea .comTips {
+    position: absolute;
+    left: 16px;
+    top: 0;
+    font: 14px/26px "microsoft yahei";
+    color: #ccc
+}
+
+.comArea .comWord {
+    width: 488px;
+    height: 66px;
+    resize: none;
+    padding: 0 16px;
+    font: 14px/26px "microsoft yahei"
+}
+
+.comArea .textCount {
+    font: 12px/32px "microsoft yahei";
+    color: #999
+}
+
+.comArea .comBtn {
+    padding: 9px 22px;
+    background-color: #dbc7ba;
+    color: #fff;
+    margin-top: 7px;
+    cursor: pointer
+}
+
+.replyBox .replyWapper {
+    background-color: #eee;
+    padding: 10px 16px
+}
+
+.replyBox.hasMore .replyCon {
+    border-top: 1px solid #ccc
+}
+
+.replyBox.hasMore .replyCon:first-child {
+    border: 0
+}
+
+.replyWapper .replyTxt {
+    font: 14px/26px "microsoft yahei";
+    position: relative
+}
+
+.replyWapper .replyTxt.active {
+    max-height: 78px;
+    overflow: hidden
+}
+
+.replyWapper .replyTxt a {
+    color: #c67c59
+}
+
+.replyWapper .replyTxt span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+    padding: 0 3px;
+    font: 14px/26px "microsoft yahei";
+    color: #dd8860;
+    background-color: #eee;
+    cursor: pointer
+}
+
+.replyWapper .replyCon .txtUp {
+    background-color: #eee
+}
+
+.replyWapper .totalReNum {
+    color: #c67c59;
+    font: 14px/26px "microsoft yahei";
+    cursor: pointer
+}
+
+.replyWapper .toTop {
+    color: #c67c59;
+    font: 14px/26px "microsoft yahei";
+    cursor: pointer
+}
+
+.replyDone .comArea {
+    width: 480px;
+    padding: 4px;
+    background-color: #fff
+}
+
+.replyDone .comArea .comWord {
+    width: 446px
+}
+
+.tc_isclose {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: url('//res.darryring.com/webimg/common/close.png') no-repeat;
+    right: 26px;
+    top: 26px
+}
+
+.drzangit_cort {
+    padding: 56px 0;
+    text-align: center
+}
+
+.drzangit_cort h6 {
+    height: 35px;
+    line-height: 35px;
+    margin-top: 30px;
+    font-size: 24px;
+    color: #c67c59;
+    text-indent: 30px;
+    font-weight: bold;
+    background: url('//res.darryring.com/webimg/shop/ico-success.png') no-repeat 170px 0
+}
+
+.drzangit_cort a {
+    display: inline-block;
+    border: 1px solid #c57d5c;
+    color: #c57d5c;
+    font-size: 12px;
+    width: 78px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    margin-top: 54px
+}
+
+.drfans_art video {
+    max-width: 100%;
+    width: 100%;
+    height: auto
+}
+
+.wx_tc {
+    color: #666;
+    text-align: center;
+    margin-left: -260px
+}
+
+.wx_tc h3 {
+    font: 24px/70px simsun;
+    margin-top: 26px;
+    color: #c67c59
+}
+
+.wx_tc h5 {
+    font: 12px/42px simsun;
+    margin-top: 5px
+}
+
+.wx_tc p {
+    font: 12px/24px simsun;
+    text-align: left;
+    padding-left: 36%
+}
+
+.wx_tc .dr_sametcborder {
+    padding-bottom: 16px
+}

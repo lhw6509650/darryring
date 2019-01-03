@@ -1,0 +1,5186 @@
+.dr_navbk {
+    background: #fff;
+    border-bottom: 1px solid #666
+}
+
+.dr_nav li {
+    width: 180px
+}
+
+.dr_nav li:first-child {
+    margin: 0
+}
+
+.mydr_cort {
+    padding: 24px 0 40px
+}
+
+.dr_nav .activate {
+    color: #9b745c
+}
+
+.opacity_href {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #fff;
+    opacity: .01;
+    filter: alpha(opacity=.01)
+}
+
+.mydr_left {
+    width: 140px;
+    background: #fbfaf9;
+    border: 1px solid #cfcfcf;
+    background: #fafafa;
+    padding: 22px 18px 6px 20px
+}
+
+.mydr_leftNav li {
+    margin-bottom: 14px
+}
+
+.mydr_leftNav h4 {
+    color: #8b766c;
+    font-weight: 700;
+    font-size: 12px;
+    background: url(//res.darryring.com/webimg/MyDr/icon_bottom.png) no-repeat right center;
+    height: 22px;
+    line-height: 22px;
+    cursor: pointer
+}
+
+.mydr_leftNav .noactivate h4 {
+    background: url(//res.darryring.com/webimg/MyDr/icon_right.png) no-repeat right center
+}
+
+.mydr_leftNav h4 span {
+    display: inline-block;
+    padding-left: 30px
+}
+
+.myicon_shop {
+    background: url(../images/indexPic/oicon1.png) no-repeat left center
+}
+
+.myicon_detail {
+    background: url(../images/indexPic/oicon2.png) no-repeat left center
+}
+
+.myicon_people {
+    background: url(../images/indexPic/oicon3.png) no-repeat left center
+}
+
+.myicon_member {
+    background: url(../images/indexPic/oicon4.png) no-repeat left center
+}
+
+.myicon_set {
+    background: url(../images/indexPic/oicon5.png) no-repeat left center
+}
+
+.myicon_news {
+    background: url(../images/indexPic/oicon6.png) no-repeat left center
+}
+
+.mydrnav_show {
+    margin-top: 8px;
+    margin-left: 18px
+}
+
+.noactivate .mydrnav_show {
+    display: none
+}
+
+.mydrnav_show a {
+    font-size: 12px;
+    color: #999
+}
+
+.mydr_leftNav .mydrnav_show li {
+    margin-bottom: 0;
+    height: 30px;
+    line-height: 30px
+}
+
+.mydrnav_show li a {
+    background: url(../images/indexPic/icon_dian.png) no-repeat left center;
+    padding-left: 12px
+}
+
+.mydrnav_show li a.active, .mydrnav_show li a:hover {
+    color: #8b766c;
+    background: url(../images/indexPic/icon_dian.png) no-repeat left center
+}
+
+.pd20 {
+    padding: 0 20px
+}
+
+.mydr_right {
+    width: 1168px;
+    background: #fff;
+    min-height: 766px;
+    border: 1px solid #cfcfcf
+}
+
+.mydr_right h4, .mydr_right h5 {
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #666;
+    padding: 14px 0 10px 10px;
+    margin-bottom: 20px
+}
+
+.mydr_right h4 a {
+    color: #689acd;
+    font-size: 12px;
+    font-weight: 100;
+    margin-right: 16px
+}
+
+.mydr_right h4 a:hover {
+    color: #9abbdd
+}
+
+.mydr_right h5 {
+    margin: 0
+}
+
+.mydr_right h5 a {
+    color: #666;
+    font-size: 12px;
+    font-weight: 100
+}
+
+.mydr_right h5 a:hover {
+    color: #8b766c
+}
+
+.mydr_right .ul-box {
+    padding: 4px 0 0 0
+}
+
+.mydr_right .li-box {
+    margin-right: 20px;
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    border-bottom: 2px solid #fff;
+    cursor: pointer
+}
+
+.mydr_right .li-box.select {
+    color: #d0967c;
+    border-bottom: 2px solid #d0967c
+}
+
+.memberDR_cort {
+    background: #fff
+}
+
+.myDRcort_top {
+    height: 180px;
+    padding: 0 20px;
+    border-bottom: 1px solid #e6e6e6;
+    background: #fbfaf9
+}
+
+.myDRcorttop_left {
+    width: 490px;
+    border-right: 1px dashed #ececec;
+    padding-top: 20px;
+    text-align: center;
+    height: 161px;
+    font-size: 0
+}
+
+.myDRTX {
+    position: relative;
+    display: inline-block;
+    width: 92px;
+    height: 92px
+}
+
+.myDRTX img {
+    width: 84px;
+    height: 84px;
+    border-radius: 100%;
+    border: 4px solid #f0f0f0
+}
+
+.myDRTX input {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    width: 92px;
+    height: 92px;
+    left: 0;
+    top: 0;
+    z-index: 2
+}
+
+.myDRTX span {
+    position: absolute;
+    bottom: 6px;
+    left: 11px;
+    background: url(//res.darryring.com/webimg/MyDr/bj_bk.png) no-repeat;
+    width: 70px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff
+}
+
+.myDRcorttop_left .fl {
+    float: initial;
+    display: inline-block
+}
+
+.myDRcorttop_left p {
+    font-size: 12px;
+    color: #c57d5c;
+    margin-top: 10px
+}
+
+.myDRcorttop_left p a {
+    color: #8b766c;
+    font-weight: 700
+}
+
+.myDRcorttop_left p a:hover {
+    color: #8b766c
+}
+
+.myDRcorttop_left p {
+    margin-top: 15px
+}
+
+.myDRcorttop_left .connect {
+    margin-top: 15px;
+    vertical-align: top
+}
+
+.myDRcorttop_left .drtx1 {
+    margin-right: -3px
+}
+
+.myDRcorttop_left .drtx2 {
+    margin-left: -39px;
+    width: 168px
+}
+
+.myDRcorttop_left .drtx2 p {
+    margin-top: 6px
+}
+
+.myDRcorttop_left .drtx2 .readybind {
+    display: inline-block;
+    width: 168px;
+    height: 30px;
+    line-height: 30px;
+    background: #8b766c;
+    text-align: center;
+    color: #fff;
+    font-size: 12px
+}
+
+.myDRcorttop_left .drtx2 .readybind1 {
+    display: inline-block;
+    width: 166px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #c57d5c;
+    background: #fff;
+    text-align: center;
+    color: #c57d5c;
+    font-size: 14px
+}
+
+.myDRcorttop_left .drtx2 .sp span {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    font-family: 'Microsoft YaHei';
+    color: #666;
+    margin-top: 10px
+}
+
+.myDRcorttop_left .drtx2 .coverbox {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 84px;
+    height: 84px;
+    line-height: 84px;
+    border-radius: 100%;
+    border: 4px solid #f0f0f0;
+    background: #000;
+    opacity: .5;
+    text-align: center;
+    vertical-align: middle
+}
+
+.myDRcorttop_left .drtx2 .covertxt {
+    font-size: 12px;
+    line-height: 21px;
+    color: #fff;
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    margin-left: -35px;
+    background: 0 0
+}
+
+.myDRcorttop_right {
+    width: 600px;
+    padding-left: 36px;
+    font-size: 0;
+    padding-top: 32px
+}
+
+.myDRcorttop_right p {
+    margin-bottom: 14px
+}
+
+.myDRcorttop_right i, .myDRcorttop_right span {
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.myDRcorttop_right i {
+    color: #5f5f5f;
+    margin-right: 12px
+}
+
+.myDRcorttop_right em {
+    color: #fdaa26;
+    margin: 0 20px;
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.levalSame {
+    display: inline-block;
+    padding-left: 26px;
+    height: 20px;
+    line-height: 20px
+}
+
+.leval_first {
+    color: #aaabab;
+    background: url(//res.darryring.com/webimg/MyDr/leval_first.png) no-repeat left center
+}
+
+.leval_sec {
+    color: #95a6b6;
+    background: url(//res.darryring.com/webimg/MyDr/leval_sec.png) no-repeat left center
+}
+
+.leval_third {
+    color: #cbb69a;
+    background: url(//res.darryring.com/webimg/MyDr/leval_third.png) no-repeat left center
+}
+
+.leval_four {
+    color: #e589a3;
+    background: url(//res.darryring.com/webimg/MyDr/leval_four.png) no-repeat left center
+}
+
+.leval_five {
+    color: #cb815e;
+    background: url(//res.darryring.com/webimg/MyDr/leval_five.png) no-repeat left center
+}
+
+.leval_six {
+    color: #000;
+    background: url(//res.darryring.com/webimg/MyDr/leval_six.png) no-repeat left center
+}
+
+.havejf {
+    background: url(//res.darryring.com/webimg/MyDr/jf.png) no-repeat left center;
+    color: #fdaa26;
+    padding-left: 16px
+}
+
+.myDRcorttop_more {
+    position: relative
+}
+
+.myDRcorttop_more a {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    color: #8b766c;
+    font-size: 12px
+}
+
+.meberSecurity {
+    margin-top: 25px
+}
+
+.meberSecurity a {
+    color: #8b766c;
+    font-size: 12px;
+    margin-left: 8px
+}
+
+.meberSecurity a:hover {
+    color: #8b766c
+}
+
+.password_aq {
+    margin-top: 2px
+}
+
+.password_aq span {
+    position: relative;
+    display: inline-block;
+    background: #ded8d2;
+    height: 10px;
+    border-left: 1px solid #fff
+}
+
+.password_aq span:first-child {
+    border: none
+}
+
+.password_aq em {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: -18px;
+    color: #8b766c
+}
+
+.password_aq .security {
+    background: #aa9a85
+}
+
+.ps_w23 {
+    width: 30px
+}
+
+.ps_w30 {
+    width: 60px
+}
+
+.ps_w40 {
+    width: 100px
+}
+
+.ps_w50 {
+    width: 122px
+}
+
+.ps_w60 {
+    width: 160px
+}
+
+.myDRcort_sec {
+    background: #fff;
+    padding-top: 38px
+}
+
+.button_sure {
+    display: inline-block;
+    background: #fff;
+    font-size: 14px;
+    border: 1px solid #8b766c;
+    color: #8b766c;
+    width: 138px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-family: "microsoft yahei"
+}
+
+.button_other {
+    border: 1px solid #a98f83;
+    background: #a98f83;
+    color: #fff
+}
+
+.button_sure:hover {
+    color: #fff;
+    background: #8b766c
+}
+
+.button_other:hover {
+    border: 1px solid #8b766c;
+    background: #8b766c;
+    color: #fff
+}
+
+.myDRcort_seccort {
+    overflow: hidden;
+    margin-left: 45px;
+    padding-bottom: 60px
+}
+
+.myDRcort_seccort li {
+    position: relative;
+    text-align: center;
+    float: left;
+    font-size: 12px;
+    color: #666;
+    margin: 0 30px
+}
+
+.myDRcort_seccort p {
+    margin-top: 20px
+}
+
+.myDRcort_seccort .drmedeal {
+    width: 187px;
+    margin: 0
+}
+
+.drmedeal p {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: "microsoft yahei";
+    font-size: 12px;
+    color: #4c0404;
+    top: 98px;
+    left: 0
+}
+
+.drmedeal img {
+    margin-top: 10px
+}
+
+.medeal_bk {
+    display: none;
+    position: absolute;
+    text-align: center;
+    width: 187px;
+    height: 150px;
+    background: #9b9b9b;
+    top: 0;
+    left: 0;
+    opacity: .8;
+    filter: alpha(opacity=80);
+    z-index: 6
+}
+
+.medeal_bk span {
+    display: inline-block;
+    padding-top: 70px;
+    font-size: 12px;
+    color: #fff
+}
+
+.myDRcort_seccort a {
+    display: none;
+    margin: 20px auto 0;
+    font-size: 12px;
+    color: #8b766c;
+    width: 93px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border: 1px solid #8b766c
+}
+
+.myDRcort_seccort a:hover {
+    background: #8b766c;
+    color: #fff
+}
+
+.drmedeal_give .medeal_bk, .drmedeal_give a {
+    display: block
+}
+
+.DRmydetail {
+    padding-bottom: 14px
+}
+
+.mydetail_table {
+    width: 100%;
+    font-size: 12px;
+    color: #666;
+    line-height: 22px;
+    margin-bottom: 10px
+}
+
+.mydetail_table .button_sure {
+    width: 70px;
+    font-family: simsun;
+    font-size: 12px
+}
+
+.mydetailfirst_one td {
+    font-weight: 700
+}
+
+.mydetailfirst_special td {
+    border-bottom: 1px solid #ececec
+}
+
+.mydetailfirst_two td {
+    background: #f1f1f1;
+    border: 1px solid #ececec
+}
+
+.mydetailfirst_tosale td {
+    background: #cebeb0
+}
+
+.mydetailfirst_two span {
+    margin-left: 20px;
+    margin-right: 16px
+}
+
+.mydetailfirst_same td {
+    position: relative;
+    border-bottom: 1px solid #ececec;
+    border-right: 1px dashed #ececec
+}
+
+.mydetail_more td {
+    border-bottom: none
+}
+
+.mydetailfirst_same img {
+    margin-left: 16px
+}
+
+.mydetailImg {
+    position: relative
+}
+
+.mydetailfirst_same a.firstColor {
+    position: relative;
+    z-index: 4
+}
+
+.mydetail_more .havedashed {
+    border-bottom: 1px dashed #ececec
+}
+
+.mydetailfirst_same .haveborder {
+    border-right: 1px solid #ececec
+}
+
+.mydetailfirst_same .opacity_href {
+    position: absolute;
+    z-index: 4
+}
+
+.thirdColor {
+    color: #999
+}
+
+.DetailfirstTd {
+    line-height: 22px
+}
+
+.DetailfirstTd img {
+    margin-right: 14px
+}
+
+.DetailfirstTd h6 {
+    width: 260px;
+    color: #666;
+    font-size: 12px;
+    font-weight: 700
+}
+
+.DetailfirstTd a {
+    color: #8b766c
+}
+
+.DetailfirstTd p {
+    font-size: 12px;
+    color: #666
+}
+
+.DetailfirstTd span {
+    margin-right: 20px
+}
+
+.DetailfirstTd p em {
+    color: #999
+}
+
+.DetailfirstTd p a {
+    color: #689acd;
+    margin-left: 12px
+}
+
+.DetailfirstTd {
+    border-left: 1px solid #ececec;
+    padding: 10px 0
+}
+
+.firstColor {
+    color: #666
+}
+
+.firstColor:hover {
+    color: #8b766c
+}
+
+.secColor {
+    color: #c67c59
+}
+
+.DRmyColle .dr_samesellers-ring {
+    display: block
+}
+
+.detailall_cort .mydetail_specialtwo td {
+    padding: 0 20px
+}
+
+.detail_lxkf {
+    font-size: 12px;
+    background: url(../images/indexPic/kf.png) no-repeat left center;
+    padding-left: 20px
+}
+
+.detail_lxkf a {
+    color: #c57d5c
+}
+
+.mydetail_process {
+    overflow: hidden;
+    padding: 22px 0;
+    text-align: center
+}
+
+.mydetail_process li {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    font-family: "microsoft yahei";
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 86px;
+    line-height: 18px;
+    vertical-align: middle
+}
+
+.mydetail_process p {
+    font-style: italic
+}
+
+.mydetail_process .linefour, .mydetail_process .lineone, .mydetail_process .linethree, .mydetail_process .linetwo {
+    background-image: url(../images/indexPic/theline3.png);
+    background-repeat: repeat-x;
+    width: 118px;
+    height: 72px;
+    background-position: left center;
+    margin: 0 5px
+}
+
+.detailprocess_one {
+    background-image: url(../images/indexPic/detail_end.png);
+    padding-top: 86px
+}
+
+.detailprocess_two {
+    background-image: url(../images/indexPic/pay_end.png);
+    padding-top: 86px
+}
+
+.detailprocess_three {
+    background-image: url(../images/indexPic/dz_end.png);
+    padding-top: 80px
+}
+
+.detailprocess_four {
+    background-image: url(../images/indexPic/ck_end.png);
+    padding-top: 86px
+}
+
+.detailprocess_five {
+    background-image: url(../images/indexPic/jy_end.png);
+    padding-top: 86px
+}
+
+.mydetail_first .detailprocess_one {
+    background-image: url(../images/indexPic/detail_now.png)
+}
+
+.mydetail_first .detailprocess_one p {
+    color: #8b766c
+}
+
+.mydetail_first .lineone {
+    background-image: url(../images/indexPic/theline.png)
+}
+
+.mydetail_sec .detailprocess_one {
+    background-image: url(../images/indexPic/detail_over.png)
+}
+
+.mydetail_sec .detailprocess_one p {
+    color: #8b766c
+}
+
+.mydetail_sec .lineone {
+    background-image: url(../images/indexPic/theline2.png)
+}
+
+.mydetail_sec .detailprocess_two {
+    background-image: url(../images/indexPic/pay_now.png)
+}
+
+.mydetail_sec .detailprocess_two p {
+    color: #8b766c
+}
+
+.mydetail_sec .linetwo {
+    background-image: url(../images/indexPic/theline.png)
+}
+
+.mydetail_third .detailprocess_one {
+    background-image: url(../images/indexPic/detail_over.png)
+}
+
+.mydetail_third .detailprocess_one p, .mydetail_third .detailprocess_two p {
+    color: #8b766c
+}
+
+.mydetail_third .lineone, .mydetail_third .linetwo {
+    background-image: url(../images/indexPic/theline2.png)
+}
+
+.mydetail_third .detailprocess_two {
+    background-image: url(../images/indexPic/pay_over.png)
+}
+
+.mydetail_third .linethree {
+    background-image: url(../images/indexPic/theline.png)
+}
+
+.mydetail_third .detailprocess_three {
+    background-image: url(../images/indexPic/dz_now.png)
+}
+
+.mydetail_third .detailprocess_three p {
+    color: #8b766c
+}
+
+.mydetail_four .detailprocess_one {
+    background-image: url(../images/indexPic/detail_over.png)
+}
+
+.mydetail_four .detailprocess_one p, .mydetail_four .detailprocess_three p, .mydetail_four .detailprocess_two p {
+    color: #8b766c
+}
+
+.mydetail_four .lineone, .mydetail_four .linethree, .mydetail_four .linetwo {
+    background-image: url(../images/indexPic/theline2.png)
+}
+
+.mydetail_four .detailprocess_two {
+    background-image: url(../images/indexPic/pay_over.png)
+}
+
+.mydetail_four .linefour {
+    background-image: url(../images/indexPic/theline.png)
+}
+
+.mydetail_four .detailprocess_three {
+    background-image: url(../images/indexPic/dz_over.png)
+}
+
+.mydetail_four .detailprocess_four {
+    background-image: url(../images/indexPic/ck_now.png)
+}
+
+.mydetail_four .detailprocess_four p {
+    color: #8b766c
+}
+
+.myleval_fiveth .detailprocess_one {
+    background-image: url(../images/indexPic/detail_over.png)
+}
+
+.myleval_fiveth .detailprocess_four p, .myleval_fiveth .detailprocess_one p, .myleval_fiveth .detailprocess_three p, .myleval_fiveth .detailprocess_two p {
+    color: #8b766c
+}
+
+.myleval_fiveth .linefour, .myleval_fiveth .lineone, .myleval_fiveth .linethree, .myleval_fiveth .linetwo {
+    background-image: url(../images/indexPic/theline2.png)
+}
+
+.myleval_fiveth .detailprocess_two {
+    background-image: url(../images/indexPic/pay_over.png)
+}
+
+.myleval_fiveth .detailprocess_three {
+    background-image: url(../images/indexPic/dz_over.png)
+}
+
+.myleval_fiveth .detailprocess_four {
+    background-image: url(../images/indexPic/ck_over.png)
+}
+
+.myleval_fiveth .detailprocess_five {
+    background-image: url(../images/indexPic/jy_now.png)
+}
+
+.myleval_fiveth .detailprocess_five p {
+    color: #8b766c
+}
+
+.DetailspecialTd {
+    padding-left: 18px
+}
+
+.DetailspecialTd p span {
+    margin-right: 90px
+}
+
+.fourcolor {
+    color: #9b745c
+}
+
+.mydetail_sectable {
+    margin-bottom: 0
+}
+
+.mydetail_sectable .DetailspecialTd {
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ececec
+}
+
+.mydetail_sectable .DetailspecialTd span {
+    display: inline-block;
+    width: 360px;
+    margin: 0
+}
+
+.detailall_cort .DRlogistics {
+    border: 1px solid #ececec;
+    border-top: none;
+    margin-bottom: 10px
+}
+
+.return_list {
+    padding-bottom: 40px
+}
+
+.return_list a {
+    font-family: "microsoft yahei";
+    font-size: 14px;
+    color: #c57d5c
+}
+
+.DRlogistics_list {
+    position: relative;
+    padding-left: 18px;
+    padding-bottom: 30px;
+    border-top: 1px dashed #ececec
+}
+
+.DRlogistics_list .whritebk {
+    background: #fff;
+    opacity: .5;
+    position: absolute;
+    height: 46px;
+    width: 90%;
+    bottom: 0;
+    left: 0
+}
+
+.DRlogistics_word {
+    font-size: 0;
+    height: 46px;
+    line-height: 46px;
+    margin-left: 6px
+}
+
+.logistics_line {
+    width: 640px;
+    height: 1px;
+    margin-left: 35px;
+    border-bottom: 1px dashed #ececec
+}
+
+.DRlogistics_word strong {
+    font-size: 12px;
+    color: #666;
+    margin-right: 26px
+}
+
+.logistics_process {
+    padding-left: 10px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    width: 1054px;
+    height: 124px;
+    overflow-y: auto
+}
+
+.logistics_process::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: #eee
+}
+
+.logistics_process::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #eee
+}
+
+.logistics_process::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #5e5d62
+}
+
+.logistics_process li {
+    position: relative;
+    border-left: 2px solid #ececec;
+    padding-left: 4px
+}
+
+.logistics_process li:first-child {
+    margin-top: -13px
+}
+
+.logistics_process span {
+    float: left;
+    display: inline-block;
+    width: 6px;
+    padding: 8px 0;
+    margin-left: -8px;
+    margin-top: 13px;
+    background: url(//res.darryring.com/webimg/MyDr/dian_gray.png) no-repeat #fff left center
+}
+
+.logistics_process p {
+    width: 1014px;
+    padding: 14px 0;
+    border-top: 1px dashed #ececec;
+    margin-left: 20px;
+    font-size: 12px;
+    color: #666
+}
+
+.logistics_process li.active span {
+    background-image: url(//res.darryring.com/webimg/MyDr/dian_orange.png)
+}
+
+.logistics_process li.active p {
+    font-weight: 700;
+    color: #c57d5c
+}
+
+.check_wl {
+    position: relative
+}
+
+.logistics_tc {
+    display: none;
+    position: absolute;
+    background: #fff;
+    width: 508px;
+    height: 372px;
+    border: 1px solid #c1c1c1;
+    box-shadow: 0 0 3px #c1c1c1;
+    top: 22px;
+    right: -174px;
+    text-align: left;
+    z-index: 10
+}
+
+.logistics_tc .DRlogistics_word strong {
+    font-weight: 100
+}
+
+.logistics_tc .logistics_line {
+    width: 90%
+}
+
+.logistics_tc .logistics_process {
+    width: 96%;
+    height: 200px;
+    overflow: hidden
+}
+
+.logistics_tc .logistics_process p {
+    width: 95%
+}
+
+.logistics_tc .DRlogistics_list {
+    overflow: hidden;
+    border: none;
+    padding-bottom: 0
+}
+
+.logistics_tc .DRlogistics_list .whritebk {
+    left: 10%
+}
+
+.logistics_tc .showmore {
+    margin-left: 50px;
+    margin-top: 18px
+}
+
+.logistics_tc .theclose {
+    background: url(//res.darryring.com/webimg/MyDr/close.png) no-repeat;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 5
+}
+
+.Mydetail_cort {
+    background: #fff
+}
+
+.Mymember_Othernav, .Mymember_nav {
+    background: #f2f2f2;
+    height: 28px;
+    line-height: 28px;
+    border-top: 1px solid #e6e6e6
+}
+
+.Mymember_Othernav li, .Mymember_nav li {
+    float: left;
+    width: 126px;
+    color: #888;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer
+}
+
+.Mymember_Othernav .activate, .Mymember_nav .activate {
+    background: #fff;
+    border-top: 2px solid #8b766c;
+    margin-top: -2px
+}
+
+.choosetime select {
+    height: 20px;
+    line-height: 20px;
+    width: 90px;
+    border: 1px solid #e6e6e6
+}
+
+.choosetime {
+    padding: 14px 10px 10px
+}
+
+.choosetime .detail_lxkf {
+    line-height: 14px
+}
+
+.Mydetail_same {
+    display: none
+}
+
+.Mydata_cort {
+    background: #fff;
+    overflow: hidden
+}
+
+.Mydata_list {
+    margin-left: 32px;
+    padding-bottom: 10px
+}
+
+.Mydata_list li {
+    margin-bottom: 14px;
+    font-size: 0;
+    min-height: 29px
+}
+
+.Mydata_list em {
+    display: inline-block;
+    width: 74px;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #555
+}
+
+.Mydata_list .myDRTX, .Mydata_list i, .Mydata_list input, .Mydata_list label, .Mydata_list select {
+    vertical-align: middle
+}
+
+.Mydata_list i {
+    font-size: 12px;
+    color: #ccc;
+    margin-left: 10px
+}
+
+.Mydata_list select {
+    width: 98px;
+    border: 1px solid #aeaeae;
+    padding: 5px 0;
+    text-indent: 2px;
+    margin-right: 6px
+}
+
+.Mydata_list label {
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    color: #555;
+    background: url(//res.darryring.com/webimg/MyDr/noclick.png) no-repeat left center;
+    padding-left: 20px;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+.Mydata_list label.activate {
+    background: url(//res.darryring.com/webimg/MyDr/itclick.png) no-repeat left center
+}
+
+.Mydata_list em i {
+    margin: 0 4px 0 -10px;
+    color: #ff5d5b
+}
+
+.Mydata_list .redWrong {
+    font-size: 12px;
+    vertical-align: middle;
+    margin-left: 2px;
+    color: #ff5d5b
+}
+
+.Mydata_txt {
+    padding: 6px 0;
+    width: 158px;
+    border: 1px solid #aeaeae;
+    text-indent: 10px
+}
+
+.loveWord {
+    position: relative
+}
+
+.loveWord em {
+    vertical-align: top
+}
+
+.loveWord i {
+    position: absolute;
+    bottom: 10px;
+    left: 310px
+}
+
+.loveWord textarea {
+    width: 306px;
+    height: 80px;
+    padding: 3px 6px;
+    outline: 0;
+    resize: none;
+    border: 1px solid #aeaeae
+}
+
+.allmore_hide h6 {
+    background: url(//res.darryring.com/webimg/MyDr/arrow_right.png) no-repeat 98% center #f6f6f6;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #999;
+    margin-left: 20px;
+    padding-left: 15px;
+    font-weight: 700;
+    margin-bottom: 18px
+}
+
+.Mydata_hide {
+    display: none
+}
+
+.allmore_show h6 {
+    background: url(//res.darryring.com/webimg/MyDr/arrow_bottom.png) no-repeat 98% center #f6f6f6
+}
+
+.allmore_show .Mydata_hide {
+    display: block
+}
+
+.Mydata_Date {
+    background: url(//res.darryring.com/webimg/MyDr/birth.png) no-repeat 97% center
+}
+
+.txt318 {
+    width: 318px
+}
+
+.thesubit {
+    text-align: center;
+    margin-bottom: 30px
+}
+
+.thesubit .button_sure {
+    width: 248px;
+    border-radius: 3px
+}
+
+.mypink_top {
+    text-align: center;
+    font-family: "microsoft yahei";
+    padding-top: 10px;
+    padding-bottom: 88px
+}
+
+.mypink_top h6 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 22px
+}
+
+.mypink_process {
+    overflow: hidden;
+    text-align: center
+}
+
+.mypink_process li {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center
+}
+
+.mypinkprocess_line {
+    background: url(//res.darryring.com/webimg/MyDr/theline.png) repeat-x center 50px;
+    width: 122px;
+    height: 124px;
+    margin: 0 10px
+}
+
+.mypink_process p {
+    font-style: italic;
+    color: #8b766c;
+    font-size: 14px;
+    height: 36px;
+    line-height: 18px;
+    margin-top: 16px
+}
+
+.mypink_process .nomargin p {
+    margin: 10px
+}
+
+.mypink_cort .Mymember_nav {
+    margin-bottom: 20px
+}
+
+.haveDjs i {
+    font-weight: 700;
+    color: #c57d5c;
+    margin: 0 3px
+}
+
+.mypinkfirst_table h6, .mypinkfirst_table i, .mypinkfirst_table p {
+    color: #aaa
+}
+
+.mysame_tips {
+    text-align: center;
+    font-size: 12px;
+    color: #493428;
+    line-height: 20px;
+    padding-bottom: 22px
+}
+
+.myEmail_begin .mysame_input, .myphone_begin .mysame_input {
+    margin-left: 370px
+}
+
+.mysame_input {
+    height: 60px;
+    font-size: 0
+}
+
+.mysame_input input {
+    padding: 12px 0;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    padding-left: 36px;
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.mysame_input p {
+    display: none;
+    color: #ff7373;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-left: 74px
+}
+
+.mysame_input i {
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+    font-size: 12px;
+    color: #404040;
+    margin-right: 10px
+}
+
+.mysame_input em {
+    color: #ff5d5b;
+    margin-right: 2px
+}
+
+.mbicon_phone {
+    width: 212px;
+    background: url(//res.darryring.com/webimg/MyDr/gray_phone.png) no-repeat 14px center
+}
+
+.mbicon_yzm {
+    width: 96px;
+    background: url(//res.darryring.com/webimg/MyDr/gray_yzm.png) no-repeat 8px center
+}
+
+.tohave_yzm {
+    display: inline-block;
+    width: 105px;
+    height: 40px;
+    background: url(//res.darryring.com/webimg/MyDr/getCodeBtn.png) no-repeat;
+    border: none;
+    color: #8b766c;
+    text-align: center;
+    font-size: 12px;
+    line-height: 40px;
+    margin-left: 12px;
+    vertical-align: middle
+}
+
+.tohave_yzm:hover {
+    background-position: 0 -40px;
+    color: #8b766c
+}
+
+.tohave_yzm.sending {
+    background-position: 0 -80px;
+    color: #999
+}
+
+.tohave_yzm.sending:hover {
+    background-position: 0 -80px;
+    color: #999
+}
+
+.myEmail_begin .button_sure, .myemail_newwrite .button_sure, .myemail_write .button_sure, .mypassword_cort .button_sure, .myphone_begin .button_sure, .myphone_write .button_sure {
+    height: 36px;
+    line-height: 36px;
+    width: 248px;
+    margin-left: 440px;
+    margin-bottom: 20px
+}
+
+.myemail_newwrite .button_sure {
+    margin-left: 448px
+}
+
+.mysame_wrong input {
+    border: 1px solid #ff7373
+}
+
+.mysame_wrong .mbicon_phone {
+    background: url(//res.darryring.com/webimg/MyDr/red_phone.png) no-repeat 14px center
+}
+
+.mysame_wrong .mbicon_yzm {
+    background: url(//res.darryring.com/webimg/MyDr/red_yzm.png) no-repeat 8px center
+}
+
+.mysame_wrong .mbicon_email {
+    background: url(//res.darryring.com/webimg/MyDr/red_email.png) no-repeat 8px center
+}
+
+.mysame_wrong .mbicon_lock {
+    background: url(//res.darryring.com/webimg/MyDr/red_lock.png) no-repeat 12px center
+}
+
+.mysame_wrong p {
+    display: block
+}
+
+.myemail_sucess, .myemail_sucessbind, .myemailchange_sucess, .myphone_sucess, .myphonechange_sucess {
+    text-align: center;
+    padding: 80px 0 20px
+}
+
+.myemail_sucess img, .myemail_sucessbind img, .myemailchange_sucess, .myphone_sucess img, .myphonechange_sucess img {
+    margin-bottom: 8px
+}
+
+.myemail_sucess p, .myemail_sucessbind p, .myemailchange_sucess p, .myphone_sucess p, .myphonechange_sucess p {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px
+}
+
+.haveJf {
+    background: url(//res.darryring.com/webimg/MyDr/newjf.png) no-repeat left center;
+    color: #f59820;
+    font-size: 12px;
+    font-family: "microsoft yahei";
+    padding-left: 20px;
+    margin-left: 6px
+}
+
+.myemail_change, .myphone_change {
+    text-align: center;
+    padding: 76px 0 20px
+}
+
+.myemail_change p, .myphone_change p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 16px
+}
+
+.myemail_proess, .myphone_proess {
+    overflow: hidden;
+    margin-bottom: 44px;
+    padding-top: 20px;
+    text-align: center
+}
+
+.myemail_proess li, .myphone_proess li {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    height: 18px;
+    line-height: 18px
+}
+
+.myphone_proess .phoneproess_one {
+    background: url(//res.darryring.com/webimg/MyDr/yzsf.png) no-repeat left center;
+    padding-left: 30px
+}
+
+.phoneproess_end {
+    color: #a88f82
+}
+
+.phoneproess_spline {
+    background: url(//res.darryring.com/webimg/MyDr/line_one.png) no-repeat center center;
+    width: 100px;
+    margin: 0 18px
+}
+
+.myphone_proess .phoneproess_two {
+    background: url(//res.darryring.com/webimg/MyDr/yzsj.png) no-repeat left center;
+    padding-left: 20px
+}
+
+.phoneproess_now {
+    color: #8b766c
+}
+
+.phoneproess_line {
+    background: url(//res.darryring.com/webimg/MyDr/line_two.png) no-repeat center center;
+    width: 100px;
+    margin: 0 18px
+}
+
+.myphone_proess .phoneproess_three {
+    background: url(//res.darryring.com/webimg/MyDr/yzcg.png) no-repeat left center;
+    padding-left: 32px
+}
+
+.phoneproess_no {
+    color: #999
+}
+
+.myemail_newwrite .mysame_input, .myemail_write .mysame_input, .myphone_write .mysame_input {
+    margin-left: 370px
+}
+
+.myemail_write .button_sure, .myphone_write .button_sure {
+    margin-left: 440px
+}
+
+.mbicon_lock {
+    width: 212px;
+    background: url(//res.darryring.com/webimg/MyDr/gray_st.png) no-repeat 12px center
+}
+
+.mbicon_email {
+    width: 212px;
+    background: url(//res.darryring.com/webimg/MyDr/gray_email.png) no-repeat 10px center
+}
+
+.myemail_sucess p span {
+    color: #8b766c
+}
+
+.myemail_proess .phoneproess_one {
+    background: url(//res.darryring.com/webimg/MyDr/yzsf_two.png) no-repeat left center;
+    padding-left: 30px
+}
+
+.myemail_proess .phoneproess_oneend {
+    background: url(//res.darryring.com/webimg/MyDr/yzsf.png) no-repeat left center;
+    padding-left: 30px
+}
+
+.myemail_proess .phoneproess_two {
+    background: url(//res.darryring.com/webimg/MyDr/yzemail.png) no-repeat left center;
+    padding-left: 30px
+}
+
+.myemail_proess .phoneproess_twonow {
+    background: url(//res.darryring.com/webimg/MyDr/yzemail_two.png) no-repeat left center;
+    padding-left: 30px
+}
+
+.myemail_proess .phoneproess_twoend {
+    background: url(//res.darryring.com/webimg/MyDr/yzemail_three.png) no-repeat left center;
+    padding-left: 30px
+}
+
+.myemail_proess .phoneproess_three {
+    background: url(//res.darryring.com/webimg/MyDr/yzcg.png) no-repeat left center;
+    padding-left: 30px
+}
+
+.myemail_proess .phoneproess_threenow {
+    background: url(//res.darryring.com/webimg/MyDr/yzcg_three.png) no-repeat left center;
+    padding-left: 30px
+}
+
+.nowEmail {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center
+}
+
+.myemail_newwrite .mysame_input i {
+    width: 68px
+}
+
+.myemail_toyz {
+    text-align: center;
+    font-size: 12px
+}
+
+.myemail_toyz p {
+    color: #666;
+    line-height: 26px
+}
+
+.myemail_toyz p span {
+    color: #8b776c
+}
+
+.mypassword_cort h4 {
+    margin-bottom: 30px
+}
+
+.mypassword_cort .mysame_input p {
+    margin-left: 2px
+}
+
+.mypassword_cort .mysame_input {
+    margin-left: 440px
+}
+
+.mypassword_cort .button_sure {
+    margin-bottom: 0
+}
+
+.forget_pw {
+    font-size: 12px;
+    margin: 6px 0 0 450px
+}
+
+.forget_pw a {
+    color: #999
+}
+
+.forget_pw a:hover {
+    color: #c57d5c
+}
+
+.mypassword_sucess {
+    display: none;
+    text-align: center;
+    padding: 40px 0
+}
+
+.mypassword_sucess i {
+    margin-right: 16px
+}
+
+.myshopnew_same {
+    border: 1px solid #ececec;
+    margin-top: 14px
+}
+
+.myshopnew_sametitle {
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 1px solid #ececec;
+    background: #f1f1f1;
+    color: #666;
+    font-size: 0;
+    padding-left: 20px
+}
+
+.myshopnew_sametitle i, .myshopnew_sametitle span {
+    font-size: 12px;
+    vertical-align: middle;
+    margin-right: 40px
+}
+
+.myshopnew_sametitle span {
+    color: #9b745c
+}
+
+.myshopnew_samebottom {
+    padding: 14px
+}
+
+.myshopnew_samebottom a.fl {
+    width: 200px
+}
+
+.myshopnew_sameright {
+    margin-left: 12px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #666
+}
+
+.myshopnew_sameright h6, .myshopnew_sameright h6 a {
+    font-weight: 700;
+    color: #9b745c
+}
+
+.myshopnew_news a:hover, .myshopnew_sameright h6 a:hover {
+    color: #9b745c
+}
+
+.myshopnew_news {
+    margin: 0 14px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 12px;
+    border-bottom: 1px dashed #ececec
+}
+
+.myshopnew_news span {
+    color: #666;
+    margin-left: 34px
+}
+
+.myshopnew_news a {
+    color: #9b745c
+}
+
+.myshopnew_out .myshopnew_sametitle, .myshopnew_out .myshopnew_sametitle span {
+    color: #aaa
+}
+
+.myreturn_cort {
+    font-family: "microsoft yahei"
+}
+
+.myreturn_cort h6 {
+    background: url(//res.darryring.com/webimg/MyDr/icon_order.png) no-repeat center top;
+    padding-top: 120px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-top: 48px;
+    margin-bottom: 96px
+}
+
+.myreturn_bottom {
+    margin: 0 auto;
+    text-align: center
+}
+
+.myreturn_same {
+    display: inline-block;
+    width: 508px;
+    height: 210px;
+    background: #fbfaf9;
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 25px
+}
+
+.myreturn_same p {
+    font-size: 18px
+}
+
+.myreturn_sh h6 {
+    background: url(//res.darryring.com/webimg/MyDr/icon_shouh.png) no-repeat center top;
+    padding-top: 64px;
+    margin-bottom: 8px;
+    margin-top: 48px
+}
+
+.myreturn_sh .button_sure {
+    background: #fff
+}
+
+.myreturn_sh .button_sure:hover {
+    background: #8b766c
+}
+
+.myreturn_phone h6 {
+    background: url(//res.darryring.com/webimg/MyDr/icon_phone.png) no-repeat center top;
+    padding-top: 64px;
+    margin-top: 48px;
+    margin-bottom: 10px
+}
+
+.myreturn_phone p {
+    color: #8b766c
+}
+
+.myDay_phoneNum {
+    width: 250px;
+    float: left;
+    margin-left: 80px
+}
+
+.myDay_phoneNum .mbicon_yzm {
+    width: 94px
+}
+
+.myDay_getPhone .mysame_input p {
+    margin-left: 0
+}
+
+.myDay_phoneNum .button_sure {
+    height: 36px;
+    line-height: 36px;
+    width: 248px;
+    margin-bottom: 10px
+}
+
+.myDay_phoneNum .tips {
+    color: #c9c9c9;
+    font-size: 12px;
+    text-align: center;
+    line-height: 16px
+}
+
+.myDay_surePhone {
+    padding: 12px 10px 12px 0;
+    margin-bottom: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    text-indent: 36px;
+    font-size: 12px;
+    background: url(//res.darryring.com/webimg/MyDr/gray_phone.png) no-repeat 14px center;
+    display: none
+}
+
+.myDr_edit a {
+    margin: 0 5px;
+    color: #b3cde6
+}
+
+.myDay_list {
+    margin-left: 444px
+}
+
+.myDay_listHead {
+    height: 30px;
+    line-height: 30px
+}
+
+.myDay_listHead label {
+    display: inline-block;
+    padding-left: 15px;
+    color: #666;
+    font-size: 12px;
+    background: url(//res.darryring.com/webimg/MyDr/ico-ring.png) left center no-repeat;
+    line-height: 30px
+}
+
+.myDay_addDay {
+    display: inline-block;
+    width: 642px;
+    height: 30px;
+    font-size: 14px;
+    color: #8b766c;
+    border: 1px solid #ececec;
+    border-top: none;
+    text-align: center;
+    line-height: 30px
+}
+
+.myDay_table {
+    margin-top: 10px
+}
+
+.myDay_table th {
+    height: 36px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #666;
+    background: #f1f1f1;
+    border: 1px solid #ececec
+}
+
+.myDay_table td {
+    height: 32px;
+    padding: 0 5px;
+    font-size: 12px;
+    color: #666;
+    border: 1px solid #ececec;
+    text-align: center;
+    line-height: 20px
+}
+
+.myDay_table td input {
+    width: 130px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    text-align: center;
+    padding: 3px 0
+}
+
+.Verifica_setPhone, .Verifica_setnewdata {
+    text-align: center;
+    padding: 60px 0 100px
+}
+
+.Verifica_setPhone img, .Verifica_setnewdata img {
+    display: block;
+    margin: 0 auto
+}
+
+.Verifica_setPhone .toright, .Verifica_setnewdata .toright, .mypassword_sucess .toright {
+    background: url(//res.darryring.com/webimg/ringbuy/dagou.png) no-repeat left center;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 44px;
+    font-size: 24px;
+    color: #8b766c;
+    margin: 30px 0 10px;
+    font-weight: 700
+}
+
+.Verifica_setPhone i, .Verifica_setnewdata i {
+    color: #ff5d5b
+}
+
+.Verifica_setnewdata p {
+    margin: 30px 0 0;
+    line-height: 24px
+}
+
+.Verifica_delDay, .Verifica_delPhone, .Verifica_editDay, .Verifica_only, .Verifica_repeat, .Verifica_setDay {
+    padding: 40px 0
+}
+
+.Verifica_delDay img, .Verifica_delPhone img, .Verifica_editDay img, .Verifica_only img, .Verifica_repeat img, .Verifica_setDay img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 35px
+}
+
+.Verifica_input {
+    margin-left: 95px;
+    margin-bottom: 10px
+}
+
+.Verifica_input input {
+    height: 28px;
+    padding: 0 5px;
+    color: #d7d7d7
+}
+
+.myDay_DayName input {
+    width: 190px
+}
+
+.myDay_DayData input {
+    width: 50px;
+    height: 30px;
+    margin-right: 1px
+}
+
+.Verifica_button a {
+    width: 80px;
+    margin: 35px 5px 0 5px
+}
+
+.Verifica_delTips {
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px
+}
+
+.color_warn {
+    color: #c57d5c
+}
+
+.Popup_close {
+    z-index: 2
+}
+
+.mydr_r_concent {
+    padding: 0 20px
+}
+
+.mydr_r_concent table {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #666
+}
+
+.mydr_r_concent table .table_tit {
+    border: 1px solid #ececec;
+    height: 32px;
+    background: #f1f1f1;
+    font-weight: 700
+}
+
+.mydr_r_concent table tr {
+    border: 1px solid #ececec;
+    height: 50px;
+    line-height: 18px
+}
+
+.table_action {
+    text-align: left;
+    padding-left: 10px
+}
+
+.table_action .isDefault, .table_action a.setDefault {
+    display: inline-block;
+    padding: 0 10px;
+    border: 1px solid #8b766c;
+    color: #8b766c;
+    line-height: 24px
+}
+
+.table_action a.setDefault {
+    display: none
+}
+
+.mydr_r_concent table tr:hover a.setDefault {
+    display: inline-block
+}
+
+.table_action .isDefault:hover, .table_action a.setDefault:hover {
+    color: #8b766c
+}
+
+.table_action .isDefault {
+    border: 0
+}
+
+.btnVessel {
+    padding: 10px 0;
+    text-align: center
+}
+
+.addAddress {
+    display: inline-block;
+    padding: 0 16px;
+    line-height: 28px;
+    border: 1px solid #8b766c;
+    color: #8b766c
+}
+
+.addAddress:hover {
+    color: #fff;
+    background: #8b766c
+}
+
+.address_popup {
+    width: 560px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -300px;
+    margin-top: -190px;
+    background: #fff;
+    border: 2px solid #f2e3dc;
+    padding: 20px;
+    font-size: 12px;
+    color: #404040;
+    z-index: 10;
+    display: none
+}
+
+.address_edit {
+    font-size: 12px
+}
+
+.address_edit h4 {
+    color: #9b745c;
+    margin-bottom: 20px
+}
+
+.address_edit div {
+    margin-bottom: 15px
+}
+
+.address_edit label {
+    width: 80px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 5px
+}
+
+.address_edit label span {
+    color: #ff5d5b;
+    margin-right: 3px
+}
+
+.address_edit input {
+    height: 20px;
+    width: 165px;
+    line-height: 24px;
+    padding: 2px;
+    border: 1px solid #e6e6e6
+}
+
+.address_edit select {
+    height: 26px;
+    width: 98px;
+    padding: 2px;
+    color: #666;
+    border: 1px solid #e6e6e6
+}
+
+input.width300 {
+    width: 300px
+}
+
+input.width46 {
+    width: 46px
+}
+
+input.width126 {
+    width: 126px
+}
+
+.confirm_btn {
+    padding-left: 92px;
+    margin-top: 20px
+}
+
+.confirm_btn a {
+    margin-right: 20px
+}
+
+input[type=text].error_info {
+    border: 1px solid #fe8c8c
+}
+
+span.error_info {
+    color: #fe8c8c
+}
+
+.confirm_btn a {
+    color: #8b766c;
+    font-size: 14px
+}
+
+.confirm_btn a.link_btn1 {
+    display: inline-block;
+    padding: 6px 10px;
+    color: #8b766c;
+    border: 1px solid #8b766c;
+    font-size: 12px;
+    margin-right: 10px
+}
+
+.confirm_btn a.link_btn1:hover {
+    color: #fff;
+    background: #8b766c
+}
+
+.confirm_btn a.address_close:hover {
+    color: #8b766c
+}
+
+.myCollent_cort {
+    background: #fff
+}
+
+.dr_samesellers-ring {
+    display: none;
+    margin: 0 auto 20px
+}
+
+.dr_samesellers-ring li {
+    margin: 0;
+    width: 222px;
+    height: 250px;
+    text-align: center;
+    font-size: 0
+}
+
+.dr_samesellers-ring li img {
+    width: 150px
+}
+
+.dr_samesellers-word {
+    bottom: 38px;
+    line-height: 22px;
+    font-size: 12px
+}
+
+.dr_samesellers-top span {
+    font-weight: 700
+}
+
+.dr_samesellers-word p {
+    min-height: 44px
+}
+
+.dr_samesellers-ring a {
+    height: 80%;
+    left: 0;
+    top: 0
+}
+
+.dr_samesellers-ring a.actionBtn {
+    display: inline-block;
+    bottom: 6px;
+    left: 0;
+    height: 30px;
+    color: #8b766c;
+    font-size: 12px;
+    opacity: 1;
+    filter: alpha(opacity=0);
+    line-height: 30px;
+    top: auto
+}
+
+.dr_samesellers-ring a.actionBtn:hover {
+    color: #8b766c
+}
+
+.Verifica_info {
+    padding: 26px 0
+}
+
+.Verifica_info p {
+    line-height: 26px
+}
+
+.myAccount_cort {
+    position: relative;
+    background: #fff
+}
+
+.myAccount_cort h6 {
+    margin: 30px 0;
+    color: #9b745c;
+    text-align: center
+}
+
+.myAccItem {
+    float: left;
+    width: 25%;
+    text-align: center
+}
+
+.introtxt {
+    position: absolute;
+    top: 14px;
+    left: 100px;
+    font-size: 12px
+}
+
+.myAccStyle {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 10px;
+    border: 2px solid #e8e8e8;
+    border-radius: 50%;
+    background: no-repeat center center
+}
+
+.myAccQQ {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdQQ.png) no-repeat center center
+}
+
+.activate.myAccQQ {
+    border-color: #39baf5;
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdQQa.png) no-repeat center center
+}
+
+.myAccWX {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdWX.png) no-repeat center center
+}
+
+.activate.myAccWX {
+    border-color: #51c332;
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdWXa.png) no-repeat center center
+}
+
+.myAccWB {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdWB.png) no-repeat center center
+}
+
+.activate.myAccWB {
+    border-color: #e6162d;
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdWBa.png) no-repeat center center
+}
+
+.myAccZFB {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdZFB.png) no-repeat center center
+}
+
+.activate.myAccZFB {
+    border-color: #00a0e9;
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdZFBa.png) no-repeat center center
+}
+
+.myAccItem p {
+    color: #666;
+    line-height: 26px
+}
+
+.myAccItem a {
+    line-height: 22px
+}
+
+.myAccItem a.bindAcc {
+    color: #9b745c
+}
+
+.myAccItem a.bindAcc:hover {
+    color: #9b745c
+}
+
+.myAccItem a.caneelAcc {
+    color: #999
+}
+
+.myAccItem a.caneelAcc:hover {
+    color: #9b745c
+}
+
+.myEvaluate_cort {
+    background: #fff
+}
+
+.myEvashare span {
+    position: relative;
+    bottom: 8px;
+    color: #7f7f7f;
+    font-size: 12px
+}
+
+.myEvashare .comShare {
+    margin: 0 auto;
+    width: inherit;
+    text-align: center
+}
+
+.myEvaluate {
+    position: relative;
+    width: 665px;
+    height: 932px;
+    background: url(//res.darryring.com/webimg/MyDr/certificate.jpg) no-repeat;
+    margin: 20px auto 50px
+}
+
+.myEvaluate p {
+    position: absolute;
+    color: #3e3937;
+    width: 176px;
+    font-size: 14px;
+    line-height: 30px
+}
+
+.myEvaluate p.myEvaMan {
+    top: 483px;
+    left: 215px;
+    width: 88px;
+    text-align: center
+}
+
+.myEvaluate p.myEvaWoman {
+    top: 483px;
+    left: 436px;
+    width: 88px;
+    text-align: center
+}
+
+.EvaManName, .EvaWomanName {
+    top: 530px;
+    text-align: center;
+    display: none
+}
+
+.EvaManName {
+    left: 128px
+}
+
+.EvaWomanName {
+    right: 128px
+}
+
+.myEvaNum {
+    top: 663px;
+    left: 131px;
+    text-align: center
+}
+
+.myEvaStyle {
+    display: none;
+    top: 706px;
+    left: 84px
+}
+
+.myEvaDate {
+    top: 746px;
+    left: 131px;
+    text-align: center
+}
+
+.myEvaluate .myEvaewm {
+    width: 58px;
+    right: 234px;
+    top: 716px
+}
+
+.myEvaewm img {
+    width: 100%
+}
+
+.myCer_cort {
+    background: #fff
+}
+
+.myCer_emptyInfo {
+    height: 90px;
+    padding-top: 200px;
+    background: url(//res.darryring.com/webimg/MyDr/ico-order.png) no-repeat center center
+}
+
+.myCer_emptyInfo p {
+    text-align: center;
+    font-size: 12px;
+    line-height: 30px
+}
+
+.myCer_seal {
+    padding: 10px 0 36px;
+    background: #f9f9f9;
+    text-align: center;
+    color: #666
+}
+
+.myCer_seal h3 {
+    font-size: 24px;
+    line-height: 60px
+}
+
+.myCer_seal .setBtn {
+    display: inline-block;
+    padding: 0 40px;
+    border: 1px solid #c57d5c;
+    color: #c57d5c;
+    line-height: 28px
+}
+
+.myCer_seal .setBtn:hover {
+    color: #d49e85
+}
+
+.myCer_sealList {
+    margin-top: 30px
+}
+
+.myCer_sealItem {
+    float: left;
+    width: 100px;
+    margin-left: 66px
+}
+
+.myCer_sealItem p {
+    margin-top: 20px
+}
+
+.myCer_sealStyle {
+    background: url(//res.darryring.com/webimg/MyDr/lovezt.png) no-repeat center top;
+    background-size: 100% auto;
+    width: 100px;
+    height: 110px
+}
+
+.myCerListTitle td {
+    text-align: center;
+    background: #f1f1f1;
+    border: 1px solid #ececec;
+    font-weight: 700
+}
+
+.myCer_info {
+    line-height: 26px
+}
+
+.myCer_content .DetailfirstTd {
+    padding: 10px 20px
+}
+
+.DetailfirstTd p.myCer_star {
+    float: left;
+    font-size: 0;
+    vertical-align: middle
+}
+
+.myCer_star i {
+    display: inline-block;
+    width: 14px;
+    height: 13px;
+    margin: 4px 2px 0;
+    background: url(//res.darryring.com/webimg/MyDr/ico-star.png) no-repeat right top
+}
+
+.myCer_star i.in {
+    background-position: left top
+}
+
+.myCer_info span {
+    float: right
+}
+
+.myCer_txt {
+    margin-bottom: 8px;
+    line-height: 22px
+}
+
+.myCer_img {
+    margin-left: -10px
+}
+
+.myCer_img li {
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 50px;
+    padding: 2px;
+    border: 2px solid #f2f2f2;
+    margin: 0 0 10px 10px;
+    font-size: 0;
+    overflow: hidden
+}
+
+.myCer_img li img {
+    width: 100%;
+    margin: 0
+}
+
+.myCer_img .Publish_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 14px
+}
+
+.myCerDesc {
+    padding: 10px;
+    text-align: left;
+    color: #c57d5c;
+    position: relative
+}
+
+.myCerDesc h6 {
+    font-weight: 700
+}
+
+.myCerAction {
+    padding: 10px;
+    text-align: center
+}
+
+a.blurLink {
+    color: #689acd
+}
+
+a.blurLink:hover {
+    color: #8eb1d8
+}
+
+.myCerAction .button_sure {
+    width: 88px
+}
+
+.myComItem {
+    padding: 20px 0;
+    border-bottom: 1px dashed #ececec
+}
+
+.myComment_content {
+    margin-top: -10px
+}
+
+.myCom_tags a {
+    margin-bottom: 6px;
+    vertical-align: middle;
+    display: inline-block;
+    min-width: 53px;
+    height: 28px;
+    padding: 0 10px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border: 1px solid #aeaeae;
+    background: #fff;
+    cursor: pointer;
+    margin-right: 6px
+}
+
+.myCom_tags a:hover {
+    min-width: 51px;
+    height: 26px;
+    line-height: 26px;
+    border: 2px solid #8b766c
+}
+
+.myCom_tags .chooseit {
+    min-width: 51px;
+    height: 26px;
+    line-height: 26px;
+    border: 2px solid #8b766c;
+    background: url(//res.darryring.com/webimg/ringbuy/right.png) no-repeat right bottom
+}
+
+.myComTr {
+    line-height: 26px
+}
+
+.myComTr i.must {
+    font-size: 12px;
+    color: #ff5d5b
+}
+
+.myComTr i.desc {
+    font-size: 12px;
+    color: #999
+}
+
+.myComTr span {
+    color: #555
+}
+
+.myComment_cort .myCer_star {
+    display: inline-block;
+    margin: 0 10px 0 20px;
+    cursor: pointer
+}
+
+.myComment_cort .myComTr a {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 24px;
+    font-size: 12px
+}
+
+.myComInput {
+    width: 1090px;
+    height: 120px;
+    border: 1px solid #aeaeae;
+    margin: 10px 0;
+    resize: none
+}
+
+.myComment_cort .myCer_img {
+    margin-top: 10px
+}
+
+li.addImg {
+    background: url(//res.darryring.com/webimg/MyDr/ico-add.png) no-repeat center center
+}
+
+li.addImg input {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.myBtnCon {
+    padding-top: 20px;
+    text-align: center
+}
+
+a.submitBtn {
+    display: inline-block;
+    width: 248px;
+    height: 36px;
+    border: 1px solid #8b766c;
+    margin-top: 20px;
+    text-align: center;
+    color: #8b766c;
+    line-height: 36px
+}
+
+a.submitBtn:hover {
+    color: #8b766c
+}
+
+.menmberClub h6 {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    font-weight: 700;
+    padding: 20px 0
+}
+
+.myleval_process {
+    overflow: hidden;
+    padding: 22px 0;
+    text-align: center
+}
+
+.myleval_process li {
+    display: inline-block;
+    text-align: center;
+    font-size: 12px;
+    font-family: "microsoft yahei";
+    background-repeat: no-repeat;
+    background-position: center top;
+    width: 61px;
+    line-height: 18px;
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_no.png);
+    padding-top: 54px
+}
+
+.myleval_process p {
+    color: #d2d2d2
+}
+
+.myleval_process .linefive, .myleval_process .linefour, .myleval_process .lineone, .myleval_process .linesix, .myleval_process .linethree, .myleval_process .linetwo {
+    background-image: url(//res.darryring.com/webimg/MyDr/heartLine.png);
+    width: 44px;
+    height: 60px;
+    background-position: center center;
+    margin: 0 10px;
+    padding-top: 0
+}
+
+.myleval_first .myleval_one {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_first.png)
+}
+
+.myleval_first .lineone {
+    background-image: url(//res.darryring.com/webimg/MyDr/heartLine2.png)
+}
+
+.myleval_first .myleval_two {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblv_sec.png);
+    width: 81px;
+    padding-top: 62px;
+    margin-top: -8px
+}
+
+.myleval_first .myleval_two p, .myleval_fiveth .myleval_two p, .myleval_fourth .myleval_two p, .myleval_sec .myleval_two p, .myleval_third .myleval_two p {
+    color: #95a6b6
+}
+
+.myleval_sec .myleval_one {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_first.png)
+}
+
+.myleval_sec .lineone, .myleval_sec .linetwo {
+    background-image: url(//res.darryring.com/webimg/MyDr/heartLine2.png)
+}
+
+.myleval_sec .myleval_two {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_sec.png)
+}
+
+.myleval_sec .myleval_three {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblv_third.png);
+    width: 81px;
+    padding-top: 62px;
+    margin-top: -8px
+}
+
+.myleval_fiveth .myleval_three p, .myleval_fourth .myleval_three p, .myleval_sec .myleval_three p, .myleval_third .myleval_three p {
+    color: #cbb69a
+}
+
+.myleval_third .myleval_one {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_first.png)
+}
+
+.myleval_third .lineone, .myleval_third .linethree, .myleval_third .linetwo {
+    background-image: url(//res.darryring.com/webimg/MyDr/heartLine2.png)
+}
+
+.myleval_third .myleval_two {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_sec.png)
+}
+
+.myleval_third .myleval_three {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_third.png)
+}
+
+.myleval_third .myleval_four {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblv_four.png);
+    width: 81px;
+    padding-top: 62px;
+    margin-top: -8px
+}
+
+.myleval_fiveth .myleval_four p, .myleval_fourth .myleval_four p, .myleval_third .myleval_four p {
+    color: #e589a3
+}
+
+.myleval_fourth .myleval_one {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_first.png)
+}
+
+.myleval_fourth .linefour, .myleval_fourth .lineone, .myleval_fourth .linethree, .myleval_fourth .linetwo {
+    background-image: url(//res.darryring.com/webimg/MyDr/heartLine2.png)
+}
+
+.myleval_fourth .myleval_two {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_sec.png)
+}
+
+.myleval_fourth .myleval_three {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_third.png)
+}
+
+.myleval_fourth .myleval_four {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_four.png)
+}
+
+.myleval_fourth .myleval_five {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblv_five.png);
+    width: 81px;
+    padding-top: 62px;
+    margin-top: -8px
+}
+
+.myleval_fiveth .myleval_five p, .myleval_fourth .myleval_five p {
+    color: #cb815e
+}
+
+.myleval_fiveth .myleval_one {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_first.png)
+}
+
+.myleval_fiveth .linefive, .myleval_fiveth .linefour, .myleval_fiveth .lineone, .myleval_fiveth .linethree, .myleval_fiveth .linetwo {
+    background-image: url(//res.darryring.com/webimg/MyDr/heartLine2.png)
+}
+
+.myleval_fiveth .myleval_two {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_sec.png)
+}
+
+.myleval_fiveth .myleval_three {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_third.png)
+}
+
+.myleval_fiveth .myleval_four {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_four.png)
+}
+
+.myleval_fiveth .myleval_five {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblvSmall_five.png)
+}
+
+.myleval_fiveth .myleval_six {
+    background-image: url(//res.darryring.com/webimg/MyDr/mblv_six.png);
+    width: 81px;
+    padding-top: 62px;
+    margin-top: -8px
+}
+
+.myleval_fiveth .myleval_six p {
+    color: #000
+}
+
+.myleval_card {
+    margin-left: 214px;
+    position: relative
+}
+
+.myleval_card span {
+    position: absolute;
+    left: 16px;
+    top: 126px;
+    font-family: arial;
+    font-size: 12px;
+    color: #595757
+}
+
+.myleval_jf, .myleval_myfs {
+    background: #fbfbfb;
+    width: 190px;
+    height: 190px;
+    margin-left: 20px;
+    position: relative;
+    font-family: "microsoft yahei"
+}
+
+.myleval_member {
+    padding-top: 48px;
+    color: #666;
+    line-height: 24px;
+    text-align: center
+}
+
+.myleval_member p {
+    font-size: 14px;
+    margin-bottom: 26px
+}
+
+.myleval_yuan {
+    width: 118px;
+    height: 118px;
+    position: relative;
+    margin: 36px auto 0
+}
+
+.myleval_yuan .thenum {
+    position: absolute;
+    top: -18px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    font-size: 14px
+}
+
+.jfCort {
+    width: 110px;
+    height: 110px;
+    border: 4px solid #f3f3f3;
+    border-radius: 50%
+}
+
+.jfwrapper {
+    width: 60px;
+    height: 118px;
+    overflow: hidden;
+    position: absolute;
+    top: 0
+}
+
+.Jfright {
+    right: 0
+}
+
+.Jfleft {
+    left: 0
+}
+
+.circleProgress {
+    width: 110px;
+    height: 110px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    -webkit-transform: rotate(45deg)
+}
+
+.rightcircle {
+    border-top: 4px solid #8b766c;
+    border-right: 4px solid #8b766c;
+    right: 0
+}
+
+.leftcircle {
+    border-bottom: 4px solid #8b766c;
+    border-left: 4px solid #8b766c;
+    left: 0
+}
+
+.jfCort_num {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 34px;
+    text-align: center;
+    font-size: 14px;
+    color: #999
+}
+
+.jfCort_num i {
+    display: block;
+    line-height: 24px
+}
+
+.jfCort_num i, .myleval_jf p i {
+    color: #8b766c
+}
+
+.jfcort_line {
+    border-top: 1px solid #999;
+    width: 48px;
+    margin: 6px auto
+}
+
+.myleval_jf p {
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    padding-top: 10px
+}
+
+.jfCort_num p {
+    font-size: 14px
+}
+
+.myleval_0 .leftcircle {
+    display: none
+}
+
+.myleval_0 .rightcircle {
+    display: none
+}
+
+.myleval_10 .leftcircle {
+    -webkit-transform: rotate(-136deg)
+}
+
+.myleval_10 .rightcircle {
+    -webkit-transform: rotate(-100deg)
+}
+
+.myleval_20 .leftcircle {
+    -webkit-transform: rotate(-136deg)
+}
+
+.myleval_20 .rightcircle {
+    -webkit-transform: rotate(-65deg)
+}
+
+.myleval_30 .leftcircle {
+    -webkit-transform: rotate(-136deg)
+}
+
+.myleval_30 .rightcircle {
+    -webkit-transform: rotate(-30deg)
+}
+
+.myleval_40 .leftcircle {
+    -webkit-transform: rotate(-136deg)
+}
+
+.myleval_40 .rightcircle {
+    -webkit-transform: rotate(5deg)
+}
+
+.myleval_50 .leftcircle {
+    -webkit-transform: rotate(-136deg)
+}
+
+.myleval_50 .rightcircle {
+    -webkit-transform: rotate(45deg)
+}
+
+.myleval_60 .leftcircle {
+    -webkit-transform: rotate(-100deg)
+}
+
+.myleval_60 .rightcircle {
+    -webkit-transform: rotate(45deg)
+}
+
+.myleval_70 .leftcircle {
+    -webkit-transform: rotate(-65deg)
+}
+
+.myleval_70 .rightcircle {
+    -webkit-transform: rotate(45deg)
+}
+
+.myleval_80 .leftcircle {
+    -webkit-transform: rotate(-30deg)
+}
+
+.myleval_60 .rightcircle {
+    -webkit-transform: rotate(45deg)
+}
+
+.myleval_90 .leftcircle {
+    -webkit-transform: rotate(-5deg)
+}
+
+.myleval_90 .rightcircle {
+    -webkit-transform: rotate(45deg)
+}
+
+.myleval_100 .leftcircle {
+    -webkit-transform: rotate(45deg)
+}
+
+.myleval_100 .rightcircle {
+    -webkit-transform: rotate(45deg)
+}
+
+.myleval_myfs {
+    text-align: center
+}
+
+.myleval_myfs p {
+    padding-top: 40px;
+    font-size: 12px;
+    color: #666
+}
+
+.myleval_myfs strong {
+    display: inline-block;
+    padding: 14px 0 6px;
+    font-size: 18px;
+    color: #8b766c
+}
+
+.myleval_member a, .myleval_myfs a {
+    display: inline-block;
+    width: 68px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid #8b766c;
+    color: #8b766c
+}
+
+.myleval_myfs .toGifthSop {
+    width: 92px
+}
+
+.myjf_rule {
+    margin-left: 22px;
+    font-size: 12px;
+    color: #c57d5c;
+    line-height: 18px;
+    margin-top: 18px
+}
+
+.myjf_rule a {
+    color: #689acd
+}
+
+.rule_special {
+    margin-left: 60px
+}
+
+.RuleTable {
+    width: 100%;
+    font-size: 12px;
+    color: #666;
+    margin-left: 20px;
+    border: 1px solid #ececec;
+    border-top: none
+}
+
+.RuleTable td {
+    border-top: 1px solid #ececec;
+    height: 30px
+}
+
+.RuleTable_first td {
+    background: #f1f1f1;
+    font-weight: 700
+}
+
+.RuleTable_special {
+    text-indent: 6px
+}
+
+.myjf_table {
+    width: 100%;
+    font-size: 12px;
+    color: #666;
+    border: 1px solid #ececec;
+    border-top: none;
+    margin-top: 10px
+}
+
+.myjf_table td {
+    border-top: 1px solid #ececec;
+    height: 30px;
+    text-align: center
+}
+
+.myjf_table-first td {
+    background: #f1f1f1;
+    font-weight: 700
+}
+
+.myusejf {
+    line-height: 34px;
+    margin-bottom: 6px
+}
+
+.myusejf_left span {
+    display: inline-block;
+    background: url(//res.darryring.com/webimg/MyDr/jf.png) no-repeat left center;
+    padding-left: 24px;
+    font-size: 14px;
+    color: #8b766c;
+    vertical-align: middle;
+    font-weight: 700
+}
+
+.myusejf_left i {
+    font-size: 12px;
+    color: #666;
+    margin-left: 26px;
+    vertical-align: middle
+}
+
+.myusejf a {
+    display: inline-block;
+    border: 1px solid #c57d5c;
+    font-size: 14px;
+    color: #c57d5c;
+    width: 138px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-family: "microsoft yahei"
+}
+
+.myusejf a:hover {
+    color: #d49e85;
+    border: 1px solid #d49e85
+}
+
+.noRecord {
+    display: none;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border: 1px solid #ececec;
+    border-top: none
+}
+
+.mycard_table td {
+    height: 58px
+}
+
+.mycard_table .myjf_table-first td {
+    height: 30px
+}
+
+.toOutdate td {
+    background: #f9f9f9;
+    color: #b0b0b0
+}
+
+.Cardrules {
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    margin-top: 6px
+}
+
+.Cardrules p i {
+    color: #999
+}
+
+.mycard_table td a {
+    display: inline-block;
+    border: 1px solid #c57d5c;
+    color: #c57d5c;
+    width: 68px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center
+}
+
+.mycard_table .toOutdate a {
+    border: 1px solid #b0b0b0;
+    color: #b0b0b0
+}
+
+.myChangeOpen {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0
+}
+
+.myEvaCahnge {
+    float: left;
+    width: 45%;
+    margin-left: 10px
+}
+
+.myEvaCahnge input {
+    border: none;
+    vertical-align: middle;
+    margin-top: -1px
+}
+
+@-moz-document url-prefix() {
+    .myEvaCahnge input {
+        margin-top: -2px
+    }
+}
+
+.myEvaCahnge label {
+    margin: 0 10px 0 4px;
+    color: #555;
+    font-size: 12px;
+    vertical-align: middle
+}
+
+.myEvaCahnge span {
+    color: #ccc;
+    font-size: 12px
+}
+
+.allRules {
+    margin-left: 20px;
+    margin-top: 20px
+}
+
+.allRules_bottom {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    padding-bottom: 50px
+}
+
+.allRules_bottom strong {
+    font-weight: 700
+}
+
+.allRules_bottom img {
+    margin: 10px auto
+}
+
+.allRules_bottomTitle {
+    font-size: 0;
+    text-align: center;
+    margin-bottom: 30px
+}
+
+.allRules_bottomTitle i {
+    display: inline-block;
+    width: 120px;
+    height: 2px;
+    border-bottom: 2px solid #493428;
+    vertical-align: top;
+    margin-top: 10px
+}
+
+.allRules_bottomTitle span {
+    vertical-align: top;
+    display: inline-block;
+    width: 456px;
+    margin: 0 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #493428;
+    line-height: 24px
+}
+
+.allRules_bottom h3 {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.nov_hr {
+    border-bottom: 1px solid #666;
+    width: 62px;
+    margin: 15px auto 12px;
+    height: 1px
+}
+
+.mgl72 {
+    margin-left: 72px
+}
+
+.drmedal_ewm {
+    display: none;
+    position: fixed;
+    text-align: center;
+    width: 500px;
+    height: 565px;
+    background: url(//res.darryring.com/webimg/MyDr/tc_border.jpg) no-repeat;
+    left: 50%;
+    margin-left: -250px;
+    top: 10%;
+    font-size: 16px;
+    color: #ca8565;
+    z-index: 9
+}
+
+.drmedal_ewm span {
+    cursor: pointer;
+    position: absolute;
+    background: url(//res.darryring.com/webimg/MyDr/close.png) no-repeat;
+    width: 14px;
+    height: 14px;
+    right: 16px;
+    top: 16px
+}
+
+.drmedal_ewm img {
+    padding-top: 162px;
+    padding-bottom: 30px
+}
+
+.thegifts {
+    position: absolute;
+    background: #ddb09b;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 12px;
+    border-radius: 5px;
+    top: 6px;
+    right: 6px;
+    color: #fff
+}
+
+.Thecomment {
+    text-align: center;
+    padding: 50px 0
+}
+
+.Thecomment .Verifica_delTips {
+    margin: 46px 0 40px
+}
+
+.shareCommunity p {
+    cursor: pointer;
+    font-size: 12px;
+    color: #555;
+    background: url(//res.darryring.com/webimg/MyDr/icon_choose.png) no-repeat left center;
+    line-height: 14px;
+    padding-left: 18px;
+    margin-bottom: 6px
+}
+
+.shareCommunity .active {
+    background: url(//res.darryring.com/webimg/MyDr/icon_chooseClick.png) no-repeat left center
+}
+
+.shareCommunity a {
+    padding-left: 18px;
+    font-size: 12px;
+    color: #689acd
+}
+
+.shareComment {
+    text-align: center;
+    padding: 50px 0
+}
+
+.shareComment_info h3 {
+    font-size: 22px;
+    color: #c67c59;
+    margin: 20px 0 16px;
+    font-weight: 700
+}
+
+.shareComment_info p {
+    font-size: 12px;
+    color: #666;
+    line-height: 20px;
+    margin-bottom: 50px
+}
+
+.shareComment a {
+    display: inline-block;
+    width: 138px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #c57d5c;
+    color: #c57d5c;
+    font-size: 14px;
+    font-family: "microsoft yahei"
+}
+
+.myFlatRoof {
+    position: relative;
+    background: #f7f7f7;
+    padding: 25px 30px
+}
+
+.myfrInfo p {
+    color: #999;
+    font-size: 12px;
+    line-height: 48px
+}
+
+.myfrInfo p.myfrActive {
+    color: #666
+}
+
+.myfrInfo p a, a.dr_linkBtn {
+    color: #c57d5c
+}
+
+.myfrInfo p a:hover, a.dr_linkBtn:hover {
+    color: #c57d5c;
+    text-decoration: underline;
+    border: none
+}
+
+.rightMessage {
+    position: absolute;
+    right: 30px;
+    top: 28px;
+    color: #666;
+    text-align: right
+}
+
+.rightMessage p {
+    display: block;
+    margin-bottom: 13px
+}
+
+.rightMessage a {
+    color: #8b766c;
+    font-size: 12px
+}
+
+.myFrmesaage {
+    position: absolute;
+    top: 34px;
+    right: 30px;
+    font-size: 14px;
+    color: #666;
+    text-align: right
+}
+
+.myBindDesc {
+    margin-bottom: 8px;
+    color: #999;
+    font-size: 12px;
+    line-height: 24px
+}
+
+.myBindList {
+    border: 1px solid #ececec
+}
+
+.myBindItem {
+    position: relative;
+    padding: 16px 30px;
+    border-top: 1px dashed #ececec
+}
+
+.myBindItem:first-child {
+    border: none
+}
+
+.myfrIcon {
+    width: 40px;
+    height: 48px;
+    margin-right: 30px
+}
+
+.myIconPhone {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdPhone.png) no-repeat center center
+}
+
+.myIconPhone.active {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdPhonea.png) no-repeat center center
+}
+
+.myIconEmail {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdEmail.png) no-repeat center center
+}
+
+.myIconEmail.active {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdEmaila.png) no-repeat center center
+}
+
+.myIconQQ {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdQQ.png) no-repeat center center
+}
+
+.myIconQQ.active {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdQQa.png) no-repeat center center
+}
+
+.myIconWB {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdWB.png) no-repeat center center
+}
+
+.myIconWB.active {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdWBa.png) no-repeat center center
+}
+
+.myIconWX {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdWX.png) no-repeat center center
+}
+
+.myIconWX.active {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdWXa.png) no-repeat center center
+}
+
+.myIconZFB {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdZFB.png) no-repeat center center
+}
+
+.myIconZFB.active {
+    background: url(//res.darryring.com/webimg/MyDr/ico-thirdZFBa.png) no-repeat center center
+}
+
+a.myFrBtn {
+    display: inline-block;
+    width: 70px;
+    height: 26px;
+    background: #8b766c;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 26px
+}
+
+a.myfrActiveBtn {
+    display: inline-block;
+    width: 68px;
+    height: 24px;
+    border: 1px solid #8b766c;
+    text-align: center;
+    color: #8b766c;
+    font-size: 12px;
+    line-height: 24px
+}
+
+.myBindItem a.myFrBtn, .myBindItem a.myfrActiveBtn, .myFlatRoof a.myFrBtn, .myFlatRoof a.myfrActiveBtn {
+    position: absolute;
+    right: 30px;
+    top: 34px
+}
+
+.myBindItem a.myFrBtn {
+    top: 26px
+}
+
+a.dr_linkBtn {
+    border: none
+}
+
+.Verifica_button a.dr_delayBtn {
+    width: inherit;
+    padding: 0 12px;
+    color: #999;
+    border: 1px solid #999
+}
+
+.Verifica_button a.dr_delayBtn.active {
+    color: #c57d5c;
+    border: 1px solid #c57d5c
+}
+
+.torightInfo {
+    background: url(//res.darryring.com/webimg/MyDr/icon_info.png) no-repeat left center;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 44px;
+    font-size: 24px;
+    color: #c67c59;
+    margin-bottom: 10px;
+    font-weight: 700
+}
+
+.torightInfoone {
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    font-size: 24px;
+    color: #c67c59;
+    margin-bottom: 30px;
+    font-weight: 700
+}
+
+.myAccBox .torightSuccess {
+    background: url(//res.darryring.com/webimg/ringbuy/dagou.png) no-repeat left center;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 44px;
+    font-size: 24px;
+    color: #8b766c;
+    margin-bottom: 10px;
+    font-weight: 700
+}
+
+.myAccBox .Verifica_all {
+    text-align: center;
+    padding: 40px 0 20px
+}
+
+img.myAccLogo {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 35px
+}
+
+.myAccGl {
+    display: inline-block;
+    margin: 20px auto;
+    text-align: center
+}
+
+.myAccGlItem {
+    width: 130px
+}
+
+.myAccGlCenter {
+    width: 60px;
+    height: 40px;
+    background: url(//res.darryring.com/webimg/MyDr/icon_relevance.png) no-repeat center center
+}
+
+.myAccGlInfo {
+    margin-left: 10px
+}
+
+.myAccGlInfo h6 {
+    color: #666;
+    line-height: 20px
+}
+
+.myAccGlInfo span {
+    display: inline-block;
+    width: 84px;
+    color: #999;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.myAccGlIcon.active {
+    width: 30px;
+    height: 36px;
+    background-size: auto 20px
+}
+
+.myAccGlIcon.active.myIconPhone {
+    background-size: auto 26px
+}
+
+.myAccGz {
+    margin-top: 43px
+}
+
+.myAccGzTitle {
+    width: 426px;
+    margin: 0 auto;
+    position: relative;
+    border-bottom: 1px solid #eee
+}
+
+.myAccGzTitle div {
+    position: absolute;
+    width: 196px;
+    background: #fff;
+    top: -6px;
+    left: 50%;
+    margin-left: -98px;
+    font-size: 12px;
+    text-align: center
+}
+
+.myAccGzList {
+    padding-top: 30px;
+    padding-left: 80px
+}
+
+.myAccGzItem {
+    margin-right: 80px;
+    font-size: 0
+}
+
+.myAccGzItem p {
+    color: #666;
+    font-size: 12px;
+    line-height: 32px
+}
+
+.verInputView {
+    margin-top: 10px;
+    text-align: center
+}
+
+.verInputView input {
+    width: 126px;
+    height: 28px;
+    padding-left: 8px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    line-height: 28px
+}
+
+.MyloveValue_list .bigList td {
+    height: 60px
+}
+
+.MyloveValue_list .bigList td span {
+    line-height: 20px
+}
+
+.myloveValue {
+    text-align: center;
+    padding: 10px 0;
+    border: 1px solid #ececec;
+    margin: 10px 0
+}
+
+.myloveValue input {
+    width: 80px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px
+}
+
+.myloveValue span {
+    color: #666
+}
+
+.myloveValue a.button_sure {
+    height: 24px;
+    width: 68px;
+    margin-left: 46px;
+    line-height: 24px
+}
+
+.loveValue_NO .torightInfo {
+    margin: 30px 0 20px
+}
+
+.myAccount_Desc {
+    font-size: 12px;
+    line-height: 30px;
+    color: #999
+}
+
+.myAccount_Desc a, .myAccount_Desc em {
+    color: #8b766c
+}
+
+.menmberClub .myDRcorttop_left {
+    border: none;
+    margin: 0 auto;
+    padding: 0
+}
+
+.menmberClub .myDRcorttop_left p span {
+    color: #666
+}
+
+.menmberleval_cort {
+    margin-bottom: 30px
+}
+
+.member_interest {
+    padding-bottom: 42px
+}
+
+.memberinterest_title {
+    text-align: center;
+    margin-top: 40px
+}
+
+.memberinterest_title h6 {
+    font-size: 0;
+    font-family: "microsoft yahei";
+    color: #8b766c;
+    padding: 0
+}
+
+.memberinterest_title i, .memberinterest_title span {
+    display: inline-block;
+    vertical-align: middle
+}
+
+.memberinterest_title i {
+    background: url(//res.darryring.com/webimg/MyDr/heart.png) no-repeat;
+    width: 8px;
+    height: 6px
+}
+
+.memberinterest_title span {
+    font-size: 16px;
+    margin: 0 10px
+}
+
+.memberinterest_title p {
+    font-size: 12px;
+    color: #666
+}
+
+.novline {
+    border-bottom: 1px solid #797979;
+    width: 30px;
+    height: 1px;
+    margin: 8px auto 10px
+}
+
+.memberinterest_cort {
+    position: relative
+}
+
+.memberinterest_cortover {
+    overflow: hidden;
+    width: 600px;
+    height: 164px;
+    margin: 36px auto 0
+}
+
+.memberinterest_cort span {
+    position: absolute;
+    cursor: pointer;
+    width: 14px;
+    height: 26px;
+    top: 50%;
+    margin-top: -13px;
+    z-index: 6
+}
+
+.button_pre {
+    background: url(//res.darryring.com/webimg/MyDr/pre.png) no-repeat;
+    left: 28px
+}
+
+.button_next {
+    background: url(//res.darryring.com/webimg/MyDr/next.png) no-repeat;
+    right: 28px
+}
+
+.interest_list li {
+    float: left;
+    width: 120px;
+    margin-right: 40px
+}
+
+.mycardcoupons {
+    padding-bottom: 30px
+}
+
+.cardcoupons_list {
+    overflow: hidden;
+    margin-top: 16px
+}
+
+.cardcoupons_list li {
+    font-family: "microsoft yahei";
+    float: left;
+    position: relative;
+    background: url(//res.darryring.com/webimg/MyDr/card_bk.png) no-repeat;
+    width: 238px;
+    height: 148px;
+    margin-left: 50px
+}
+
+.cardcoupons_list li:first-child {
+    margin-left: 18px
+}
+
+.cardcoupons_top {
+    position: absolute;
+    top: 20px;
+    left: 26px;
+    color: #fff
+}
+
+.cardcoupons_top h3 {
+    font-size: 18px;
+    margin-bottom: 6px
+}
+
+.cardcoupons_top p {
+    font-size: 14px
+}
+
+.cardcoupons_bottom {
+    position: absolute;
+    left: 20px;
+    bottom: 4px;
+    font-size: 12px;
+    color: #999;
+    height: 40px;
+    line-height: 40px
+}
+
+.cardcoupons_null {
+    height: 100px;
+    line-height: 100px;
+    text-align: center
+}
+
+.memberActivity {
+    padding-bottom: 35px
+}
+
+.Activity_list {
+    overflow: hidden
+}
+
+.Activity_list li {
+    float: left;
+    margin-left: 50px
+}
+
+.Activity_list li:first-child {
+    margin-left: 18px
+}
+
+.salegift .dr_samesellers-ring {
+    display: block
+}
+
+.salegift .dr_samesellers-ring li {
+    width: 282px;
+    height: 340px
+}
+
+.salegift .dr_samesellers-ring strong {
+    display: inline-block;
+    color: #8b766c;
+    margin: 3px 0
+}
+
+.salegift .dr_samesellers-ring a {
+    height: 100%
+}
+
+.noBuy_title {
+    text-align: center;
+    padding: 20px 0
+}
+
+.noBuy_title h3 {
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    color: #8b766c
+}
+
+.noBuy_title p {
+    font-size: 12px;
+    color: #666;
+    line-height: 18px
+}
+
+.noBuy_title p i {
+    color: #8b766c
+}
+
+.signInList {
+    display: none;
+    position: fixed;
+    top: 7%;
+    left: 50%;
+    width: 660px;
+    padding: 30px 0;
+    height: 80%;
+    margin-left: -330px;
+    background: #fff;
+    z-index: 9
+}
+
+.si_close {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -40px;
+    width: 40px;
+    height: 40px;
+    background: url(//res.darryring.com/webimg/common/sp_close.jpg) no-repeat
+}
+
+.si_view {
+    width: 610px;
+    max-height: 100%;
+    margin: 0 auto;
+    overflow-y: auto
+}
+
+.si_item {
+    margin-bottom: 30px;
+    text-align: center
+}
+
+.si_item img {
+    width: 100%
+}
+
+.myGift_cort .giftCort_select {
+    display: block;
+    position: initial;
+    font-family: "microsoft yahei"
+}
+
+.myGift_cort .giftselect_right {
+    width: 1124px
+}
+
+.myGift_cort .giftselect_right li.active {
+    background: #f7f7f7;
+    width: 960px
+}
+
+.myGift_cort .giftselect_top {
+    background: #fff
+}
+
+.myGift_cort .giftselect_top .w1000 {
+    width: 746px
+}
+
+.dring_thing li.active .dring_thing-word {
+    background: 0 0
+}
+
+.dring_thing li:hover .dring_thing-price {
+    display: block
+}
+
+.dring_thing li:hover .dring_thing-word {
+    top: 288px
+}
+
+.dring_thing li.active:hover .toremove_gifttips {
+    display: block
+}
+
+.dring_thing li.active:hover .toadd_gifttips {
+    display: none
+}
+
+.myGift_cort .toremove_gifttips {
+    display: block;
+    bottom: auto;
+    top: 10px;
+    right: 10px;
+    height: 22px
+}
+
+.myGift_cort .dring_thing-price, .myGift_cort .dring_thing-word {
+    position: static;
+    margin-top: 15px
+}
+
+.myGift_cort .tobuy {
+    display: inline-block;
+    width: 88px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+    color: #8b766c;
+    border: 1px solid #8b766c;
+    margin-top: 16px
+}
+
+.myGift_cort .tobuy:hover {
+    background: #8b766c;
+    color: #fff
+}
+
+.myGift_cort .dring_thing {
+    height: 426px
+}
+
+.myGift_cort .dring_thing li {
+    height: 378px;
+    margin-left: 45px
+}
+
+.myGift_cort .dring_thing {
+    margin-left: -45px
+}
+
+.searchRing {
+    display: none
+}
+
+.myDRcort_seccort .ml30 {
+    margin-left: 30px
+}
+
+.myDRcort_seccort .drmedeal1 {
+    width: 187px
+}
+
+.myDRcort_seccort .img_box {
+    display: inline-block;
+    width: 100%;
+    height: 150px
+}
+
+.drmedeal1 p {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: "microsoft yahei";
+    font-size: 12px;
+    color: #4c0404;
+    top: 98px;
+    left: 0
+}
+
+.drmedeal1 img {
+    margin-top: 10px
+}
+
+.drmedal_xyk {
+    display: none;
+    position: fixed;
+    top: 101px;
+    left: 50%;
+    margin-left: -260px;
+    width: 520px;
+    height: 742px;
+    z-index: 9
+}
+
+.drmedal_xyk .xygif1 {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+.drmedal_xyk .xytxt {
+    position: absolute;
+    top: 100px;
+    height: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #c67c59;
+    font-size: 24px;
+    line-height: 48px;
+    overflow: hidden
+}
+
+.drmedal_xyk .xygif2 {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0
+}
+
+.drmedal_xyk .xykshow {
+    display: none;
+    position: absolute;
+    width: 398px;
+    height: 568px;
+    top: 2px;
+    border: 1px solid #9b9b93;
+    border-radius: 24px;
+    left: 50%;
+    margin-left: -199px
+}
+
+.drmedal_xyk .xykshow img {
+    width: 100%
+}
+
+.drmedal_xyk .xyuseRule {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    text-align: center;
+    background: #fff;
+    border-radius: 24px;
+    border: 1px solid #9b9b93;
+    padding: 0 24px
+}
+
+.drmedal_xyk .xyuseRule h3 {
+    font-size: 18px;
+    color: #c67c59;
+    margin: 51px auto 49px
+}
+
+.drmedal_xyk .xyuseRule p {
+    text-align: left;
+    color: #c67c59;
+    font-size: 14px;
+    text-indent: -23px;
+    padding: 0 22px;
+    line-height: 30px;
+    margin-bottom: 20px
+}
+
+.drmedal_xyk .xyuseRule form {
+    text-align: left
+}
+
+.drmedal_xyk .xyuseRule form div {
+    width: 100%;
+    border-top: 1px solid #e6e6e6;
+    height: 54px;
+    line-height: 54px
+}
+
+.drmedal_xyk .xyuseRule form span {
+    color: #999
+}
+
+.drmedal_xyk .xyuseRule form input {
+    border: none
+}
+
+.drmedal_xyk .xyuseRule form .getCode {
+    display: inline-block;
+    width: 130px;
+    height: 30px;
+    border: 1px solid #999;
+    line-height: 30px;
+    text-align: center;
+    color: #999;
+    margin: 12px 20px 0 0
+}
+
+.drmedal_xyk .xyuseRule form .getMsg {
+    color: #c67c59
+}
+
+.drmedal_xyk .xyuseRule form .lastline {
+    border-bottom: 1px solid #e6e6e6
+}
+
+.drmedal_xyk .xyuseRule .get_xyk {
+    margin-top: 50px;
+    text-align: center
+}
+
+.drmedal_xyk .xyuseRule .get_xyk a {
+    display: inline-block;
+    width: 250px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    border: 1px solid #c67c59;
+    color: #c67c59;
+    border-radius: 5px
+}
+
+.drmedal_xyk .xyuseRule form .getgray {
+    color: #999
+}
+
+.xyclosebtn {
+    display: none;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9
+}
+
+.drmedal_xyk .getedxyk {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -260px;
+    width: 520px;
+    height: 742px;
+    text-align: center;
+    background: #fff;
+    border-radius: 24px;
+    border: 1px solid #9b9b93;
+    overflow: hidden
+}
+
+.drmedal_xyk .getedxyk h3 {
+    font-size: 24px;
+    margin: 35px auto;
+    line-height: 43px;
+    color: #333
+}
+
+.drmedal_xyk .getedxyk img {
+    margin-bottom: 29px
+}
+
+.drmedal_xyk .getedxyk p {
+    font-size: 16px;
+    color: #7f7f7f;
+    margin-bottom: 18px
+}
+
+.drmedal_xyk .getedxyk p span {
+    color: #333
+}
+
+.drmedal_xyk .getedxyk .xyewm {
+    height: 60px;
+    background: #f5f5f5;
+    padding: 14px
+}
+
+.drmedal_xyk .getedxyk .xyewm span {
+    line-height: 30px;
+    margin-left: 8px;
+    color: #666
+}
+
+.nonecard_table {
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    border: 1px solid #eaeceb
+}
+
+.nonecard_table a {
+    color: #c67c59
+}
+
+.nonecard_table a:hover {
+    text-decoration: underline
+}
+
+.dr_banner {
+    height: 620px;
+    position: relative
+}
+
+.dr_bannerul {
+    position: relative;
+    width: 100%;
+    margin: 0 auto
+}
+
+.dr_bannerul li {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 620px;
+    overflow: hidden;
+    display: none
+}
+
+.dr_bannerul img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -960px
+}
+
+.dr_bannerul li:first-child {
+    display: block
+}
+
+.dr_banner li a {
+    display: block;
+    height: 470px
+}
+
+.dr_banner a.drbanBtn {
+    position: absolute;
+    display: none;
+    top: 50%;
+    margin-top: -22.5px;
+    width: 24px;
+    height: 45px;
+    background: url(//res.darryring.com/webimg/index/ico-bannerBtn.png) no-repeat
+}
+
+.dr_banner a.drprevBtn {
+    left: 50px
+}
+
+.dr_banner a.drnextBtn {
+    right: 50px;
+    background-position: -25px 0
+}
+
+.dr_banner a.drprevBtn:hover {
+    background-position: 0 -45px
+}
+
+.dr_banner a.drnextBtn:hover {
+    background-position: -25px -45px
+}
+
+.dr_banner:hover a.drbanBtn {
+    display: block
+}
+
+.drCtBan {
+    margin: 0 auto;
+    width: 655px;
+    height: 970px
+}
+
+.drCtBan li {
+    height: 970px
+}
+
+.drCtBan img {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-left: auto
+}
+
+.drCtBan a.drbanBtn {
+    margin-top: -15px;
+    display: block;
+    width: 18px;
+    height: 31px;
+    background: url(//res.darryring.com/webimg/MyDr/arrow_left02.png) no-repeat
+}
+
+.drCtBan a.drbanBtn:hover {
+    background-position: 0 0
+}
+
+.drCtBan a.drprevBtn {
+    left: -47px
+}
+
+.drCtBan a.drnextBtn {
+    right: -47px;
+    background: url(//res.darryring.com/webimg/MyDr/arrow_right02.png) no-repeat
+}
+
+.drCtBan .p01 {
+    margin-top: 20px;
+    color: #666;
+    font-size: 12px
+}
+
+.drCtBan .p01 .num {
+    display: inline-block;
+    height: auto;
+    color: #d0967c
+}
+
+.drCtBan .img_box {
+    position: relative;
+    z-index: 0
+}
+
+.drCtBan .img-box .txt {
+    position: absolute;
+    z-index: 4;
+    text-align: center
+}
+
+.drCtBan .img-box .myEvaMan {
+    top: 270px;
+    left: 88px;
+    width: 112px
+}
+
+.drCtBan .img-box .myEvaProduct {
+    top: 270px;
+    left: 296px;
+    width: 250px
+}
+
+.drCtBan .img-box .myEvaWoman {
+    top: 302px;
+    left: 120px;
+    width: 110px
+}
+
+.drCtBan .img-box .EvaManName {
+    top: 370px;
+    left: 88px;
+    display: block;
+    width: 112px
+}
+
+.drCtBan .img-box .EvaWomanName {
+    top: 370px;
+    left: 458px;
+    display: block;
+    width: 112px
+}
+
+.drCtBan .img-box .myEvaDateYear {
+    top: 370px;
+    left: 216px;
+    width: 46px
+}
+
+.drCtBan .img-box .myEvaDateMonth {
+    top: 370px;
+    left: 280px;
+    width: 30px
+}
+
+.drCtBan .img-box .myEvaDateDay {
+    top: 370px;
+    left: 324px;
+    width: 30px
+}
+
+.drCtBan .img-box .myEvaCount {
+    top: 370px;
+    left: 382px;
+    width: 30px
+}
+
+.drCtBan .img-box .myEvaMsg {
+    top: 562px;
+    left: 164px;
+    width: 410px;
+    line-height: 20px;
+    height: 100px;
+    text-align: left;
+    overflow: hidden
+}
+
+.drCtBan .img-box .myEvaewm {
+    top: 760px;
+    left: 88px;
+    width: 84px
+}
+
+.drCtBan .img-box .myEvaewm img {
+    width: 100%
+}
+
+.myEvaluateEmpty-con {
+    text-align: center;
+    padding: 130px 30px 30px
+}
+
+.myEvaluateEmpty-con .p01 {
+    margin-bottom: 42px;
+    line-height: 20px;
+    color: #666;
+    font-size: 12px
+}
+
+.myEvaluateEmpty-con .a01 {
+    display: inline-block;
+    width: 250px;
+    height: 38px;
+    line-height: 36px;
+    text-align: center;
+    color: #c57d5c;
+    font-size: 14px;
+    border: 1px solid #c57d5c;
+    border-radius: 3px
+}
+
+.drBindTc {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-left: -260px;
+    width: 505px;
+    height: 355px;
+    background: #fff;
+    z-index: 10;
+    padding: 15px
+}
+
+.drBindTc .bindBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000;
+    text-align: center
+}
+
+.drBindTc1 .bindBox .userbox {
+    width: 308px;
+    margin: 43px auto 0
+}
+
+.drBindTc1 .bindBox .userbox .nobinduser {
+    margin-left: -15px
+}
+
+.drBindTc1 .bindBox .userbox .binduser p {
+    font-size: 14px;
+    color: #000;
+    margin-top: 15px
+}
+
+.drBindTc1 .bindBox .userbox .binduser p a {
+    text-decoration: none;
+    color: #000;
+    font-family: '瀹嬩綋'
+}
+
+.drBindTc .close_bind {
+    cursor: pointer;
+    position: absolute;
+    background: url(//res.darryring.com/webimg/MyDr/close.png) no-repeat;
+    width: 14px;
+    height: 14px;
+    right: 25px;
+    top: 25px
+}
+
+.drBindTc1 .bindBox .bind_intro {
+    margin-top: 42px
+}
+
+.drBindTc1 .bindBox .bind_intro p {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 9px
+}
+
+.orange {
+    color: #c67c59 !important
+}
+
+.drBindTc1 .bindBox .iknow {
+    display: inline-block;
+    width: 110px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #c67c59;
+    font-size: 14px;
+    color: #c67c59;
+    margin-top: 24px
+}
+
+.drBindTc1 .bindBox .tapbindbox {
+    margin-top: 53px
+}
+
+.drBindTc1 .bindBox .tapbindbox .tapbindbtn {
+    display: inline-block;
+    width: 182px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #c67c59;
+    font-size: 14px;
+    color: #c67c59
+}
+
+.drBindTc1 .bindBox .tapbindbox .knowmore {
+    display: inline-block;
+    font-size: 12px;
+    color: #666;
+    margin-top: 21px
+}
+
+.drBindTc .logo {
+    margin-top: 60px
+}
+
+.drBindTc2 h3 {
+    font-size: 24px;
+    color: #c67c59;
+    margin-top: 40px;
+    font-family: '瀹嬩綋'
+}
+
+.drBindTc2 .btnbox {
+    margin-top: 50px
+}
+
+.drBindTc2 .btnbox .surebtn {
+    display: inline-block;
+    width: 110px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #c67c59;
+    font-size: 14px;
+    color: #c67c59;
+    margin-right: 44px
+}
+
+.drBindTc2 .btnbox .cancelbtn {
+    display: inline-block;
+    width: 110px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px solid #c67c59;
+    font-size: 14px;
+    color: #c67c59
+}
+
+.drBindTc3 h3 {
+    font-size: 24px;
+    font-family: '瀹嬩綋';
+    color: #c67c59;
+    margin: 50px auto 40px
+}
+
+.drBindTc3 p {
+    font-size: 12px;
+    line-height: 25px;
+    text-align: left;
+    margin-left: 50px;
+    text-indent: -20px;
+    color: #666
+}
+
+.drBindTc4 .bingo {
+    margin-top: 37px
+}
+
+.drBindTc4 h3 {
+    font-size: 24px;
+    font-family: '瀹嬩綋';
+    color: #c67c59;
+    margin: 20px auto 0
+}
+
+.drBindTc5 .bingo {
+    margin-top: 37px
+}
+
+.drBindTc5 h3 {
+    font-size: 24px;
+    font-family: '瀹嬩綋';
+    color: #c67c59;
+    margin: 20px auto 0
+}
+
+.drBindTc6 h3 {
+    font-size: 24px;
+    font-family: '瀹嬩綋';
+    color: #c67c59;
+    margin: 51px auto 0
+}
+
+.drBindTc6 .ewm {
+    margin-top: 30px
+}
+
+.drBindTc6 p {
+    font-size: 12px;
+    color: #666
+}
+
+.drBindTc6 .p1 {
+    margin-top: 27px
+}
+
+.drBindTc6 .p2 {
+    margin-top: 29px
+}
+
+.memberDR_invite {
+    padding: 66px 0 0 137px
+}
+
+.memberDR_invite p {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 57px
+}
+
+.memberDR_invite h3 {
+    color: #c57d5c;
+    font-size: 14px;
+    font-family: 'Microsoft YaHei'
+}
+
+.memberDR_invite .must {
+    margin-left: 110px
+}
+
+.memberDR_invite span {
+    vertical-align: middle;
+    height: 40px;
+    line-height: 40px;
+    color: #000
+}
+
+.memberDR_invite .infobox {
+    margin-top: 45px
+}
+
+.memberDR_invite .usertel {
+    position: relative;
+    width: 248px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    margin-left: 10px
+}
+
+.memberDR_invite .usertel input {
+    position: absolute;
+    left: 36px;
+    top: 0;
+    border: none;
+    height: 36px
+}
+
+.memberDR_invite .usertel .telIco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 36px;
+    height: 38px;
+    line-height: 38px;
+    vertical-align: middle;
+    text-align: center;
+    margin-top: 9px
+}
+
+.memberDR_invite .sendmessage {
+    margin: 21px 0 80px 183px
+}
+
+.memberDR_invite .sendmessage .send {
+    display: inline-block;
+    width: 248px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    text-align: center;
+    color: gray;
+    font-family: 'Microsoft YaHei';
+    pointer-events: none
+}
+
+.memberDR_invite .sendmessage .send.active {
+    display: inline-block;
+    width: 248px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid #c57d5c;
+    border-radius: 3px;
+    text-align: center;
+    color: #c57d5c;
+    font-family: 'Microsoft YaHei';
+    pointer-events: auto
+}
+
+.memberDR_invite .wxshare {
+    text-align: center;
+    margin-top: 45px
+}
+
+.font_red {
+    color: red
+}
+
+.mydetailfirst_same .DetailfirstTd1 {
+    border-right: none
+}
+
+.paybtn {
+    padding-right: 38px
+}
+
+.paybtn p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #999
+}
+
+.mydetail_table_travel {
+    margin-bottom: 28px
+}
+
+.Abtn {
+    display: inline-block;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 15px
+}
+
+.cutbtn {
+    box-sizing: border-box;
+    border: 1px solid #c57d5c;
+    color: #c57d5c
+}
+
+.goon {
+    background: #cfcfcf;
+    color: #fff
+}
+
+.myAddress_cort .titletxt {
+    border-bottom: none;
+    margin-bottom: 0
+}
+
+.myAddress_cort .protocols {
+    padding: 14px 0 10px 10px
+}
+
+.myAddress_cort .protocols p {
+    line-height: 30px;
+    font-size: 12px;
+    margin-bottom: 35px
+}
+
+.myAddress_cort .protocols label {
+    font-size: 12px
+}
+
+.myAddress_cort .protocols label input {
+    vertical-align: middle
+}
+
+.myAddress_cort .conBtn {
+    text-align: center;
+    margin-top: 50px
+}
+
+.myAddress_cort .protocols a, .myAddress_cort .protocols em {
+    color: #c57d5c
+}
+
+.drBindTc7 {
+    height: 471px
+}
+
+.drBindTc7 h3 {
+    font-size: 24px;
+    font-family: '瀹嬩綋';
+    color: #8b766c;
+    margin: 50px auto 40px
+}
+
+.drBindTc7 p {
+    font-size: 12px;
+    line-height: 25px;
+    text-align: left;
+    margin-left: 50px;
+    text-indent: -20px;
+    color: #666
+}
+
+.BindTc-btn {
+    width: 100%;
+    text-align: cemter;
+    margin-top: 60px
+}
+
+.BindTc-btn a {
+    display: inline-block;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #8b766c;
+    border: 1px solid #8b766c
+}
+
+.drBindTc7 .cancelBtn {
+    margin-right: 44px
+}
+
+.drBindTc7 .cancelBtn:hover {
+    background: #8b776c;
+    color: #fff
+}
+
+.drBindTc7 .continueBtn:hover {
+    background: #8b776c;
+    color: #fff
+}
+
+.drBindTc .cRed {
+    color: #ff5d5b
+}
+
+.drBindTc8 {
+    height: 471px
+}
+
+.drBindTc8 h3 {
+    font-size: 24px;
+    font-family: '瀹嬩綋';
+    color: #8b766c;
+    margin: 50px auto 40px
+}
+
+.drBindTc8 p {
+    font-size: 12px;
+    line-height: 25px;
+    text-align: left;
+    margin-left: 50px;
+    text-indent: -20px;
+    color: #666
+}
+
+.BindTc-btn {
+    width: 100%;
+    text-align: cemter;
+    margin-top: 60px
+}
+
+.BindTc-btn a {
+    display: inline-block;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #8b766c;
+    border: 1px solid #8b766c
+}
+
+.drBindTc8 .cancelBtn {
+    margin-right: 44px
+}
+
+.drBindTc8 .cancelBtn:hover {
+    background: #8b776c;
+    color: #fff
+}
+
+.drBindTc8 .continueBtn:hover {
+    background: #8b776c;
+    color: #fff
+}
+.oroption{
+    height: 30px;
+    width: 180px;
+}
+.orstatus{
+    height: 30px;
+    width: 580px;
+    margin-bottom: 10px;
+}
+.searchBor{
+    height: 28px;
+    width: 280px;
+    float:right;
+}
+.searchBor input{
+    height: 25px;
+    width: 180px;
+    margin-right: 20px;
+}

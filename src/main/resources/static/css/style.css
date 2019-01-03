@@ -1,0 +1,954 @@
+.customLayer {
+    position: fixed;
+    z-index: 102;
+    top: 0;
+    left: 0;
+    background: #fff
+}
+
+.customLayer-shade {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    background-color: #000;
+    filter: alpha(opacity=60);
+    -moz-opacity: .6;
+    -khtml-opacity: .6;
+    opacity: .6
+}
+
+.customLayer-main {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border: 1px solid #eee
+}
+
+.customLayer-content {
+    position: relative;
+    z-index: 0;
+    overflow: auto
+}
+
+.customLayer-title {
+    padding: 0 80px 0 20px;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    background-color: #F8F8F8
+}
+
+.customLayer-setwin {
+    position: absolute;
+    z-index: 4;
+    right: 15px;
+    top: 15px
+}
+
+.customLayer-setwin .customLayer-close {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../img/close.png) 0 0 no-repeat
+}
+
+.customLayer-setwin .customLayer-close:hover {
+    background: url(../img/close.png) 0 -14px no-repeat
+}
+
+.customLayer-btn {
+    padding: 0 15px 12px;
+    text-align: right
+}
+
+.customLayer-btn a {
+    margin: 5px 5px 0;
+    display: inline-block;
+    height: 28px;
+    line-height: 26px;
+    padding: 0 15px;
+    background-color: #fff;
+    color: #333;
+    font-size: 12px;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #dedede
+}
+
+.customLayer-btn .customLayer-btn0 {
+    color: #fff;
+    background-color: #1E9FFF;
+    border-color: #1E9FFF
+}
+
+.customLayer-noTitle .customLayer-setwin {
+    top: 0;
+    right: -25px
+}
+
+.customLayer-load, .customLayer-msg {
+    background: 0 0;
+    border: 0
+}
+
+.customLayer-msg .png {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter: alpha(opacity=60);
+    -moz-opacity: .6;
+    -khtml-opacity: .6;
+    opacity: .6;
+    border-radius: 3px
+}
+
+.customLayer-msg .pngCon {
+    position: relative;
+    z-index: 4
+}
+
+.customLayer-msg .customLayer-content {
+    padding: 12px 25px;
+    color: #fff
+}
+
+.customLayer-loadShade, .customLayer-msgShade {
+    background: 0 0
+}
+
+.customLayer-load .customLayer-content {
+    line-height: 1;
+    font-size: 0
+}
+
+.customLayer-load .loading {
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    background: url(../img/loading.gif) 0 0 no-repeat
+}
+
+.customLayer.customLayer-anim-scale {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    animation-name: customLayer-bounceIn;
+    -webkit-animation-name: customLayer-bounceIn
+}
+
+@-webkit-keyframes customLayer-bounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        transform: scale(.5)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+@keyframes customLayer-bounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.5);
+        -ms-transform: scale(.5);
+        transform: scale(.5)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+body {
+    min-width: 1320px;
+    font-family: '瀹嬩綋'
+}
+
+.slpPart-common .con-main {
+    margin: 0 auto;
+    width: 1320px
+}
+
+.slpPart-common .con-t {
+    text-align: center
+}
+
+.slpPart-common .con-t h1 {
+    padding-top: 80px;
+    color: #2a0305;
+    font-size: 36px;
+    font-family: 'Adobe 榛戜綋 Std R'
+}
+
+.slpPart-common .con-t .hr {
+    margin: 40px auto 30px;
+    width: 160px;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-bottom: 1px solid #000
+}
+
+.slpPart-common .con-t .p01 {
+    line-height: 36px;
+    color: #2a0305;
+    font-size: 18px;
+    font-family: '瀹嬩綋'
+}
+
+.slpPart-common .con-t .p01 span {
+    color: #b47455
+}
+
+.swiper-pagination {
+    position: relative;
+    height: 125px
+}
+
+.swiper-pagination .pagination {
+    position: absolute;
+    z-index: 20;
+    top: 50px;
+    width: 100%;
+    text-align: center
+}
+
+.swiper-pagination .swiper-pagination-switch {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    border-radius: 3px;
+    background: #fff;
+    margin: 0 9px;
+    border: 1px solid #b47455;
+    cursor: pointer
+}
+
+.swiper-pagination .swiper-active-switch {
+    background: #b47455
+}
+
+.slpPart01 {
+    position: relative;
+    z-index: 0;
+    min-width: 1320px;
+    height: 720px;
+    overflow: hidden
+}
+
+.slpPart01 .banner-img {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    margin-left: -960px
+}
+
+.slpPart02 {
+    min-width: 1320px;
+    height: 627px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/temp/part02_bg01.jpg) center 0 no-repeat
+}
+
+.slpPart02 .con-main {
+    text-align: center
+}
+
+.slpPart03 {
+    min-width: 1320px;
+    height: 706px;
+    background: #f4f4f3
+}
+
+.slpPart03 .ul-list {
+    margin-top: 16px
+}
+
+.slpPart03 li {
+    position: relative;
+    z-index: 0;
+    margin-right: 60px;
+    float: left;
+    width: 400px;
+    height: 400px
+}
+
+.slpPart03 li.last-li {
+    margin-right: 0
+}
+
+.slpPart03 .ul-list .img-box {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    overflow: hidden
+}
+
+.slpPart03 .ul-list .img-box img {
+    width: 100%
+}
+
+.slpPart03 .ul-list .p01 {
+    position: absolute;
+    z-index: 4;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 24px
+}
+
+.slpPart03 .ul-list .a01 {
+    position: absolute;
+    z-index: 4;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -80px;
+    display: inline-block;
+    width: 158px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    border: 1px solid #000
+}
+
+.slpPart04 {
+    min-width: 1320px;
+    height: 1267px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/temp/part04_bg01.jpg) center center no-repeat
+}
+
+.slpPart04-swiper {
+    margin: 40px 0 0;
+    height: 694px
+}
+
+.slpPart04-swiper .swiper-slide {
+    background: #fff
+}
+
+.slpPart04-swiper .img-box {
+    float: left;
+    width: 781px;
+    height: 694px;
+    overflow: hidden
+}
+
+.slpPart04-swiper .swiper-slide.swiper-slide-active .img-box img {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%)
+}
+
+.slpPart04-swiper .swiper-slide.first-time .img-box img {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0)
+}
+
+.slpPart04-swiper .co {
+    float: left;
+    width: 492px;
+    height: 658px;
+    padding: 18px 26px 18px 21px
+}
+
+.slpPart04-swiper .c-box {
+    position: relative;
+    height: 656px;
+    padding: 0 30px 0 48px;
+    border: 1px solid #b9a7a0
+}
+
+.slpPart04-swiper .p01 {
+    padding: 50px 0 25px;
+    color: #2a0305;
+    font-size: 28px
+}
+
+.slpPart04-swiper .p02 {
+    line-height: 34px;
+    color: #2a0305;
+    font-size: 16px
+}
+
+.slpPart04-swiper .p03 {
+    margin: 30px 0 20px 22px;
+    line-height: 30px;
+    padding: 5px 0 5px 80px;
+    color: #000;
+    font-size: 24px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/icon/ic_address.png) 0 0 no-repeat
+}
+
+.slpPart04-swiper .a01 {
+    margin: 0 auto;
+    display: block;
+    width: 270px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    background: #7a584c;
+    border-radius: 3px
+}
+
+.slpPart04-swiper .pro-box {
+    position: absolute;
+    top: 250px;
+    left: 325px
+}
+
+.slpPart04 .c-b {
+    text-align: center
+}
+
+.slpPart04 .c-b .a01 {
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 245px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    background: #7a584c;
+    border-radius: 3px
+}
+
+.slpPart04 .c-b .a02 {
+    color: #b47455;
+    font-size: 24px
+}
+
+.slpPart05 {
+    min-width: 1320px;
+    height: 1350px;
+    background: #f3efea
+}
+
+.slpPart05-swiper {
+    float: left;
+    width: 400px;
+    height: 400px
+}
+
+.slpPart05-swiper .img-box {
+    position: relative;
+    z-index: 0;
+    display: block;
+    height: 100%;
+    overflow: hidden
+}
+
+.slpPart05-swiper .img-box:hover .info-box {
+    left: 0
+}
+
+.slpPart05-swiper .info-box {
+    position: absolute;
+    z-index: 6;
+    top: 0;
+    left: 400px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #c7bab1;
+    transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -webkit-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s
+}
+
+.slpPart05-swiper .info-box .p01 {
+    padding-top: 130px;
+    color: #2a0305;
+    font-size: 24px
+}
+
+.slpPart05-swiper .info-box .p02 {
+    margin-bottom: 44px;
+    color: #2a0305;
+    font-size: 18px
+}
+
+.slpPart05-swiper .info-box .p03 {
+    color: #b47455;
+    font-size: 18px
+}
+
+.slpPart05-swiper .info-box .hr {
+    margin: 24px auto 16px;
+    width: 80px;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-bottom: 1px solid #3e3a39
+}
+
+.slpPart05-swiper .img-box .ic {
+    position: absolute;
+    z-index: 4;
+    bottom: 18px;
+    left: 50%;
+    margin-left: -19px;
+    display: inline-block;
+    width: 38px;
+    height: 39px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/icon/ic_add.png) no-repeat
+}
+
+.slpPart05 .pro-part {
+    position: relative;
+    height: 400px
+}
+
+.slpPart05 .pro-co {
+    width: 480px;
+    padding-top: 36px
+}
+
+.slpPart05 .pro-co .p01 {
+    margin-bottom: 40px;
+    text-align: center;
+    color: #2a0305;
+    font-size: 30px
+}
+
+.slpPart05 .pro-co .p02 {
+    line-height: 36px;
+    text-align: center;
+    color: #2a0305;
+    font-size: 18px
+}
+
+.slpPart05 .swiper-pagination {
+    position: absolute;
+    z-index: 4;
+    bottom: 46px;
+    left: 0;
+    width: 100%;
+    height: 25px
+}
+
+.slpPart05 .swiper-pagination .pagination {
+    top: 0
+}
+
+.slpPart05 .shoppers-part {
+    padding-top: 34px
+}
+
+.slpPart05 .shoppers-part .p01 {
+    text-align: center;
+    color: #2a0305;
+    font-size: 30px
+}
+
+.slpPart05 .shoppers-part .hr {
+    margin: 40px auto 50px;
+    width: 124px;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-bottom: 1px solid #858584
+}
+
+.slpPart05 .shoppers-part .ul-list li {
+    position: relative;
+    z-index: 0;
+    margin-right: 60px;
+    float: left;
+    width: 400px;
+    height: 400px;
+    text-align: center
+}
+
+.slpPart05 .shoppers-part .ul-list li.last-li {
+    margin-right: 0
+}
+
+.slpPart05 .shoppers-part .ul-list .img-box {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 0;
+    overflow: hidden
+}
+
+.slpPart05 .shoppers-part .ul-list img {
+    width: 100%
+}
+
+.slpPart05 .shoppers-part .ul-list .co {
+    position: relative;
+    z-index: 4
+}
+
+.slpPart05 .shoppers-part .ul-list .ti {
+    margin-bottom: 20px;
+    padding-top: 156px;
+    color: #000;
+    font-size: 30px;
+    font-weight: 700
+}
+
+.slpPart05 .shoppers-part .ul-list .txt {
+    margin-bottom: 36px;
+    line-height: 24px;
+    color: #000;
+    font-size: 14px
+}
+
+.slpPart05 .shoppers-part .ul-list .tt {
+    color: #7a584c;
+    font-size: 18px
+}
+
+.slpPart05 .shoppers-part .link-a {
+    margin: 48px auto 0;
+    display: block;
+    width: 240px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    background: #7a584c;
+    border-radius: 3px;
+    vertical-align: middle
+}
+
+.slpPart05-middleSwiper {
+    margin: 0 20px;
+    float: left;
+    width: 480px;
+    height: 400px
+}
+
+.slpPart06 {
+    height: 1095px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/temp/part06_bg01.jpg) center 0 no-repeat
+}
+
+.slpPart06.other-page {
+    height: 916px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/temp/part06_bg01.jpg) center -179px no-repeat
+}
+
+.slpPart06.other-page .p03 {
+    height: 122px
+}
+
+.slpPart06 .con-main {
+    position: relative;
+    height: 100%
+}
+
+.slpPart06 .p01 {
+    margin-bottom: 66px;
+    line-height: 34px;
+    text-align: center;
+    padding: 125px 0 40px;
+    color: #000;
+    font-size: 18px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/icon/ic_arrowDown.png) center bottom no-repeat
+}
+
+.slpPart06 .p02 {
+    margin: 0 auto;
+    width: 520px
+}
+
+.slpPart06 .p03 {
+    margin: 0 auto 66px;
+    height: 301px
+}
+
+.slpPart06 .p02 .ti {
+    margin-bottom: 20px;
+    color: #000;
+    font-size: 24px;
+    font-weight: 700
+}
+
+.slpPart06 .p02 .txt {
+    margin-bottom: 30px;
+    color: #000;
+    font-size: 18px
+}
+
+.slpPart06 .p02 .link-a {
+    margin-top: 30px;
+    display: inline-block;
+    line-height: 26px;
+    padding-left: 18px;
+    color: #b47455;
+    font-size: 18px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/icon/ic_arrowRight.png) 0 center no-repeat
+}
+
+.slpPart06 .txt-link {
+    position: absolute;
+    bottom: 116px;
+    left: 136px;
+    display: inline-block;
+    line-height: 478px;
+    text-align: center;
+    color: #7a584c;
+    font-size: 24px;
+    overflow: hidden
+}
+
+.slpPart06 .txt-link01 {
+    left: 66px;
+    width: 250px;
+    height: 256px
+}
+
+.slpPart06 .txt-link02 {
+    left: 472px;
+    width: 370px;
+    height: 256px
+}
+
+.slpPart06 .txt-link03 {
+    left: 980px;
+    width: 270px;
+    height: 256px
+}
+
+.storeSelect-box .c-select {
+    margin-right: 16px;
+    display: inline-block;
+    width: 168px;
+    height: 60px;
+    line-height: 24px;
+    padding: 18px;
+    color: #000;
+    font-size: 18px;
+    border: 0;
+    border-radius: 3px;
+    vertical-align: middle
+}
+
+.storeSelect-box .a01 {
+    display: inline-block;
+    width: 130px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    background: #7a584c;
+    border-radius: 3px;
+    vertical-align: middle
+}
+
+.slpPart07 {
+    display: none;
+    height: 1090px;
+    background: #dfd9d3
+}
+
+.slpPart07 .storeSelect-box {
+    margin: 0 auto;
+    width: 516px;
+    padding: 120px 0 55px
+}
+
+.bdmap-part {
+    width: 1276px;
+    height: 726px;
+    padding: 22px;
+    background: #fff
+}
+
+.bdmap-part .bdmap-box {
+    float: left;
+    width: 866px;
+    height: 726px
+}
+
+.bdmap-part .bdmap-box .storeMap {
+    height: 100%
+}
+
+.bdmap-part .co {
+    margin-left: 912px
+}
+
+.bdmap-part .co .p01 {
+    margin-bottom: 16px;
+    padding: 32px 0 0;
+    color: #2a0305;
+    font-size: 18px
+}
+
+.bdmap-part .co .p02 {
+    margin-bottom: 24px;
+    text-align: right
+}
+
+.bdmap-part .co .p02 a {
+    color: #b47455;
+    font-size: 18px
+}
+
+.bdmap-part .ul-list .ti {
+    margin-bottom: 8px;
+    line-height: 24px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.bdmap-part .ul-list .address-con {
+    line-height: 24px;
+    color: #000;
+    font-size: 12px
+}
+
+.bdmap-part .list-wrap {
+    height: 620px;
+    overflow-y: auto
+}
+
+.bdmap-part .ul-list li {
+    position: relative;
+    padding-bottom: 50px
+}
+
+.bdmap-part .ul-list .a01 {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: inline-block;
+    width: 160px;
+    height: 50px;
+    line-height: 48px;
+    text-align: center;
+    color: #000;
+    font-size: 18px;
+    border: 1px solid #000
+}
+
+.bdmap-part .bdmap-box .BMap_bubble_content {
+    line-height: 20px;
+    font-size: 12px
+}
+
+.bdmap-part .bdmap-box .BMap_bubble_content h1 {
+    margin-bottom: 8px;
+    font-size: 14px
+}
+
+.activePop .customLayer-setwin {
+    top: 52px;
+    right: 56px
+}
+
+.activePop .customLayer-setwin .customLayer-close {
+    width: 70px;
+    height: 70px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/icon/ic_close.png) no-repeat
+}
+
+.activePop-con {
+    position: relative;
+    display: none;
+    width: 866px;
+    height: 553px;
+    background: url(//res.darryring.com/activity/drSEM_storeLandingPage/temp/part07_popBg01.jpg) no-repeat
+}
+
+.activePop-con .p01 {
+    margin-bottom: 30px;
+    text-align: center;
+    padding-top: 92px;
+    color: #141414;
+    font-size: 40px
+}
+
+.activePop-con .p02 {
+    line-height: 48px;
+    padding: 0 80px;
+    color: #141414;
+    font-size: 24px
+}
+
+.activePop-con .p03 {
+    position: absolute;
+    right: 72px;
+    bottom: 96px;
+    color: #401f14;
+    font-size: 24px
+}
+
+@-webkit-keyframes slideInRight {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        visibility: visible
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+        visibility: visible
+    }
+    100% {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0)
+    }
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.slideInRight {
+    -webkit-animation-name: slideInRight;
+    animation-name: slideInRight
+}

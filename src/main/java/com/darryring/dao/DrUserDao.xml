@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.darryring.dao.DrUserDao">
+    <!--注册账号-->
+    <insert id="insertUser">
+        insert into dr_user(phone,password)value(#{phone},#{password})
+    </insert>
+
+    <!--根据手机号码和密码登录-->
+    <select id="findByNamePw" resultType="DrUser">
+        SELECT * FROM dr_user WHERE phone=#{phone} and password=#{password}
+    </select>
+
+    <!--个人中心修改资料-->
+    <update id="updateUser">
+        UPDATE `darryring`.`dr_user` SET `userName` = #{userName} , `loginName` = #{loginName} , `password` = #{password} ,
+        `sex` = #{sex} ,`identityCode` = #{identityCode} , `email` = #{email} ,`touRoute` = #{touRoute},`loveWord` = #{loveWord} where`userId` = #{userId}
+    </update>
+
+    <!--根据用户ID查用户-->
+    <select id="findAll" resultType="druser">
+        select * from dr_user where userId=#{userId}
+    </select>
+
+    <!--根据手机号码判定用户是否存在-->
+    <select id="findUserByPhone">
+        select * from dr_user where phone=#{phone}
+    </select>
+
+</mapper>

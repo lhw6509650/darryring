@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.darryring.dao.Dr_shopcarMapper">
+    <resultMap id="shopcar" type="Dr_shopcar">
+        <id column="shcaid" property="shcaid"/>
+        <association property="dr_product" javaType="Dr_product"/>
+        <association property="user" javaType="DrUser"/>
+    </resultMap>
+
+
+    <select id="selProById" resultMap="shopcar">
+        select * from dr_shopcar s,dr_user u where s.uid = u.userId and s.uid = #{uid}
+    </select>
+    <insert id="addPro">
+        insert into dr_shopcar(pid,uid,xtotal,num) values(#{pid},#{uid},#{xtotal},#{num})
+    </insert>
+    <delete id="delPro">
+        delete from dr_shopcar where uid = #{uid} and pid = #{pid}
+    </delete>
+</mapper>

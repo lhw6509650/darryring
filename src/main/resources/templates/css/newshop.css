@@ -1,0 +1,1273 @@
+.marBot10 {
+    margin-bottom: 10px
+}
+
+.martop10 {
+    margin-top: 10px
+}
+
+.inlineBlock {
+    display: inline-block
+}
+
+.shopBanner {
+    position: relative;
+    height: 540px;
+    overflow: hidden
+}
+
+.shopBanPics {
+    position: relative;
+    height: 100%
+}
+
+.shopBanPics li {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.shopServer {
+    width: 100%;
+    margin: 50px auto 46px
+}
+
+.shopServerDic {
+    float: left;
+    width: 167px;
+    height: 88px;
+    padding-left: 89px;
+    background: url(//res.darryring.com/webimg/shop/serverIcon.png) no-repeat;
+    margin-top: 16px;
+    margin-left: 16px
+}
+
+.shopServerDic h3 {
+    line-height: 16px;
+    margin-top: 22px;
+    font-size: 16px;
+    color: #505050;
+    margin-bottom: 10px
+}
+
+.shopServerDic p {
+    font-size: 13px;
+    line-height: 20px;
+    color: #a98f83
+}
+
+.shopzjsd {
+    background-position: 25px 24px
+}
+
+.shopgzzd {
+    background-position: 25px -124px
+}
+
+.shopzjby {
+    background-position: 25px -258px
+}
+
+.shopzjsj {
+    background-position: 25px -383px
+}
+
+.shopServerOrder {
+    background: #b89983;
+    float: left;
+    width: 251px;
+    height: 110px;
+    text-align: center;
+    cursor: pointer;
+    transition: background .3s;
+    -moz-transition: background .3s;
+    -webkit-transition: background .3s;
+    -o-transition: background .3s
+}
+
+.shopServerOrder.activate {
+    background: #a88f82
+}
+
+.shopServerOrder h3 {
+    font-size: 21px;
+    color: #fff;
+    height: 26px;
+    line-height: 26px;
+    padding-top: 18px
+}
+
+.shopServerOrder p {
+    height: 28px;
+    font-size: 16px;
+    color: #fff;
+    line-height: 28px
+}
+
+.shopso_hr {
+    height: 1px;
+    width: 55px;
+    margin: 8px auto 4px;
+    border-bottom: 1px solid #fff
+}
+
+.shopSearch {
+    padding: 0 108px;
+    background: #f8f8f8;
+    height: 70px;
+    line-height: 70px
+}
+
+.shopSearch_left {
+    font-size: 0
+}
+
+.shopSearch_left a, .shopSearch_left span {
+    vertical-align: middle;
+    font-size: 14px;
+    color: #666
+}
+
+.shopSearch_left a {
+    color: #b89983;
+    margin-right: 18px
+}
+
+.shopSearch_left a i {
+    color: #999
+}
+
+.shopSearch_right {
+    position: relative;
+    z-index: 2
+}
+
+.shopSearch_right input {
+    border: 1px solid #e6e6e6;
+    padding: 5px 0 5px 8px;
+    width: 300px;
+    border-radius: 3px;
+    vertical-align: middle
+}
+
+.shopSearch_Bottom {
+    display: none;
+    position: absolute;
+    top: 51px;
+    left: 0;
+    width: 312px;
+    background: #fff;
+    font-family: simsun;
+    box-shadow: 0 2px 2px 1px #e0e0e0
+}
+
+.shopSearch_title {
+    font-size: 0;
+    margin-top: 1px;
+    line-height: 26px
+}
+
+.shopSearch_href {
+    font-size: 0;
+    padding: 12px 18px;
+    line-height: 22px
+}
+
+.shopSearch_same {
+    display: none
+}
+
+.shopSearch_href a {
+    display: inline-block;
+    width: 50px;
+    font-size: 12px;
+    color: #666;
+    margin-right: 18px
+}
+
+.shopSearch_href a:hover {
+    color: #e99277
+}
+
+.shopSearch_title a {
+    display: inline-block;
+    width: 76px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    background: #e6e6e6;
+    font-size: 14px;
+    color: #c57d5c;
+    margin-left: 1px
+}
+
+.shopSearch .searchBtn {
+    height: 22px;
+    line-height: 22px;
+    padding: 2px 20px;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    background: #a98f83;
+    border-radius: 3px
+}
+
+.shopListMain {
+    margin-top: 44px;
+    background: #f8f8f8;
+    padding: 56px 108px 50px
+}
+
+.shopListSame {
+    margin-bottom: 72px;
+    text-align: center
+}
+
+.shopListTitle {
+    background: url(//res.darryring.com/webimg/shop/titleLine.png) no-repeat center bottom;
+    font-size: 34px;
+    color: #757575;
+    text-align: center;
+    margin-bottom: 12px;
+    padding-bottom: 12px
+}
+
+.shopList {
+    margin-left: -20px
+}
+
+.shopInfo {
+    float: left;
+    width: 368px;
+    height: 510px;
+    margin-left: 20px;
+    text-align: center;
+    background: #fff;
+    margin-bottom: 18px
+}
+
+.shopInfo h4 {
+    height: 34px;
+    line-height: 34px;
+    font-size: 20px;
+    position: relative;
+    color: #8b766c
+}
+
+.shopInfo h4 a {
+    color: #c77a61
+}
+
+.shopInfo h4 a:hover {
+    color: #e99277
+}
+
+.shopInfo h4 .openSoon {
+    line-height: 36px;
+    background: url(//res.darryring.com/webimg/shop/toopen.png) no-repeat left center;
+    font-size: 12px;
+    color: #c67c59;
+    padding-left: 26px;
+    right: 0;
+    top: 2px
+}
+
+.shopInfo .nomg {
+    margin: 0 auto
+}
+
+.shopInfo .shop_adress, .shopInfo p {
+    line-height: 26px;
+    color: #757575;
+    font-size: 14px;
+    width: 306px;
+    margin: 0 auto 20px
+}
+
+.shopInfo .shop_adress {
+    margin: 8px auto 40px
+}
+
+.showMapBtn {
+    display: inline-block;
+    width: 16px;
+    height: 20px;
+    margin-right: 4px;
+    background: url(//res.darryring.com/webimg/shop/smallAdress.png) no-repeat;
+    vertical-align: middle
+}
+
+.shopInfo .shop_time {
+    background: url(//res.darryring.com/webimg/shop/icon_time.png) no-repeat left center;
+    padding-left: 24px
+}
+
+.shopInfo .shop_phone {
+    background: url(//res.darryring.com/webimg/shop/icon_phone.png) no-repeat left center;
+    padding-left: 16px
+}
+
+.shopInfo .shop_adress a, .shopInfo p a {
+    color: #757575
+}
+
+.shopInfo h4 a, .shopInfo h4 i {
+    vertical-align: middle
+}
+
+.shopInfo_top {
+    position: relative
+}
+
+.shopInfo_top img {
+    width: 341px;
+    border: 13px solid #fff
+}
+
+.shopInfo_top .hrefLink {
+    position: absolute;
+    opacity: .01;
+    filter: alpha(opacity=.01);
+    background: #fff;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4
+}
+
+.shopInfo:hover .shopInfo_top {
+    animation: FadeIn 1s linear forwards;
+    -webkit-animation: FadeIn 1s linear forwards;
+    -moz-animation: FadeIn 1s linear forwards;
+    -ms-animation: FadeIn 1s linear forwards;
+    -o-animation: FadeIn 1s linear forwards
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .5
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-moz-keyframes FadeIn {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .5
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes FadeIn {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .5
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-ms-keyframes FadeIn {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .5
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@-o-keyframes FadeIn {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .5
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+.shopInfo:hover div a, .shopInfo:hover p, .shopInfo:hover p a {
+    color: #8b766c
+}
+
+.openBottom h3 {
+    font-size: 24px;
+    color: #9b745c;
+    border-bottom: 1px solid #9b745c;
+    padding-bottom: 14px;
+    margin-bottom: 12px
+}
+
+.openWord {
+    font-size: 0
+}
+
+.openWord i, .openWord span {
+    font-size: 14px;
+    vertical-align: middle
+}
+
+.openWord i {
+    color: #9b745c
+}
+
+.openWord span {
+    color: #888
+}
+
+.openWord_sec {
+    margin-right: 6px
+}
+
+.openWord_sec i {
+    display: inline-block;
+    height: 20px;
+    padding: 0 4px;
+    color: #fff;
+    background: #9b745c;
+    line-height: 20px;
+    margin: 0 4px
+}
+
+.shopBanLeft {
+    width: 680px;
+    height: 510px
+}
+
+.shopBanLeft img {
+    width: 680px;
+    height: 510px
+}
+
+.shopBanRight {
+    background: url(//res.darryring.com/webimg/shop/bkother.png) no-repeat;
+    width: 304px;
+    height: 510px;
+    text-align: center
+}
+
+.shopBanRight .openBottom {
+    width: 280px;
+    margin: 30px auto 0
+}
+
+.shopBanRight .openWord p {
+    margin-bottom: 6px
+}
+
+.shopBanRight .shopDetail_same {
+    padding: 0 38px
+}
+
+.shopDetail_same a {
+    color: #8b766c;
+    margin: 0 4px
+}
+
+.shopmentImg, .shopmentImg img {
+    width: 628px;
+    height: 482px
+}
+
+.openWord_first {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    background: #f1f0f0;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #888
+}
+
+.openWord_first i {
+    font-weight: 700;
+    color: #9b745c
+}
+
+.SendshopTips .shopment {
+    padding: 62px 0 50px;
+    width: 260px
+}
+
+.SendshopTips h4 {
+    text-align: center;
+    font-size: 24px;
+    color: #c57d5c;
+    margin-bottom: 46px
+}
+
+.SendshopTips .shopment_phone .w230 {
+    width: 174px
+}
+
+.shopmenMap {
+    width: 890px;
+    height: 620px;
+    margin: 50px auto 62px
+}
+
+.store_information {
+    font-family: simsun
+}
+
+.shopTips .nov_hr {
+    border-color: #ca8565
+}
+
+.shopOrderTips {
+    color: #999;
+    font: 12px/20px "microsoft yahei";
+    text-align: center;
+    padding: 10px 0
+}
+
+.shopOrderTips a {
+    height: 100%;
+    width: auto;
+    margin-left: 4px
+}
+
+.shopOrderTips a img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle
+}
+
+.orderTimeTips {
+    font: 12px/2em "microsoft yahei";
+    color: red;
+    text-align: center;
+    padding-top: 5px;
+    height: 24px
+}
+
+div.SendResultTips {
+    padding: 15px
+}
+
+.SendResultTips .shopment h4 {
+    background: url(//res.darryring.com/webimg/ringbuy/dagou.png) no-repeat left center;
+    display: inline-block;
+    height: 34px;
+    line-height: 34px;
+    padding-left: 44px;
+    font-size: 22px;
+    color: #c67c59;
+    margin: 30px 0 10px;
+    font-weight: 700
+}
+
+.orderTimeTips_tc {
+    width: 300px;
+    margin-left: -150px;
+    text-align: center;
+    border-radius: 4px;
+    top: 40%
+}
+
+.orderTimeTips_tc p {
+    font: 14px/2em "microsoft yahei";
+    color: #333;
+    margin-top: 50px
+}
+
+.orderTimeTips_tc .btn {
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    background: #c57d5c;
+    font: 14px/30px "microsoft yahei";
+    color: #fff;
+    border-radius: 4px;
+    margin: 15px auto
+}
+
+.shopDetail_same {
+    padding: 0 60px;
+    margin-top: 26px
+}
+
+.shopDetail_same strong {
+    color: #666;
+    display: inline-block;
+    padding-left: 20px;
+    line-height: 20px
+}
+
+.shopDetail_same p {
+    font-size: 12px;
+    color: #888;
+    line-height: 20px
+}
+
+.shopDetail_same p a {
+    color: #888
+}
+
+.shopDetail_same .nov_hr {
+    border-bottom: 1px solid #bfbfbf;
+    width: 36px;
+    height: 1px;
+    margin: 5px auto
+}
+
+.shopDetail_adress strong {
+    background: url(//res.darryring.com/webimg/shop/shopadress.png) no-repeat left center;
+    cursor: pointer
+}
+
+.shopDetail_time strong {
+    background: url(//res.darryring.com/webimg/shop/shoptime.png) no-repeat left center
+}
+
+.shopDetail_phone strong {
+    background: url(//res.darryring.com/webimg/shop/shopphone.png) no-repeat left center
+}
+
+.shopmentAll {
+    padding-top: 30px
+}
+
+.shopmentLeft {
+    position: relative;
+    width: 732px;
+    height: 482px;
+    background: #fafafa
+}
+
+.shopmentLeft .shopment {
+    height: auto
+}
+
+.shopmentBk {
+    background: #fafafa;
+    padding: 0 44px
+}
+
+.shopment {
+    padding-top: 75px;
+    width: 310px;
+    margin: 0 auto
+}
+
+.shopment_same {
+    margin-top: 17px
+}
+
+.shopment_same {
+    font-size: 0
+}
+
+.shopment_same em, .shopment_same i, .shopment_same input, .shopment_same select, .shopment_same span, .shopment_same strong {
+    font-size: 12px;
+    color: #666;
+    vertical-align: middle;
+    font-weight: 100
+}
+
+.shopment_same input, .shopment_third textarea {
+    padding: 8px 0 8px 8px;
+    border: 1px solid #ccc
+}
+
+.shopment_same select {
+    position: absolute;
+    opacity: .01;
+    filter: Alpha(Opacity=.01);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0
+}
+
+.shopment_same p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px
+}
+
+.shopment_same span {
+    display: inline-block;
+    position: relative;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: url(//res.darryring.com/webimg/shop/select.png) no-repeat 92% center;
+    background-size: 10px auto
+}
+
+.shopment_same em {
+    display: inline-block;
+    width: 139px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 8px
+}
+
+.shopment_first {
+    font-size: 0;
+    position: relative
+}
+
+.shopment_first i, .shopment_first span, .shopment_first strong {
+    font-size: 12px;
+    color: #666;
+    vertical-align: middle;
+    font-weight: 100
+}
+
+.shopment_first i, .shopment_first strong {
+    color: #bf967c
+}
+
+.shopment_first .shopmentWrite {
+    position: absolute;
+    text-decoration: underline;
+    right: 0;
+    top: 0;
+    cursor: pointer
+}
+
+.shopment_choose {
+    display: none
+}
+
+.shopment_choose select {
+    width: 80px;
+    padding: 4px 0;
+    margin-left: 4px;
+    border-color: #e6e6e6
+}
+
+.shopment_choose .w140 {
+    width: 140px
+}
+
+.shopment_choose select:first-child {
+    margin-left: 0
+}
+
+.shopment_sec input {
+    width: 140px;
+    margin-right: 10px;
+    background: url(//res.darryring.com/webimg/shop/calendar.png) 126px center no-repeat
+}
+
+.shopment_sec span {
+    width: 147px
+}
+
+.shopment_third {
+    position: relative
+}
+
+.shopment_third input {
+    width: 300px
+}
+
+.shopment_third textarea {
+    width: 302px;
+    outline: 0;
+    resize: none;
+    height: 66px
+}
+
+.shopment_third .check_way {
+    margin-bottom: 10px
+}
+
+.shopment_third .check_way i {
+    display: inline-block;
+    vertical-align: middle;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #e6e6e6;
+    background: #fff;
+    width: 68px;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border-radius: 3px;
+    cursor: pointer
+}
+
+.shopment_third .check_way .theway_click {
+    border: 1px solid #c57d5d;
+    background: url(//res.darryring.com/webimg/ringbuy/right.png) #fff no-repeat right bottom
+}
+
+.shopment_same strong {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #bf967c
+}
+
+.shopment_five {
+    text-align: center;
+    position: relative
+}
+
+.shopment_five i {
+    display: inline-block;
+    margin-top: 13px;
+    color: #999;
+    cursor: pointer
+}
+
+.shopment_phone {
+    text-align: left
+}
+
+.shopment_five input {
+    width: 300px
+}
+
+.AreaCode {
+    display: none;
+    width: 64px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    position: relative;
+    height: 30px;
+    line-height: 30px
+}
+
+.AreaCode input {
+    width: 34px;
+    border: none;
+    box-shadow: none;
+    background: 0 0;
+    position: absolute;
+    right: 0;
+    top: 0
+}
+
+.shopment .vcode-inp {
+    margin-right: 10px;
+    width: 140px
+}
+
+.shopment .btn01 {
+    display: inline-block;
+    width: 147px;
+    height: 31px;
+    line-height: 31px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    background: #c57d5c;
+    border: 1px solid #c57d5c;
+    border-radius: 4px
+}
+
+.shopment .btn01.disabled {
+    color: #676767;
+    background: #e2dddb;
+    border-color: #e2dddb;
+    cursor: not-allowed
+}
+
+.AreaCode_unit {
+    position: absolute;
+    height: 30px;
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    left: 0;
+    top: 0
+}
+
+.shopment_Email {
+    display: none
+}
+
+.Alldemand {
+    display: none;
+    margin-top: 25px
+}
+
+.Alldemand .shopment_same {
+    display: none
+}
+
+.moredemand {
+    text-align: center
+}
+
+.moredemand span {
+    display: inline-block;
+    background: url(//res.darryring.com/webimg/shop/arrow_bottom.png) no-repeat right center;
+    background-size: 8px auto;
+    padding-right: 14px
+}
+
+.moredemand a, .moredemand span {
+    font-size: 12px;
+    color: #999;
+    cursor: pointer
+}
+
+.demandToshow .shopment_same {
+    display: block
+}
+
+.demandToshow .moredemand span {
+    background: url(//res.darryring.com/webimg/shop/arrow_top.png) no-repeat right center;
+    background-size: 14px auto;
+    padding-right: 18px
+}
+
+.shopButton {
+    display: block;
+    margin: 10px auto 0;
+    background: #a98f83;
+    color: #fff;
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+    width: 200px;
+    text-align: center
+}
+
+.shopButton:hover {
+    background: #8b766c
+}
+
+.shopAppoment .shopment_sec input, .shopmentAll .shopment_sec input {
+    width: 300px;
+    margin-right: 0;
+    background-position: 96% center
+}
+
+.shopAppoment .shopment_sec span, .shopmentAll .shopment_sec span {
+    display: none
+}
+
+.shopAppoment .shopment {
+    margin-left: 86px
+}
+
+.shopAppoment .Popup_close {
+    right: 14px;
+    top: 14px
+}
+
+.shopDescribeInfo {
+    font-size: 14px;
+    color: #888;
+    line-height: 32px;
+    margin-top: 40px
+}
+
+.shopDescribeInfo img {
+    max-width: 100%
+}
+
+.shop_sameCity {
+    position: absolute;
+    width: 100%;
+    height: 63px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    border-top: 1px solid #e0e0e0;
+    background: #f1f0f0;
+    padding-top: 16px;
+    padding-left: 18px
+}
+
+.shop_sameCity div.fl {
+    width: 298px;
+    margin-left: 4px;
+    font-size: 0;
+    text-align: center
+}
+
+.shop_sameCity a, .shop_sameCity span {
+    font-size: 12px;
+    color: #666;
+    display: inline-block
+}
+
+.shop_sameCity span {
+    margin-top: 1px
+}
+
+.shop_sameCity a {
+    color: #9b745c;
+    margin-right: 16px;
+    margin-bottom: 10px
+}
+
+.drfans_list {
+    padding: 0;
+    margin-left: -14px;
+    margin-top: 26px
+}
+
+.drfans_list li {
+    width: 480px;
+    margin-left: 22px
+}
+
+.dr_samesellersMain {
+    margin-top: 66px
+}
+
+.dr_samesellers-ring li {
+    width: 236px;
+    height: 330px;
+    margin-left: 11px
+}
+
+.dr_samesellers-ring li img {
+    width: 236px;
+    height: 236px
+}
+
+.dr_samesellers-word {
+    bottom: 28px
+}
+
+.dr_samesellers-word p {
+    font-size: 12px;
+    color: #666
+}
+
+.shopmentSpecial .shopmentImg {
+    width: 585px;
+    height: 449px;
+    overflow: hidden
+}
+
+.shopmentSpecial .shopmentImg img {
+    width: 100%
+}
+
+.shopmentSpecial .shopmentLeft {
+    width: 398px;
+    height: 449px
+}
+
+.shopmentSpecial .shopment {
+    padding-top: 62px
+}
+
+.subjectShop {
+    background: #e6ecf4;
+    padding: 50px 0
+}
+
+.subjectshopment {
+    width: 1000px;
+    margin: 0 auto
+}
+
+.subjectShop_title {
+    font-family: simsun;
+    text-align: center;
+    margin-bottom: 30px
+}
+
+.subjectShop_title h3 {
+    font-size: 30px;
+    color: #0e050a
+}
+
+.subjectShop_title .nov_hr {
+    width: 60px;
+    height: 1px;
+    margin: 20px auto 10px;
+    border-bottom: 1px solid #666
+}
+
+.subjectShop_title p {
+    font-size: 18px;
+    color: #333
+}
+
+.moreShop {
+    text-align: right;
+    margin-bottom: 14px
+}
+
+.moreShop a {
+    font-size: 13px;
+    color: #777
+}
+
+.subjectshopment .shopment_choose {
+    display: block;
+    margin-left: -9px
+}
+
+.subjectshopment .Alldemand {
+    display: none
+}
+
+.subjectshopment .shopmenMap {
+    width: 575px;
+    height: 450px;
+    margin: 0 auto
+}
+
+.subjectshopment .shopmentLeft {
+    width: 424px;
+    height: 450px
+}
+
+.subjectshopment .shopmentBk {
+    background: #f1f5f8;
+    height: 450px;
+    width: 340px
+}
+
+.subjectshopment .shopment_choose p {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 10px;
+    padding-left: 9px
+}
+
+.subjectshopment .shopment_choose em {
+    color: #c67c59;
+    margin-left: 6px
+}
+
+.subjectshopment .shopment_choose select {
+    margin-left: 9px;
+    width: 150px
+}
+
+.subjectshopment .shopment {
+    height: auto;
+    padding: 50px 0
+}
+
+.subjectshopment .shopButton {
+    margin: 30px auto 0
+}
+
+.shopTipsMain {
+    width: 490px;
+    height: 340px;
+    padding: 15px;
+    padding-bottom: 20px;
+    margin-top: 10%
+}
+
+.shopTipBorder {
+    height: 100%;
+    border: 2px solid #5e5d62;
+    margin-bottom: 5px
+}
+
+.shopTipBorder .closeTips {
+    top: 20px;
+    right: 20px
+}
+
+.shopTipBorder img {
+    margin-top: 44px
+}
+
+.shopTipBorder h6 {
+    padding-top: 0;
+    background: url(//res.darryring.com/webimg/shop/ico-success.png) no-repeat 122px 20px;
+    font-family: "瀹嬩綋";
+    font-weight: 700;
+    text-indent: 35px
+}
+
+.shopTipBorder .yuyueDetail {
+    margin-bottom: 8px;
+    color: #9b745c;
+    line-height: 22px
+}
+
+.shopTipBorder .yuyueDetail label {
+    font-weight: 700
+}
+
+.shopTipBorder p.open {
+    height: auto;
+    line-height: 20px
+}
+
+.yuyue_repeat {
+    line-height: 25px;
+    display: none
+}
+
+.yuyue_repeat h6 {
+    background: 0 0;
+    text-indent: 0
+}
+
+.shopBanNav {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 1000px;
+    margin-left: -500px;
+    z-index: 1;
+    text-align: center;
+    font-size: 0
+}
+
+.shopBanNav li {
+    width: 249px;
+    height: 28px;
+    line-height: 30px;
+    border-right: 1px solid #fff;
+    opacity: .5;
+    background: #000;
+    opacity: .2;
+    filter: Alpha(Opacity=20);
+    display: inline-block;
+    zoom: 1
+}
+
+.shopBanNav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 14px
+}
+
+.shopBanNav .select, .shopBanNav li:hover {
+    background: #444;
+    opacity: .7;
+    filter: Alpha(Opacity=70)
+}
+
+.shopBanNav li.last {
+    width: 250px;
+    border-right: none
+}

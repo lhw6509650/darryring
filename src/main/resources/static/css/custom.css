@@ -1,0 +1,709 @@
+.wordTitle {
+    text-align: center;
+    padding-top: 50px
+}
+
+.wordTitle h3 {
+    font-size: 28px;
+    color: #4d3a33
+}
+
+.wordTitle h4 {
+    font-size: 24px;
+    color: #4d3a33
+}
+
+.wordTitle p {
+    font-size: 18px;
+    color: #606060;
+    line-height: 22px
+}
+
+.wordTitle .nov_hr {
+    border-bottom: 1px solid #4d3b31;
+    width: 38px;
+    margin: 37px auto 0
+}
+
+.customFirst {
+    background: url(//res.darryring.com/webimg/cusotom/banner.jpg) no-repeat center;
+    height: 540px;
+    position: relative
+}
+
+.customFirst .wordTitle {
+    position: absolute;
+    padding: 0;
+    width: 272px;
+    top: 232px;
+    right: 192px
+}
+
+.customFirst .nov_hr {
+    width: 21px;
+    border-bottom: 2px solid #4d3b31;
+    margin: 30px auto 0
+}
+
+.customTips {
+    background: #f8f8f8;
+    padding-bottom: 52px;
+    margin-top: 34px
+}
+
+.customTips_list {
+    text-align: center;
+    font-size: 0;
+    margin-top: 46px
+}
+
+.customTips_list li {
+    display: inline-block;
+    text-align: center;
+    width: 343px;
+    height: 394px;
+    margin: 0 35px;
+    background: #fff
+}
+
+.customTips_list .wordTitle {
+    padding-top: 66px
+}
+
+.customTips_list .wordTitle h5 {
+    font-family: arial;
+    font-size: 19px;
+    color: #a09087;
+    margin-bottom: 4px
+}
+
+.customTips_list .wordTitle p {
+    font-size: 15px;
+    color: #656565
+}
+
+.customTips_list .nov_hr {
+    width: 37px;
+    border-color: #b1b0b2;
+    margin: 28px auto 0
+}
+
+.customSec {
+    background: #f4f4f4;
+    margin-top: 34px
+}
+
+.customSec .w1200 {
+    position: relative
+}
+
+.page-main {
+    position: relative;
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto
+}
+
+.pageHead {
+    text-align: left;
+    padding-top: 56px
+}
+
+.pageHead i {
+    font-size: 34px;
+    color: #4d3a33;
+    font-style: italic;
+    margin-right: 14px
+}
+
+.pageHead span {
+    font-size: 22px;
+    color: #4d3a33
+}
+
+.ringLink {
+    display: block;
+    position: absolute;
+    bottom: 90px;
+    left: 200px;
+    width: 300px;
+    height: 326px
+}
+
+.ringImg {
+    position: absolute;
+    bottom: 251px;
+    left: 388px
+}
+
+.try-bor {
+    height: 710px
+}
+
+.try-left {
+    position: absolute;
+    background: #fff;
+    width: 576px;
+    height: 584px;
+    left: 0;
+    top: 120px
+}
+
+.try-hand-show2, .try-hand-show3 {
+    width: 276px;
+    height: 584px
+}
+
+.try-hand-full, .try-hand-slim {
+    position: relative
+}
+
+.try-hand-slim {
+    margin-left: 140px;
+    margin-top: 29px
+}
+
+.tryRingShow {
+    position: absolute;
+    top: 206px;
+    left: 33px;
+    cursor: pointer
+}
+
+.try-hand-desc {
+    position: absolute;
+    bottom: 26px;
+    right: 20px
+}
+
+.try-hand-desc p {
+    font-family: simsun;
+    font-size: 12px;
+    color: #60646a;
+    text-align: center;
+    line-height: 20px
+}
+
+.try-hand-full {
+    display: none;
+    left: 10px;
+    margin-left: 120px;
+    margin-top: 25px
+}
+
+.fullImg {
+    margin: 54px 0 0 5px
+}
+
+.try-hand-full .tryRingShow {
+    top: 240px;
+    left: 47px
+}
+
+.change-hand {
+    width: 206px;
+    margin: 16px 0 8px 170px;
+    font-size: 0
+}
+
+.change-hand a {
+    display: inline-block;
+    width: 102px;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 26px;
+    background: #aa8e83;
+    border-left: 2px solid #fff
+}
+
+.change-hand a.activate {
+    background: #8a766b
+}
+
+.change-hand a:first-child {
+    border: none
+}
+
+.tryRingInfo {
+    display: none;
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    line-height: 26px
+}
+
+.tryRingList {
+    position: relative;
+    width: 600px;
+    margin-top: 30px
+}
+
+.tryRingSame {
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    width: 600px;
+    height: 584px
+}
+
+.tryRingSame li {
+    display: none;
+    float: left;
+    background: #fff;
+    border: 1px solid #fff;
+    margin-left: 22px;
+    margin-bottom: 28px;
+    width: 275px;
+    height: 275px;
+    text-align: center
+}
+
+.tryRingSame .thefirst {
+    display: block
+}
+
+.tryRingSame li.active {
+    background: #fff;
+    border: 1px solid #333
+}
+
+.tryRingSame img {
+    margin-top: 20px
+}
+
+.tryRingSmall {
+    position: absolute;
+    font-size: 0;
+    width: 578px;
+    text-align: center;
+    right: 0;
+    top: 590px
+}
+
+.tryRingSmall span {
+    display: inline-block;
+    background: url(//res.darryring.com/webimg/cusotom/dian.png) no-repeat;
+    width: 15px;
+    height: 15px;
+    background-position: 0 -15px;
+    margin: 0 6px;
+    cursor: pointer
+}
+
+.tryRingSmall span.active {
+    background-position: 0 0
+}
+
+.bigRingShow {
+    display: none;
+    position: absolute;
+    top: 190px;
+    left: 22px;
+    cursor: pointer
+}
+
+.try-hand-full .bigRingShow {
+    top: 210px;
+    left: 42px
+}
+
+.pageDesc {
+    display: none;
+    height: 50px;
+    text-align: center;
+    color: #9198a4;
+    font-size: 12px;
+    line-height: 40px
+}
+
+.bigDrillShow {
+    position: absolute;
+    width: 38px;
+    text-align: center;
+    font-size: 0
+}
+
+.bigDrillShow p {
+    color: #595c61;
+    font-size: 12px;
+    line-height: 22px;
+    text-align: center
+}
+
+.try-hand-slim .bigDrillShow {
+    bottom: 332px;
+    left: 51px
+}
+
+.try-hand-full .bigDrillShow {
+    bottom: 310px;
+    left: 64px
+}
+
+.cancel-btn {
+    position: absolute;
+    width: 578px;
+    right: 0;
+    top: 618px;
+    font-size: 0;
+    text-align: center
+}
+
+.cancel-btn .aboutWrong {
+    position: absolute;
+    width: 264px;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 44px;
+    border: 1px solid #ff7373;
+    background: url(//res.darryring.com/webimg/cusotom/wrong.png) no-repeat 14px center #fff2f2;
+    font-size: 14px;
+    color: #666;
+    left: 50%;
+    margin-left: -154px;
+    top: -50px;
+    text-align: left
+}
+
+.cancel-btn a {
+    display: inline-block;
+    padding: 0 12px;
+    height: 27px;
+    line-height: 27px;
+    background: #8b766c;
+    font-size: 13px;
+    color: #fff;
+    margin-left: 34px
+}
+
+.cancel-btn a:first-child, .page2 .cancel-btn a {
+    margin-left: 0
+}
+
+.picList li {
+    float: left;
+    width: 174px;
+    height: 275px;
+    background: #fff;
+    border: 1px solid #fff;
+    text-align: center;
+    margin-left: 22px;
+    margin-bottom: 24px
+}
+
+.picList li.active {
+    background: #fff;
+    border: 1px solid #333
+}
+
+.picList .pic {
+    width: 50px;
+    height: 50px;
+    margin: 102px auto 0
+}
+
+.picList .pic img {
+    margin-top: 10px
+}
+
+.picList span {
+    font-size: 12px;
+    color: #2b2b2b
+}
+
+.page3 .cancel-btn {
+    right: -2px;
+    top: 622px
+}
+
+.customSec .theTips {
+    position: absolute;
+    font-size: 12px;
+    color: #a3a3a3;
+    right: 0;
+    top: 90px
+}
+
+.bigDrillShow img, .tryRingShow {
+    display: none
+}
+
+.btn_arrow {
+    position: absolute;
+    cursor: pointer;
+    background: url(//res.darryring.com/webimg/star/arrow.png) no-repeat;
+    width: 36px;
+    height: 11px;
+    top: 402px
+}
+
+.theLeft {
+    background-position: 0 0
+}
+
+.theRight {
+    background-position: 0 -11px
+}
+
+.customSec .theLeft {
+    left: -50px
+}
+
+.customSec .theRight {
+    right: -50px
+}
+
+.customThird ul {
+    overflow: hidden;
+    padding: 34px 0
+}
+
+.customThird li {
+    float: left;
+    position: relative;
+    text-align: center;
+    margin-left: 18px
+}
+
+.customThird li img {
+    transition: transform .5s;
+    transform: translateZ(0);
+    z-index: 1
+}
+
+.customThird .wordTitle {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 0;
+    bottom: 96px
+}
+
+.customThird .wordTitle h3 {
+    font-size: 22px;
+    color: #4e3b34
+}
+
+.customThird .nov_hr {
+    width: 20px;
+    border-color: #2e2420;
+    margin: 18px auto 8px
+}
+
+.customThird .wordTitle p {
+    font-size: 14px;
+    color: #606060
+}
+
+.customThird .ggwImg {
+    width: 440px;
+    height: 609px;
+    overflow: hidden
+}
+
+.customThird li:hover img {
+    transform: scale(1.05)
+}
+
+.customThird li:first-child {
+    margin: 0
+}
+
+.customCort .hrefLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #fff;
+    opacity: .01;
+    filter: alpha(opacity=.01);
+    z-index: 3
+}
+
+.customThird li h3 {
+    font-size: 24px;
+    color: #60646a;
+    margin: 14px auto 12px
+}
+
+.customThird li p {
+    font-family: simsun;
+    font-size: 12px;
+    color: #60646a
+}
+
+.customFour {
+    background: #f1f1f1;
+    overflow: hidden
+}
+
+.customFour .wordTitle {
+    position: relative;
+    padding-bottom: 36px
+}
+
+.customFour .wordTitle p {
+    margin-top: 10px
+}
+
+.customFour .nov_hr {
+    margin: 28px auto 0;
+    border-color: #cdbfba
+}
+
+.customFour .wordTitle a {
+    position: absolute;
+    right: 338px;
+    bottom: 8px;
+    font-size: 12px;
+    color: #a98e83
+}
+
+.carousel-container {
+    position: relative;
+    width: 1200px;
+    margin: 0 auto
+}
+
+.carousel-border {
+    width: 56%;
+    margin: 0 auto
+}
+
+#carousel {
+    height: 490px;
+    width: 1200px;
+    position: relative;
+    margin-bottom: .5em;
+    font-size: 12px;
+    font-family: Arial
+}
+
+.carousel-image {
+    border: 0;
+    display: block
+}
+
+.carousel-feature {
+    overflow: hidden;
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    box-shadow: 0 0 8px #cac9c5;
+    cursor: pointer;
+    background: #fff
+}
+
+.carousel-feature h4 {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 16%;
+    font-size: 14px;
+    color: #89776d;
+    text-align: center
+}
+
+.carousel-feature img {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 auto
+}
+
+.carousel-container .theLeft {
+    top: 50%;
+    margin-top: -18px;
+    left: -20px
+}
+
+.carousel-container .theRight {
+    top: 50%;
+    margin-top: -18px;
+    right: -20px
+}
+
+.customFive {
+    background: #fff;
+    margin-top: 34px
+}
+
+.customFive .wordTitle p {
+    margin-top: 10px
+}
+
+.customFive .nov_hr {
+    margin: 28px auto 0;
+    border-color: #606060
+}
+
+.customFive_list {
+    margin-top: 34px
+}
+
+.customFive_list li {
+    overflow: hidden;
+    height: 227px;
+    margin-bottom: 8px
+}
+
+.custombk_same {
+    width: 364px;
+    height: 227px;
+    color: #4d3a33;
+    text-align: center
+}
+
+.custombk_same p {
+    font-size: 18px;
+    line-height: 26px;
+    padding-top: 92px
+}
+
+.custombk_same .nov_line {
+    width: 20px;
+    border-bottom: 1px solid #4d3a33;
+    margin: 8px auto 0
+}
+
+.custombk_first {
+    background: #70675e;
+    color: #fff
+}
+
+.custombk_first .nov_line {
+    border-color: #fff
+}
+
+.custombk_sec {
+    background: #ded7d1
+}
+
+.custombk_third {
+    background: #e6e6e6
+}
+
+.custombk_third p {
+    padding-top: 74px
+}
+
+.custombk_four {
+    background: #ded7d1;
+    color: #464241;
+    width: 100%
+}
+
+.custombk_four p {
+    line-height: 36px;
+    padding-top: 38px
+}
+
+.customFive_word {
+    text-align: center;
+    font-size: 22px;
+    color: #464241;
+    margin-top: 58px;
+    line-height: 34px
+}

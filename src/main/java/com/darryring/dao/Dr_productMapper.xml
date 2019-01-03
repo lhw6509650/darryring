@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.darryring.dao.Dr_productMapper">
+    <sql id="condition">
+        <where>
+                cid = #{cid}
+            <if test="psid !=0 and psid != null">
+                and pro.psid = #{psid}
+            </if>
+            <if test="dsid !=0 and dsid != null">
+                and sh.dsid = #{dsid}
+            </if>
+            <if test="patternName !='' and patternName != null">
+                and pa.patternName like concat('%',#{patternName},'%')
+            </if>
+            <if test="sname !='' and sname != null">
+                and se.sname like concat('%',#{sname},'%')
+            </if>
+            <if test="lowprice !=0 and lowprice != null and highprice !=0 and highprice != null">
+                and pro.price between #{lowprice} and #{highprice}
+            </if>
+        </where>
+    </sql>
+    <select id="queryAllProBy" resultType="map">
+        SELECT pro.productId,se.sname,pa.patternName,we.dweight,co.dcolor,pro.imageRoute,pro.price
+        FROM dr_product pro
+                 INNER JOIN dr_product_series se ON pro.psid = se.sid
+                 INNER JOIN dr_pattern pa ON pro.patternId = pa.patternId
+                 INNER JOIN diamond_parameters par ON pro.dpaid = par.dpaid
+                 INNER JOIN diamond_weight we ON we.dwid = par.weiid
+                 INNER JOIN diamond_shape sh ON sh.dsid = par.shaid
+                 INNER JOIN diamond_color co ON co.dcid = par.colid
+    <include refid="condition"/>
+    </select>
+
+    <select id="selProDetail" resultType="map">
+        SELECT pro.productId,ca.cid,ca.typename,se.sid,se.sname,pa.patternName,pro.price,
+               we.dweight,co.dcid,co.dcolor,sh.shapename,
+               cl.dcname,cu.cutname,fl.dfname,ma.mid,ma.mname,po.polishname,
+               sy.symmetricname
+        FROM dr_product pro
+                 INNER JOIN dr_product_series se ON pro.psid = se.sid
+                 INNER JOIN dr_product_category ca ON ca.cid = se.cid
+                 INNER JOIN dr_pattern pa ON pro.patternId = pa.patternId
+                 INNER JOIN diamond_parameters par ON pro.dpaid = par.dpaid
+                 INNER JOIN diamond_weight we ON we.dwid = par.weiid
+                 INNER JOIN diamond_color co ON co.dcid = par.colid
+                 INNER JOIN diamond_shape sh ON sh.dsid = par.shaid
+                 INNER JOIN diamond_clarity cl ON cl.dclid = par.claid
+                 INNER JOIN diamond_cut cu ON cu.cutid = par.cutid
+                 INNER JOIN diamond_fluorescence fl ON fl.dfid = par.fluid
+                 INNER JOIN diamond_material ma ON ma.mid = par.matid
+                 INNER JOIN diamond_polish po ON po.polishid = par.polid
+                 INNER JOIN diamond_symmetric sy ON sy.symmetricid = par.symid
+        WHERE  pro.productId = #{productId}
+    </select>
+    <select id="selProPic" resultType="map">
+        SELECT pro.productId,sp.slproute FROM dr_smallpic sp
+              LEFT JOIN dr_product pro ON sp.pid = pro.productId
+        WHERE sp.pid = #{productId}
+    </select>
+
+    <!-- //类型-->
+    <sql id="conditions">
+        <where>
+            <if test="cid !=0 and cid != null">
+                cid = #{cid}
+            </if>
+            <if test="pbid !=0 and pbid != null">
+                and pro.pbid = #{pbid}
+            </if>
+            <if test="dsid !=0 and dsid != null">
+                and sh.dsid = #{dsid}
+            </if>
+            <if test="keyword !='' and keyword != null">
+                and ba.bname like concat('%',#{keyword},'%')
+            </if>
+            <!-- <if test="patternName !='' and patternName != null">
+                 and pa.patternName like concat('%',#{patternName},'%')
+             </if>-->
+            <if test="minPrice !='' and minPrice != null and maxPrice !='' and maxPrice != null">
+                and pro.price between #{minPrice} and #{maxPrice}
+            </if>
+        </where>
+    </sql>
+    <select id="queryAllBrandBy" resultType="map">
+        SELECT pro.productId,ba.bname,pa.patternName,we.dweight,co.dcolor,pro.imageRoute,pro.price
+        FROM dr_product pro
+        INNER JOIN dr_product_brand ba ON pro.pbid = ba.bid
+        INNER JOIN dr_pattern pa ON pro.patternId = pa.patternId
+        INNER JOIN diamond_parameters par ON pro.dpaid = par.dpaid
+        INNER JOIN diamond_weight we ON we.dwid = par.weiid
+        INNER JOIN diamond_shape sh ON sh.dsid = par.shaid
+        INNER JOIN diamond_color co ON co.dcid = par.colid
+        <include refid="conditions"/>
+    </select>
+</mapper>
