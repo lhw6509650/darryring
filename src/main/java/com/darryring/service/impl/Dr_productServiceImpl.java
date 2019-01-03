@@ -55,4 +55,9 @@ public class Dr_productServiceImpl implements Dr_productService {
 
         return dpm.queryAllBrandBy(map);
     }
+
+    @Override
+    public int selectByOrder(String identityCode) {
+        return dpm.selectByOrder(identityCode);
+    }
 }

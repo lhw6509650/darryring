@@ -96,4 +96,15 @@
         INNER JOIN diamond_color co ON co.dcid = par.colid
         <include refid="conditions"/>
     </select>
+    <select id="selectByOrder" resultType="int">
+        SELECT COUNT(0) FROM dr_order o
+                                 LEFT JOIN dr_order_detail dod ON dod.oid = o.oid
+                                 LEFT JOIN dr_product pro ON pro.productId = dod.proid
+                                 LEFT JOIN dr_product_series se ON se.sid = pro.psid
+                                 LEFT JOIN dr_product_category ca ON ca.cid = se.cid
+                                 LEFT JOIN dr_user u ON u.userId = o.userId
+        WHERE se.cid = 1 AND u.identityCode=#{identityCode}
+    </select>
+
+
 </mapper>
