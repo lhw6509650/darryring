@@ -1,43 +1,23 @@
-<!DOCTYPE>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta name="baidu-site-verification" content="l0c5KddqRr" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta itemprop="name" content="Darry Ring(DR)戒指|戴瑞珠宝|求婚钻戒-Darry Ring官网"/>
     <meta itemprop="image" content="http://static.darryring.com/comm/drlogo.png" />
-    <meta name="renderer" content="webkit"/>
-    <title>Darry Ring求婚钻戒|DR求婚|戴瑞求婚|求婚钻戒|求婚|-Darry Ring戴瑞珠宝官网</title>
+    <meta name="renderer" content="webkit">
+    <title>DR钻戒定制|婚戒定制|裸钻定制-Darry Ring官网</title>
     <meta content="telephone=no" name="format-detection" />
-    <meta name="Description" content="Darry Ring（DR）求婚钻戒是专业的求婚浪漫品牌，戴瑞珠宝提供专业齐全的钻石戒指款式，需进一步了解Darry Ring求婚钻戒、钻石价格，请进入Darry Ring（DR）戴瑞珠宝官网进行了解！" />
-    <meta name="Keywords" content="Darry Ring求婚钻戒,DR求婚,戴瑞求婚,求婚钻戒,求婚Darry Ring求婚钻戒|DR求婚|戴瑞求婚|求婚钻戒|求婚|-Darry Ring戴瑞珠宝官网 " />
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/drring.css" />
-    <link rel="stylesheet" href="css/drlog.css" />
-    <link rel="stylesheet" href="css/layer-animate.css" />
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+    <meta name="Description" content="DR求婚钻戒，三个步骤即可定制出满意的款式，根据手型挑选心动款式，再根据钻石4C(重量、颜色、净度、切工)甄选钻石，还可查看试戴效果。赶紧为挚爱的她定制一枚“一生只爱一人”的DR钻戒，开启你们的浪漫故事吧。" />
+    <meta name="Keywords" content="DR钻戒定制,裸钻定制,求婚钻戒定制,结婚钻戒定制,钻戒定制品牌,钻戒定制流程,钻戒定制价格" />
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="js/indexJQ.js"></script>
-    <script type="text/javascript" src="js/method.js"></script>
-    <style type="text/css">
-        .drbanner_xd li{width:16px;height:12px;margin-right: 10px}
-        .dr_passprt{margin: 0 auto}
-    </style>
-    <script type="text/javascript">
-        $(function(){
-            //显示个人中心
-            $(".dr_member-left").mouseover(function (){
-                $(".loginIn").show();
-            }).mouseout(function () {
-                $(".loginIn").hide();
-            });
-        });
-        function subSearch(){toSearch()
-            $("#priceForm").submit();
-        }
-        function toSearch(){
-            $("#keywordForm").submit();
-        }
-    </script>
+    <script type="text/javascript" src="js/imageflow.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="css/custom.css" />
 </head>
 <body>
 <div class="w1360">
@@ -58,7 +38,7 @@
     <div class="headerAll w1360">
         <div class="acitve_show w1360">
             <div class="leftLogo">
-                <a th:href="@{/index}">
+                <a th:href="@{index}">
                     <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
                 </a>
             </div>
@@ -84,7 +64,7 @@
         <div class="dr_header">
             <div class="fix">
                 <div class="dr_logo fl">
-                    <a href="/">
+                    <a th:href="@{index}">
                         <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
                     </a>
                 </div>
@@ -96,12 +76,16 @@
                 <!--店铺定位 end-->
                 <div class="dr_member fr">
                     <div class="drmember_sec">
+                        <!--<c:choose>-->
+                        <!-- <c:when test="${empty user}">-->
                         <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
-                            <a th:href="@{/login}">登录</a>
-                            <a th:href="@{/register}" class="drtojoin">注册</a>
+                            <a href="login">登录</a>
+                            <a href="regists" class="drtojoin">注册</a>
                         </div>
+                        <!-- </c:when>
+                         <c:otherwise>-->
                         <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                            <a href="/user"  class="userName">你好！欢迎  <span  th:text="${session.user.loginName}">游客</span></a>
+                            <a href="/user" class="userName">你好！欢迎  <span th:text="${session.user.loginName}">游客</span></a>
                             <div class="loginIn fix" id="loginInaAtion">
                                 <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
                                 <a href="qian/usercart.jsp">购物车</a>
@@ -110,6 +94,8 @@
                                 <a href="/logout?forword=">退出</a>
                             </div>
                         </div>
+                        <!--</c:otherwise>
+                        </c:choose>-->
                         <ul class="dr_member-right drLang fl" id="dr-country">
                             <li>
                                 <a href="/">中文(简体)</a>
@@ -160,7 +146,7 @@
         <div class="dr_navbk w1360 fix">
             <ul class="dr_nav" >
                 <li id="DrNav" class="active" >
-                    <a th:href="@{/index}" phptag="官网_公共头部_文字链接_DR" >DR</a>
+                    <a th:href="@{index}" phptag="官网_公共头部_文字链接_DR" >DR</a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="DRsubNav">
                         <!--导航上部分-->
@@ -187,9 +173,13 @@
                         <!--导航上部分end-->
                     </div>
                     <!--下拉导航end-->
+                    <!--下拉导航end-->
                 </li>
                 <li id="qhzjNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==0}">
-                    <a th:href="@{/cdarryring(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_求婚钻戒" ><span th:text="${cl.typename}"></span></a>
+                    <a th:href="@{cdarryring(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_求婚钻戒" th:text="${cl.typename}"></a>
+                    <!--<c:forEach items="${categoryList}" var="clist"  end="0">
+                        <a href="<%=basePath %>Dr_ProductServlet?method=parent&tid=${clist['typeId']}" phptag="官网_公共头部_文字链接_求婚钻戒" >${clist['typeName']}</a>
+                     </c:forEach>-->
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-first" id="qhzjsubNav">
                         <!--导航上部分-->
@@ -199,7 +189,7 @@
                                 <!--戒指-->
                                 <div class="dr_navsuv-ring dr_navsuvleft-ring fl">
                                     <a href="https://www.darryring.com/darry_ring/?category=1&amp;series=14">
-                                        <img src="//pkquutas9.bkt.clouddn.com/1520406309.jpg" width="200" height="200"/>
+                                        <img src="//pkquutas9.bkt.clouddn.com/150607150059c4d3cc6559d.jpg" width="200" height="200"/>
                                     </a>
                                     <a href="https://www.darryring.com/darry_ring?category=1&amp;series=3">
                                         <img src="//pkquutas9.bkt.clouddn.com/1481184001.jpg" width="200" height="200"/>
@@ -219,14 +209,36 @@
                                 </div>
                                 <!--戒指end-->
                                 <!--相同部分-->
+                                <!--<div class="dr_navsuv-same dr_navsuvleft-same fl">
+                                <c:forEach items="${categoryList}" var="clist"  end="0">
+                                     <c:forEach items="${clist.child}" var="cl" begin="0" end="4">
+                                    <a href="<%=basePath %>Dr_ProductServlet?method=child&tid=${cl['typeId']}" ><p>${cl.typeName}</p></a>
+                                     </c:forEach>
+                                     <a href="<%=basePath %>Dr_ProductServlet?method=parent&tid=${clist['typeId']}" ><p>查看全部商品</p></a>
+                                </c:forEach>
+                                </div>-->
                                 <div class="dr_navsuv-same dr_navsuvleft-same fl" >
-                                    <a th:href="@{/cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:each="ic,icSta:${session.ziCategorylist}"   th:if="${ic.cid==1 && icSta.index lt 9 && icSta.index%2==0}" ><p th:text="${ic.sname}"></p></a><!--WHITH YOU系列稀世粉钻-->
+                                    <a href="https://www.darryring.com/darry_ring/?category=1&amp;series=14" th:each="ic,icSta:${ziCategorylist}"   th:if="${ic.cid==1 && icSta.index lt 9 && icSta.index%2==0}" ><p th:text="${ic.sname}"></p></a><!--WHITH YOU系列稀世粉钻-->
+                                    <!--MY HEART 系列-->
+                                    <!--BELIEVE 系列-->
+                                    <!--FOREVER 系列-->
+                                    <!--DR PARIS 52°&nbsp;系列-->
                                 </div>
                                 <!--相同部分end-->
                                 <!--相同部分-->
+                                <!--<div class="dr_navsuv-same dr_navsuvright-same fl">
+                                <c:forEach items="${categoryList}" var="clist" end="0">
+                                     <c:forEach items="${clist.child}" var="cl" begin="5">
+                                    <a href="<%=basePath %>Dr_ProductServlet?method=child&tid=${cl['typeId']}" ><p>${cl.typeName}</p></a>
+                                     </c:forEach>
+                                </c:forEach>
+                                </div>-->
                                 <div class="dr_navsuv-same dr_navsuvright-same fl">
-                                    <a th:href="@{/cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==1  && icSta.index lt 9 && icSta.index%2==1}" ><p th:text="${ic.sname}"></p></a><!--LOVE LINE 系列-->
-                                    <a th:href="@{/cdarryring(cid=${cl.cid})}"><p>查看全部商品</p></a>
+                                    <a href="https://www.darryring.com/darry_ring?category=1&amp;series=16" th:each="ic,icSta:${ziCategorylist}"  th:if="${ic.cid==1  && icSta.index lt 9 && icSta.index%2==1}" ><p th:text="${ic.sname}"></p></a><!--LOVE LINE 系列-->
+                                    <!--<a href="https://www.darryring.com/darry_ring?category=1&amp;series=6" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==3}"><p th:text="${ic.sname}"></p></a>&lt;!&ndash;TRUE LOVE 系列&ndash;&gt;
+                                    <a href="https://www.darryring.com/darry_ring?category=1&amp;series=8" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==5}"><p th:text="${ic.sname}"></p></a>&lt;!&ndash;PRINCESS 系列&ndash;&gt;
+                                    <a href="https://www.darryring.com/darry_ring/?category=1&amp;series=35" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==7}"><p th:text="${ic.sname}">&nbsp;</p></a>&lt;!&ndash;LOCK FOREVER系列&ndash;&gt;-->
+                                    <a href="https://www.darryring.com/darry_ring"><p>查看全部商品</p></a>
                                 </div>
                                 <!--相同部分end-->
                                 <!--戒指-->
@@ -259,7 +271,10 @@
                     <!--下拉导航end-->
                 </li>
                 <li id="zaskNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==1}">
-                    <a href="allPro" th:text="${cl.typename}"></a>
+                    <a th:href="@{cdarryring(cid=${cl.cid})}" th:text="${cl.typename}"></a>
+                    <!-- <c:forEach items="${categoryList}" var="clist"  begin="1" 结婚对戒>
+                      <a href="<%=basePath %>Dr_ProductServlet?method=parent&tid=${clist['typeId']}" >${clist['typeName']}</a>
+                   </c:forEach>-->
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-sec" id="zasksubNav">
                         <!--导航上部分-->
@@ -280,7 +295,9 @@
                                         </div>
                                         <div class="dr_navsuv-List dr_navsuv-List2 fl">
                                             <h6>系列</h6>
-                                            <p th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==2  && icSta.index lt 13}" ><a th:href="@{cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:text="${ic.sname}"></a></p>
+                                            <p th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==2  && icSta.index lt 13}" ><a href="/couple?series=23&amp;pos=banner" th:text="${ic.sname}"></a></p>
+                                            <!--<p><a href="/couple?series=21&amp;pos=banner">TOGETHER系列</a></p>
+                                            <p><a href="/couple?series=13&amp;pos=banner">ENDLESS LOVE系列</a></p>-->
                                             <p><a href="/couple?pos=banner">查看更多戒指</a></p>
                                             <!--<c:forEach items="${categoryList}" var="clist"  begin="1">
                                                  <c:forEach items="${clist.child}" var="cl">
@@ -308,7 +325,7 @@
                 </li>
                 <li id="jnrlwNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==2}">
                     <!--真爱礼物-->
-                    <a th:href="@{cpring(cid=${cl.cid})}" th:text="${cl.typename}"></a>
+                    <a th:href="@{cdarryring(cid=${cl.cid})}"th:text="${cl.typename}"></a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="jnrlwsubNav">
                         <!--导航上部分-->
@@ -320,8 +337,7 @@
                                     <div class="dr_navsuv-curturesame fl fix two-curturesame">
                                         <div class="dr_navsuv-List fl">
                                             <h6>类型</h6>
-                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==3 && bdSta.index gt 7 && bdSta.index lt 10}">
-                                                <a th:href="@{cpring(cid=${cl.cid},pbid=${bd.bid})}"   th:text="${bd.bname}"></a></p><!--浪漫女士-->
+                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==3 && bdSta.index gt 7 && bdSta.index lt 10}"><a th:href="@{cpring(cid=${cl.cid},pbid=${bd.bid})}"  th:text="${bd.bname}"></a></p><!--浪漫女士-->
                                             <!-- <p><a href="/goods/9?page=1&amp;tags=4&amp;isajax=0&amp;pos=banner">尊贵男士</a></p>-->
                                             <h6 class="dr_navsuv-r3">真爱礼物</h6>
                                             <p><a href="/goods/9?page=1&amp;orderby=salecount&amp;sort=asc&amp;isajax=0&amp;pos=banner">热销礼物</a></p>
@@ -329,8 +345,7 @@
                                         </div>
                                         <div class="dr_navsuv-List dr_navsuv-List2 fl">
                                             <h6>类型</h6>
-                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==3 && bdSta.index gt 2 && bdSta.index lt 8}">
-                                                <a th:href="@{cpring(cid=${cl.cid},pbid=${bd.bid})}"  th:text="${bd.bname}"></a></p><!--套链/项链/吊坠-->
+                                            <p th:each="bd,bdSta:${bdCategorylist}" th:if="${bd.cid==3 && bdSta.index gt 2 && bdSta.index lt 8}"><a th:href="@{cpring(cid=${cl.cid},pbid=${bd.bid})}" th:text="${bd.bname}"></a></p><!--套链/项链/吊坠-->
                                             <!--<p><a href="/goods/9?page=1&amp;category=6%2C14&amp;isajax=0&amp;pos=banner">手链/手镯</a></p>
                                             <p><a href="/goods/9?page=1&amp;category=11&amp;isajax=0&amp;pos=banner">冠冕</a></p>
                                             <p><a href="/goods/9?page=1&amp;category=15&amp;isajax=0&amp;pos=banner">爱的DIY</a></p>
@@ -355,10 +370,10 @@
                 </li>
                 <li  th:each="cl,clst:${session.categoryList}" th:if="${clst.index==3}">
                     <!--钻戒定制-->
-                    <a th:href="@{customnew(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_钻戒定制" th:text="${cl.typename}"></a>
+                    <a th:href="@{customnew}" phptag="官网_公共头部_文字链接_钻戒定制" th:text="${cl.typename}"></a>
                 </li>
                 <li id="shopNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==4}">
-                    <a th:href="@{customnew(cid=${cl.cid})}"  phptag="官网_公共头部_文字链接_DR实体店" th:text="${cl.typename}"></a>
+                    <a href="/shopyd" phptag="官网_公共头部_文字链接_DR实体店" th:text="${cl.typename}"></a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="ShopsubNav">
                         <!--导航上部分-->
@@ -543,8 +558,8 @@
                     </div>
                     <!--下拉导航end-->
                 </li>
-                <li id="ppwhNav" >
-                    <a href="/culture" phptag="官网_公共头部_文字链接_DR品牌文化">DR品牌文化</a>
+                <li id="ppwhNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==5}">
+                    <a href="/culture" phptag="官网_公共头部_文字链接_DR品牌文化" th:text="${cl.typename}"></a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="ppwhsubNav">
                         <!--导航上部分-->
@@ -574,8 +589,8 @@
                     </div>
                     <!--下拉导航end-->
                 </li>
-                <li id="DRsqNav" >
-                    <a href="/story">探索DR</a>
+                <li id="DRsqNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==6}">
+                    <a href="/story" th:text="${cl.typename}"></a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="DRsqsubNav">
                         <!--导航上部分-->
@@ -606,227 +621,341 @@
                     <!--下拉导航end-->
                 </li>
             </ul>
-        </div>                                                   <!--导航end-->
+        </div>                                                   <!--导航
     </div>
-    <!--banner-->
-    <div class="dr_banner" id="focus">
-        <ul class="dr_bannerul" id="drHomeBan">
+    <!--头部导航end--><div class="customCort">
+    <div class="customFirst">
+        <div class="wordTitle">
+            <h3>浪漫钻戒  为爱定制</h3>
+            <div class="nov_hr"></div>
+        </div>
+    </div>
+    <div class="customTips">
+        <div class="wordTitle">
+            <h4>DR定制三部曲</h4>
+            <div class="nov_hr"></div>
+        </div>
+        <ul class="customTips_list">
             <li>
-                <a href="https://www.darryring.com/culture" target="_blank">
-                    <img src="//pkquutas9.bkt.clouddn.com/15445985525c10b41881135.jpg" />
-                </a>
+                <div class="wordTitle">
+                    <h5>STEP  01</h5>
+                    <p>挑选款式</p>
+                    <div class="nov_hr"></div>
+                </div>
+                <img src="images/customnew/tips1.jpg" alt="" />
             </li>
             <li>
-                <a href="https://www.darryring.com//market/newgarden.html" target="_blank">
-                    <img src="//pkquutas9.bkt.clouddn.com/15337984405b6be82883d66.jpg" />
-                </a>
+                <div class="wordTitle">
+                    <h5>STEP  02</h5>
+                    <p>挑选钻石</p>
+                    <div class="nov_hr"></div>
+                </div>
+                <img src="images/customnew/tips2.jpg" alt="" />
             </li>
             <li>
-                <a href="https://www.darryring.com/market/drfashionbasha.html" target="_blank">
-                    <img src="//pkquutas9.bkt.clouddn.com/15332040685b62d6646a9a4.jpg" />
-                </a>
-            </li>
-            <li>
-                <a href="https://www.darryring.com/market/drFerrisWheel" target="_blank">
-                    <img src="//pkquutas9.bkt.clouddn.com/15353352235b835b37aca0b.jpg" />
-                </a>
-            </li>
-            <li>
-                <a href="https://www.darryring.com/star" target="_blank">
-                    <img src="//pkquutas9.bkt.clouddn.com/15337984305b6be81e11f31.jpg" />
-                </a>
+                <div class="wordTitle">
+                    <h5>STEP  03</h5>
+                    <p>浪漫定制</p>
+                    <div class="nov_hr"></div>
+                </div>
+                <img src="images/customnew/tips3.jpg" alt="" />
             </li>
         </ul>
-        <div class="drbanner_xdcort">
-            <ul class="drbanner_xd" id="drHomeBanxd">
-                <li ><span></span></li>
-                <li ><span></span></li>
-                <li ><span></span></li>
-                <li ><span></span></li>
-                <li ><span></span></li>
-            </ul>
-        </div>
-        <a id="drbanPrev" class="drbanBtn drprevBtn" href="javascript:;"></a>
-        <a id="drbanNext" class="drbanBtn drnextBtn" href="javascript:;"></a>
-    </div><!--banner end-->
-    <!--搜索栏-->
-    <div class="dr-bread">
-        <!--右边-->
-        <form action="cdarryring" method="post" id="keywordForm">
-            <div class="drring_search-right fr">
-                <div class="searchBorder">
-                    <input type="hidden" name="cid" th:value="${map.get('cid')}">
-                    <input type="text" placeholder="My Heart系列" id="searchInput" name="keyword" th:value="${map.get('sname')}" />
-                    <i id="goodsSearch" url="/darry_ring/"></i>
-                </div>
-                <a onclick="toSearch()" style="cursor:pointer" >高级</a>
-            </div>
-        </form>
-        <!--右边end-->
-        <!--左边-->
-        <div class="drring_search-left fl">
-            <!--面包屑-->
-            <div class="drring_all-bread fl">
-                <a th:href="@{/index}" >DR</a>
-                <span>></span>
-                <a href="/darry_ring/">求婚钻戒</a>
-                <span>></span>
-                <span><a th:href="@{/}">My Heart系列</a></span>
-            </div>
-            <!--面包屑end-->
-            <!--筛选-->
-            <div class="drring_search-choose fl" id="searchList">
-            </div>
-            <!--筛选end-->
-        </div>
-        <!--左边end-->
     </div>
-    <!--搜索栏end-->
-
-    <!--高级搜索栏-->
-    <div class="drring_highsearch" id="highsearchDarry">
-        <a class="clearSearch" id="clearSearch" href="/darry_ring">清除全部搜索</a>
-        <div id="highsearch" >
-            <ul class="highsearchCort fix">
-                <li>
-                    <span>系列</span>
-                    <div class="drring_highsearch-same" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==0}">
-                        <!--th:href="@{/cdarryring(cid=${cl.cid},psid=${ser.sid})}"-->
-                        <span th:each="ser:${session.ziCategorylist}" th:if="${serStat.index lt 9}"> <a th:href="@{/cdarryring(cid=${map.cid},psid=${ser.sid})}"><p th:text="${ser.sname}">My Heart系列</p></a></span>
+    <!--试戴选参数-->
+    <div class="customSec">
+        <div class="w1200">
+            <p class="theTips">以上试戴仅为大致效果参考，最终请以实物为准</p>
+            <div class="page-con page2">
+                <div class="page-main page2-main">
+                    <span class="btn_arrow theRight"></span>
+                    <div class="pageHead">
+                        <i>Step1</i><span>根据手型挑选心动款式，开启你们的浪漫故事</span>
                     </div>
-                </li>
-                <li>
-                    <span>价格</span>
-                    <div class="drring_highsearch-same highsearch-mwidth" id="priceCond">
-                        <a href="<%=basePath %>Dr_ProductServlet?method=Search&type=price&value=0-5000">5000以下</a>
-                        <a href="<%=basePath %>Dr_ProductServlet?method=Search&type=price&value=5000-10000">5000-10000</a>
-                        <a href="<%=basePath %>Dr_ProductServlet?method=Search&type=price&value=10000-20000">10000-20000</a>
-                        <a href="<%=basePath %>Dr_ProductServlet?method=Search&type=price&value=20000-40000">20000-40000</a>
-                        <a href="<%=basePath %>Dr_ProductServlet?method=Search&type=price&value=40000-8000000">40000以上</a>
-                        <form action="cdarryring" method="get" id="priceForm">
-                            <div class="PriceSearch">
-                                <input type="text" id="minPrice" name="minPrice" th:value="${map.get('minPrice')}" placeholder="人民币"/>
-                                <label>-</label>
-                                <input type="text" id="maxPrice" name="maxPrice" th:value="${map.get('maxPrice')}" placeholder="人民币"/>
-                                <em id="priceBtn" onclick="subSearch()">确定</em>
-                            </div>
-                        </form>
-                    </div>
-                </li>
-                <li>
-                    <span>排序</span>
-                    <div class="drring_highsearch-same highsearch-mwidth" id="sortCort">
-                        <a  href="/darry_ring/?orderby=salecount&amp;sort=desc">按人气</a>
-                        <a  href="/darry_ring/?orderby=onshelfttime&amp;sort1=desc">按新品</a>
-                        <a  href="/darry_ring/?orderby=price&amp;sort2=asc">按价格</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="grayCort">
-        <div class="noresult" style="display: block;" th:if="${page.getResult().size()==0}">
-            <h4>对不起，未搜索到 : </h4>
-            <p>您可以试着换个词再试试!</p>
-        </div>
-            <!--商品-->
-            <ul class="dring_thing">
-                <li th:each="pro:${page.getResult()}">
-                    <a th:href="@{/proDetail(productId=${pro.productId})}"  target="_blank"><img th:src="${pro.imageRoute}" width="320" height="320" alt="" /></a>
-                    <div class="dring_thing-cort">
-                        <div class="dring_thing-price">
-                            &yen;<span th:text="${#numbers.formatDecimal(pro.price, 1, 0)}">33990.0</span>
-                        </div>
-                        <p class="dring_thing-word">
-                            <span th:text="${pro.bname}+' '+${pro.patternName}+' '+${pro.dweight}+'分 '+${pro.dcolor}+'色'">sMy Heart系列</span>
-                        </p>
-                        <div class="dring_thing-button">
-                            <span class="sc" price="31219" sku=''>收藏</span>
-                            <input type="hidden" th:value="${pro.productId}">
-                            <a th:href="@{/proDetail(productId=${pro.productId})}"><i>立即购买</i></a>
-                        </div>
-                        <div class="dring_thing-sold">
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <!--商品end-->
-            <!--分页-->
-            <div class="pagin fpagin">
-                <span>共<span th:text="${page.getPages()}"></span>页</span>
-                <a th:href="@{cdarryring(pageIndex=1,cid=${map.get('cid')},keyword=${map.get('sname')},price=${map.get('price')})}" class="prevPage">首页</a>
-                <a th:href="@{cdarryring(pageIndex=${page.getPageNum()-1},cid=${map.get('cid')},keyword=${map.get('sname')},price=${map.get('price')})}" class="prevPage">&lt;</a>
-                <!--<a th:value="${page.getPageIndex()}">1</a>/<a th:value="${page.getPages()}">2</a>-->
-                <a th:href="@{cdarryring(pageIndex=${page.getPageNum()+1},cid=${map.get('cid')},keyword=${map.get('sname')},price=${map.get('price')})}" class="nextPage">&gt;</a>
-                <a th:href="@{cdarryring(pageIndex=${page.getPages()},cid=${map.get('cid')},keyword=${map.get('sname')},price=${map.get('price')})}" class="nextPage">末页</a>
-            </div>
-    </div>
-    <!--收藏弹窗-->
-    <div class="dr_shopPopup">
-        <div class="dr_shopPopup-border">
-            <!--关闭按钮-->
-            <a href="javascript:;" class="Popup_close"></a>
-            <!--关闭按钮end-->
-            <!--成功加入-->
-            <div class="dr_shopPopup-top">
-                <span>已经成功加入收藏夹</span>
-            </div>
-            <!--成功加入end-->
-            <!--查看-->
-            <div class="dr_shopPopup-sec">
-                <a href="javascript:;" class="goto_shop">继续购物</a>
-                <span>还可以</span>
-                <a href="/user/collect">查看收藏夹</a>
-            </div>
-            <!--查看end-->
-        </div>
-    </div>
-    <!--收藏失败弹窗-->
-    <div class="dr_shopPopup">
-        <div class="dr_shopPopup-border">
-            <!--关闭按钮-->
-            <a href="javascript:;" class="Popup_close"></a>
-            <!--关闭按钮end-->
-            <div class="dr_shopPopup-top">
-                <div class="dr_passprt dr_passprtFirst login-box">
-                    <form id="loginform">
-                        <h3>DR族-登录</h3>
-                        <div class="errorMsg" id="prError" style="" ></div>
-                        <!--手机验证码登录-->
-                        <div class="dr_form phone_dl">
-                            <div class="dr_minAction">
-                                <input type="text" class="ipTxt ico-user" name="phones" placeholder="请输入您的手机号码" />
-                                <div class="fix"><input type="text" name="code" class="ipTxt ico-send inputCode" placeholder="请输入验证码" />
-                                    <a class="getCodeBtn" id='getSmsCode' href="javascript:;" data-type="1">获取短信验证码</a>
+                    <div class="try-box">
+                        <div class="try-bor">
+                            <div class="tryRingList tryRingCort fr">
+                                <ul class="tryRingSame">
+                                    <li ringData='believe' ringDesc="Believe 系列 典雅款" ringNum="30" class="thefirst">
+                                        <img src="images/customnew/believe-big.png" />
+                                    </li>
+                                    <li ringData='justyou-jd' ringDesc="Just You 系列 经典款" ringNum="30" class="thefirst">
+                                        <img src="images/customnew/justyou-big.png" />
+                                    </li>
+                                    <li ringData='forever-jd' ringDesc="Forever 系列 经典款" ringNum="30" class="thefirst">
+                                        <img src="images/customnew/forver-big.png" />
+                                    </li>
+                                    <li ringData='truelove-js' ringDesc="True Love 系列 简奢款" ringNum="30" class="thefirst">
+                                        <img src="images/customnew/truelove-big.png" />
+                                    </li>
+                                    <li ringData='forever-sh' ringDesc="Forever 系列 奢华款" ringNum="30" class="thesec">
+                                        <img src="images/customnew/forver2-big.png" />
+                                    </li>
+                                    <li ringData='iswear-sh' ringDesc="I Swear 系列 奢华款" ringNum="30" class="thesec">
+                                        <img src="images/customnew/iswear-big.png" />
+                                    </li>
+                                    <li ringData='loveline-sh' ringDesc="LoveLine 系列 奢华款" ringNum="100" class="thesec">
+                                        <img src="images/customnew/loveline-big.png" />
+                                    </li>
+                                    <li ringData='lockforever' ringDesc="Lock Forever 系列 心·锁唯一" ringNum="50" class="thesec">
+                                        <img src="images/customnew/lockme-big.png" />
+                                    </li>
+                                    <li ringData='sweety' ringDesc="Sweetie 系列 心蓝" ringNum="30" class="thethird">
+                                        <img src="images/customnew/sweety-big.png" />
+                                    </li>
+                                    <li ringData='justyou-lm' ringDesc="Just You 系列 浪漫款" ringNum="30" class="thethird">
+                                        <img src="images/customnew/justyou2-big.png" />
+                                    </li>
+                                    <li ringData='iswear-jd' ringDesc="I Swear 系列 经典款" ringNum="30" class="thethird">
+                                        <img src="images/customnew/iswear2-big.png" />
+                                    </li>
+                                    <li ringData='forever-js' ringDesc="Forever 系列 简奢款" ringNum="30" class="thethird">
+                                        <img src="images/customnew/forver3-big.png" />
+                                    </li>
+                                </ul>
+                                <div class="tryRingSmall">
+                                    <span class=""></span>
+                                    <span></span>
+                                    <span></span>
                                 </div>
-                                <p class="actionwd_same" style="margin-bottom: 25px;margin-top: 5px">使用<a href="javascript:;" class="usePassWord">密码登录</a></p>
-                            </div>
-                            <!-- 注册协议 -->
-                            <div class="checkTerms" style="text-align: center;">
-                                <input type="checkbox" name="mobile_check" id="phoneCheck" checked="checked" /><label for="phoneCheck">同意Darry Ring用户</label><a href="//www.darryring.com/">注册协议</a>和<a href="//www.darryring.com/">隐私条款</a>
+                                <div class="cancel-btn">
+                                    <a id="confirmBtn" href="javascript:;">确认佩戴</a>
+                                </div>
                             </div>
                         </div>
-                        <!--手机验证码登录end-->
-                        <div class="dr_form phone_dl">
-                            <div class="dr_minAction">
-                                <input type="text" class="ipTxt ico-user" style="behavior:url(#default#savehistory)" value="" id="txtName" name="phone" placeholder="请输入您的邮箱/手机号码" required pattern="(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}" />
-                                <input type="password" class="ipTxt ico-pwd" value="" id="txtPwd" name="password" placeholder="请输入密码" required pattern="\w{5,17}" />
-
-                            </div>
-
-                            <p class="dr_actionPwd"><a class="fr" href="/forget?lang=cn">忘记密码?</a><input id="isRemember" type="checkbox"  name='remember' vlaue='1' /><label for="isRemember">记住密码</label></p>
-                            <p class="actionwd_same">使用<a href="javascript:;" class="usePhone">手机验证码登录</a></p>
-                        </div>
-                        <!--常规登录end-->
-                        <div id="login" class="dr_Btns">
-                            <input type="button" class="defaultBtn focus" id="mobile_log" value="登录" />
-                        </div>
-                    </form>
+                    </div>
                 </div>
+            </div>
+            <div class="page-con page3" style="display:none;">
+                <div class="page-main page3-main">
+                    <span class="btn_arrow theLeft"></span>
+                    <div class="pageHead">
+                        <i>Step2</i><span>选择臻美钻石，让爱更闪耀</span>
+                    </div>
+                    <div class="try-box">
+                        <div class="try-bor">
+                            <div class="tryRingList fr">
+                                <div id="picListCort">
+                                    <ul class="picList">
+                                        <li>
+                                            <div class="pic"><img style="width:14px"  src="images/customnew/try-y.png"></div>
+                                            <span>0.3ct</span>
+                                        </li>
+                                        <li>
+                                            <div class="pic"><img style="width:16px"  src="images/customnew/try-y.png"></div>
+                                            <span>0.4ct</span>
+                                        </li>
+                                        <li>
+                                            <div class="pic"><img style="width:17px"  src="images/customnew/try-y.png"></div>
+                                            <span>0.5ct</span>
+                                        </li>
+                                        <li>
+                                            <div class="pic"><img style="width:20px"  src="images/customnew/try-y.png"></div>
+                                            <span>0.7ct</span>
+                                        </li>
+                                        <li>
+                                            <div class="pic"><img style="width:21px"  src="images/customnew/try-y.png"></div>
+                                            <span>0.8ct</span>
+                                        </li>
+                                        <li>
+                                            <div class="pic"><img style="width:22px"  src="images/customnew/try-y.png"></div>
+                                            <span>1ct</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="cancel-btn">
+                                    <a id="returnP2" href="javascript:;">返回上一步</a>
+                                    <a id="goPageLink" href="javascript:;" target="_blank">定制好了，我要下单</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="try-left">
+                <div class="try-hand">
+                    <div class="try-hand-show try-hand-slim">
+                        <img src="images/customnew/hand-slim.png" />
+                        <img class="tryRingShow" src="" alt="" />
+                        <div class="try-hand-desc">
+                            <p>手型参考图：12号手寸</p>
+                            <p>手指直径约16.1mm</p>
+                            <p>参考戒指钻重<i>30</i>分</p>
+                        </div>
+                        <div class="bigDrillShow">
+                            <p></p>
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+                    <div class="try-hand-show try-hand-full">
+                        <img class="fullImg" src="images/customnew/hand-full.png" />
+                        <img class="tryRingShow" src="" alt="" />
+                        <div class="try-hand-desc">
+                            <p>手型参考图：16号手寸</p>
+                            <p>手指直径约17.6mm</p>
+                            <p>参考戒指钻重<i>30</i>分</p>
+                        </div>
+                        <div class="bigDrillShow">
+                            <p></p>
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="change-hand">
+                    <a class="activate" href="javascript:;">修长型</a>
+                    <a href="javascript:;">圆润型</a>
+                </div>
+                <p class="tryRingInfo">Forever 系列 经典款</p>
             </div>
         </div>
     </div>
-    <!--你已经收藏过此商品了，不需要重复收藏哦！-->
+    <!--试戴选参数end-->
+    <!--广告位-->
+    <div class="customThird">
+        <ul>
+            <li>
+                <a class="hrefLink" href="/darry_ring/?category=1&series=3" target="_blank"></a>
+                <div class="ggwImg">
+                    <img src="images/customnew/ggw1.jpg" />
+                </div>
+                <div class="wordTitle">
+                    <h3>My Heart 系列 简奢款</h3>
+                    <div class="nov_hr"></div>
+                    <p>把心交给你 是我一生浪漫的开始</p>
+                </div>
+            </li>
+            <li>
+                <a class="hrefLink" href="/darry_ring/?category=1&series=2" target="_blank"></a>
+                <div class="ggwImg">
+                    <img src="images/customnew/ggw2.jpg" />
+                </div>
+                <div class="wordTitle">
+                    <h3>Forever 系列 简奢款</h3>
+                    <div class="nov_hr"></div>
+                    <p>一生挚爱，永恒不变</p>
+                </div>
+            </li>
+            <li>
+                <a class="hrefLink" href="/darry_ring/?category=1&series=16" target="_blank"></a>
+                <div class="ggwImg">
+                    <img src="images/customnew/ggw3.jpg" />
+                </div>
+                <div class="wordTitle">
+                    <h3>Love Line 系列 简奢款</h3>
+                    <div class="nov_hr"></div>
+                    <p>与你绑定一生的幸福</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--广告位end-->
+    <!--第四块轮播-->
+    <div class="customFour">
+        <div class="wordTitle">
+            <h4>一枚钻戒  一生信物</h4>
+            <p>给你的浪漫，千挑万选</p>
+            <div class="nov_hr"></div>
+            <a href="/search" target="_blank">更多款式选择+</a>
+        </div>
+        <div class="carousel-container">
+            <div id="carousel">
+                <div class="carousel-feature">
+                    <a class="hrefLink" href="/search/list/87" target="_blank"></a>
+                    <div class="carousel-border">
+                        <img class="carousel-image" alt="Image Caption" src="images/customnew/1509692104.jpg">
+                    </div>
+                    <h4>JUST YOU系列 耀世</h4>
+                </div>
+                <div class="carousel-feature">
+                    <a class="hrefLink" href="/search/list/4245" target="_blank"></a>
+                    <div class="carousel-border">
+                        <img class="carousel-image" alt="Image Caption" src="images/customnew/1520251670.jpg">
+                    </div>
+                    <h4>TRUE LOVE系列 坚定爱</h4>
+                </div>
+                <div class="carousel-feature">
+                    <a class="hrefLink" href="/search/list/3365" target="_blank"></a>
+                    <div class="carousel-border">
+                        <img class="carousel-image" alt="Image Caption" src="images/customnew/1490672622.jpg">
+                    </div>
+                    <h4>JUST YOU系列 典雅款</h4>
+                </div>
+                <div class="carousel-feature">
+                    <a class="hrefLink" href="/search/list/150" target="_blank"></a>
+                    <div class="carousel-border">
+                        <img class="carousel-image" alt="Image Caption" src="images/customnew/1509964641.jpg">
+                    </div>
+                    <h4>LOVE LINE系列 简奢款</h4>
+                </div>
+                <div class="carousel-feature">
+                    <a class="hrefLink" href="/search/list/96" target="_blank"></a>
+                    <div class="carousel-border">
+                        <img class="carousel-image" alt="Image Caption" src="https://res.darryring.com/images/2017/09/14/1492745071.jpg">
+                    </div>
+                    <h4>TRUE LOVE系列 典雅</h4>
+                </div>
+                <div class="carousel-feature">
+                    <a class="hrefLink" href="/search/list/604" target="_blank"></a>
+                    <div class="carousel-border">
+                        <img class="carousel-image" alt="Image Caption" src="https://res.darryring.com/images/1486708709.png">
+                    </div>
+                    <h4>TRUE LOVE系列 奢华款</h4>
+                </div>
+                <div class="carousel-feature">
+                    <a class="hrefLink" href="/search/list/159" target="_blank"></a>
+                    <div class="carousel-border">
+                        <img class="carousel-image" alt="Image Caption" src="images/customnew/1509690591.jpg">
+                    </div>
+                    <h4>LOVE LINE系列 经典款</h4>
+                </div>
+            </div>
+            <span class="btn_arrow theLeft" id="carousel-right"></span>
+            <span class="btn_arrow theRight" id="carousel-left"></span>
+        </div>
+    </div>
+    <!--第四块轮播end-->
+    <!--4C标准-->
+    <div class="customFive">
+        <div class="wordTitle">
+            <h4>匠心打造 专注真爱</h4>
+            <p>严苛4C标准</p>
+            <div class="nov_hr"></div>
+        </div>
+        <ul class="customFive_list">
+            <li>
+                <img src="images/customnew/list1.jpg" class="fl"/>
+                <div class="custombk_same custombk_first fr">
+                    <p>严苛甄选比例</p>
+                    <div class="nov_line"></div>
+                </div>
+            </li>
+            <li>
+                <img src="images/customnew/list2.jpg" class="fr"/>
+                <div class="custombk_same custombk_sec fl">
+                    <p>珍视钻石的浪漫使命，悉心打造</p>
+                    <div class="nov_line"></div>
+                </div>
+            </li>
+            <li>
+                <img src="images/customnew/list3.jpg" class="fl"/>
+                <div class="custombk_same custombk_third fr">
+                    <p>无论克拉大小<br/>
+                        每一枚DR钻石均有璀璨迷人光芒</p>
+                    <div class="nov_line"></div>
+                </div>
+            </li>
+            <li>
+                <div class="custombk_same custombk_four">
+                    <p>DR悉心甄选每颗钻石<br/>
+                        只选用SI1及以上的优质净度，J及以上璀璨色级<br/>
+                        切工更是高达3VG以上<br/>
+                        确保每一颗钻石都光彩夺目，熠熠生辉</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--4C标准end-->
+</div>
     <!--底部-->
     <div class="dr_footer">
         <div class="dr_footer-top"></div>
@@ -1047,7 +1176,7 @@
         <span class="drKf_close"></span>
         <ul class="drKf_tcborder fix">
             <li class='drsqkfli'>
-                <a href="javascript:;" class="drKf_tcLink" onclick="javascript:showxiaon('kf_9883_1402631963601');" phptag="官网_底部_文字链接_售前客服"></a>
+                <a href="javascript:;" class="drKf_tcLink" onclick="" phptag="官网_底部_文字链接_售前客服"></a>
                 <span class="drsqkf">售前客服</span>
                 <p>
                     <i>商品选购</i>
@@ -1056,7 +1185,7 @@
                 </p>
             </li>
             <li class="drshkfli drKf_shkf">
-                <a href="javascript:;" class="drKf_tcLink" onclick="javascript:showxiaon('kf_9883_1432524866880');" phptag="官网_底部_文字链接_售后客服"></a>
+                <a href="javascript:;" class="drKf_tcLink" onclick="" phptag="官网_底部_文字链接_售后客服"></a>
                 <span class="drshkf">售后客服</span>
                 <p>
                     <i>订制进度</i>
@@ -1116,64 +1245,5 @@
         </div>
     </div>
 </div>
-<script th:inline="javascript">
-    $(function () {
-        //其他页登录
-        $("#mobile_log").click(function () {
-            $.post("otherlogin",$('#loginform').serialize(),function (data) {
-                if (data=="true"){
-                    window.location.reload();
-                }else{
-                    alert("登录失败！");
-                }
-            });
-        });
-
-
-        //收藏
-        $(".sc").click(function () {
-            $.post("collect",{pid:$(this).next().val()},function (data) {
-                if (data=="1"){
-                    $(".dr_shopPopup:eq(0) .dr_shopPopup-top span").text("已经成功加入收藏夹");
-                    $(".dr_shopPopup").eq(0).show();
-                    $(".dr_sametcborder").show();
-                }else if (data=="2") {
-                    /*"你已经收藏过此商品了，不需要重复收藏哦！" dr_shopPopup-top span*/
-                    $(".dr_shopPopup:eq(0) .dr_shopPopup-top span").text("你已经收藏过此商品了，不需要重复收藏哦！" );
-                    $(".dr_shopPopup").eq(0).show();
-                    $(".dr_sametcborder").show();
-                }else if (data=="0") {
-                    $(".dr_shopPopup").eq(1).show();
-                    $(".dr_sametcborder").show();
-                }
-            });
-        })
-
-
-        $(".Popup_close").click(function () {
-            $("#background_div").css("width",0);
-            $("#background_div").css("height",0);
-            $(".dr_shopPopup").hide();
-            $(".dr_sametcborder").hide();
-        })
-        $(".goto_shop").click(function () {
-            $(".dr_shopPopup").hide();
-            $(".dr_sametcborder").hide();
-        })
-
-        $(".dr_form:first").hide();
-        $(".usePhone").click(function () {
-            $(".dr_form:first").show();
-            $(".dr_form:last").hide();
-        })
-        $(".usePassWord").click(function () {
-            $(".dr_form:first").hide();
-            $(".dr_form:last").show();
-        })
-
-
-    })
-
-</script>
 </body>
 </html>

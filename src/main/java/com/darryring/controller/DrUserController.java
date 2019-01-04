@@ -38,11 +38,11 @@ public class DrUserController {
 
     @GetMapping(value = "/regist")
     public String regist(){
-        return "register";
+        return "qianduan/register";
     }
     @GetMapping(value = "/login")
     public String login(){
-        return "login";
+        return "qianduan/login";
     }
 
     //验证注册
@@ -61,9 +61,9 @@ public class DrUserController {
     @PostMapping("/regist")
     public String regist(DrUser user){
         if(dus.insertUser(user)>0){
-            return "login";
+            return "qianduan/login";
         }
-        return "register";
+        return "qianduan/register";
     }
 
     //登录
@@ -76,7 +76,7 @@ public class DrUserController {
             mo.addAttribute("user",user);
             return "redirect:/index";
         }
-        return "login";
+        return "qianduan/login";
     }
 
     //其他登录
@@ -120,7 +120,7 @@ public class DrUserController {
         if(user!=null){
             mav.addObject("user",user);
         }
-        mav.setViewName("usershow");
+        mav.setViewName("qianduan/usershow");
         return mav;
     }
 
@@ -195,7 +195,7 @@ public class DrUserController {
             mav.setViewName("forward:/login");
             return mav;
         }
-        mav.setViewName("password");
+        mav.setViewName("qianduan/password");
         return mav;
     }
 
@@ -214,7 +214,7 @@ public class DrUserController {
         }else{
             mav.addObject("addressList",null);
         }
-        mav.setViewName("useraddress");
+        mav.setViewName("qianduan/useraddress");
         return mav;
     }
 

@@ -58,7 +58,7 @@
     <div class="headerAll w1360">
         <div class="acitve_show w1360">
             <div class="leftLogo">
-                <a th:href="@{/index}">
+                <a th:href="@{index}">
                     <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
                 </a>
             </div>
@@ -84,7 +84,7 @@
         <div class="dr_header">
             <div class="fix">
                 <div class="dr_logo fl">
-                    <a href="/">
+                    <a th:href="@{index}">
                         <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
                     </a>
                 </div>
@@ -98,7 +98,7 @@
                     <div class="drmember_sec">
                         <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
                             <a th:href="@{/login}">登录</a>
-                            <a th:href="@{/register}" class="drtojoin">注册</a>
+                            <a th:href="@{/regists}" class="drtojoin">注册</a>
                         </div>
                         <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
                             <a href="/user"  class="userName">你好！欢迎  <span  th:text="${session.user.loginName}">游客</span></a>
@@ -110,6 +110,8 @@
                                 <a href="/logout?forword=">退出</a>
                             </div>
                         </div>
+                        <!--</c:otherwise>
+                        </c:choose>-->
                         <ul class="dr_member-right drLang fl" id="dr-country">
                             <li>
                                 <a href="/">中文(简体)</a>
@@ -160,7 +162,7 @@
         <div class="dr_navbk w1360 fix">
             <ul class="dr_nav" >
                 <li id="DrNav" class="active" >
-                    <a th:href="@{/index}" phptag="官网_公共头部_文字链接_DR" >DR</a>
+                    <a th:href="@{index}" phptag="官网_公共头部_文字链接_DR" >DR</a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="DRsubNav">
                         <!--导航上部分-->
@@ -189,7 +191,10 @@
                     <!--下拉导航end-->
                 </li>
                 <li id="qhzjNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==0}">
-                    <a th:href="@{/cdarryring(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_求婚钻戒" ><span th:text="${cl.typename}"></span></a>
+                    <a th:href="@{cdarryring(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_求婚钻戒" ><span th:text="${cl.typename}"></span></a>
+                    <!--<c:forEach items="${categoryList}" var="clist"  end="0">
+                        <a href="<%=basePath %>Dr_ProductServlet?method=parent&tid=${clist['typeId']}" phptag="官网_公共头部_文字链接_求婚钻戒" >${clist['typeName']}</a>
+                     </c:forEach>-->
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-first" id="qhzjsubNav">
                         <!--导航上部分-->
@@ -199,7 +204,7 @@
                                 <!--戒指-->
                                 <div class="dr_navsuv-ring dr_navsuvleft-ring fl">
                                     <a href="https://www.darryring.com/darry_ring/?category=1&amp;series=14">
-                                        <img src="//pkquutas9.bkt.clouddn.com/1520406309.jpg" width="200" height="200"/>
+                                        <img src="//pkquutas9.bkt.clouddn.com/150607150059c4d3cc6559d.jpg" width="200" height="200"/>
                                     </a>
                                     <a href="https://www.darryring.com/darry_ring?category=1&amp;series=3">
                                         <img src="//pkquutas9.bkt.clouddn.com/1481184001.jpg" width="200" height="200"/>
@@ -219,14 +224,36 @@
                                 </div>
                                 <!--戒指end-->
                                 <!--相同部分-->
+                                <!--<div class="dr_navsuv-same dr_navsuvleft-same fl">
+                                <c:forEach items="${categoryList}" var="clist"  end="0">
+                                     <c:forEach items="${clist.child}" var="cl" begin="0" end="4">
+                                    <a href="<%=basePath %>Dr_ProductServlet?method=child&tid=${cl['typeId']}" ><p>${cl.typeName}</p></a>
+                                     </c:forEach>
+                                     <a href="<%=basePath %>Dr_ProductServlet?method=parent&tid=${clist['typeId']}" ><p>查看全部商品</p></a>
+                                </c:forEach>
+                                </div>-->
                                 <div class="dr_navsuv-same dr_navsuvleft-same fl" >
                                     <a th:href="@{/cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:each="ic,icSta:${session.ziCategorylist}"   th:if="${ic.cid==1 && icSta.index lt 9 && icSta.index%2==0}" ><p th:text="${ic.sname}"></p></a><!--WHITH YOU系列稀世粉钻-->
+                                    <!--MY HEART 系列-->
+                                    <!--BELIEVE 系列-->
+                                    <!--FOREVER 系列-->
+                                    <!--DR PARIS 52°&nbsp;系列-->
                                 </div>
                                 <!--相同部分end-->
                                 <!--相同部分-->
+                                <!--<div class="dr_navsuv-same dr_navsuvright-same fl">
+                                <c:forEach items="${categoryList}" var="clist" end="0">
+                                     <c:forEach items="${clist.child}" var="cl" begin="5">
+                                    <a href="<%=basePath %>Dr_ProductServlet?method=child&tid=${cl['typeId']}" ><p>${cl.typeName}</p></a>
+                                     </c:forEach>
+                                </c:forEach>
+                                </div>-->
                                 <div class="dr_navsuv-same dr_navsuvright-same fl">
                                     <a th:href="@{/cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==1  && icSta.index lt 9 && icSta.index%2==1}" ><p th:text="${ic.sname}"></p></a><!--LOVE LINE 系列-->
-                                    <a th:href="@{/cdarryring(cid=${cl.cid})}"><p>查看全部商品</p></a>
+                                    <!--<a href="https://www.darryring.com/darry_ring?category=1&amp;series=6" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==3}"><p th:text="${ic.sname}"></p></a>&lt;!&ndash;TRUE LOVE 系列&ndash;&gt;
+                                    <a href="https://www.darryring.com/darry_ring?category=1&amp;series=8" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==5}"><p th:text="${ic.sname}"></p></a>&lt;!&ndash;PRINCESS 系列&ndash;&gt;
+                                    <a href="https://www.darryring.com/darry_ring/?category=1&amp;series=35" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==7}"><p th:text="${ic.sname}">&nbsp;</p></a>&lt;!&ndash;LOCK FOREVER系列&ndash;&gt;-->
+                                    <a href="https://www.darryring.com/darry_ring"><p>查看全部商品</p></a>
                                 </div>
                                 <!--相同部分end-->
                                 <!--戒指-->
@@ -258,8 +285,10 @@
                     </div>
                     <!--下拉导航end-->
                 </li>
+                <!--11111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
                 <li id="zaskNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==1}">
-                    <a href="allPro" th:text="${cl.typename}"></a>
+                    <a th:href="@{cdarryring(cid=${cl.cid})}" th:text="${cl.typename}"></a>
+
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-sec" id="zasksubNav">
                         <!--导航上部分-->
@@ -271,7 +300,8 @@
                                     <div class="dr_navsuv-curturesame fl fix two-curturesame">
                                         <div class="dr_navsuv-List fl">
                                             <h6>类型</h6>
-                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==2 && bdSta.index lt 2}"><a href="/couple?category=2&amp;pos=banner" th:text="${bd.bname}"></a></p><!--结婚对戒-->
+                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==2 && bdSta.index lt 2}">
+                                                <a th:href="@{cpring(cid=${cl.cid},pbid=${bd.bid})}" th:text="${bd.bname}"></a></p><!--结婚对戒-->
                                             <!--<p th:each="bd,bdSta:${bdCategorylist}"><a href="/couple?category=3&amp;pos=banner">男戒</a></p>
                                             <p><a href="/cpring">结婚套装</a></p>-->
                                             <h6 class="dr_navsuv-r3">浏览</h6>
@@ -280,7 +310,10 @@
                                         </div>
                                         <div class="dr_navsuv-List dr_navsuv-List2 fl">
                                             <h6>系列</h6>
-                                            <p th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==2  && icSta.index lt 13}" ><a th:href="@{cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:text="${ic.sname}"></a></p>
+                                            <p th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==2  && icSta.index lt 13}" >
+                                                <a th:href="@{cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:text="${ic.sname}"></a></p>
+                                            <!--<p><a href="/couple?series=21&amp;pos=banner">TOGETHER系列</a></p>
+                                            <p><a href="/couple?series=13&amp;pos=banner">ENDLESS LOVE系列</a></p>-->
                                             <p><a href="/couple?pos=banner">查看更多戒指</a></p>
                                             <!--<c:forEach items="${categoryList}" var="clist"  begin="1">
                                                  <c:forEach items="${clist.child}" var="cl">
@@ -358,7 +391,7 @@
                     <a th:href="@{customnew(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_钻戒定制" th:text="${cl.typename}"></a>
                 </li>
                 <li id="shopNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==4}">
-                    <a th:href="@{customnew(cid=${cl.cid})}"  phptag="官网_公共头部_文字链接_DR实体店" th:text="${cl.typename}"></a>
+                    <a th:href="@{customnew(cid=${cl.cid})}" th:text="${cl.typename}"></a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="ShopsubNav">
                         <!--导航上部分-->

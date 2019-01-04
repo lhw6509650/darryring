@@ -33,7 +33,7 @@ public class ProductController {
         mo.addAttribute("page",page);
         mo.addAttribute("map",map);
         System.out.println(page.getPages());
-        return "/cdarryring";
+        return "qianduan/cdarryring";
     }
 
     //显示所有的类型
@@ -53,14 +53,14 @@ public class ProductController {
         System.out.println(".."+page.getResult().size());
         mo.addAttribute("bnames",bnames);
         mo.addAttribute("map",map);
-        return "cpring";
+        return "qianduan//cpring";
     }
     //查询根据钻石参数的dpaid和系列的psid查询所有的钻石定制
     //钻戒定制
     @RequestMapping("/customnew")
     public  String  customnew(@RequestParam Map<String,Object> map,Model mo){
 
-        return "customnew";
+        return "qianduan/customnew";
     }
 
 
@@ -71,7 +71,7 @@ public class ProductController {
         System.out.println("商品详情。。。。");
         mo.addAttribute("pdmap",dps.selProDetail(productId));
         mo.addAttribute("pdpiclist",dps.selProPic(productId));
-        return "/goodsJewelry";
+        return "qianduan//goodsJewelry";
     }
 
 }

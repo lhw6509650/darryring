@@ -32,7 +32,7 @@ public class IndexController {
         mo.addAttribute("categoryList",dcs.selectAll());
         mo.addAttribute("ziCategorylist",dpss.selectAllSeries());
         mo.addAttribute("bdCategorylist",dpbs.selectAllBrand());
-        return "index";
+        return "qianduan/index";
     }
 
 
