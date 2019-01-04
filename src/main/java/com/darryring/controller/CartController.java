@@ -90,6 +90,6 @@ public class CartController {
      public String cart(){
          List<Dr_shopcar> cartlist = dss.selProById(null);
          System.out.println("cartlist..."+cartlist);
-        return "shopcar";
+        return "qianduan/shopcar";
      }
 }
