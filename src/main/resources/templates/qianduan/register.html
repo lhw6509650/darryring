@@ -1,0 +1,290 @@
+<!DOCTYPE >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>戴瑞珠宝官网会员注册登录_Darry Ring求婚钻戒价格 戴瑞珠宝官网</title>
+    <meta content="Darry Ring钻戒价格,Darry Ring钻戒图片" name="Keywords" />
+    <meta content="Darry Ring官网会员注册登录唯一入口，Darry Ring是求婚钻戒品牌，想了解Darry Ring实体店、Darry Ring哪里有卖等相关Darry Ring资讯就先进入戴瑞珠宝官网注册吧！" name="Description" />
+    <meta property="qc:admins" content="26403151123072464122121676375" />
+    <meta name="save" content="history">
+    <link rel="stylesheet" type="text/css" href="css/logAndReg.css">
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/indexJQ.js"></script>
+</head>
+<script type="text/javascript">
+    function getPic(){
+        $("#veryCode").attr("src","getVerify?"+Math.random());
+    }
+$(function(){
+
+    $("#mobile_reg").click(function(){
+        var phone = $("#txtName").val();
+        var code = $("#yzCode").val();
+        var pwd = $("#txtPwd").val();
+        var repwd = $("#txtRePwd").val();
+        if(phone != "" && phone!=null && pwd != "" && pwd!=null && repwd != "" && repwd!=null){
+            if(code != null && code != ""){
+                $.post("vCode",{"code":code,"password":pwd,"repwd":repwd},callBack);
+                function callBack(data){
+                    alert(data);
+                    if(data == "false"){
+                        $("#prError").show().html("验证码错误！");
+                    }else{
+                        $("#commonform").submit();
+                    }
+                }
+                $("#prError").hide().html("");
+            }else{
+                $("#prError").show().html("验证码不能为空！");
+            }
+        }else{
+            $("#prError").show().html("手机号或密码不能为空！");
+        }
+        return false;
+    });
+
+    getPic();
+
+	$(".ipTxt").blur(function(){
+		var name = $("#txtName").val();
+		var pwd = $("#txtPwd").val();
+		var repwd = $("#txtRePwd").val();
+		if((name == null || name == "")||(pwd == null || pwd == "")||(repwd == null || repwd == "")){
+			$("#prError").show().html("手机号或密码不能为空！");
+		}else if(pwd != repwd){
+			$("#prError").show().html("两次输入密码不一致！");
+		}else{
+		     $("#prError").hide().html(""); 
+		}
+	   });
+	});
+
+</script>
+
+
+<body >
+<div class="w1360">
+    <header class="cart_head">
+        <div class="dr_logo fl">
+            <a href="https://www.darryring.com/"><img src="images/loginPic/logo.png" alt="" /></a>
+        </div>
+        <div class="dr_member fr">
+            <div class="drmember_sec">
+                <div class="dr_member-left fl">
+                    <a href="login.html">登录</a>
+                    <a href="register.html" class="drtojoin">注册</a>
+                </div>
+                <div class="dr_member-left fl">
+                    <i>
+                        <img src="images/indexPic/phone.png">
+                        400 01 13520
+                    </i>
+                </div>
+                <div class="dr_member-left fl">
+                    <a href="https://www.darryring.com/help" target="_blank" class="help-right">帮助中心<span></span></a>
+                </div>
+            </div>
+        </div>
+    </header>    <!-- starto of container -->
+    <div class="dr_banner">
+        <!--通行证操作区-->
+        <div class="dr_actionMain">
+            <div class="login-wrap">
+                <div class="login-png"></div>
+                <div class="dr_passprt dr_passprt-h login-box">
+                    <ul class="dr_formTabTitle  fix">
+                        <li class="dr_formTableft">手机注册</li>
+                    </ul>
+                    <div class="dr_form">
+                        <div class="dr_formTabMain" id="formTabs">
+                            <!--手机end-->
+                            <form class="form_first" id="commonform" action="regist" method="post">
+                                <div class="dr_formTabCon" style="display:block;">
+                                    <div class="higheVssel higheVssel_phone " style="height:280px">
+                                        <!--错误提示-->
+                                        <div class="errorMsg" id="prError"></div>
+                                        <!--错误提示-->
+                                        <input type="text" name="phone" id="txtName" value="" class="ipTxt2 ico-phone" placeholder="请输入您注册的手机号码" required pattern="(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}" />
+                                        <input type="password" name="password" id="txtPwd" class="ipTxt2 ico-pwd" placeholder="请输入长度为6-20位数的密码" required pattern="\w{5,17}" />
+                                        <input type="password" name="repwd" id="txtRePwd" class="ipTxt2 ico-pwd" placeholder="请再次确认密码" required pattern="\w{5,17}" />
+                                        <div class="fix">
+                                            <input type="text" name="verycodes" value="" id="yzCode" class="ipTxt2 ico-send inputCode" placeholder="输入验证码" required pattern="[a-zA-Z0-9]{4}"/>
+                                            <a class="getCodeBtn mobile_action" id="getSmsCode"  data-type="1" onclick="getPic()" style="cursor: pointer"><img id="veryCode" src="" style="cursor:pointer;"/></a>
+                                        </div>
+                                        <div class="checkTerms">
+                                            <input type="checkbox" name="mobile_check" id="phoneCheck" checked="checked" /><label for="phoneCheck">同意Darry Ring用户</label><a href="//www.darryring.com/help/46">注册协议</a>和<a href="//www.darryring.com/help/47">隐私条款</a>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="dr_Btns">
+                                        <!-- <a class="colorBtn" id="mobile_reg">立即加入DR族</a> -->
+                                        <input class="colorBtn" type="submit" id="mobile_reg" value="立即加入DR族"/>
+                                    </div>
+                                    <div class="loginLink">
+                                        <!--简体版第三方登录-->
+                                        <!-- <div class="regOtherLogin">
+                                            <a class="qqdl" href="javascript:;"></a>
+                                            <a class="wxdl" href="javascript:;"></a>
+                                            <a class="wbdl" href="javascript:;"></a>
+                                            <a class="zfbdl" href="javascript:;"></a>
+                                        </div> -->
+                                        <div class="regOtherLogin">
+                                            <a class="qqdl" href="/syncLogin/qq"></a>
+                                            <a class="wxdl" href="/syncLogin/weixin"></a>
+                                            <a class="wbdl" href="/syncLogin/weibo"></a>
+                                            <a class="zfbdl" href="/syncLogin/alipay"></a>
+                                        </div>
+
+                                        <!--简体版第三方登录end-->
+                                        <a href="/login?lang=cn">> 已有帐户 登录</a>
+                                    </div>
+                                </div>
+                            </form>
+                            <!--手机end-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="isCommit" value="0">
+        <!--通行证操作区 end-->
+        <!-- banner -->
+        <div class="dr-stBanner">
+            <img src="images/loginPic/login_bg.jpg" alt="" class="img01" />
+        </div>
+        <!-- banner -->
+    </div>
+    <!-- end of container -->
+
+    <div class="dr_footer">
+        <div class="dr_footer-top"></div>
+        <!--底部图标-->
+        <ul class="dr_footer-icon w1000">
+            <li>
+                <a href="https://www.darryring.com/help/28">
+                    <i class="footer-icon1"></i>
+                    <span>权威认证</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.darryring.com/help/42">
+                    <i class="footer-icon2"></i>
+                    <span>一钻双证</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.darryring.com/help/41">
+
+                    <i class="footer-icon3"></i>
+                    <span>终生保养</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.darryring.com/help/43">
+                    <i class="footer-icon4"></i>
+                    <span>以小换大</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.darryring.com/help/45">
+                    <i class="footer-icon5"></i>
+                    <span>15天退换</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.darryring.com/help/36">
+                    <i class="footer-icon6"></i>
+                    <span>全国免运费</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.darryring.com/help/44">
+                    <i class="footer-icon7"></i>
+                    <span>全程保险</span>
+                </a>
+            </li>
+        </ul>
+        <!--底部图标end-->
+        <!--黑色区域-->
+        <div class="dr_tint">
+            <div class="w1000">
+                <!--服务-->
+                <ul class="dr_servie">
+                    <li>
+                        <h4>关于我们</h4>
+                        <a href="https://www.darryring.com/help/28" target="_blank">权威认证</a>
+                        <a href="https://www.darryring.com/help/30" target="_blank">合作专区</a>
+                        <a href="https://www.darryring.com/help/32" target="_blank">加入我们</a>
+                    </li>
+                    <li>
+                        <h4>购物指南</h4>
+                        <a href="https://www.darryring.com/help/34" target="_blank">购买流程</a>
+                        <a href="https://www.darryring.com/help/27" target="_blank">支付方式</a>
+                        <a href="https://www.darryring.com/help/36" target="_blank">配送流程</a>
+                    </li>
+                    <li>
+                        <h4>售后服务</h4>
+                        <a href="https://www.darryring.com/help/37" target="_blank">退货流程</a>
+                        <a href="https://www.darryring.com/help/38" target="_blank">办理售后</a>
+                        <a href="https://www.darryring.com/help/45" target="_blank">15天退换</a>
+                    </li>
+                    <li>
+                        <h4>帮助中心</h4>
+                        <a href="https://www.darryring.com/help/33" target="_blank">注册流程</a>
+                        <a href="javascript:;" class="udeskkefu" target="_blank">联系客服</a>
+                        <a href="https://www.darryring.com/help/78" target="_blank">网站地图</a>
+                    </li>
+                    <li>
+                        <h4>服务条款</h4>
+                        <a href="https://www.darryring.com/help/41" target="_blank">终生保养</a>
+                        <a href="https://www.darryring.com/help/46" target="_blank">注册协议</a>
+                        <a href="https://www.darryring.com/help/47" target="_blank">隐私声明</a>
+                    </li>
+                    <li>
+                        <h4>DR资讯</h4>
+                        <a href="https://www.darryring.com/news/10807.html" target="_blank">钻石百科</a>
+                        <a href="https://www.darryring.com/news/10747.html" target="_blank">产品百科</a>
+                        <a href="https://www.darryring.com/news/10742.html" target="_blank">求婚指南</a>
+                    </li>
+                </ul>
+                <!--关注我们-->
+                <div class="drfocus">
+                    <h3>关注我们</h3>
+                    <p>一个让你相信真爱的地方，给你实用的情感指南，为你的爱情终身服务。</p>
+                    <a href="javascript:;" class="wechat">
+                        <img src="//res.darryring.com/webimg/common/gzh_wx.png" />
+                    </a>
+                    <a href="https://weibo.com/2249451585/" class="weibo" target="_blank"></a>
+                </div>
+                <!--服务end-->
+            </div>
+            <!--中英文切换，网站声明-->
+            <div class="dr_declare fix">
+                <div class="w1360">
+                    <div class="dr_langues fl">
+                        <span>选择站点</span>
+                        <p class="dr_langueBtn"><a href="javascript:;">简体</a></p>
+                        <div class="dr_langueList" id="langueList">
+                            <a href="/login?lang=cn" class="active">简体</a>
+                            <a href="/login?lang=hk">繁体</a>
+                            <a href="/login?lang=en">English</a>
+                            <p><label>简体</label></p>
+                        </div>
+                        <a href="https://www.darryring.com/help/47">隐私政策</a>
+                        <a href="javascript:;">网站地图</a>
+                        <a href="javascript:;">友情链接</a>
+                    </div>
+                    <div class="dr_decItem fr">
+                        <a href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
+                        <span>粤ICP备11012085号-2/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
+                        <img src="https://www.darryring.com/bundles/acmefrontend/img/kxzd.png" alt="" />
+                    </div>
+                </div>
+            </div>
+            <!--中英文切换，网站声明end-->
+        </div>
+        <!--黑色区域end-->
+    </div>
+  </div>
+</body>
+</html>
