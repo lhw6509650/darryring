@@ -87,6 +87,33 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
+        <!-- 短信依赖 -->
+        <dependency>
+            <groupId>com.ganshane.specs</groupId>
+            <artifactId>httpclient4.3.6</artifactId>
+            <version>4.3.6</version>
+        </dependency>
+
+        <!-- 短信依赖 -->
+        <dependency>
+            <groupId>com.ganshane.specs</groupId>
+            <artifactId>httpcore4.3.3</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>

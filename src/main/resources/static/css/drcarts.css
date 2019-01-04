@@ -63,19 +63,19 @@ a.link_btn2:hover {
     width: 198px;
     float: left;
     text-align: center;
-    color: #ccc;
+    color: #cbcbcb;
     font-size: 12px
 }
 
 .shopping_steps span {
     display: block;
-    width: 100%;
-    height: 100%;
+    /*width: 100%;
+    height: 100%;*/
     line-height: 23px;
     color: #fff;
     letter-spacing: -2px;
     margin-bottom: 10px;
-    background: #ccc url(//res.darryring.com/webimg/cart/steps_bg.png) center no-repeat
+    background: #cbcbcb url(//res.darryring.com/webimg/cart/steps_bg.png) center no-repeat
 }
 
 .sp_steps1 span {
@@ -164,7 +164,7 @@ a.link_btn2:hover {
     margin-bottom: 0;
     padding: 15px 0;
     text-align: left;
-    border-top: 2px dashed #e2e2e2;
+    border-top: 2px dashed #e4e4e4;
     background: #fafafa
 }
 
@@ -265,7 +265,7 @@ a.link_btn2:hover {
     height: 48px;
     text-align: center;
     background: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #cbcbcb;
     overflow: hidden
 }
 
@@ -277,7 +277,7 @@ a.link_btn2:hover {
     height: 84px;
     background: #fff;
     border: 2px solid #8b766c;
-    box-shadow: 0 0 5px #ccc
+    box-shadow: 0 0 5px #cbcbcb
 }
 
 .pay_way li:hover {
@@ -302,11 +302,15 @@ a.link_btn2:hover {
     display: none
 }
 
+.pay_way li div.bank_selected {
+    border: 2px solid #8b766c;
+    background: url(//res.darryring.com/webimg/ringbuy/right.png) right bottom no-repeat
+}
 
 .pay_now {
     height: 50px;
     text-align: right;
-    background: #f9f9f9;
+    background: #f8f8f8;
     border: 1px solid #f1f1f1;
     border-top: 0;
     border-right: 0
@@ -561,7 +565,7 @@ a.link_btn2:hover {
     position: initial;
     width: 1360px;
     height: 50px;
-    background: #f9f9f9;
+    background: #f8f8f8;
     border: 1px solid #f1f1f1;
     font-size: 12px;
     margin-top: 10px
@@ -649,7 +653,7 @@ a.link_btn2:hover {
     width: 400px;
     height: 90px;
     margin: 95px auto;
-    
+    background: url(//res.darryring.com/webimg/cart/ico-cart.png) left center no-repeat;
     padding-left: 90px
 }
 
@@ -783,7 +787,7 @@ a.link_btn2:hover {
 .delivery_notic h3 {
     color: #FFBE78;
     font-weight: 700;
-    border-bottom: 1px dashed #e2e2e2;
+    border-bottom: 1px dashed #e4e4e4;
     padding-bottom: 12px;
     margin-bottom: 8px
 }
@@ -921,7 +925,7 @@ a.link_btn2:hover {
 }
 
 .HaveDr p {
-    color: #C67C59;
+    color: #c57d5c;
     font-size: 14px;
     padding: 4px 40px;
     text-align: left
@@ -1099,7 +1103,7 @@ span.error_info {
 }
 
 .aggreement_left div strong {
-    color: #c67c59;
+    color: #c57d5c;
     font-family: "寰蒋闆呴粦"
 }
 
@@ -1109,7 +1113,7 @@ span.error_info {
 }
 
 .aggreement_con2 {
-    border-top: 1px dashed #e2e2e2
+    border-top: 1px dashed #e4e4e4
 }
 
 .aggreement_con2 .aggreement_right p {
@@ -1120,7 +1124,7 @@ span.error_info {
     margin-top: 20px;
     margin-bottom: 2px;
     font-size: 14px;
-    color: #C67C59;
+    color: #c57d5c;
     font-family: "寰蒋闆呴粦";
     font-weight: 700
 }
@@ -1228,7 +1232,7 @@ input[type=checkbox], input[type=radio] {
     padding: 4px 0;
     text-indent: 24px;
     width: 238px;
-    border: 1px solid #e4e4e4
+    border: 1px solid #e6e6e6
 }
 
 .morePay i {
@@ -1407,7 +1411,7 @@ input[type=checkbox], input[type=radio] {
 .ringbuy_Choose-third i {
     display: inline-block;
     width: 25px;
-    border-left: 1px solid #aeaeae;
+    border-left: 1px solid #afafb0;
     font-size: 16px;
     color: #8b766c;
     text-align: center;
@@ -1419,7 +1423,7 @@ input[type=checkbox], input[type=radio] {
     font-size: 12px;
     color: #8b766c;
     vertical-align: middle;
-    border-left: 1px solid #aeaeae;
+    border-left: 1px solid #afafb0;
     width: 36px;
     text-align: center
 }
@@ -1445,7 +1449,7 @@ input[type=checkbox], input[type=radio] {
     width: 958px;
     height: 650px;
     margin: 0 auto;
-    background: url(../img/cart/agrBg1.jpg) no-repeat top left;
+    background: url(//res.darryring.com/webimg/cart/agrBg.jpg) no-repeat top left;
     text-align: center
 }
 
@@ -1460,7 +1464,7 @@ input[type=checkbox], input[type=radio] {
 
 .love_agr_desc {
     position: absolute;
-    top: 238px;
+    top: 230px;
     right: 106px;
     width: 300px;
     text-align: left;
@@ -1476,7 +1480,7 @@ input[type=checkbox], input[type=radio] {
 
 .love_agr_Info {
     position: absolute;
-    top: 410px;
+    top: 412px;
     left: 232px;
     width: 182px
 }
@@ -1496,8 +1500,8 @@ input[type=checkbox], input[type=radio] {
     width: 56px
 }
 
-.love_agr_Info input.lai_yDate {
-    margin: 4px 0 0 58px;
+.love_agr_Info input#lai_yDate {
+    margin: 0 0 0 58px;
     width: 118px
 }
 
@@ -1644,7 +1648,7 @@ input[type=checkbox], input[type=radio] {
     line-height: 34px;
     padding-left: 44px;
     font-size: 24px;
-    color: #c67c59;
+    color: #c57d5c;
     margin: 30px 0 10px;
     font-weight: 700
 }
@@ -1891,7 +1895,7 @@ a.help_fenqi {
 }
 
 a.help_fenqi:hover {
-    color: #C67C59
+    color: #c57d5c
 }
 
 .drUseDis {
@@ -1941,7 +1945,7 @@ a.help_fenqi:hover {
 }
 
 .drud_tabs .drud_tabsBtn.active {
-    color: #c67c59;
+    color: #c57d5c;
     font-weight: 700
 }
 
@@ -1974,6 +1978,28 @@ a.help_fenqi:hover {
 .drud_con {
     padding: 18px 0 18px 40px;
     line-height: 42px
+}
+
+.drud_con .check-dom {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 1;
+    font-size: 0;
+    background: url(//res.darryring.com/webimg/icons/check_false.png) no-repeat;
+    vertical-align: middle;
+    cursor: pointer
+}
+
+.drud_con .check-dom.checked {
+    background: url(//res.darryring.com/webimg/icons/check_true.png) no-repeat
+}
+
+.drud_con .deductionVolumeNum-dom:disabled {
+    color: #999
 }
 
 .drud_con .b {
@@ -2026,6 +2052,10 @@ a.help_fenqi:hover {
     padding-left: 40px
 }
 
+.drud_tips i {
+    color: red
+}
+
 .drud_con select {
     width: 260px;
     height: 20px;
@@ -2068,7 +2098,7 @@ span.errorMsg.active {
     width: 958px;
     height: 650px;
     margin: 0 auto;
-    background: url(../img/cart/agrBg2.jpg) no-repeat top left;
+    background: url(//res.darryring.com/webimg/cart/agrBg2.jpg) no-repeat top left;
     text-align: center
 }
 
@@ -2365,7 +2395,7 @@ span.errorMsg.active {
 }
 
 .giveDill_list li.active p {
-    color: #c67c59
+    color: #c57d5c
 }
 
 .xycard {
@@ -2380,7 +2410,7 @@ span.errorMsg.active {
     width: 10px;
     height: 10px;
     padding: 1px;
-    border: 1px solid #c67c59;
+    border: 1px solid #c57d5c;
     cursor: pointer;
     vertical-align: middle
 }
@@ -2740,7 +2770,7 @@ table {
 
 .drBindTc2 h3 {
     font-size: 24px;
-    color: #c67c59;
+    color: #c57d5c;
     margin-top: 40px;
     font-family: '瀹嬩綋'
 }
@@ -2762,9 +2792,9 @@ table {
     height: 28px;
     line-height: 28px;
     text-align: center;
-    border: 1px solid #c67c59;
+    border: 1px solid #c57d5c;
     font-size: 14px;
-    color: #c67c59
+    color: #c57d5c
 }
 
 .drBindTc2 .btnbox .cancelbtn {
@@ -2773,14 +2803,14 @@ table {
     height: 28px;
     line-height: 28px;
     text-align: center;
-    border: 1px solid #c67c59;
+    border: 1px solid #c57d5c;
     font-size: 14px;
-    color: #c67c59
+    color: #c57d5c
 }
 
 .drBindTc3 h3 {
     font-size: 24px;
-    color: #c67c59;
+    color: #c57d5c;
     margin-top: 40px;
     font-family: '瀹嬩綋'
 }
@@ -2795,14 +2825,14 @@ table {
     height: 28px;
     line-height: 28px;
     text-align: center;
-    border: 1px solid #c67c59;
+    border: 1px solid #c57d5c;
     font-size: 14px;
-    color: #c67c59
+    color: #c57d5c
 }
 
 .drBindTc4 h3 {
     font-size: 24px;
-    color: #c67c59;
+    color: #c57d5c;
     margin-top: 40px;
     font-family: '瀹嬩綋'
 }
@@ -2817,16 +2847,16 @@ table {
     height: 28px;
     line-height: 28px;
     text-align: center;
-    border: 1px solid #c67c59;
+    border: 1px solid #c57d5c;
     font-size: 14px;
-    color: #c67c59
+    color: #c57d5c
 }
 
 .travel-tip {
     padding: 90px 0 100px;
     text-align: center;
     font-size: 18px;
-    color: #c67c59;
+    color: #c57d5c;
     font-family: 'Microsoft YaHei'
 }
 
@@ -2850,7 +2880,7 @@ table {
 .payresult_box .payStatue {
     font-size: 18px;
     font-family: 'Microsoft YaHei';
-    color: #c67c59;
+    color: #c57d5c;
     margin-bottom: 15px
 }
 
@@ -2880,7 +2910,7 @@ table {
     width: 68px;
     height: 24px;
     line-height: 24px;
-    background: #c67c59;
+    background: #c57d5c;
     text-align: center;
     color: #fff;
     font-size: 12px;
@@ -2909,7 +2939,7 @@ table {
     width: 14px;
     height: 14px;
     cursor: pointer;
-    background: url(../img/cart/ic_problem.png) no-repeat
+    background: url(//res.darryring.com/webimg/cart/ic_problem.png) no-repeat
 }
 
 .problem-tips {
@@ -2955,7 +2985,7 @@ table {
     line-height: 28px;
     padding: 0 32px 0 14px;
     border: 1px solid #cfcfcf;
-    background: url(../img/cart/ic_date.png) 235px 1px no-repeat
+    background: url(//res.darryring.com/webimg/cart/ic_date.png) 235px 1px no-repeat
 }
 
 .dr_sametc_btn {
@@ -2988,14 +3018,10 @@ table {
     background: #8b766c;
     border: 1px solid #8b766c
 }
-.jia {
-    cursor: pointer;
-}
-.jian{
-    cursor: pointer;
-}
-.quantity{
-    text-align: center;
-    width: 30px;
-}
 
+.dr_sametcView .dr_sametcInfo .loveDate {
+    margin-top: 16px;
+    font-weight: 600;
+    line-height: 30px;
+    color: red
+}

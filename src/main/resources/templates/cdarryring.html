@@ -259,7 +259,7 @@
                     <!--下拉导航end-->
                 </li>
                 <li id="zaskNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==1}">
-                    <a href="allPro" th:text="${cl.typename}"></a>
+                    <a th:href="@{/cdarryring(cid=${cl.cid})}" th:text="${cl.typename}"></a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-sec" id="zasksubNav">
                         <!--导航上部分-->

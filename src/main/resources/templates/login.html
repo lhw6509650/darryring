@@ -70,7 +70,7 @@
                     <!--手机验证码登录-->
                     <div class="dr_form phone_dl">
                         <div class="dr_minAction">
-                            <input type="text" class="ipTxt ico-user" name="phones" placeholder="请输入您的手机号码" />
+                            <input type="text" class="ipTxt ico-user" id="cphone" name="phones" placeholder="请输入您的手机号码" />
                             <div class="fix"><input type="text" name="code" class="ipTxt ico-send inputCode" placeholder="请输入验证码" />
                                 <a class="getCodeBtn" id='getSmsCode' href="javascript:;" data-type="1">获取短信验证码</a>
                             </div>
@@ -245,4 +245,17 @@
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    $(function () {
+        $("#getSmsCode").click(function () {
+            $.post("getCode",{"phone":$("#cphone").val()},function (data) {
+                if (data=="true"){
+                    alert("获取验证码成功，请留意您的手机短信！");
+                } else{
+                    alert("获取验证码失败，请重试！");
+                }
+            })
+        })
+    })
+</script>
 </html>

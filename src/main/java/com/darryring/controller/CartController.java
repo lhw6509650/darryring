@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -29,8 +30,9 @@ public class CartController {
     /**
      * 未登录时
      */
-    @RequestMapping(value = "/addCart/{pdtId}",method = RequestMethod.GET)
-    public String addCart(@PathVariable String pdtId, Model model, HttpServletRequest request){
+    @ResponseBody
+    @RequestMapping(value = "/addCart",method = RequestMethod.POST)
+    public String addCart(String pdtId, Model model, HttpServletRequest request){
         // 根据id返回商品对象
         Map<String,Object> proMap = dps.selProDetail(Integer.parseInt(pdtId));
         // 从商品中取出购物车集合
@@ -38,7 +40,7 @@ public class CartController {
         // 创建一个购物车对象
         Dr_shopcar scar = new Dr_shopcar();
         //总金额
-        Double sumPrice = 0.0;
+        Float sumPrice = 0.0f;
         // 将商品封装到购物车对象
         scar.setProMap(proMap);
         // 判断是否是第一次进入购物车
@@ -64,7 +66,7 @@ public class CartController {
                     // 为相同商品重新设置回去
                     shopcar.setNum(shopcar.getNum() + 1);
                     // 总金额在原来的基础加一个相同的价格
-                    sumPrice = sumPrice + (Double) shopcar.getProMap().get("price");
+                    sumPrice = sumPrice + (Float) shopcar.getProMap().get("price");
                     model.addAttribute("sumPrice", sumPrice);
                     flag = true;
                     break;
@@ -74,19 +76,20 @@ public class CartController {
                 // 设置商品数量为1
                 scar.setNum(1);
                 // 总金额
-                sumPrice = sumPrice + (Double) scar.getProMap().get("price");
+                sumPrice = sumPrice + (Float) scar.getProMap().get("price");
                 // 把新商品加入购物车集合
                 sclist.add(scar);
                 model.addAttribute("shops", sclist);
                 model.addAttribute("sumPrice", sumPrice);
             }
         }
-        return "forward:/shopcars";
+        return "true";
     }
 
-    @RequestMapping("/cart")
-    public String cart(){
-
-        return "index";
-    }
+     @RequestMapping("/cart")
+     public String cart(){
+         List<Dr_shopcar> cartlist = dss.selProById(null);
+         System.out.println("cartlist..."+cartlist);
+        return "shopcar";
+     }
 }

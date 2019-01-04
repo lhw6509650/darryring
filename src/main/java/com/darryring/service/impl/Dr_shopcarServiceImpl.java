@@ -20,21 +20,21 @@ public class Dr_shopcarServiceImpl implements Dr_shopcarService {
 
     @Override
     public List<Dr_shopcar> selProById(Integer uid) {
-        List<Dr_shopcar> cartlist = null;
-        if(uid==null && redisUtil.exists("cartlist")){
+        List<Dr_shopcar> sclist = null;
+        if(uid==null && redisUtil.exists("sclist")){
             System.out.println("exists:3333....");
-            cartlist = (List<Dr_shopcar>)redisUtil.get("cartlist");
-            System.out.println("cartlist:33333....");
-            for (Dr_shopcar n : cartlist) {
+            sclist = (List<Dr_shopcar>)redisUtil.get("sclist");
+            System.out.println("sclist:33333....");
+            for (Dr_shopcar n : sclist) {
                 System.out.println(n.getNum()+"\t");
             }
         }else{
             System.out.println("not exists:3333....");
             //从数据库取并保存到redis
-            cartlist = dr_shopcarMapper.selProById(uid);
-            redisUtil.set("cartlist", cartlist, 24*60L);
+            sclist = dr_shopcarMapper.selProById(uid);
+            redisUtil.set("sclist", sclist, 24*60L);
         }
-        return cartlist;
+        return sclist;
     }
 
     @Override

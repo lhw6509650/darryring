@@ -7,6 +7,7 @@ import com.darryring.service.DrUserService;
 import com.darryring.service.Dr_user_addressService;
 import com.darryring.service.Dr_user_areaService;
 import com.darryring.util.ImageCreate;
+import com.darryring.util.SendSMSValidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -78,6 +79,33 @@ public class DrUserController {
         }
         return "login";
     }
+
+    //短信验证登录
+    @ResponseBody
+    @RequestMapping(value = "/getCode",method = RequestMethod.POST )
+    public String getCode(String phone){
+          System.out.println("进入短信登陆验证。。。。。"+phone);
+          Boolean flag = SendSMSValidate.sendSms(phone,"3");
+          if(flag){
+              return "true";
+          }
+        return "false";
+    }
+
+
+    /*//短信验证登录
+    @RequestMapping(value = "/msglogin",method = RequestMethod.POST )
+    public String msglogin(String phone,String veryCode,Model mo){
+        System.out.println("进入短信登陆。。。。。"+veryCode);
+        Boolean flag = SendSMSValidate.sendSms(phone,"3");
+        System.out.println("csdcsd...."+flag);
+        DrUser user = dus.findUserByPhone(phone);
+        if(user!=null && flag){
+            mo.addAttribute("user",user);
+            return "redirect:/index";
+        }
+        return "login";
+    }*/
 
     //其他登录
     @ResponseBody

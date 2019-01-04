@@ -1,6 +1,7 @@
 package com.darryring.controller;
 
 import com.darryring.service.Dr_productService;
+import com.darryring.util.RedisUtil;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 
@@ -17,6 +19,9 @@ public class ProductController {
 
     @Autowired
     private Dr_productService dps;
+
+    @Autowired
+    RedisUtil redisUtil;
 
 
     //显示所有父分类
@@ -73,5 +78,17 @@ public class ProductController {
         mo.addAttribute("pdpiclist",dps.selProPic(productId));
         return "/goodsJewelry";
     }
+
+
+
+    @ResponseBody
+    @RequestMapping("/VerifiCard")
+    public String VerifiCard(String cnumber){
+        if(dps.selectByOrder(cnumber)>0){
+            return "1";
+        }
+        return "0";
+    }
+
 
 }
