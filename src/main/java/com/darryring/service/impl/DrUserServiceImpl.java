@@ -8,10 +8,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Transactional
 public class DrUserServiceImpl implements DrUserService {
+
     @Autowired
     private DrUserDao drd;
 
@@ -56,4 +58,15 @@ public class DrUserServiceImpl implements DrUserService {
     public List<DrUser> queryByPwd(String pwd, Integer userId){
         return drd.queryByPwd(pwd,userId);
     }
+
+    //(后台)根据用户名和密码登录后台
+    public DrUser findAllUserByType(String userName,String password){
+       return drd.findAllUserByType(userName,password);
+    }
+
+    //(后台)根据多条件带分页查询用户
+    public List<Map<String,Object>> selectAllUser(Map<String,Object> map){
+        return drd.selectAllUser(map);
+    }
+
 }

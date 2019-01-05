@@ -30,6 +30,6 @@ public class DrUser {
 
 	private String loveWord; // 真爱宣言
 
-
+	private int usertype;//用户类型
 
 }

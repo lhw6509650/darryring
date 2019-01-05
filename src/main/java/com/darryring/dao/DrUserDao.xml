@@ -38,4 +38,36 @@
     <!--修改密码前判断输入的原密码是否存在-->
     <select id="queryByPwd" resultType="DrUser">select userName from dr_user where password = #{password} and userId = #{userId} </select>
 
+    <!--根据用户名和密码登录后台-->
+    <select id="findAllUserByType" resultType="DrUser">
+        SELECT * FROM dr_user  WHERE userName=#{userName} and password=#{password}
+    </select>
+
+    <!--根据多条件带分页查询用户-->
+    <sql id="con">
+        <where>
+            <if test="userName!=null and userName!=''">
+                userName=#{userName}
+            </if>
+            <if test="loginName!=null and loginName!=''">
+                and loginName=#{loginName}
+            </if>
+            <if test="phone!=null and phone=''">
+                and phone=#{phone}
+            </if>
+            <if test="identityCode!=null and identityCode=''">
+                and identityCode=#{identityCode}
+            </if>
+            <if test="sort!=null and sort!='' and order!=null and order!=''">
+                LIMIT sort=#{sort}, order=#{order}
+            </if>
+
+        </where>
+    </sql>
+    <select id="selectAllUserByCon" resultType="map">
+        SELECT * FROM dr_user <include refid="con"/>
+    </select>
+    <select id="selectAllUser" resultType="map">
+        SELECT * FROM dr_user
+    </select>
 </mapper>

@@ -62,27 +62,27 @@
 }
 
 .myicon_shop {
-    background: url(../images/indexPic/oicon1.png) no-repeat left center
+    background: url(../easyui/images/indexPic/oicon1.png) no-repeat left center
 }
 
 .myicon_detail {
-    background: url(../images/indexPic/oicon2.png) no-repeat left center
+    background: url(../easyui/images/indexPic/oicon2.png) no-repeat left center
 }
 
 .myicon_people {
-    background: url(../images/indexPic/oicon3.png) no-repeat left center
+    background: url(../easyui/images/indexPic/oicon3.png) no-repeat left center
 }
 
 .myicon_member {
-    background: url(../images/indexPic/oicon4.png) no-repeat left center
+    background: url(../easyui/images/indexPic/oicon4.png) no-repeat left center
 }
 
 .myicon_set {
-    background: url(../images/indexPic/oicon5.png) no-repeat left center
+    background: url(../easyui/images/indexPic/oicon5.png) no-repeat left center
 }
 
 .myicon_news {
-    background: url(../images/indexPic/oicon6.png) no-repeat left center
+    background: url(../easyui/images/indexPic/oicon6.png) no-repeat left center
 }
 
 .mydrnav_show {
@@ -106,13 +106,13 @@
 }
 
 .mydrnav_show li a {
-    background: url(../images/indexPic/icon_dian.png) no-repeat left center;
+    background: url(../easyui/images/indexPic/icon_dian.png) no-repeat left center;
     padding-left: 12px
 }
 
 .mydrnav_show li a.active, .mydrnav_show li a:hover {
     color: #8b766c;
-    background: url(../images/indexPic/icon_dian.png) no-repeat left center
+    background: url(../easyui/images/indexPic/icon_dian.png) no-repeat left center
 }
 
 .pd20 {
@@ -744,7 +744,7 @@
 
 .detail_lxkf {
     font-size: 12px;
-    background: url(../images/indexPic/kf.png) no-repeat left center;
+    background: url(../easyui/images/indexPic/kf.png) no-repeat left center;
     padding-left: 20px
 }
 
@@ -775,7 +775,7 @@
 }
 
 .mydetail_process .linefour, .mydetail_process .lineone, .mydetail_process .linethree, .mydetail_process .linetwo {
-    background-image: url(../images/indexPic/theline3.png);
+    background-image: url(../easyui/images/indexPic/theline3.png);
     background-repeat: repeat-x;
     width: 118px;
     height: 72px;
@@ -784,32 +784,32 @@
 }
 
 .detailprocess_one {
-    background-image: url(../images/indexPic/detail_end.png);
+    background-image: url(../easyui/images/indexPic/detail_end.png);
     padding-top: 86px
 }
 
 .detailprocess_two {
-    background-image: url(../images/indexPic/pay_end.png);
+    background-image: url(../easyui/images/indexPic/pay_end.png);
     padding-top: 86px
 }
 
 .detailprocess_three {
-    background-image: url(../images/indexPic/dz_end.png);
+    background-image: url(../easyui/images/indexPic/dz_end.png);
     padding-top: 80px
 }
 
 .detailprocess_four {
-    background-image: url(../images/indexPic/ck_end.png);
+    background-image: url(../easyui/images/indexPic/ck_end.png);
     padding-top: 86px
 }
 
 .detailprocess_five {
-    background-image: url(../images/indexPic/jy_end.png);
+    background-image: url(../easyui/images/indexPic/jy_end.png);
     padding-top: 86px
 }
 
 .mydetail_first .detailprocess_one {
-    background-image: url(../images/indexPic/detail_now.png)
+    background-image: url(../easyui/images/indexPic/detail_now.png)
 }
 
 .mydetail_first .detailprocess_one p {
@@ -817,11 +817,11 @@
 }
 
 .mydetail_first .lineone {
-    background-image: url(../images/indexPic/theline.png)
+    background-image: url(../easyui/images/indexPic/theline.png)
 }
 
 .mydetail_sec .detailprocess_one {
-    background-image: url(../images/indexPic/detail_over.png)
+    background-image: url(../easyui/images/indexPic/detail_over.png)
 }
 
 .mydetail_sec .detailprocess_one p {
@@ -829,11 +829,11 @@
 }
 
 .mydetail_sec .lineone {
-    background-image: url(../images/indexPic/theline2.png)
+    background-image: url(../easyui/images/indexPic/theline2.png)
 }
 
 .mydetail_sec .detailprocess_two {
-    background-image: url(../images/indexPic/pay_now.png)
+    background-image: url(../easyui/images/indexPic/pay_now.png)
 }
 
 .mydetail_sec .detailprocess_two p {
@@ -841,11 +841,11 @@
 }
 
 .mydetail_sec .linetwo {
-    background-image: url(../images/indexPic/theline.png)
+    background-image: url(../easyui/images/indexPic/theline.png)
 }
 
 .mydetail_third .detailprocess_one {
-    background-image: url(../images/indexPic/detail_over.png)
+    background-image: url(../easyui/images/indexPic/detail_over.png)
 }
 
 .mydetail_third .detailprocess_one p, .mydetail_third .detailprocess_two p {
@@ -853,19 +853,19 @@
 }
 
 .mydetail_third .lineone, .mydetail_third .linetwo {
-    background-image: url(../images/indexPic/theline2.png)
+    background-image: url(../easyui/images/indexPic/theline2.png)
 }
 
 .mydetail_third .detailprocess_two {
-    background-image: url(../images/indexPic/pay_over.png)
+    background-image: url(../easyui/images/indexPic/pay_over.png)
 }
 
 .mydetail_third .linethree {
-    background-image: url(../images/indexPic/theline.png)
+    background-image: url(../easyui/images/indexPic/theline.png)
 }
 
 .mydetail_third .detailprocess_three {
-    background-image: url(../images/indexPic/dz_now.png)
+    background-image: url(../easyui/images/indexPic/dz_now.png)
 }
 
 .mydetail_third .detailprocess_three p {
@@ -873,7 +873,7 @@
 }
 
 .mydetail_four .detailprocess_one {
-    background-image: url(../images/indexPic/detail_over.png)
+    background-image: url(../easyui/images/indexPic/detail_over.png)
 }
 
 .mydetail_four .detailprocess_one p, .mydetail_four .detailprocess_three p, .mydetail_four .detailprocess_two p {
@@ -881,23 +881,23 @@
 }
 
 .mydetail_four .lineone, .mydetail_four .linethree, .mydetail_four .linetwo {
-    background-image: url(../images/indexPic/theline2.png)
+    background-image: url(../easyui/images/indexPic/theline2.png)
 }
 
 .mydetail_four .detailprocess_two {
-    background-image: url(../images/indexPic/pay_over.png)
+    background-image: url(../easyui/images/indexPic/pay_over.png)
 }
 
 .mydetail_four .linefour {
-    background-image: url(../images/indexPic/theline.png)
+    background-image: url(../easyui/images/indexPic/theline.png)
 }
 
 .mydetail_four .detailprocess_three {
-    background-image: url(../images/indexPic/dz_over.png)
+    background-image: url(../easyui/images/indexPic/dz_over.png)
 }
 
 .mydetail_four .detailprocess_four {
-    background-image: url(../images/indexPic/ck_now.png)
+    background-image: url(../easyui/images/indexPic/ck_now.png)
 }
 
 .mydetail_four .detailprocess_four p {
@@ -905,7 +905,7 @@
 }
 
 .myleval_fiveth .detailprocess_one {
-    background-image: url(../images/indexPic/detail_over.png)
+    background-image: url(../easyui/images/indexPic/detail_over.png)
 }
 
 .myleval_fiveth .detailprocess_four p, .myleval_fiveth .detailprocess_one p, .myleval_fiveth .detailprocess_three p, .myleval_fiveth .detailprocess_two p {
@@ -913,23 +913,23 @@
 }
 
 .myleval_fiveth .linefour, .myleval_fiveth .lineone, .myleval_fiveth .linethree, .myleval_fiveth .linetwo {
-    background-image: url(../images/indexPic/theline2.png)
+    background-image: url(../easyui/images/indexPic/theline2.png)
 }
 
 .myleval_fiveth .detailprocess_two {
-    background-image: url(../images/indexPic/pay_over.png)
+    background-image: url(../easyui/images/indexPic/pay_over.png)
 }
 
 .myleval_fiveth .detailprocess_three {
-    background-image: url(../images/indexPic/dz_over.png)
+    background-image: url(../easyui/images/indexPic/dz_over.png)
 }
 
 .myleval_fiveth .detailprocess_four {
-    background-image: url(../images/indexPic/ck_over.png)
+    background-image: url(../easyui/images/indexPic/ck_over.png)
 }
 
 .myleval_fiveth .detailprocess_five {
-    background-image: url(../images/indexPic/jy_now.png)
+    background-image: url(../easyui/images/indexPic/jy_now.png)
 }
 
 .myleval_fiveth .detailprocess_five p {

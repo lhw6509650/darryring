@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询用户</title>
+    <link id='easyuiTheme' rel="stylesheet" href="http://localhost:8080/darryring/easyui/themes/default/easyui.css" type="text/css"></link>
+    <link rel="stylesheet" href="http://localhost:8080/darryring/easyui/themes/icon.css" type="text/css"></link>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.cookie.js"></script>
+    <style>
+        .input{
+            float: left;
+        }
+
+    </style>
+    <script>
+        //编辑的行索引
+        var editRow = null;
+        $(function(){
+            //编辑方法
+            function updateData(rowIndex){
+
+                if(editRow!=null){
+                    $dgg.datagrid('cancelEdit',editRow);
+                    editRow=null;
+                }
+
+                if(rowIndex){
+                    //直接双击或右击
+                    editRow=rowIndex;
+                    $dgg.datagrid('beginEdit',rowIndex);
+                    $dgg.datagrid('unselectAll');
+                }else{
+                    var rows = $dgg.datagrid('getSelections');
+                    //只能选择一行编辑
+                    if(rows.length==1){
+                        if(editRow==null){
+                            //获得选中行索引
+                            editRow = $dgg.datagrid('getRowIndex',rows[0]);
+                            $dgg.datagrid('beginEdit',editRow);
+                        }
+                    }else{
+                        $.messager.alert('提示','请选择要编辑的一行');
+                    }
+                }
+            }
+
+            //删除方法
+            function deleteData(){
+                //获取所有选中的行
+                var rows = $dgg.datagrid('getSelections');
+
+                if(rows.length>0){
+                    if(editRow!=null){
+                        $dgg.datagrid('cancelEdit',editRow);
+                    }
+                    $.messager.confirm('确定','您确定要删除选定的记录？',function(r){
+                        if(r){
+                            //获取要删除的id数组
+                            var ids = [];
+                            $(rows).each(function(i,obj){
+                                ids.push(obj.user_id);
+                            });
+                            console.info(ids);
+                            $.ajax({
+                                url:'http://localhost:8080/kwx/deluser',
+                                data:{id:ids.join(',')}, //1,3,5
+                                dataType:'json',
+                                success:function(r){
+                                    if(r.flag){
+                                        $.messager.show({
+                                            title:'消息',
+                                            msg:r.message
+                                        });
+                                        $dgg.datagrid('reload');
+                                        $dgg.datagrid('unselectAll');
+                                    }else{
+                                        $.messager.alert('消息',r.message);
+                                    }
+                                    editRow = null;
+                                }
+                            });
+                        }
+                    });
+                }else{
+                    $.messager.alert('提示','请选择要删除的行','warning');
+                }
+            }
+
+            //DataGrid
+            var $dgg = $('#dg').datagrid({
+                url:'http://localhost:8080/kwx/selectusers', //要有url点击翻页才会发请求
+                striped:true,			//隔行变色
+                fitColumns:true,		//匹配列宽，false使用固定值
+                fit:true,				//匹配父容器，panel属性
+                nowrap:true,			//列不够是否自动换行,true表示不换行
+                singleSelect:false,
+                //分页控件
+                pagination:true,
+                pagePosition:'top',
+                pageSize:3,
+                pageList:[3,6,9,12],
+                //排序
+                sortName:'user_id',
+                sortOrder:'desc',
+
+                loadMsg:'正在加载数据...',
+
+                //冻结列
+                frozenColumns:[[
+                    {field:'user_id',title:'序号',width:50,sortable:true,
+                        styler:function(value){
+                            if(value<30){
+                                return  'color:red;';
+                            }else{
+                                return  'color:blue;';
+                            }
+                        }
+                    },
+                    {field:'user_logname',title:'用户名',width:100,
+                        formatter:function(value,row){
+                            return '<span title=提示:"'+value+'">'+value+'</span>';
+                        },
+                        editor:{
+                            type:'validatebox',
+                            options:{required:true}
+                        }
+                    }
+                ]],
+                columns:[[
+                    {field:'user_pwd',title:'密码',width:150,
+                        editor:{
+                            type:'validatebox',
+                            options:{required:true}
+                        }
+                    },
+                    {field:'user_sex',title:'性别',width:100,
+                        editor:{
+                            type:'combobox',
+                            options:{
+                                editable:false,
+                                required:true,
+                                valueField:'sex_id',
+                                textField:'sex_name',
+                                url:'http://localhost:8080/kwx/sex',
+                            }
+                        }
+                    },
+                    {field:'user_phone',title:'手机号码',width:180,
+                        editor:{
+                            type:'validatebox',
+                            options:{required:true}
+                        }
+                    },
+                    {field:'user_qq',title:'QQ',width:150,
+                        editor:{
+                            type:'textbox',
+                            options:{required:false}
+                        }
+                    },
+                    {field:'user_name',title:'真实姓名',width:110,
+                        editor:{
+                            type:'textbox',
+                            options:{required:false}
+                        }
+                    },
+                    {field:'user_email',title:'邮箱',width:180,
+                        editor:{
+                            type:'textbox',
+                            options:{required:false}
+                        }
+                    },
+                    {field:'user_status',title:'用户状态',width:130,
+                        editor:{
+                            type:'combobox',
+                            options:{
+                                editable:false,
+                                required:true,
+                                valueField:'status_id',
+                                textField:'status_name',
+                                url:'http://localhost:8080/kwx/status',
+                            }
+                        }
+                    },
+                    {field:'user_type',title:'用户类型',width:180,
+                        editor:{
+                            type:'combobox',
+                            options:{
+                                editable:false,
+                                required:true,
+                                valueField:'type_id',
+                                textField:'type_name',
+                                url:'http://localhost:8080/kwx/type',
+                            }
+                        }
+                    },
+                    {field:'user_zipcode',title:'邮箱编码',width:120,
+                        editor:{
+                            type:'textbox',
+                            options:{required:false}
+                        }
+                    },
+                    {field:'user_birthday',title:'生日',width:400,
+                        formatter : function(value){
+                            var date = new Date(value);
+                            var y = date.getFullYear();
+                            var m = date.getMonth() + 1;
+                            var d = date.getDate();
+                            return y + '-' +m + '-' + d;
+                        },
+                        editor:{type:'datebox',options:{}}}
+                ]],
+                toolbar: [{
+                    text: '编辑',
+                    iconCls: 'icon-edit',
+                    handler: function(){
+                        updateData();
+                    }
+                },'-',{
+                    text: '删除',
+                    iconCls: 'icon-remove',
+                    handler: function(){
+                        deleteData();
+                    }
+                },'-',{
+                    text: '保存',
+                    iconCls: 'icon-save',
+                    handler: function(){
+                        if(editRow!=null){
+
+                            //触发onAfterEdit事件
+                            $dgg.datagrid('endEdit',editRow);
+                        }
+                    }
+                },'-',{
+                    text: '取消编辑',
+                    iconCls: 'icon-back',
+                    handler: function(){
+                        $dgg.datagrid('rejectChanges');	//撤销修改内容
+                        $dgg.datagrid('unselectAll');	//取消选择
+                        editRow=null;
+                    }
+                }],
+                //结束编辑时触发,实现新增和修改到后台
+                onAfterEdit:function(rowIndex,rowData,change){
+                    //console.info(rowData);
+                    //验证通过才会发该请求
+                    $.ajax({
+
+                        url:'http://localhost:8080/kwx/upuser',
+                        data:rowData, //{id:11,username:'admin'} id=11&username=admin
+                        dataType:'json',
+                        type:'post',
+                        success:function(m){
+                            if(m.flag){
+                                $.messager.show({
+                                    title:'消息',
+                                    msg:m.message,
+                                    timeout:5000,
+                                    showType:'slide'
+                                });
+                                //完成后刷新datagrid
+                                $dgg.datagrid('load');
+                            }else{
+                                $.messager.alert('消息',m.message);
+                                $dgg.datagrid('rejectChanges');
+                            }
+                            editRow = null;
+                        }
+                    });
+                },
+                //双击编辑
+                onDblClickRow:function(rowIndex,rowData){
+                    updateData(rowIndex);
+                },
+                //右键菜单
+                onRowContextMenu:function(e, rowIndex, rowData){
+                    //只能采用阻止默认事件
+                    e.preventDefault();
+                    //取消原来的选中行
+                    $dgg.datagrid('unselectAll');
+                    //右键选中行
+                    $dgg.datagrid('selectRow',rowIndex);
+                    //弹出右键菜单
+                    $('#mm').menu('show', {
+                        left: e.pageX,
+                        top: e.pageY
+                    });
+                }
+            });
+
+
+            //菜单点击事件
+            $('#mm').menu({
+                onClick:function(item){
+                    if(item.name=='edit'){
+                        updateData();
+                    }else if(item.name=='exit'){
+                        $('#mm').menu('hide');
+                    }else if(item.name=='remove'){
+                        alert('remove');
+                        deleteData();
+                    }
+                }
+            });
+
+            //将form表单元素序列化成JSON对象
+            serializeToObject=function(form){
+                var o = {};
+                $.each(form.serializeArray(),function(index){
+                    if(o[this['name']]){
+                        o[this['name']]=o[this['name']]+','+this['value'];
+                    }else{
+                        //{id:11,username:"admin"}
+                        o[this['name']]=this['value'];
+                    }
+                });
+                return o;
+            }
+
+            $('#tb').textbox({
+                buttonText: '搜索',
+                iconCls: 'icon-search',
+                iconAlign: 'left',
+                onClickButton: function () {
+                    $('#dg').datagrid({
+                        queryParams: {
+                            user_logname: $("#tb").val(),
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+</head>
+<body>
+<div data-options="region:'west'" style="width:200px;">
+    <div style="margin-bottom: 10px">
+        <input id="tb" type="text" style="width:300px;">
+    </div>
+    <!-- 右键菜单 -->
+    <div id="mm" class="easyui-menu" style="width:120px;display:none;">
+        <div data-options="name:'edit',iconCls:'icon-edit'">编辑</div>
+        <div data-options="name:'remove',iconCls:'icon-remove'">删除</div>
+        <div class="menu-sep"></div>
+        <div data-options="name:'exit',iconCls:'icon-exit'" >退出</div>
+    </div>
+    <div style="width: 1200px;height: 360px;">
+        <table id="dg"></table>
+    </div>
+
+</div>
+</body>
+</html>

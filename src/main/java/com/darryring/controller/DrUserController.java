@@ -1,5 +1,6 @@
 package com.darryring.controller;
 
+import com.darryring.dao.DrUserDao;
 import com.darryring.pojo.DrUser;
 import com.darryring.pojo.Dr_user_address;
 import com.darryring.pojo.Dr_user_area;
@@ -7,6 +8,8 @@ import com.darryring.service.DrUserService;
 import com.darryring.service.Dr_user_addressService;
 import com.darryring.service.Dr_user_areaService;
 import com.darryring.util.ImageCreate;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +21,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @SessionAttributes({"user"})
 @Controller
@@ -302,7 +307,39 @@ public class DrUserController {
         mav.setViewName("forward:/queryAddress");
         return mav;
     }
+    //(后台)获取页面信息
+    @GetMapping(value = "/hlogin")
+    public ModelAndView hlogin(ModelAndView modelAndView){
+        modelAndView.setViewName("hlogin.html");
+        return modelAndView;
+    }
+    ////(后台)根据用户名和密码登录后台
+    @RequestMapping(value = "/hlogin",method = RequestMethod.POST )
+    public String hlogin(String userName,String password,Model mo){
+        System.out.println("进入后台登录。。。。。");
+        DrUser user = dus.findAllUserByType(userName,password);
+        System.out.println("11"+user.getUserName());
+        System.out.println("后台user.............");
+        if(user!=null){
+            mo.addAttribute("user",user);
+            return "layout.html";
+        }
+      return "hlogin.html";
 
+    }
+    //(后台)根据多条件带分页查询用户
+    @RequestMapping("/selectusers")
+    @ResponseBody
+    public Object selectusers(DrUser drUser,Model model){
+        System.out.println("(后台)根据多条件带分页查询用户");
+        System.out.println("(后台Id::)"+drUser.getUserId());
+        System.out.println("(后台userName::)"+drUser.getUserName());
+        Map<String,Object> map = new HashMap<>();
+        map.put("drUser",drUser);
+        List<Map<String,Object>> map1 = dus.selectAllUser(map);
+        model.addAttribute("map1",map1);
+        return map1;
+    }
 
 
 }

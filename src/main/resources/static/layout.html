@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>戴瑞后台管理平台</title>
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/darryring/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/darryring/easyui/css/table.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/darryring/easyui/themes/default/validatebox.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8080/darryring/easyui/themes/icon.css">
+
+	<style type="text/css">
+		a{
+			text-decoration:none;
+		}
+		.easyui-linkbutton{
+			margin-left: 300px;
+		}
+        .options{
+            height: 32px;
+            position: relative;
+            border: 1px solid #95B8E7;
+            background-color: #fff;
+            vertical-align: middle;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        #select{
+			height: 28px;
+			width: 40px;
+			position: relative;
+			border: 1px solid #95B8E7;
+			background-color: #fff;
+			vertical-align: middle;
+			display: inline-block;
+			overflow: hidden;
+			white-space: nowrap;
+			margin: 0;
+			padding: 0;
+			-moz-border-radius: 5px 5px 5px 5px;
+			-webkit-border-radius: 5px 5px 5px 5px;
+			border-radius: 5px 5px 5px 5px;
+		}
+	</style>
+<script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.min.js"></script>
+<script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="http://localhost:8080/darryring/easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.calendar.js"></script>
+
+    <script type="text/javascript">
+
+        function addTab(title, url){
+
+            if ($('#tt').tabs('exists', title)){
+                $('#tt').tabs('select', title);
+            } else {
+                var content = '<iframe scrolling="no" frameborder="0"  src="'+url+'" style="width:100%;height:100%;"></iframe>';
+                $('#tt').tabs('add',{
+                    title:title,
+                    content:content,
+                    closable:true
+                });
+            }
+        }
+	$(function () {
+
+        $('#btn1').linkbutton({
+            onClick:function(){
+
+                $('#form').form('submit', {
+                    url:'layout.html',
+                    onSubmit: function(){
+                        var flag = $('#form').form('validate');
+
+                        return flag;
+                    },
+                    success:function(data){
+                        $.messager.show({
+                            title:'我的消息',
+                            msg:'保存成功！',
+                            timeout:3000,
+                            showType:'fade'
+                        });
+                        $('#win').window('close');
+                    }
+                });
+            }
+        });
+    })
+
+
+</script>
+	<script src="http://localhost:8080/darryring/easyui/jquery.calendar.js"></script>
+	<link rel="stylesheet" href="http://localhost:8080/darryring/easyui/themes/default/validatebox.css">
+</head>
+<body class="easyui-layout">   
+    <div data-options="region:'north'" style="height:79px;overflow: hidden;">
+        <div style="margin-right: 0px">
+			<img src="http://localhost:8080/darryring/easyui/images/1546575235(1).png" height="50" width="216" style="padding-top: 20px;padding-left: 20px"/>
+			<h1 style="position:relative;left: 580px;bottom: 65px">戴瑞后台管理平台</h1>
+		</div>
+
+	</div>
+
+    <div data-options="region:'south'" style="height:50px;overflow: hidden;">
+		<div class="f-copyright" style="padding-left: 380px">
+			<p>
+				Copyright ©2014-2018 戴瑞珠宝版权所有
+				<span class="szgs-stat"><span id="szgs_stat_icon_45401"><a
+						href="https://www.beian.suzhou.gov.cn/websiteMark?siteid=45401&amp;type=1"
+						target="_blank"><img src="http://localhost:8080/darryring/easyui/images/szicbok.gif" height="18" width="20"/></a></span></span>
+				<a target="_blank"
+												   href="http://www.miibeian.gov.cn/">苏ICP备14049145号-1</a>&nbsp;&nbsp;ICP证：苏B1-20140152
+
+			</p>
+		</div>
+	</div>
+   
+    <div data-options="region:'west'" style="width:200px;">
+    	<div id="aa" class="easyui-accordion" style="width:198px;height:100%;">
+		    <div title="用户管理" data-options="iconCls:'icon-save'" style="overflow:auto;padding:10px;">
+
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/search.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('查询用户','selectuser.html')">查询用户</a></span></h3>
+                <h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('添加用户','selectuser.html')">添加用户</a></span></h3>
+                <h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('修改用户','selectuser.html')">修改用户</a></span></h3>
+            </div>
+		    <div title="商品管理" data-options="iconCls:'icon-reload',selected:true" style="padding:10px;">
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring//easyui/themes/icons/search.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('查询商品','selectshop.html')">查询商品</a></span></h3>
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('商品上架','addshop.html')">商品上架</a></span></h3>
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('商品下架','selectshop.html')">商品下架</a></span></h3>
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('商品修改','selectshop.html')">商品修改</a></span></h3>
+		    </div>   
+		    <div title="订单管理" data-options="iconCls:'icon-reload',selected:true" style="padding:10px;">
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('查询订单','selectorder.html')">查询订单</a></span></h3>
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('修改订单','selectorder.html')">修改订单</a></span></h3>
+		    </div>
+			<div title="商品分类管理" data-options="iconCls:'icon-reload',selected:true" style="padding:10px;">
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('查询商品分类','selectshopkind.html')">查询商品分类</a></span></h3>
+				<h3 style="color:#0099FF;padding-left: 20px"><span><img src="http://localhost:8080/darryring/easyui/themes/icons/pencil.png" height="16"
+																		width="16"/><a href="#"  onclick="addTab('修改商品分类','selectshopkind.html')">修改商品分类</a></span></h3>
+			</div>
+		</div>
+    </div> 
+      
+    <div data-options="region:'center'" style="padding:0px;background:#eee;overflow: hidden;">
+    	<div id="tt" class="easyui-tabs" style="width:100%;height:100%">
+			<div  title="主页" data-options="iconCls:'icon-reload',closable:false" style="padding:20px;display:none;">
+				<h1>主页</h1>
+				<input class="easyui-textbox" data-options="iconCls:'icon-search'" style="width:300px">
+			</div>
+		</div> 
+    </div>   
+</body>
+
+</html>

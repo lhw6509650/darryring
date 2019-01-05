@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>科沃斯后台管理平台</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/darryring/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/darryring/easyui/css/table.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/darryring/easyui/themes/default/validatebox.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:8080/darryring/easyui/themes/icon.css">
+
+    <style type="text/css">
+        .shop{
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+        a{
+            text-decoration:none;
+        }
+        .easyui-linkbutton{
+            margin-left: 300px;
+        }
+        .options{
+            height: 32px;
+            position: relative;
+            border: 1px solid #95B8E7;
+            background-color: #fff;
+            vertical-align: middle;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border-radius: 5px 5px 5px 5px;
+        }
+        .easyui-validatebox{
+            height: 28px;
+            width: 300px;
+            position: relative;
+            border: 1px solid #95B8E7;
+            background-color: #fff;
+            vertical-align: middle;
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            -moz-border-radius: 5px 5px 5px 5px;
+            -webkit-border-radius: 5px 5px 5px 5px;
+            border-radius: 5px 5px 5px 5px;
+        }
+    </style>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.calendar.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.calendar.js"></script>
+    <script type="text/javascript" src="http://localhost:8080/darryring/easyui/jquery.numberbox.js"></script>
+    <link rel="stylesheet" href="http://localhost:8080/darryring/easyui/themes/default/validatebox.css">
+</head>
+<body class="easyui-layout">
+<div style="margin-left: 200px;margin-top:10px;width: 100%;height: 100%;overflow-y:scroll; ">
+
+<form id="ff" method="post" action="http://localhost:8080/kwx/addGoods" enctype="multipart/form-data" style="width: 400px">
+    <div class="shop">
+        <label for="name" >商品名:</label>
+        <input style="margin-top: 0px;margin-right: 30px" id="name" name="goods_name" class="easyui-validatebox" type="text" data-options="required:true" />
+    </div>
+    <div class="shop" >
+        <div>
+        <label for="cc" >分类:</label>
+        </div>
+        <input style="width: 300px;"  id="cc" class="easyui-combobox" name="type_id" value="请选择"
+               data-options="valueField:'type_id',textField:'type_name',url:'http://localhost:8080/kwx/ajaxTypeone'" />
+    </div>
+    <div class="shop" >
+        <div>
+        <label for="number" >商品重量:</label>
+        </div>
+        <input style="width: 300px" id="number" name="goods_weight" type="text" class="easyui-numberbox" value="100" data-options="min:0,precision:2"></input>
+    </div>
+    <div class="shop">
+        <div>
+        <label for="size">商品尺寸:</label>
+        </div>
+        <input style="width: 300px" id="size" name="goods_size" class="easyui-textbox" data-options="" style="width:300px">
+    </div>
+    <div class="shop">
+        <div>
+        <label for="dianchi">电池容量(mAh):</label>
+        </div>
+        <input style="width: 300px" id="dianchi" name="goods_vol" type="text" class="easyui-numberbox" value="100" data-options="min:0,precision:2"></input>
+    </div>
+    <div class="shop">
+        <div>
+        <label for="dianya">电压(V):</label>
+        </div>
+        <input style="width: 300px" id="dianya" name="goods_adapter" type="text" class="easyui-numberbox" value="100" data-options="min:0,precision:2"></input>
+    </div>
+    <div class="shop">
+        <div>
+        <label for="jiage">价格(元):</label>
+        </div>
+        <input style="width: 300px" id="jiage" name="goods_price" type="text" class="easyui-numberbox" value="100" data-options="min:0,precision:2"></input>
+    </div>
+    <div class="shop">
+        <div>
+        <label for="kucun">库存:</label>
+        </div>
+        <input style="width: 300px" id="kucun" name="goods_kucun" type="text" class="easyui-numberbox" value="100" data-options="min:0,precision:2"></input>
+    </div>
+    <div class="shop">
+        <div>
+        <label for="date">日期:</label>
+    </div>
+        <input style="width: 300px" id="date" name="goods_date" id="dd"  type= "text" class= "easyui-datebox" required ="required"> </input>
+    </div>
+
+    <div class="shop">
+        <label for="clear">自动规划清洁功能:</label>
+        <select id="clear" name="goods_clear"  class="easyui-combobox" style="width:300px;">
+            <option value="0" selected>无</option>
+            <option value="1">有</option>
+        </select>
+    </div>
+
+    <div class="shop">
+        <label for="shop1">识别无边框功能:</label>
+        <select name="goods_frame"  class="easyui-combobox" style="width:300px;">
+            <option value="0" selected>无</option>
+            <option value="1">有</option>
+        </select>
+    </div>
+    <div class="shop">
+        <label for="shop1">报警提示功能:</label>
+        <select name="goods_warn"  class="easyui-combobox" style="width:300px;">
+            <option value="0" selected>无</option>
+            <option value="1">有</option>
+        </select>
+    </div>
+    <div class="shop">
+        <label for="shop1">备用安全电池:</label>
+
+        <select name="goods_cell"  class="easyui-combobox" style="width:300px;">
+            <option value="0"  selected>无</option>
+            <option value="1" >有</option>
+        </select>
+    </div>
+    <div class="shop">
+        <div>
+        <label for="shop1">遥控器:</label>
+        </div>
+        <select name="goods_control"  class="easyui-combobox" style="width:300px;">
+            <option value="0" selected>无</option>
+            <option value="1" >有</option>
+        </select>
+    </div>
+    <div class="shop">
+        <div>
+        <label for="shop1">安全扣:</label>
+        </div>
+        <select name="goods_safe"  class="easyui-combobox" style="width:300px;">
+            <option value="0" selected>无</option>
+            <option value="1" >有</option>
+        </select>
+    </div>
+    <div class="shop">
+        <label for="shop1">颜色:</label>
+        <input type="checkbox" value="1" name="color_id" ><span>中国红</span>
+        <input type="checkbox" value="2" name="color_id" checked><span>耀光银</span>
+        <input type="checkbox" value="3" name="color_id" ><span>炫酷黑</span>
+    </div>
+    <div class="shop">
+        <div>
+        <label for="shop1">商品图片:</label>
+        </div>
+        <input id="shop1" name="goodsfiles" class="easyui-filebox" style="width:300px" data-options="buttonText:'图片1'">
+    </div>
+    <div class="shop">
+        <label for="shop2">商品展示图片1:</label>
+        <input id="shop2" name="imgfiles" class="easyui-filebox" style="width:300px" data-options="buttonText:'图片2'">
+    </div>
+    <div class="shop">
+        <label for="shop3">商品展示图片2:</label>
+        <input id="shop3" name="imgfiles" class="easyui-filebox" style="width:300px" data-options="buttonText:'图片3'">
+    </div>
+    <div class="shop">
+        <label for="shop4">商品展示图片3:</label>
+        <input id="shop4" name="imgfiles" class="easyui-filebox" style="width:300px" data-options="buttonText:'图片4'">
+    </div>
+    <div class="shop">
+        <label for="shop5">商品展示图片4:</label>
+        <input id="shop5" name="imgfiles" class="easyui-filebox" style="width:300px" data-options="buttonText:'图片5'">
+    </div>
+    <div class="shop">
+        <label for="shop6">图片详情1:</label>
+        <input id="shop6" name="infofiles" class="easyui-filebox" style="width:300px" data-options="buttonText:'图片6'">
+    </div>
+    <div class="shop">
+        <label for="shop7">图片详情2:</label>
+        <input id="shop7" name="infofiles" class="easyui-filebox" style="width:300px" data-options="buttonText:'图片7'">
+    </div>
+    <div class="shop">
+        <label for="shop8">图片详情3:</label>
+        <input id="shop8" name="infofiles" class="easyui-filebox" style="width:300px" data-options="buttonText:'图片8'">
+    </div>
+    <div class="shop">
+        <p>商品描述:</p>
+        <input name="goods_info" style="width: 300px;height: 200px">
+    </div>
+    <div class="shop">
+        <input type="submit" value="添加商品">
+        <span style="position: relative;left: -100px">
+        <a style="width: 100px" id="btn" href="javascript:void(0)" class="easyui-linkbutton" data-options="iconCls:'icon-save'" >添加商品</a>
+        </span>
+    </div>
+</form>
+</div>
+
+
+
+</body>
+
+</html>

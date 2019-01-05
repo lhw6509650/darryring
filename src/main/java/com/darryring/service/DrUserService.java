@@ -3,6 +3,7 @@ package com.darryring.service;
 import com.darryring.pojo.DrUser;
 
 import java.util.List;
+import java.util.Map;
 
 public interface DrUserService {
 
@@ -29,5 +30,12 @@ public interface DrUserService {
 
     //修改密码前判断输入的原密码是否存在
     public List<DrUser> queryByPwd(String pwd, Integer userId);
+
+    //(后台)根据用户名和密码登录后台
+    public DrUser findAllUserByType(String userName,String password);
+
+    //(后台)根据多条件带分页查询用户
+    public List<Map<String,Object>> selectAllUser(Map<String,Object> map);
+
 
 }
