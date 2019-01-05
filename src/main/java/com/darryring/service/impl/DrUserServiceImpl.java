@@ -42,6 +42,12 @@ public class DrUserServiceImpl implements DrUserService {
     //根据手机号码判定用户是否存在
     public DrUser findUserByPhone(String phone){ return  drd.findUserByPhone(phone);}
 
+    @Override
+    public DrUser registByPhone(String phone) {
+
+        return drd.registByPhone(phone);
+    }
+
     //更改用户个人资料
     public int improve(DrUser du){
         return drd.improve(du);

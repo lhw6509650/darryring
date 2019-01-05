@@ -3,9 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.darryring.dao.DrUserDao">
-    <!--注册账号-->
+    <!--账号密码注册账号-->
     <insert id="insertUser">
         insert into dr_user(phone,password)value(#{phone},#{password})
+    </insert>
+
+    <!--短信注册账号-->
+    <insert id="insertUser">
+        insert into dr_user(phone)value(#{phone})
     </insert>
 
     <!--根据手机号码和密码登录-->

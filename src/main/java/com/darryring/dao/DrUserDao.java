@@ -21,6 +21,9 @@ public interface DrUserDao {
     //根据手机号码判定用户是否存在
     public DrUser findUserByPhone(String phone);
 
+    //根据手机号码登录注册
+    public DrUser registByPhone(String phone);
+
     //更改用户个人资料
     public int improve(DrUser du);
 

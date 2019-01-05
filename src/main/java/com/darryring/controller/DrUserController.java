@@ -7,6 +7,7 @@ import com.darryring.service.DrUserService;
 import com.darryring.service.Dr_user_addressService;
 import com.darryring.service.Dr_user_areaService;
 import com.darryring.util.ImageCreate;
+import com.darryring.util.RondomNumUtil;
 import com.darryring.util.SendSMSValidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
-@SessionAttributes({"user"})
+@SessionAttributes({"user","u"})
 @Controller
 public class DrUserController {
 
@@ -36,6 +37,8 @@ public class DrUserController {
 
     @Autowired
     private Dr_user_areaService dua;
+
+    private String param;
 
     @GetMapping(value = "/regist")
     public String regist(){
@@ -85,7 +88,9 @@ public class DrUserController {
     @RequestMapping(value = "/getCode",method = RequestMethod.POST )
     public String getCode(String phone){
           System.out.println("进入短信登陆验证。。。。。"+phone);
-          Boolean flag = SendSMSValidate.sendSms(phone,"3");
+          this.param = RondomNumUtil.createRandomVcode();
+          System.out.println("param..."+this.param);
+          Boolean flag = SendSMSValidate.sendSms(phone,this.param);
           if(flag){
               return "true";
           }
@@ -93,19 +98,30 @@ public class DrUserController {
     }
 
 
-    /*//短信验证登录
+    //短信验证登录
     @RequestMapping(value = "/msglogin",method = RequestMethod.POST )
     public String msglogin(String phone,String veryCode,Model mo){
         System.out.println("进入短信登陆。。。。。"+veryCode);
-        Boolean flag = SendSMSValidate.sendSms(phone,"3");
-        System.out.println("csdcsd...."+flag);
         DrUser user = dus.findUserByPhone(phone);
-        if(user!=null && flag){
-            mo.addAttribute("user",user);
-            return "redirect:/index";
+        if(user!=null){
+            if(this.param.equals(veryCode)){
+                mo.addAttribute("user",user);
+                return "redirect:/index";
+            }else{
+                mo.addAttribute("msg","验证码错误，请重试！");
+                return "qianduan/login";
+            }
+        }else{
+            if(this.param.equals(veryCode)){
+                DrUser u = dus.registByPhone(phone);
+                mo.addAttribute("u",u);
+                return "redirect:/index";
+            }else{
+                mo.addAttribute("msg","验证码错误，请重试！");
+                return "qianduan/login";
+            }
         }
-        return "login";
-    }*/
+    }
 
     //其他登录
     @ResponseBody
