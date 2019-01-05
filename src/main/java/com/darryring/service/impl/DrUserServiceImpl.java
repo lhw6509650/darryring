@@ -43,7 +43,7 @@ public class DrUserServiceImpl implements DrUserService {
     public DrUser findUserByPhone(String phone){ return  drd.findUserByPhone(phone);}
 
     @Override
-    public DrUser registByPhone(String phone) {
+    public int registByPhone(String phone) {
 
         return drd.registByPhone(phone);
     }

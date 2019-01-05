@@ -22,7 +22,7 @@ public interface DrUserDao {
     public DrUser findUserByPhone(String phone);
 
     //根据手机号码登录注册
-    public DrUser registByPhone(String phone);
+    public int registByPhone(String phone);
 
     //更改用户个人资料
     public int improve(DrUser du);

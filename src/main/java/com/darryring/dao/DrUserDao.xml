@@ -9,7 +9,7 @@
     </insert>
 
     <!--短信注册账号-->
-    <insert id="insertUser">
+    <insert id="registByPhone">
         insert into dr_user(phone)value(#{phone})
     </insert>
 
@@ -30,7 +30,7 @@
     </select>
 
     <!--根据手机号码判定用户是否存在-->
-    <select id="findUserByPhone">
+    <select id="findUserByPhone" resultType="DrUser">
         select * from dr_user where phone=#{phone}
     </select>
 

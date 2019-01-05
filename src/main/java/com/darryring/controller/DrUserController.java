@@ -7,6 +7,7 @@ import com.darryring.service.DrUserService;
 import com.darryring.service.Dr_user_addressService;
 import com.darryring.service.Dr_user_areaService;
 import com.darryring.util.ImageCreate;
+import com.darryring.util.RedisUtil;
 import com.darryring.util.RondomNumUtil;
 import com.darryring.util.SendSMSValidate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
-@SessionAttributes({"user","u"})
+@SessionAttributes({"user"})
 @Controller
 public class DrUserController {
 
@@ -39,6 +40,9 @@ public class DrUserController {
     private Dr_user_areaService dua;
 
     private String param;
+
+    @Autowired
+    RedisUtil redisUtil;
 
     @GetMapping(value = "/regist")
     public String regist(){
@@ -83,7 +87,7 @@ public class DrUserController {
         return "qianduan/login";
     }
 
-    //短信验证登录
+    //短信验证
     @ResponseBody
     @RequestMapping(value = "/getCode",method = RequestMethod.POST )
     public String getCode(String phone){
@@ -92,6 +96,7 @@ public class DrUserController {
           System.out.println("param..."+this.param);
           Boolean flag = SendSMSValidate.sendSms(phone,this.param);
           if(flag){
+              redisUtil.set("vcode",this.param,5L);
               return "true";
           }
         return "false";
@@ -102,9 +107,11 @@ public class DrUserController {
     @RequestMapping(value = "/msglogin",method = RequestMethod.POST )
     public String msglogin(String phone,String veryCode,Model mo){
         System.out.println("进入短信登陆。。。。。"+veryCode);
-        DrUser user = dus.findUserByPhone(phone);
+        DrUser user = null;
+        String params = (String) redisUtil.get("vcode");
+        user = dus.findUserByPhone(phone);
         if(user!=null){
-            if(this.param.equals(veryCode)){
+            if(params.equals(veryCode)){
                 mo.addAttribute("user",user);
                 return "redirect:/index";
             }else{
@@ -112,10 +119,14 @@ public class DrUserController {
                 return "qianduan/login";
             }
         }else{
-            if(this.param.equals(veryCode)){
-                DrUser u = dus.registByPhone(phone);
-                mo.addAttribute("u",u);
-                return "redirect:/index";
+            if(params.equals(veryCode)){
+                if(dus.registByPhone(phone)>0){
+                    user = dus.findUserByPhone(phone);
+                    mo.addAttribute("user",user);
+                    return "redirect:/index";
+                }else {
+                    return "qianduan/login";
+                }
             }else{
                 mo.addAttribute("msg","验证码错误，请重试！");
                 return "qianduan/login";
