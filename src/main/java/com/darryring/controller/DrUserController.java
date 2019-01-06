@@ -76,13 +76,18 @@ public class DrUserController {
 
     //登录
     @RequestMapping(value = "/login",method = RequestMethod.POST )
-    public String login(String phone, String password,Model mo){
+    public String login(String phone, String password,String preurl,Model mo){
         System.out.println("进入登陆。。。。。");
+        System.out.println("url:"+preurl);
         DrUser user = dus.findByNamePw(phone,password);
         if(user!=null){
-            System.out.println("user.............");
             mo.addAttribute("user",user);
-            return "redirect:/index";
+            if("".equals(preurl)){
+                return "redirect:/index";
+            }else{
+                return "redirect:"+preurl;
+            }
+
         }
         return "qianduan/login";
     }

@@ -19,32 +19,33 @@ public class Dr_shopcarServiceImpl implements Dr_shopcarService {
     RedisUtil redisUtil;
 
     @Override
-    public List<Dr_shopcar> selProById(Integer uid) {
+    public List<Dr_shopcar> selProById(DrUser user) {
         List<Dr_shopcar> sclist = null;
-        if(uid==null && redisUtil.exists("sclist")){
-            System.out.println("exists:3333....");
-            sclist = (List<Dr_shopcar>)redisUtil.get("sclist");
-            System.out.println("sclist:33333....");
-            for (Dr_shopcar n : sclist) {
-                System.out.println(n.getNum()+"\t");
+        if(user==null){
+            System.out.println("没有登陆。。。");
+            if(redisUtil.exists("sclist")){
+                sclist = (List<Dr_shopcar>)redisUtil.get("sclist");
+                System.out.println("sclist:"+sclist);
+            }else{
+                return sclist;
             }
         }else{
-            System.out.println("not exists:3333....");
+            System.out.println("已经登陆了。。。");
             //从数据库取并保存到redis
-            sclist = dr_shopcarMapper.selProById(uid);
+            sclist = dr_shopcarMapper.selProById(user.getUserId());
             redisUtil.set("sclist", sclist, 24*60L);
         }
         return sclist;
     }
 
     @Override
-    public void addPro(List<Dr_shopcar> sclist,HttpServletRequest request) {
-        DrUser user = (DrUser)request.getSession().getAttribute("user");
+    public void addPro(List<Dr_shopcar> sclist,DrUser user) {
         redisUtil.set("sclist", sclist, 7*24*60L);
         if(user!=null){//已登录
             System.out.println("jinru....");
             List<Dr_shopcar> slist = (List<Dr_shopcar>)redisUtil.get("sclist");
             for(Dr_shopcar soc : sclist){
+                soc.setUid(user.getUserId());
                 dr_shopcarMapper.addPro(soc);
             }
             //插入成功后清空redis缓存

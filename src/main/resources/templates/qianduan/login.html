@@ -70,6 +70,7 @@
                         <div class="dr_minAction">
                             <input type="text" class="ipTxt ico-user" style="behavior:url(#default#savehistory)" value="" id="txtName1" name="phone" placeholder="请输入您的邮箱/手机号码" required pattern="(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}" />
                             <input type="password" class="ipTxt ico-pwd" value="" id="txtPwd1" name="password" placeholder="请输入密码" required pattern="\w{5,17}" />
+                            <input type="hidden"  name="preurl" class="preurl" value="">
                         </div>
                         <p class=" "><a class="fr" href="/forget?lang=cn">忘记密码?</a><input id="isRemember1" type="checkbox"  name='remember' vlaue='1' /><label for="isRemember">记住密码</label></p>
                         <p class="actionwd_same">使用<a href="javascript:;" class="usePhone">手机验证码登录</a></p>
@@ -92,7 +93,7 @@
                     <!--手机验证码登录-->
                     <div class="dr_form phone_dl">
                         <div class="dr_minAction">
-                            <input type="hidden" name="type" value="1">
+                            <input type="hidden" name="preurl"  class="preurl" value="">
                             <input type="text" class="ipTxt ico-user" id="cphone" name="phone" placeholder="请输入您的手机号码" />
                             <div class="fix"><input type="text" name="veryCode" class="ipTxt ico-send inputCode" placeholder="请输入验证码" />
                                 <a class="getCodeBtn" id='getSmsCode' href="javascript:;" data-type="1">获取短信验证码</a>
@@ -260,6 +261,18 @@
 </body>
 <script th:inline="javascript">
     $(function () {
+        var preurl = document.referrer;
+        alert(preurl);
+        if($.trim(preurl)==''){
+            $(".preurl").val("");
+        }else{
+            if(preurl.indexOf('regist')!=-1){		//来自注册页面
+                $(".preurl").val("");
+            }
+            $(".preurl").val(preurl.substring(31));
+            alert(preurl.substring(31));
+        }
+
         $("#getSmsCode").click(function () {
             Load();
             $.post("getCode",{"phone":$("#cphone").val()},function (data) {

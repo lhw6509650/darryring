@@ -58,7 +58,7 @@ public class ProductController {
         System.out.println(".."+page.getResult().size());
         mo.addAttribute("bnames",bnames);
         mo.addAttribute("map",map);
-        return "qianduan//cpring";
+        return "qianduan/cpring";
     }
     //查询根据钻石参数的dpaid和系列的psid查询所有的钻石定制
     //钻戒定制
@@ -76,7 +76,7 @@ public class ProductController {
         System.out.println("商品详情。。。。");
         mo.addAttribute("pdmap",dps.selProDetail(productId));
         mo.addAttribute("pdpiclist",dps.selProPic(productId));
-        return "qianduan//goodsJewelry";
+        return "qianduan/goodsJewelry";
     }
 
 

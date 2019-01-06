@@ -1669,7 +1669,12 @@ ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br
                         $(".dr_sametcborder").show();
                         $(".Verifica_first").hide();
                         $(".Verifica_nobuy").show();
-                        Load("cart");
+                        $.post("addCart",{"pdtId":$(".isto_shopcart").val()},function (r) {
+                            if (r == "true"){
+                                alert("dddd/..");
+                                Load("cart");
+                            }
+                        });
                     }
                 });
             }
