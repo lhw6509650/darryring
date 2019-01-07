@@ -48,11 +48,11 @@
     });
     function isLogin(){
 		var productId= $(".isto_shopcart").val();
-		$.post("../UserServlet?action=islogin",callBack);
+		$.post("islogin",callBack);
 		function callBack(data){
 			if(data=="false"){
 				alert("你还未登录，请先登录!");
-				location.href="login.html";
+				location.href="login";
 			}else{
 				location.href="http://localhost:8080/DarryRings/Dr_ProductServlet?method=shop&pid="+productId;
 			}
@@ -62,11 +62,11 @@
     function isLogin2(){
 		var productId= $(".isto_shopcart1").val();
 		var id= $(".isto_shopcart2").val();
-		$.post("../UserServlet?action=islogin",callBack);
+		$.post("islogin",callBack);
 		function callBack(data){
 			if(data=="false"){
 				alert("你还未登录，请先登录!");
-				location.href="login.html";
+				location.href="login";
 			}else{
 				location.href="http://localhost:8080/DarryRings/AddressServlet?action=adds&id="+id+"&proid="+productId;
 			}
@@ -120,7 +120,7 @@
         <div class="dr_header">
             <div class="fix">
                 <div class="dr_logo fl">
-                    <a href="/">
+                    <a th:href="@{index}">
                         <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
                     </a>
                 </div>
@@ -133,16 +133,16 @@
                 <div class="dr_member fr">
                     <div class="drmember_sec">
                         <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
-                            <a th:href="@{/login}">登录</a>
-                            <a th:href="@{/register}" class="drtojoin">注册</a>
+                            <a th:href="@{login}">登录</a>
+                            <a th:href="@{regist}" class="drtojoin">注册</a>
                         </div>
                         <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                            <a href="/user"  class="userName">你好！欢迎  <span  th:text="${session.user.loginName}">游客</span></a>
+                            <a th:href="@{usershow}" class="userName">欢迎<span th:text="${user.loginName}"></span></a>
                             <div class="loginIn fix" id="loginInaAtion">
-                                <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-                                <a href="qian/usercart.jsp">购物车</a>
+                                <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+                                <a href="usercart.html">购物车</a>
                                 <a href="/user/collect">我的收藏</a>
-                                <a href="qian/user.jsp">个人中心</a>
+                                <a th:href="@{usershow}">个人中心</a>
                                 <a href="/logout?forword=">退出</a>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
         <div class="dr_navbk w1360 fix">
             <ul class="dr_nav" >
                 <li id="DrNav" class="active" >
-                    <a th:href="@{/index}" phptag="官网_公共头部_文字链接_DR" >DR</a>
+                    <a th:href="@{index}" phptag="官网_公共头部_文字链接_DR" >DR</a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="DRsubNav">
                         <!--导航上部分-->
@@ -225,7 +225,10 @@
                     <!--下拉导航end-->
                 </li>
                 <li id="qhzjNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==0}">
-                    <a th:href="@{/cdarryring(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_求婚钻戒" ><span th:text="${cl.typename}"></span></a>
+                    <a th:href="@{cdarryring(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_求婚钻戒" ><span th:text="${cl.typename}"></span></a>
+                    <!--<c:forEach items="${categoryList}" var="clist"  end="0">
+                        <a href="<%=basePath %>Dr_ProductServlet?method=parent&tid=${clist['typeId']}" phptag="官网_公共头部_文字链接_求婚钻戒" >${clist['typeName']}</a>
+                     </c:forEach>-->
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-first" id="qhzjsubNav">
                         <!--导航上部分-->
@@ -235,7 +238,7 @@
                                 <!--戒指-->
                                 <div class="dr_navsuv-ring dr_navsuvleft-ring fl">
                                     <a href="https://www.darryring.com/darry_ring/?category=1&amp;series=14">
-                                        <img src="//pkquutas9.bkt.clouddn.com/1520406309.jpg" width="200" height="200"/>
+                                        <img src="//pkquutas9.bkt.clouddn.com/150607150059c4d3cc6559d.jpg" width="200" height="200"/>
                                     </a>
                                     <a href="https://www.darryring.com/darry_ring?category=1&amp;series=3">
                                         <img src="//pkquutas9.bkt.clouddn.com/1481184001.jpg" width="200" height="200"/>
@@ -255,14 +258,36 @@
                                 </div>
                                 <!--戒指end-->
                                 <!--相同部分-->
+                                <!--<div class="dr_navsuv-same dr_navsuvleft-same fl">
+                                <c:forEach items="${categoryList}" var="clist"  end="0">
+                                     <c:forEach items="${clist.child}" var="cl" begin="0" end="4">
+                                    <a href="<%=basePath %>Dr_ProductServlet?method=child&tid=${cl['typeId']}" ><p>${cl.typeName}</p></a>
+                                     </c:forEach>
+                                     <a href="<%=basePath %>Dr_ProductServlet?method=parent&tid=${clist['typeId']}" ><p>查看全部商品</p></a>
+                                </c:forEach>
+                                </div>-->
                                 <div class="dr_navsuv-same dr_navsuvleft-same fl" >
                                     <a th:href="@{/cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:each="ic,icSta:${session.ziCategorylist}"   th:if="${ic.cid==1 && icSta.index lt 9 && icSta.index%2==0}" ><p th:text="${ic.sname}"></p></a><!--WHITH YOU系列稀世粉钻-->
+                                    <!--MY HEART 系列-->
+                                    <!--BELIEVE 系列-->
+                                    <!--FOREVER 系列-->
+                                    <!--DR PARIS 52°&nbsp;系列-->
                                 </div>
                                 <!--相同部分end-->
                                 <!--相同部分-->
+                                <!--<div class="dr_navsuv-same dr_navsuvright-same fl">
+                                <c:forEach items="${categoryList}" var="clist" end="0">
+                                     <c:forEach items="${clist.child}" var="cl" begin="5">
+                                    <a href="<%=basePath %>Dr_ProductServlet?method=child&tid=${cl['typeId']}" ><p>${cl.typeName}</p></a>
+                                     </c:forEach>
+                                </c:forEach>
+                                </div>-->
                                 <div class="dr_navsuv-same dr_navsuvright-same fl">
                                     <a th:href="@{/cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==1  && icSta.index lt 9 && icSta.index%2==1}" ><p th:text="${ic.sname}"></p></a><!--LOVE LINE 系列-->
-                                    <a th:href="@{/cdarryring(cid=${cl.cid})}"><p>查看全部商品</p></a>
+                                    <!--<a href="https://www.darryring.com/darry_ring?category=1&amp;series=6" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==3}"><p th:text="${ic.sname}"></p></a>&lt;!&ndash;TRUE LOVE 系列&ndash;&gt;
+                                    <a href="https://www.darryring.com/darry_ring?category=1&amp;series=8" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==5}"><p th:text="${ic.sname}"></p></a>&lt;!&ndash;PRINCESS 系列&ndash;&gt;
+                                    <a href="https://www.darryring.com/darry_ring/?category=1&amp;series=35" th:each="ic,icSta:${indexCategory}" th:if="${icSta.index==7}"><p th:text="${ic.sname}">&nbsp;</p></a>&lt;!&ndash;LOCK FOREVER系列&ndash;&gt;-->
+                                    <a href="https://www.darryring.com/darry_ring"><p>查看全部商品</p></a>
                                 </div>
                                 <!--相同部分end-->
                                 <!--戒指-->
@@ -294,8 +319,10 @@
                     </div>
                     <!--下拉导航end-->
                 </li>
+                <!--11111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
                 <li id="zaskNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==1}">
-                    <a href="allPro" th:text="${cl.typename}"></a>
+                    <a th:href="@{cdarryring(cid=${cl.cid})}" th:text="${cl.typename}"></a>
+
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-sec" id="zasksubNav">
                         <!--导航上部分-->
@@ -307,7 +334,8 @@
                                     <div class="dr_navsuv-curturesame fl fix two-curturesame">
                                         <div class="dr_navsuv-List fl">
                                             <h6>类型</h6>
-                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==2 && bdSta.index lt 2}"><a href="/couple?category=2&amp;pos=banner" th:text="${bd.bname}"></a></p><!--结婚对戒-->
+                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==2 && bdSta.index lt 2}">
+                                                <a th:href="@{cpring(cid=${cl.cid},pbid=${bd.bid})}" th:text="${bd.bname}"></a></p><!--结婚对戒-->
                                             <!--<p th:each="bd,bdSta:${bdCategorylist}"><a href="/couple?category=3&amp;pos=banner">男戒</a></p>
                                             <p><a href="/cpring">结婚套装</a></p>-->
                                             <h6 class="dr_navsuv-r3">浏览</h6>
@@ -316,7 +344,10 @@
                                         </div>
                                         <div class="dr_navsuv-List dr_navsuv-List2 fl">
                                             <h6>系列</h6>
-                                            <p th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==2  && icSta.index lt 13}" ><a href="/couple?series=23&amp;pos=banner" th:text="${ic.sname}"></a></p>
+                                            <p th:each="ic,icSta:${session.ziCategorylist}"  th:if="${ic.cid==2  && icSta.index lt 13}" >
+                                                <a th:href="@{cdarryring(cid=${cl.cid},psid=${ic.sid})}" th:text="${ic.sname}"></a></p>
+                                            <!--<p><a href="/couple?series=21&amp;pos=banner">TOGETHER系列</a></p>
+                                            <p><a href="/couple?series=13&amp;pos=banner">ENDLESS LOVE系列</a></p>-->
                                             <p><a href="/couple?pos=banner">查看更多戒指</a></p>
                                             <!--<c:forEach items="${categoryList}" var="clist"  begin="1">
                                                  <c:forEach items="${clist.child}" var="cl">
@@ -344,7 +375,7 @@
                 </li>
                 <li id="jnrlwNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==2}">
                     <!--真爱礼物-->
-                    <a href="/jnr" th:text="${cl.typename}"></a>
+                    <a th:href="@{cpring(cid=${cl.cid})}" th:text="${cl.typename}"></a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="jnrlwsubNav">
                         <!--导航上部分-->
@@ -356,7 +387,8 @@
                                     <div class="dr_navsuv-curturesame fl fix two-curturesame">
                                         <div class="dr_navsuv-List fl">
                                             <h6>类型</h6>
-                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==3 && bdSta.index gt 7 && bdSta.index lt 10}"><a href="/goods/9?page=1&amp;tags=2&amp;isajax=0&amp;pos=banner"  th:text="${bd.bname}"></a></p><!--浪漫女士-->
+                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==3 && bdSta.index gt 7 && bdSta.index lt 10}">
+                                                <a th:href="@{cpring(cid=${cl.cid},pbid=${bd.bid})}"   th:text="${bd.bname}"></a></p><!--浪漫女士-->
                                             <!-- <p><a href="/goods/9?page=1&amp;tags=4&amp;isajax=0&amp;pos=banner">尊贵男士</a></p>-->
                                             <h6 class="dr_navsuv-r3">真爱礼物</h6>
                                             <p><a href="/goods/9?page=1&amp;orderby=salecount&amp;sort=asc&amp;isajax=0&amp;pos=banner">热销礼物</a></p>
@@ -364,7 +396,8 @@
                                         </div>
                                         <div class="dr_navsuv-List dr_navsuv-List2 fl">
                                             <h6>类型</h6>
-                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==3 && bdSta.index gt 2 && bdSta.index lt 8}"><a href="/goods/9?page=1&amp;category=4%2C5&amp;isajax=0&amp;pos=banner" th:text="${bd.bname}"></a></p><!--套链/项链/吊坠-->
+                                            <p th:each="bd,bdSta:${session.bdCategorylist}" th:if="${bd.cid==3 && bdSta.index gt 2 && bdSta.index lt 8}">
+                                                <a th:href="@{cpring(cid=${cl.cid},pbid=${bd.bid})}"  th:text="${bd.bname}"></a></p><!--套链/项链/吊坠-->
                                             <!--<p><a href="/goods/9?page=1&amp;category=6%2C14&amp;isajax=0&amp;pos=banner">手链/手镯</a></p>
                                             <p><a href="/goods/9?page=1&amp;category=11&amp;isajax=0&amp;pos=banner">冠冕</a></p>
                                             <p><a href="/goods/9?page=1&amp;category=15&amp;isajax=0&amp;pos=banner">爱的DIY</a></p>
@@ -389,10 +422,10 @@
                 </li>
                 <li  th:each="cl,clst:${session.categoryList}" th:if="${clst.index==3}">
                     <!--钻戒定制-->
-                    <a href="/goods/customnew" phptag="官网_公共头部_文字链接_钻戒定制" th:text="${cl.typename}"></a>
+                    <a th:href="@{customnew(cid=${cl.cid})}" phptag="官网_公共头部_文字链接_钻戒定制" th:text="${cl.typename}"></a>
                 </li>
                 <li id="shopNav" th:each="cl,clst:${session.categoryList}" th:if="${clst.index==4}">
-                    <a href="/shopyd" phptag="官网_公共头部_文字链接_DR实体店" th:text="${cl.typename}"></a>
+                    <a th:href="@{customnew(cid=${cl.cid})}" th:text="${cl.typename}"></a>
                     <!--下拉导航-->
                     <div class="dr_navsuv dr_navsuv-third" id="ShopsubNav">
                         <!--导航上部分-->
@@ -896,29 +929,49 @@
                         </ul>
                         <!--商品详情产品参数end-->
                         <!--商品图片-->
-                        <div class="ringbuy_img"><p><a href="http://www.darryring.com/store" target="_self"><img src="images/goodsJewelry/1479178396.jpg" title="男士凭身份证一生仅一枚" alt="男士凭身份证一生仅一枚"/></a>
-                            <a href="http://www.darryring.com/star" target="_self"><img src="images/goodsJewelry/1479178401.jpg" title="众多明星购买darry ring戒指" alt="众多明星购买darry ring戒指"/></a></p>
-                            <p><br/></p>
-                            <p><a href="http://www.darryring.com/star" target="_self" th:each="pdpic:${pdpiclist}" th:if="${pdpicStat.index gt 1}"><img th:src="${pdpic.slproute}"  alt="众多明星购买darry ring戒指"/></a></p>
-                            <p><br/></p><p><a href="http://www.darryring.com/culture" target="_self"><img src="images/goodsJewelry/1479178559.jpg" title="darry ring浪漫求婚钻戒品牌" alt="darry ring
-
-浪漫求婚钻戒牌"/></a><img src="images/goodsJewelry/1489389156.jpg" title="1489389156.jpg" alt="求婚钻戒版-PC端-盒子最新修改_44.jpg"/><a href="http://www.darryring.com/help/3" target="_self"><img src="images/goodsJewelry/1479178592.jpg" title="darry ring测量手寸" alt="darry ring测量手
-
-寸"/></a><a href="images/goodsJewelry/1479178617.jpg" title="darry
-
-ring珠宝品牌购买流程" alt="darry ring珠宝品牌购买流程"/></a><a href="http://www.darryring.com/brand/culture/51" target="_self"><img src="images/goodsJewelry/1479178628.jpg" title="darry ring珠宝超4C完美标准" alt="darry ring
-
-珠宝超4C完美标准"/></a><a href="http://www.darryring.com/brand/culture/52" target="_self"><img src="images/goodsJewelry/1479178636.jpg" title="darry ring珠宝国际|全球鉴定证书" alt="darry
-
-ring珠宝国际|全球鉴定证书"/></a><a href="http://www.darryring.com/brand/culture/53" target="_self"><img src="images/goodsJewelry/1479178622.jpg" title="darry ring珠宝终身保养" alt="darry ring珠宝
-
-终身保养"/></a><a href="http://www.darryring.com/help/21" target="_self"><img src="images/goodsJewelry/1479178652.jpg" title="darry
-
-ring珠宝全程保险|保价，全国免费送货" alt="darry ring珠宝全程保险|保价
-
-，全国免费送货"/></a><a href="http://www.darryring.com/store" target="_self"><img src="images/goodsJewelry/1479178661.jpg" title="darry
-
-ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br/></p><p><br/></p></div>
+                        <div class="ringbuy_img">
+                            <p>
+                                <a href="http://www.darryring.com/store" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178396.jpg" title="男士凭身份证一生仅一枚" alt="男士凭身份证一生仅一枚"/>
+                                </a>
+                                <a href="http://www.darryring.com/star" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178401.jpg" title="众多明星购买darry ring戒指" alt="众多明星购买darry ring戒指"/>
+                                </a>
+                            </p>
+                            <p>
+                                <br/>
+                            </p>
+                            <p>
+                                <a href="http://www.darryring.com/star" target="_self" th:each="pdpic,pdpicStat:${pdpiclist}" th:if="${pdpicStat.index gt 1}">
+                                    <img th:src="${pdpic.slproute}"  alt="众多明星购买darry ring戒指"/>
+                                </a>
+                            </p>
+                            <p><br/></p><p>
+                                <a href="http://www.darryring.com/culture" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178559.jpg" title="darry ring浪漫求婚钻戒品牌" alt="darry ring浪漫求婚钻戒牌"/>
+                                </a>
+                                <img src="//pkquutas9.bkt.clouddn.com/1489389156.jpg" title="1489389156.jpg" alt="求婚钻戒版-PC端-盒子最新修改_44.jpg"/>
+                                <a href="http://www.darryring.com/help/3" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178592.jpg" title="darry ring测量手寸" alt="darry ring测量手寸"/>
+                                </a>
+                                <a href="//pkquutas9.bkt.clouddn.com/1479178617.jpg" title="darryring珠宝品牌购买流程" alt="darry ring珠宝品牌购买流程"/>
+                                </a>
+                                <a href="http://www.darryring.com/brand/culture/51" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178628.jpg" title="darry ring珠宝超4C完美标准" alt="darry ring珠宝超4C完美标准"/>
+                                </a>
+                                <a href="http://www.darryring.com/brand/culture/52" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178636.jpg" title="darry ring珠宝国际|全球鉴定证书" alt="darryring珠宝国际|全球鉴定证书"/>
+                                </a>
+                                <a href="http://www.darryring.com/brand/culture/53" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178622.jpg" title="darry ring珠宝终身保养" alt="darry ring珠宝终身保养"/>
+                                </a>
+                                <a href="http://www.darryring.com/help/21" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178652.jpg" title="darryring珠宝全程保险|保价，全国免费送货" alt="darry ring珠宝全程保险|保价，全国免费送货"/>
+                                </a>
+                                <a href="http://www.darryring.com/store" target="_self">
+                                    <img src="//pkquutas9.bkt.clouddn.com/1479178661.jpg" title="darryring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/>
+                                </a>
+                            </p><p><br/></p><p><br/></p></div>
                         <!--商品图片end-->
                     </div>
                     <!--商品详情end-->
@@ -1035,14 +1088,14 @@ ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br
                     <!--售后保障-->
                     <div class="Details-all Details-third">
                         <!--商品图片-->
-                        <div class="ringbuy_img"><p><img src="images/goodsJewelry/1509091966.jpg" title="1509091966.jpg" alt="售后保障-2017修改简体版.jpg"/></p></div>
+                        <div class="ringbuy_img"><p><img src="//pkquutas9.bkt.clouddn.com/1509091966.jpg" title="1509091966.jpg" alt="售后保障-2017修改简体版.jpg"/></p></div>
                         <!--商品图片end-->
                     </div>
                     <!--售后保障end-->
                     <!--如何购买-->
                     <div class="Details-all Details-four">
                         <!--商品图片-->
-                        <div class="ringbuy_img"><p><img src="images/goodsJewelry/1484119219.jpg" title="1484119219.jpg" alt="钻戒公共详情 (4).jpg"/></p></div>
+                        <div class="ringbuy_img"><p><img src="//pkquutas9.bkt.clouddn.com/1484119219.jpg" title="1484119219.jpg" alt="钻戒公共详情 (4).jpg"/></p></div>
                         <!--商品图片end-->
                     </div>
                     <!--如何购买end-->
@@ -1470,7 +1523,7 @@ ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br
                     <div class="dr_decItem fr">
                         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
                         <span>粤ICP备11012085号-2/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
-                        <img src="/bundles/acmefrontend/img/kxzd.png" alt="" />
+                        <img src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
                     </div>
                 </div>
             </div>
@@ -1498,7 +1551,7 @@ ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br
                 <p>亲爱的DR族，在春节和<br />情人节繁忙期间，为了<br />确保您定制的Darry <br />Ring可以及时送达，建<br />议您提前选购商品哦。<br />详情请咨询客服。</p>
             </div>-->
             <!--温馨提示(1228)end-->
-            <img src="//res.darryring.com/webimg/common/zxkf.gif" />
+            <img src="//pkquutas9.bkt.clouddn.com/zxkf.gif" />
             <span>
 			在线<br/>客服
 		</span>
