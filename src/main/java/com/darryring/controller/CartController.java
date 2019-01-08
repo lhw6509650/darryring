@@ -8,10 +8,7 @@ import com.darryring.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -19,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@SessionAttributes({"sumPrice"})
 public class CartController {
 
     @Autowired
@@ -59,7 +57,6 @@ public class CartController {
             //将购物车存放至数据库
             dss.addPro(sclist,user);
             System.out.println("第一次进入");
-            model.addAttribute("shops", sclist);
             model.addAttribute("sumPrice", sumPrice);
         } else {
             // 不是第一次进入
@@ -74,16 +71,16 @@ public class CartController {
                     shopcar.setNum(shopcar.getNum() + 1);
                     // 总金额在原来的基础加一个相同的价格
                     sumPrice = sumPrice + (Float) shopcar.getProMap().get("price");
+                    dss.upPro(shopcar);
                     model.addAttribute("sumPrice", sumPrice);
                     flag = true;
                     break;
                 }
             }
-            //将购物车存放至数据库
-            dss.addPro(sclist,user);
             if (!flag) {// 商品不相同
                 // 创建一个购物车对象
                 Dr_shopcar scar = new Dr_shopcar();
+                List<Dr_shopcar> shclist = new ArrayList<>();
                 // 将商品封装到购物车对象
                 scar.setProMap(proMap);
                 // 将商品id封装到购物车对象
@@ -93,11 +90,10 @@ public class CartController {
                 // 总金额
                 sumPrice = sumPrice + (Float) scar.getProMap().get("price");
                 // 把新商品加入购物车集合
-                sclist.add(scar);
+                shclist.add(scar);
                 System.out.println("商品不相同");
                 //将购物车存放至数据库
-                dss.addPro(sclist,user);
-                model.addAttribute("shops", sclist);
+                dss.addPro(shclist,user);
                 model.addAttribute("sumPrice", sumPrice);
             }
         }
@@ -110,10 +106,81 @@ public class CartController {
          DrUser user = (DrUser)request.getSession().getAttribute("user");
          List<Dr_shopcar> cartlist = dss.selProById(user);
          model.addAttribute("cartlist",cartlist);
-         System.out.println("cartlist..."+cartlist.size());
-         for(Dr_shopcar s : cartlist){
-            System.out.println(s.getNum());
-         }
+        /* if(user!=null){
+             dss.addPro(cartlist,user);
+             model.addAttribute("cartlist",dss.selProById(user));
+         }else {
+             model.addAttribute("cartlist",cartlist);
+         }*/
         return "qianduan/shopcar";
      }
+
+    @RequestMapping("/add")
+    public String add(String productId, Model model,HttpServletRequest request){
+       System.out.println("进入加+++++");
+        //是否登录
+        DrUser user = (DrUser)request.getSession().getAttribute("user");
+        List<Dr_shopcar> slist = dss.selProById(user);
+        for(Dr_shopcar s : slist){
+            if(s.getProMap().get("productId").toString().equals(productId)){
+                s.setNum(s.getNum()+1);
+                s.setXtotal(s.getXtotal()+(Float) s.getProMap().get("price"));
+                dss.upPro(s);
+            }
+        }
+        return "redirect:/cart";
+    }
+
+    @RequestMapping("/min")
+    public String min(String productId,Model model,HttpServletRequest request){
+        System.out.println("进入减----------");
+        //是否登录
+        DrUser user = (DrUser)request.getSession().getAttribute("user");
+        Float sumPrice = (Float)request.getSession().getAttribute("sumPrice");
+        List<Dr_shopcar> slist = dss.selProById(user);
+        for(Dr_shopcar s : slist){
+            if(s.getProMap().get("productId").toString().equals(productId)){
+                System.out.println(s.getNum());
+                if(s.getNum()>1){
+                    s.setNum(s.getNum()-1);
+                    s.setXtotal(s.getXtotal()-(Float) s.getProMap().get("price"));
+                    sumPrice = sumPrice-(Float) s.getProMap().get("price");
+                    dss.upPro(s);
+                }else{
+                    sumPrice = sumPrice-s.getXtotal();
+                    dss.delPro(Integer.parseInt(productId),user.getUserId());
+                }
+            }
+        }
+        model.addAttribute("sumPrice",sumPrice);
+        return "redirect:/cart";
+    }
+
+    @RequestMapping("/del")
+    public String del(String productId,Model model,HttpServletRequest request){
+        System.out.println("进入删除----------");
+        DrUser user = (DrUser)request.getSession().getAttribute("user");
+        List<Dr_shopcar> slist = dss.selProById(user);
+        Float sumPrice = (Float)request.getSession().getAttribute("sumPrice");
+        for(Dr_shopcar s : slist){
+            if(s.getProMap().get("productId").toString().equals(productId)){
+                sumPrice = sumPrice-s.getXtotal();
+                dss.delPro(Integer.parseInt(productId),user.getUserId());
+            }
+        }
+        model.addAttribute("sumPrice",sumPrice);
+        return "redirect:/cart";
+    }
+
+    @RequestMapping("/delAll")
+    public String delAll(Model model,HttpServletRequest request){
+        System.out.println("进入清空购物车----------");
+        DrUser user = (DrUser)request.getSession().getAttribute("user");
+        Float sumPrice = (Float)request.getSession().getAttribute("sumPrice");
+        sumPrice = 0f;
+        dss.delPro(null,user.getUserId());
+        model.addAttribute("sumPrice",sumPrice);
+        return "redirect:/cart";
+    }
+
 }

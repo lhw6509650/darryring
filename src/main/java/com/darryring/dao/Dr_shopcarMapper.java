@@ -12,5 +12,7 @@ public interface Dr_shopcarMapper {
 
     public int addPro(Dr_shopcar dr_shopcar);
 
+    public int upPro(Dr_shopcar dr_shopcar);
+
     public int delPro(@Param("pid") Integer pid,@Param("uid")Integer uid);
 }

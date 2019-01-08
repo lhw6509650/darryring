@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.darryring.dao.Dr_order_detailMapper">
+    <insert id="addOrderDetail">
+        insert into dr_order_detail(oid,proid,quantity) values (#{oid},#{proid},#{quantity})
+    </insert>
+
+</mapper>

@@ -12,6 +12,7 @@
     <meta name="Description" content="" />
     <meta name="Keywords" content="" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/drcarts.css" />
     <link rel="stylesheet" href="css/MyDr.css" />
@@ -80,48 +81,35 @@
                 <thead>
                 <tr>
                     <td width="150px" class="padleft_20"><input type="checkbox" name="" id="" value="" checked="checked" class="check_all" />全选</td>
-                    <td width="220px" align="center">商品</td>
-                    <td width="630px">&nbsp;</td>
-                    <td width="157px" align="center">价格</td>
+                    <td width="240px" align="center">商品</td>
+                    <td width="330px" align="center">价格</td>
+                    <td width="290px" align="center">数量</td>
+                    <td width="157px" align="center">小计</td>
                     <td width="175px" align="center" class="padright_20">操作</td>
                 </tr>
                 </thead>
             </table>
             <!-- 人气组合 -->
-            <table class="shoppingcart_table shoppingcart_tbody" border="1" cellpadding="10">
+            <table class="shoppingcart_table shoppingcart_tbody" border="1" cellpadding="10" th:each="cal:${cartlist}">
                 <tbody>
                 <tr>
-                    <td width="30px" rowspan="2" class="padleft_20" valign="top"><input type="checkbox" name="" data-price="92699.00" data-id="99010" id="99010" value="1" checked="checked" class="cbox" /></td>
-                    <td width="128px" rowspan="2" valign="top"><img src="https://static.darryring.com/images/2017/09/14/1501497993.jpg" alt="" width="100" height="100" /></td>
-                    <td width="350px" class="nopad_left border_dashed">
+                    <td width="30px" rowspan="2" class="padleft_20" valign="top"><input type="checkbox" name="" data-price="31219.00" data-id="67035" id="67035" value="1" checked="checked" class="cbox" /></td>
+                    <td width="120px" rowspan="2" valign="top"><img th:src="${cal.getProMap().get('imageRoute')}" alt="" width="100" height="100" /></td>
+                    <td width="245px" class="nopad_left border_dashed" align="center">
                         <strong>
-                            <a href="/goods-jewelry-3542">
-                                MY HEART系列  奢华款
-
-                                100分
-
-                                F色
+                            <a href="/goods-jewelry-155" th:text="${cal.getProMap().get('sname')+' '+cal.getProMap().get('patternName')+' '+cal.getProMap().get('dweight')+'分'+cal.getProMap().get('dcolor')+'色'}">
+                                MY HEART系列  奢华款 100分 F色
                             </a>
-                        </strong> <strong>求婚钻戒</strong></td>
-                    <td width="514px" class="nopad_left border_dashed">
-                        <!--刻字-->
-                        <span class="errorMsg">刻字内容不能超过10个字符</span>
-                        <div class="ringbuy_Choose-third">
-                            <input type="text" name="carved" data-info="A"  data-id="99010" placeholder="刻字限5个汉字或10个字母" title="限输入5个汉字或10个字母" id="ipt_font" class="ipt_font" value=""/>
-                            <div class="ringbuy_Choose-btn">
-                                <i>♥</i>
-                                <i>&</i>
-                                <a class="cart-editSubmit" href="javascript:;" data-id="99010">确定</a>
-                            </div>
-                            <div class="ipt_wrong" style="display:none;">限输入8个汉字或14个字母</div>
-                        </div>
-                        <!--数量end-->
+                        </strong><strong th:text="${cal.getProMap().get('typename')}">求婚钻戒</strong></td>
+                    <td width="330px" class="border_dashed pay_money" align="center">&yen;<span th:text="${cal.getProMap().get('price')}" th:border="1">232332</span></td>
+                    <td width="294px" class="nopad_left border_dashed" align="center" th:border="1">
+                        <a th:href="@{min(productId=${cal.getProMap().get('productId')})}" ><input type="button" class='jian' value="-"></a>
+                        <input type="text" class='quantity'  th:value="${cal.getNum()}" style="width:20px"align="center"/>
+                        <a th:href="@{add(productId=${cal.getProMap().get('productId')})}"><input type="button" class='jia' value="+"></a>
                     </td>
-                    <td width="157px" class="border_dashed pay_money" align="center"><span>&yen;92699</span></td>
-                    <td width="175px" class="border_dashed" align="center">
-                        <!--<a href="javascript:;" class="addCollect" data-id="99010">移入收藏夹</a><br/>-->
-                        <a href="javascript:;" class="addGift" data-id="99010">移入礼物清单</a><br/>
-                        <a href="javascript:;" class="car-del" data-id="99010">删除</a>
+                    <td width="157px" class="border_dashed pay_money" align="center" th:border="1">&yen;<span th:text="${cal.getXtotal()}">232332</span></td>
+                    <td width="175px" class="border_dashed" align="center" th:border="1">
+                        <a th:href="@{del(productId=${cal.getProMap().get('productId')})}" class="car-del" data-id="67035" onclick="return confirm('你确定要删除该商品吗？')">删除</a>
                     </td>
                 </tr>
                 <tr>
@@ -151,6 +139,7 @@
                             </div>
                         </div>
                     </td>
+                    <td></td>
                     <td align="center" valign="top" class="padright_20"><a href="javascript:;" class="ringdetail_show">展开查看详情</a></td>
                 </tr>
                 </tbody>
@@ -163,8 +152,7 @@
             <div class="shoppingcart_pay clearfix pay_bottom">
                 <div class="scfoot_left">
                     <p><input type="checkbox" name="" id="" value="" checked="checked" class="check_all" />全选</p>
-                    <!--<p><a href="javascript:;" id="addAll">全部移入收藏夹</a></p>-->
-                    <p><a href="javascript:;" id="addAllGift">全部移入礼物清单</a></p>
+                    <p><a href="javascript:;" id="addAll">全部移入收藏夹</a></p>
                     <p><a href="/goods/9">继续购物</a></p>
                 </div>
                 <div class="scfoot_right">
@@ -365,24 +353,24 @@
     </div>
     <!--底部end-->
     <!--右边漂浮件-->
-    <div class="dr_quickservice" id="dr-quickservice">
-        <!--在线客服-->
+    <!--<div class="dr_quickservice" id="dr-quickservice">
+        &lt;!&ndash;在线客服&ndash;&gt;
         <div class="droline_kf droline_showkf" >
-            <!--客服提示文字-->
+            &lt;!&ndash;客服提示文字&ndash;&gt;
             <div class="droline_kfword">
                 <span></span>
                 <p>
                     想了解更多钻石知识<br />我们有专业在线客服给您解答
                 </p>
             </div>
-            <!--客服提示文字end-->
-            <!--温馨提示(1228)-->
-            <!--<div class="dr_Reminder">
+            &lt;!&ndash;客服提示文字end&ndash;&gt;
+            &lt;!&ndash;温馨提示(1228)&ndash;&gt;
+            &lt;!&ndash;<div class="dr_Reminder">
                 <span></span>
                 <h3>温馨提示</h3>
                 <p>亲爱的DR族，在春节和<br />情人节繁忙期间，为了<br />确保您定制的Darry <br />Ring可以及时送达，建<br />议您提前选购商品哦。<br />详情请咨询客服。</p>
-            </div>-->
-            <!--温馨提示(1228)end-->
+            </div>&ndash;&gt;
+            &lt;!&ndash;温馨提示(1228)end&ndash;&gt;
             <img src="//res.darryring.com/webimg/common/zxkf.gif" />
             <span>
 			在线<br/>客服
@@ -390,7 +378,7 @@
             <em class="droline_yleft"></em>
             <em class="droline_yright"></em>
         </div>
-        <!--在线客服end-->
+        &lt;!&ndash;在线客服end&ndash;&gt;
         <div class="dr_quick-cort">
             <a href="/shopbk?pos=dr_appointment" target="_blank" class="dr_quick8"></a>
             <p>预约</p>
@@ -426,7 +414,7 @@
                 新人礼包
             </div>
         </div>
-        <!--二维码-->
+        &lt;!&ndash;二维码&ndash;&gt;
         <div class="dr_quick-cort">
             <a href="javascript:;" class="dr_quick6"></a>
             <p>手机端</p>
@@ -434,8 +422,8 @@
                 <img src="//res.darryring.com/webimg/common/ewm.jpg" alt="移动版二维码" />
             </div>
         </div>
-        <!--二维码end-->
-        <!-- <div class="dr_quick-cort">
+        &lt;!&ndash;二维码end&ndash;&gt;
+        &lt;!&ndash; <div class="dr_quick-cort">
             <a href="javascript:;" class="dr_quick7"></a>
             <p>分享</p>
             <div class="dr_quick-word comShare">
@@ -445,14 +433,14 @@
                 <a class="shareRenren" rel="nofollow" href="javascript:;"></a>
                 <a class="shareDouban" rel="nofollow" href="javascript:;"></a>
                     </div>
-        </div> -->
+        </div> &ndash;&gt;
         <div class="dr_quick-cort">
             <a href="javascript:;" class="dr_totop"></a>
             <div class="dr_quick-word">
                 返回顶部
             </div>
         </div>
-    </div>
+    </div>-->
 
     <!--右边漂浮件end-->
     <!--客服弹窗-->
@@ -564,6 +552,20 @@
             您可浏览官网参与其他活动！</div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $("#cart-post").click(function () {
+            alert("1122");
+            location.href="order";
+        })
+        $(".jian").click(function () {
+            alert($(".quantity").val()=="1");
+            if($(".quantity").val()=="1"){
+                return confirm('你确定要删除该商品吗？');
+            }
+        })
+    })
+</script>
 <!--新人礼弹窗 end-->
 </body>
 </html>
