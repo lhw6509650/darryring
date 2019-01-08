@@ -66,17 +66,28 @@ $(function(){
 <div class="w1360">
     <header class="cart_head">
         <div class="dr_logo fl">
-            <a href="https://www.darryring.com/"><img src="images/loginPic/logo.png" alt="" /></a>
+            <a th:href="@{index}">
+                <img src="//pkquutas9.bkt.clouddn.com/logo.png" alt="" /></a>
         </div>
         <div class="dr_member fr">
             <div class="drmember_sec">
-                <div class="dr_member-left fl">
-                    <a href="login.html">登录</a>
-                    <a href="register.html" class="drtojoin">注册</a>
+                <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
+                    <a th:href="@{login}">登录</a>
+                    <a th:href="@{regist}" class="drtojoin">注册</a>
+                </div>
+                <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
+                    <a th:href="@{usershow}" class="userName">欢迎<span th:text="${user.loginName}"></span></a>
+                    <div class="loginIn fix" id="loginInaAtion">
+                        <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+                        <a href="usercart.html">购物车</a>
+                        <a href="/user/collect">我的收藏</a>
+                        <a th:href="@{usershow}">个人中心</a>
+                        <a href="/logout?forword=">退出</a>
+                    </div>
                 </div>
                 <div class="dr_member-left fl">
                     <i>
-                        <img src="images/indexPic/phone.png">
+                        <img src="//pkquutas9.bkt.clouddn.com/phone.png">
                         400 01 13520
                     </i>
                 </div>
@@ -150,7 +161,7 @@ $(function(){
         <!--通行证操作区 end-->
         <!-- banner -->
         <div class="dr-stBanner">
-            <img src="images/loginPic/login_bg.jpg" alt="" class="img01" />
+            <img src="//pkquutas9.bkt.clouddn.com/login_bg.jpg" alt="" class="img01" />
         </div>
         <!-- banner -->
     </div>
@@ -277,10 +288,12 @@ $(function(){
                     <div class="dr_decItem fr">
                         <a href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
                         <span>粤ICP备11012085号-2/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
-                        <img src="https://www.darryring.com/bundles/acmefrontend/img/kxzd.png" alt="" />
+                        <img src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
                     </div>
                 </div>
             </div>
+
+
             <!--中英文切换，网站声明end-->
         </div>
         <!--黑色区域end-->

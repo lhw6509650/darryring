@@ -1,18 +1,5 @@
-<%@ page language="java" import="java.util.*,com.darryring.pojo.*"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
-%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta name="baidu-site-verification" content="l0c5KddqRr" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,13 +11,13 @@
 <meta content="telephone=no" name="format-detection" />
 <meta name="Description" content="" />
 <meta name="Keywords" content="" />
-<script type="text/javascript" src="<%=basePath%>qian/js/common.js"
+<script type="text/javascript" src="js/common.js"
 	id='aws_mjs' aws-account='DarryRing-PC'></script>
 <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="stylesheet" href="<%=basePath%>qian/css/common.css" />
-<link rel="stylesheet" href="<%=basePath%>qian/css/MyDr.css" />
+<link rel="stylesheet" href="css/common.css" />
+<link rel="stylesheet" href="css/MyDr.css" />
 <script type="text/javascript"
-	src="<%=basePath%>qian/js/jquery-1.8.3.min.js"></script>
+	src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		//显示个人中心
@@ -81,8 +68,8 @@
 		<div class="dr_blackwall"></div>
 		<div class="acitve_show w1360">
 			<div class="leftLogo">
-				<a href="/"> <img
-					src="//res.darryring.com/webimg/common/logo.png" />
+				<a th:href="@{index}">
+					<img src="//pkquutas9.bkt.clouddn.com/logo.png" />
 				</a>
 			</div>
 			<div class="rightNav">
@@ -92,14 +79,15 @@
 				</div>
 				<a href="/user">
 					<div class="themeber fl"></div>
+				</a>
 			</div>
 		</div>
 		<!--头部-->
 		<div class="dr_header">
 			<div class="fix">
 				<div class="dr_logo fl">
-					<a href="/"> <img
-						src="//res.darryring.com/webimg/common/logo.png" />
+					<a th:href="@{index}">
+						<img src="//pkquutas9.bkt.clouddn.com/logo.png" />
 					</a>
 				</div>
 				<!--店铺定位-->
@@ -110,31 +98,27 @@
 				<!--店铺定位 end-->
 				<div class="dr_member fr">
 					<div class="drmember_sec">
-						<c:choose>
-							<c:when test="${empty user}">
-								<div class="dr_member-left fl" id="long_status">
-									<a href="<%=basePath%>qian/login.jsp">登录</a> <a
-										href="<%=basePath%>qian/register.jsp" class="drtojoin">注册</a>
-								</div>
-							</c:when>
-							<c:otherwise>
-								<div class="dr_member-left fl" id="loginInInfo">
-									<a href="/user" class="userName">欢迎${user.loginName}</a>
-									<div class="loginIn fix" id="loginInaAtion">
-										<a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-										<a href="/cart">购物车</a> <a href="/user/collect">我的收藏</a> <a
-											href="/user">个人中心</a> <a href="/logout?forword=">退出</a>
-									</div>
-								</div>
-							</c:otherwise>
-						</c:choose>
+						<div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
+							<a th:href="@{login}">登录</a>
+							<a th:href="@{regist}" class="drtojoin">注册</a>
+						</div>
+						<div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
+							<a th:href="@{usershow}" class="userName">欢迎<span th:text="${user.loginName}"></span></a>
+							<div class="loginIn fix" id="loginInaAtion">
+								<a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+								<a href="usercart.html">购物车</a>
+								<a href="/user/collect">我的收藏</a>
+								<a th:href="@{usershow}">个人中心</a>
+								<a href="/logout?forword=">退出</a>
+							</div>
+						</div>
 						<ul class="dr_member-right drLang fl" id="dr-country">
 							<li><a href="/">中文(简体)</a></li>
 							<li id="dr-english"><a href="https://www.darryring.com/en">English</a>
 								<a href="https://www.darryring.com/hk">中文(繁體)</a></li>
 						</ul>
 						<div class="dr_member-left fl">
-							<i> <img src="//res.darryring.com/webimg/common/phone.png" />
+							<i> <img src="//pkquutas9.bkt.clouddn.com/phone.png" />
 								400 01 13520
 							</i>
 						</div>
@@ -316,17 +300,15 @@
 					<!--所有订单-->
 					<div class="Mydetail_list">
 						<div class="Mydetail_same" style="display:block;">
-						<c:choose>
-						<c:when test="${empty orlist}">
-							<div class="myCer_empty pd20">
+
+							<div class="myCer_empty pd20" th:if="${orlist==null}">
 						      <div class="myCer_emptyInfo">
 							    <p>目前没有信息</p>
 						      </div>
 					        </div>
-						</c:when>
-						<c:otherwise>
-						<table class="mydetail_table" border="0">
-							<c:forEach items="${orlist}" var="order" varStatus="status">
+
+						<table class="mydetail_table" border="0" th:unless="${orlist==null}">
+							<!--<c:forEach items="${orlist}" var="order" varStatus="status">
 							   <c:forEach items="${order.orderIitems}" var="orderit"> 
 								<tr height="36px" class="mydetailfirst_two">
 									<td colspan="5">
@@ -416,10 +398,9 @@
 									</td>
 								</tr>
 								</c:forEach>
-								</c:forEach>
+								</c:forEach>-->
 							</table>
-					        </c:otherwise>
-					        </c:choose>
+
 						</div>
 					</div>
 					
@@ -438,7 +419,7 @@
 			<div class="dr_sametcborder">
 				<!--确认收货弹窗-->
 				<div class="Thecomment" id="confirm_mdOK">
-					<img src="<%=basePath %>qian/images/indexPic/dr_logo.png" />
+					<img src="//pkquutas9.bkt.clouddn.com/dr_logo.png" />
 					<div class="Verifica_delTips">
 						<p>确认收货成功！</p>
 					</div>
@@ -455,7 +436,7 @@
 			<div class="dr_sametcborder">
 				<!--确认删除订单-->
 				<div class="Verifica_all Verifica_delDay" id="delCOrderTips">
-					<img src="<%=basePath%>qian/images/indexPic/dr_logo.png"/>
+					<img src="//pkquutas9.bkt.clouddn.com/dr_logo.png"/>
 					<div class="Verifica_delTips">
 						<p>是否确认删除此订单？</p>
 					</div>
@@ -530,7 +511,7 @@
 						<h3>关注我们</h3>
 						<p>一个让你相信真爱的地方，给你实用的情感指南，为你的爱情终身服务。</p>
 						<a href="javascript:;" class="wechat"> <img
-							src="//res.darryring.com/webimg/common/gzh_wx.png" />
+							src="//pkquutas9.bkt.clouddn.com/gzh_wx.png" />
 						</a> <a href="https://weibo.com/2249451585/" class="weibo"
 							target="_blank"></a>
 					</div>
@@ -561,7 +542,7 @@
 								44030302000934号/</a> <span><a
 								href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备11012085号-2</a>/Copyright©2006-2018
 								www.darryring.com 戴瑞珠宝 All Rights Reserved. </span> <img
-								src="/bundles/acmefrontend/img/kxzd.png" alt="" />
+								src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
 						</div>
 					</div>
 				</div>
@@ -570,6 +551,8 @@
 			<!--黑色区域end-->
 		</div>
 		<!--底部end-->
+
+
 	</div>
 	<script language='javascript' type='text/javascript'>
          //订单期限倒计时

@@ -79,16 +79,16 @@
                 <div class="dr_member fr">
                     <div class="drmember_sec">
                         <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
-                            <a th:href="@{/login}">登录</a>
-                            <a th:href="@{/regists}" class="drtojoin">注册</a>
+                            <a th:href="@{login}">登录</a>
+                            <a th:href="@{regist}" class="drtojoin">注册</a>
                         </div>
                         <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                            <a href="/user"  class="userName">你好！欢迎  <span  th:text="${session.user.loginName}">游客</span></a>
+                            <a th:href="@{usershow}" class="userName">欢迎<span th:text="${user.loginName}"></span></a>
                             <div class="loginIn fix" id="loginInaAtion">
-                                <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-                                <a href="qian/usercart.jsp">购物车</a>
+                                <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+                                <a href="usercart.html">购物车</a>
                                 <a href="/user/collect">我的收藏</a>
-                                <a href="qian/user.jsp">个人中心</a>
+                                <a th:href="@{usershow}">个人中心</a>
                                 <a href="/logout?forword=">退出</a>
                             </div>
                         </div>
@@ -633,35 +633,35 @@
                 <li>
                     <a href="/goods/9?page=1&amp;category=4%2C5&amp;isajax=0" target="_blank" class="hrefLink"></a>
                     <span>
-					<img src="images/jnr/style4.jpg" />
+					<img src="//pkquutas9.bkt.clouddn.com/style4.jpg" />
 				</span>
                     <p>套链/项链/吊坠</p>
                 </li>
                 <li>
                     <a href="/goods/9?page=1&amp;category=6%2C14&amp;isajax=0" target="_blank" class="hrefLink"></a>
                     <span>
-					<img src="images/jnr/style5.jpg" />
+					<img src="//pkquutas9.bkt.clouddn.com/style5.jpg" />
 				</span>
                     <p>手链/手镯</p>
                 </li>
                 <li>
                     <a href="/goods/9?page=1&amp;category=7&amp;isajax=0" target="_blank" class="hrefLink"></a>
                     <span>
-					<img src="images/jnr/style6.jpg" />
+					<img src="//pkquutas9.bkt.clouddn.com/style6.jpg" />
 				</span>
                     <p>耳环/耳钉/耳线</p>
                 </li>
                 <li>
                     <a href="/goods/9?page=1&amp;category=11&amp;isajax=0" target="_blank" class="hrefLink"></a>
                     <span>
-					<img src="images/jnr/style7.jpg" />
+					<img src="//pkquutas9.bkt.clouddn.com/style7.jpg" />
 				</span>
                     <p>冠冕</p>
                 </li>
                 <li>
                     <a href="/goods/9?page=1&amp;category=10&amp;isajax=0" target="_blank" class="hrefLink"></a>
                     <span>
-					<img src="images/jnr/style8.jpg" />
+					<img src="//pkquutas9.bkt.clouddn.com/style8.jpg" />
 				</span>
                     <p>首饰盒/花盒</p>
                 </li>
@@ -709,7 +709,7 @@
         <div class="channel_same">
             <div class="channel_advert">
                 <a href="/goods/9" target="_blank" class="hrefLink"></a>
-                <img src="images/jnr/jnr_ad1.jpg" />
+                <img src="//pkquutas9.bkt.clouddn.com/jnr_ad1.jpg" />
             </div>
             <div class="channel_title">
                 <h3>当季推荐</h3>
@@ -717,7 +717,7 @@
             <ul class="channel_list">
                 <li>
                     <a href="/goods-ornament-3275" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_cp1.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_cp1.jpg" />
                     <div class="channellist_word">
                         <h3>LOVE LINE系列 初心套链</h3>
                         <div class="nov_hr"></div>
@@ -730,7 +730,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-3855" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_cp2.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_cp2.jpg" />
                     <div class="channellist_word">
                         <h3>HONEY系列 甜如蜜手链</h3>
                         <div class="nov_hr"></div>
@@ -743,7 +743,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-363" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_cp3.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_cp3.jpg" />
                     <div class="channellist_word">
                         <h3>SNOW系列 简奢款手链</h3>
                         <div class="nov_hr"></div>
@@ -756,7 +756,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-392" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_cp4.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_cp4.jpg" />
                     <div class="channellist_word">
                         <h3>MY LOVE系列典雅耳钉</h3>
                         <div class="nov_hr"></div>
@@ -769,7 +769,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4097" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_cp5.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_cp5.jpg" />
                     <div class="channellist_word">
                         <h3>D+R系列 倾心之链</h3>
                         <div class="nov_hr"></div>
@@ -782,7 +782,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-3938" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_cp6.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_cp6.jpg" />
                     <div class="channellist_word">
                         <h3>FLOWER LOVE系列 玫瑰耳钉</h3>
                         <div class="nov_hr"></div>
@@ -800,7 +800,7 @@
         <div class="channel_same constellation_cort">
             <div class="channel_advert">
                 <a href="/goods/9?page=1&series=22&isajax=0" target="_blank" class="hrefLink"></a>
-                <img src="images/jnr/jnr_ad2.jpg" />
+                <img src="//pkquutas9.bkt.clouddn.com/jnr_ad2.jpg" />
             </div>
             <div class="channel_title">
                 <h3>星座推荐</h3>
@@ -808,7 +808,7 @@
             <ul class="constellation_list">
                 <li>
                     <a href="/goods-ornament-4061" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con1.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con1.jpg" />
                     <div class="channellist_word">
                         <h3>白羊座 3.21-4.19</h3>
                         <div class="nov_hr"></div>
@@ -821,7 +821,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4151" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con2.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con2.jpg" />
                     <div class="channellist_word">
                         <h3>摩羯座 12.22-1.19</h3>
                         <div class="nov_hr"></div>
@@ -834,7 +834,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4138" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con3.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con3.jpg" />
                     <div class="channellist_word">
                         <h3>射手座 11.23-12.21</h3>
                         <div class="nov_hr"></div>
@@ -847,7 +847,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4126" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con4.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con4.jpg" />
                     <div class="channellist_word">
                         <h3>天蝎座 10.24-11.22</h3>
                         <div class="nov_hr"></div>
@@ -860,7 +860,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4162" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con5.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con5.jpg" />
                     <div class="channellist_word">
                         <h3>水瓶座 1.20-2.18</h3>
                         <div class="nov_hr"></div>
@@ -873,7 +873,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4067" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con6.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con6.jpg" />
                     <div class="channellist_word">
                         <h3>金牛座 4.20-5.20</h3>
                         <div class="nov_hr"></div>
@@ -886,7 +886,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4117" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con7.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con7.jpg" />
                     <div class="channellist_word">
                         <h3>天秤座 9.23-10.23</h3>
                         <div class="nov_hr"></div>
@@ -899,7 +899,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4160" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con8.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con8.jpg" />
                     <div class="channellist_word">
                         <h3>双鱼座 2.19-3.20</h3>
                         <div class="nov_hr"></div>
@@ -912,7 +912,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4104" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con9.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con9.jpg" />
                     <div class="channellist_word">
                         <h3>处女座 8.23-9.22</h3>
                         <div class="nov_hr"></div>
@@ -925,7 +925,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4088" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con10.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con10.jpg" />
                     <div class="channellist_word">
                         <h3>狮子座 7.23-8.22</h3>
                         <div class="nov_hr"></div>
@@ -938,7 +938,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4081" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con11.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con11.jpg" />
                     <div class="channellist_word">
                         <h3>巨蟹座 6.22-7.22</h3>
                         <div class="nov_hr"></div>
@@ -951,7 +951,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-4075" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/con12.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/con12.jpg" />
                     <div class="channellist_word">
                         <h3>双子座 5.21-6.21</h3>
                         <div class="nov_hr"></div>
@@ -969,7 +969,7 @@
         <div class="channel_same">
             <div class="channel_advert">
                 <a href="/goods/9" target="_blank" class="hrefLink"></a>
-                <img src="images/jnr/jnr_ad3.jpg" />
+                <img src="//pkquutas9.bkt.clouddn.com/jnr_ad3.jpg" />
             </div>
             <div class="channel_title">
                 <h3>纪念日推荐</h3>
@@ -977,7 +977,7 @@
             <ul class="channel_list">
                 <li>
                     <a href="/goods-ornament-3787" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_sp1.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_sp1.jpg" />
                     <div class="channellist_word">
                         <h3>SWEETIE系列 浪漫套链</h3>
                         <div class="nov_hr"></div>
@@ -990,7 +990,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-3040" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_sp2.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_sp2.jpg" />
                     <div class="channellist_word">
                         <h3>TRUE LOVE系列 经典手链</h3>
                         <div class="nov_hr"></div>
@@ -1003,7 +1003,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-3992" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_sp3.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_sp3.jpg" />
                     <div class="channellist_word">
                         <h3>SWEETIE系列 心形耳饰</h3>
                         <div class="nov_hr"></div>
@@ -1016,7 +1016,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-404" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_sp4.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_sp4.jpg" />
                     <div class="channellist_word">
                         <h3>TRUE LOVE系列 典雅款耳钉</h3>
                         <div class="nov_hr"></div>
@@ -1029,7 +1029,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-370" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_sp5.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_sp5.jpg" />
                     <div class="channellist_word">
                         <h3>MY HEART系列 初心耳环</h3>
                         <div class="nov_hr"></div>
@@ -1042,7 +1042,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-3888" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_sp6.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_sp6.jpg" />
                     <div class="channellist_word">
                         <h3>ROMANTIC 永生花盒 佳人</h3>
                         <div class="nov_hr"></div>
@@ -1059,7 +1059,7 @@
         <!--热销推荐-->
         <div class="channel_same">
             <div class="channel_advert">
-                <img src="images/jnr/jnr_ad4.jpg" />
+                <img src="//pkquutas9.bkt.clouddn.com/jnr_ad4.jpg" />
             </div>
             <div class="channel_title">
                 <h3>热销推荐</h3>
@@ -1067,7 +1067,7 @@
             <ul class="channel_list">
                 <li>
                     <a href="/goods-ornament-3278" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_hot1.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_hot1.jpg" />
                     <div class="channellist_word">
                         <h3>LUCKY LOVE系列 四叶草 幸运套链</h3>
                         <div class="nov_hr"></div>
@@ -1080,7 +1080,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-3133" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_hot2.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_hot2.jpg" />
                     <div class="channellist_word">
                         <h3>ENDLESS LOVE系列 典雅款耳钉</h3>
                         <div class="nov_hr"></div>
@@ -1093,7 +1093,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-2956" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_hot3.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_hot3.jpg" />
                     <div class="channellist_word">
                         <h3>ENDLESS LOVE系列 简爱款套链</h3>
                         <div class="nov_hr"></div>
@@ -1106,7 +1106,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-3269" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_hot4.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_hot4.jpg" />
                     <div class="channellist_word">
                         <h3>JUST YOU系列 守护套链</h3>
                         <div class="nov_hr"></div>
@@ -1119,7 +1119,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-767" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_hot5.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_hot5.jpg" />
                     <div class="channellist_word">
                         <h3>SWEETIE系列 满天星耳钉</h3>
                         <div class="nov_hr"></div>
@@ -1132,7 +1132,7 @@
                 </li>
                 <li>
                     <a href="/goods-ornament-358" target="_blank" class="hrefLink"></a>
-                    <img src="images/jnr/jnr_hot6.jpg" />
+                    <img src="//pkquutas9.bkt.clouddn.com/jnr_hot6.jpg" />
                     <div class="channellist_word">
                         <h3>LUCKY LOVE系列 四叶草 幸运手链</h3>
                         <div class="nov_hr"></div>
@@ -1274,7 +1274,7 @@
                     <div class="dr_decItem fr">
                         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
                         <span>粤ICP备11012085号-2/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
-                        <img src="/bundles/acmefrontend/img/kxzd.png" alt="" />
+                        <img src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
                     </div>
                 </div>
             </div>
@@ -1302,7 +1302,7 @@
                 <p>亲爱的DR族，在春节和<br />情人节繁忙期间，为了<br />确保您定制的Darry <br />Ring可以及时送达，建<br />议您提前选购商品哦。<br />详情请咨询客服。</p>
             </div>-->
             <!--温馨提示(1228)end-->
-            <img src="//res.darryring.com/webimg/common/zxkf.gif" />
+            <img src="//pkquutas9.bkt.clouddn.com/zxkf.gif" />
             <span>
 			在线<br/>客服
 		</span>
