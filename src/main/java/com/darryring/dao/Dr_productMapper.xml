@@ -22,6 +22,12 @@
                 and pro.price between #{lowprice} and #{highprice}
             </if>
         </where>
+            <if test="sort!=null and sort!='' and order!=null and order!=''">
+                order by ${sort} ${order}
+            </if>
+            <if test="page!=null and page!='' and rows!=null and rows!=''">
+                LIMIT #{page},#{rows}
+            </if>
     </sql>
     <select id="queryAllProBy" resultType="map">
         SELECT pro.productId,se.sname,pa.patternName,we.dweight,co.dcolor,pro.imageRoute,pro.price

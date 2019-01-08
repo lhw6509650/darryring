@@ -3,71 +3,145 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.darryring.dao.DrUserDao">
-    <!--注册账号-->
-    <insert id="insertUser">
-        insert into dr_user(phone,password)value(#{phone},#{password})
-    </insert>
+     <!--账号密码注册账号-->
+     <insert id="insertUser">
+         insert into dr_user(phone,password)value(#{phone},#{password})
+     </insert>
 
-    <!--根据手机号码和密码登录-->
-    <select id="findByNamePw" resultType="DrUser">
-        SELECT * FROM dr_user WHERE phone=#{phone} and password=#{password}
-    </select>
+     <!--短信注册账号-->
+     <insert id="registByPhone">
+         insert into dr_user(phone)value(#{phone})
+     </insert>
 
-    <!--个人中心修改资料-->
-    <update id="updateUser">
-        UPDATE `darryring`.`dr_user` SET `userName` = #{userName} , `loginName` = #{loginName} , `password` = #{password} ,
-        `sex` = #{sex} ,`identityCode` = #{identityCode} , `email` = #{email} ,`touRoute` = #{touRoute},`loveWord` = #{loveWord} where`userId` = #{userId}
-    </update>
+     <!--&lt;!&ndash;根据手机号码和密码登录&ndash;&gt;-->
+     <select id="findByNamePw" resultType="DrUser">
+         SELECT * FROM dr_user WHERE phone=#{phone} and password=#{password}
+     </select>
 
-    <!--根据用户ID查用户-->
-    <select id="findAll" resultType="druser">
-        select * from dr_user where userId=#{userId}
-    </select>
+    <!-- &lt;!&ndash;个人中心修改资料&ndash;&gt;-->
+     <update id="updateUser">
+         UPDATE `darryring`.`dr_user` SET `userName` = #{userName} , `loginName` = #{loginName} , `password` = #{password} ,
+         `sex` = #{sex} ,`identityCode` = #{identityCode} , `email` = #{email} ,`touRoute` = #{touRoute},`loveWord` = #{loveWord} where`userId` = #{userId}
+     </update>
 
-    <!--根据手机号码判定用户是否存在-->
-    <select id="findUserByPhone">
-        select * from dr_user where phone=#{phone}
-    </select>
+     <!--&lt;!&ndash;根据用户ID查用户&ndash;&gt;-->
+     <select id="findAll" resultType="druser">
+         select * from dr_user where userId=#{userId}
+     </select>
 
-    <!--修改用户信息-->
-    <update id="improve" parameterType="DrUser" keyProperty="userId" keyColumn="userId">UPDATE dr_user SET userName=#{userName},loginName=#{loginName},identityCode=#{identityCode},email=#{email},sex=#{sex},loveWord=#{loveWord}WHERE userId=#{userId} </update>
+     <!--&lt;!&ndash;根据手机号码判定用户是否存在&ndash;&gt;-->
+     <select id="findUserByPhone" resultType="DrUser">
+         select * from dr_user where phone=#{phone}
+     </select>
 
-    <!--修改密码-->
-    <update id="resetPwd" parameterType="DrUser">update dr_user set password = #{password} where userId = #{userId} </update>
+     <!--&lt;!&ndash;修改用户信息&ndash;&gt;-->
+     <update id="improve" parameterType="DrUser" keyProperty="userId" keyColumn="userId">
+UPDATE dr_user SET userName=#{userName},loginName=#{loginName},identityCode=#{identityCode},email=#{email},sex=#{sex},loveWord=#{loveWord}WHERE userId=#{userId} </update>
 
-    <!--修改密码前判断输入的原密码是否存在-->
-    <select id="queryByPwd" resultType="DrUser">select userName from dr_user where password = #{password} and userId = #{userId} </select>
+     <!--&lt;!&ndash;修改密码&ndash;&gt;-->
+     <update id="resetPwd" parameterType="DrUser">
+            update dr_user set password = #{password} where userId = #{userId}
+     </update>
 
-    <!--根据用户名和密码登录后台-->
-    <select id="findAllUserByType" resultType="DrUser">
-        SELECT * FROM dr_user  WHERE userName=#{userName} and password=#{password}
-    </select>
+     <!--&lt;!&ndash;修改密码前判断输入的原密码是否存在&ndash;&gt;-->
+     <select id="queryByPwd" resultType="DrUser">
+select userName from dr_user where password = #{password} and userId = #{userId}
+</select>
 
-    <!--根据多条件带分页查询用户-->
-    <sql id="con">
+     <!--&lt;!&ndash;根据用户名和密码登录后台&ndash;&gt;-->
+     <select id="findAllUserByType" resultType="DrUser">
+         SELECT * FROM dr_user  WHERE userName=#{userName} and password=#{password}
+     </select>
+
+    <!--&lt;!&ndash;根据多条件带分页查询用户-->
+    <sql id="conditions">
         <where>
+            <if test="userId!=null and userId!=''">
+                and  userId=#{userId}
+            </if>
             <if test="userName!=null and userName!=''">
-                userName=#{userName}
+                and  userName=#{userName}
             </if>
             <if test="loginName!=null and loginName!=''">
-                and loginName=#{loginName}
+                and loginName LIKE concat('%',#{loginName},'%')
             </if>
-            <if test="phone!=null and phone=''">
+            <if test="phone!=null and phone!=''">
                 and phone=#{phone}
             </if>
-            <if test="identityCode!=null and identityCode=''">
+            <if test="identityCode!=null and identityCode!=''">
                 and identityCode=#{identityCode}
             </if>
+        </where>
             <if test="sort!=null and sort!='' and order!=null and order!=''">
-                LIMIT sort=#{sort}, order=#{order}
+                order by ${sort} ${order}
+            </if>
+            <if test="page!=null and page!='' and rows!=null and rows!=''">
+                LIMIT #{page},#{rows}
+            </if>
+    </sql>
+    <select id="selectAllUserByCon" resultType="DrUser">
+        SELECT * FROM dr_user
+        <include refid="conditions"/>
+    </select>
+   <!--//统计有多少个用户-->
+    <select id="selectUser" resultType="int">
+        SELECT count(*) FROM dr_user
+    </select>
+    <!--更新用户-->
+    <update id="updateUsers">
+        UPDATE dr_user
+        <set>
+            <if test="userName!=null and userName!=''">
+                userName = #{userName}
+            </if>
+            <if test="loginName!=null and loginName!=''">
+                loginName = #{loginName}
+            </if>
+            <if test="password!=null and password!=''">
+                password = #{password}
+            </if>
+            <if test="identityCode!=null and identityCode!=''">
+                identityCode = #{identityCode}
+            </if>
+            <if test="email!=null and email!=''">
+                email = #{email}
+            </if>
+            <if test="sex!=null and sex!=''">
+                sex = #{sex}
+            </if>
+            <if test="phone!=null and phone!=''">
+                phone = #{phone}
             </if>
 
-        </where>
-    </sql>
-    <select id="selectAllUserByCon" resultType="map">
-        SELECT * FROM dr_user <include refid="con"/>
-    </select>
-    <select id="selectAllUser" resultType="map">
-        SELECT * FROM dr_user
-    </select>
+            <if test="touRoute!=null and touRoute!=''">
+                touRoute = #{touRoute}
+            </if>
+            <if test="loveWord!=null and loveWord!=''">
+                loveWord = #{loveWord}
+            </if>
+            <if test="usertype!=null and usertype!=''">
+                usertype = #{usertype}
+            </if>
+        </set>
+        WHERE
+            userId = #{userId} ;
+    </update>
+    <!--//新增用户-->
+    <insert id="insertUsers">
+
+        INSERT INTO dr_user(userName,loginName,password,identityCode,email,sex, phone,touRoute,loveWord,usertype)
+        VALUES
+        (#{userName},
+         #{loginName},
+         #{password},
+         #{identityCode},
+         #{email},
+         #{sex},
+         #{phone},
+         #{touRoute},
+         #{loveWord},
+         #{usertype}
+        );
+    </insert>
+
 </mapper>

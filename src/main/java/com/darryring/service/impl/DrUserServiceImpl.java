@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Map;
+
 
 @Service
 @Transactional
@@ -44,6 +44,12 @@ public class DrUserServiceImpl implements DrUserService {
     //根据手机号码判定用户是否存在
     public DrUser findUserByPhone(String phone){ return  drd.findUserByPhone(phone);}
 
+    @Override
+    public int registByPhone(String phone) {
+
+        return drd.registByPhone(phone);
+    }
+
     //更改用户个人资料
     public int improve(DrUser du){
         return drd.improve(du);
@@ -65,8 +71,22 @@ public class DrUserServiceImpl implements DrUserService {
     }
 
     //(后台)根据多条件带分页查询用户
-    public List<Map<String,Object>> selectAllUser(Map<String,Object> map){
-        return drd.selectAllUser(map);
+    public List<DrUser> selectAllUserByCon(DrUser user){
+        return drd.selectAllUserByCon(user);
+    }
+
+    //统计有多少个用户
+    public int  selectUser(){
+        return drd.selectUser();
+    }
+    //(后台)新增用户
+    public boolean insertUsers(DrUser user){
+        return drd.insertUsers(user);
+    }
+    //(后台)修改用户
+    @Override
+    public boolean updateUsers(DrUser user) {
+        return drd.updateUsers(user);
     }
 
 }

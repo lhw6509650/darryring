@@ -13,14 +13,13 @@
 </head>
 <script type="text/javascript">
     $(function(){
-        $(".dr_form:first").hide();
         $(".usePhone").click(function () {
-            $(".dr_form:first").show();
-            $(".dr_form:last").hide();
+            $("#loginform").hide();
+            $("#msgform").show();
         })
         $(".usePassWord").click(function () {
-            $(".dr_form:first").hide();
-            $(".dr_form:last").show();
+            $("#loginform").show();
+            $("#msgform").hide();
         })
     	$(".ipTxt").blur(function(){
     		var name = $("#txtName").val();
@@ -43,8 +42,8 @@
         <div class="dr_member fr">
             <div class="drmember_sec">
                 <div class="dr_member-left fl">
-                    <a href="login.html">登录</a>
-                    <a href="register.html" class="drtojoin">注册</a>
+                    <a th:href="@{/login}">登录</a>
+                    <a th:href="@{/regist}" class="drtojoin">注册</a>
                 </div>
                 <div class="dr_member-left fl">
                     <i>
@@ -64,14 +63,39 @@
         <div class="login-wrap">
             <div class="login-png"></div>
             <div class="dr_passprt dr_passprtFirst login-box">
-                <form id="loginform" action="login" method="post">
+                <form id="loginform" action="login" method="post" style="display: block">
                     <h3>DR族-登录</h3>
                     <div class="errorMsg" id="prError" style="" ></div>
+                    <div class="dr_form phone_dl">
+                        <div class="dr_minAction">
+                            <input type="text" class="ipTxt ico-user" style="behavior:url(#default#savehistory)" value="" id="txtName1" name="phone" placeholder="请输入您的邮箱/手机号码" required pattern="(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}" />
+                            <input type="password" class="ipTxt ico-pwd" value="" id="txtPwd1" name="password" placeholder="请输入密码" required pattern="\w{5,17}" />
+                            <input type="hidden"  name="preurl" class="preurl" value="">
+                        </div>
+                        <p class=" "><a class="fr" href="/forget?lang=cn">忘记密码?</a><input id="isRemember1" type="checkbox"  name='remember' vlaue='1' /><label for="isRemember">记住密码</label></p>
+                        <p class="actionwd_same">使用<a href="javascript:;" class="usePhone">手机验证码登录</a></p>
+                    </div>
+                    <!--常规登录end-->
+                    <div id="login" class="dr_Btns">
+                        <input type="submit" class="defaultBtn focus" id="mobile_log" value="登录" />
+                    </div>
+                    <div class="dr_otherLogin">
+                        <h4>第三方账户登录</h4>
+                        <a class="qqdl" href="/syncLogin/qq" target="_blank"></a>
+                        <a class="wxdl" href="/syncLogin/weixin" target="_blank"></a>
+                        <a class="wbdl" href="/syncLogin/weibo" target="_blank"></a>
+                        <a class="zfbdl" href="/syncLogin/alipay" target="_blank"></a>
+                    </div>
+                </form>
+                <form id="msgform" action="msglogin" method="post" style="display: none">
+                    <h3>DR族-登录</h3>
+                    <div class="errorMsg" id="prError1" style="" ></div>
                     <!--手机验证码登录-->
                     <div class="dr_form phone_dl">
                         <div class="dr_minAction">
-                            <input type="text" class="ipTxt ico-user" name="phones" placeholder="请输入您的手机号码" />
-                            <div class="fix"><input type="text" name="code" class="ipTxt ico-send inputCode" placeholder="请输入验证码" />
+                            <input type="hidden" name="preurl"  class="preurl" value="">
+                            <input type="text" class="ipTxt ico-user" id="cphone" name="phone" placeholder="请输入您的手机号码" />
+                            <div class="fix"><input type="text" name="veryCode" class="ipTxt ico-send inputCode" placeholder="请输入验证码" />
                                 <a class="getCodeBtn" id='getSmsCode' href="javascript:;" data-type="1">获取短信验证码</a>
                             </div>
                             <p class="actionwd_same" style="margin-bottom: 25px;margin-top: 5px">使用<a href="javascript:;" class="usePassWord">密码登录</a></p>
@@ -82,19 +106,9 @@
                         </div>
                     </div>
                     <!--手机验证码登录end-->
-                    <div class="dr_form phone_dl">
-                        <div class="dr_minAction">
-                            <input type="text" class="ipTxt ico-user" style="behavior:url(#default#savehistory)" value="" id="txtName" name="phone" placeholder="请输入您的邮箱/手机号码" required pattern="(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}" />
-                            <input type="password" class="ipTxt ico-pwd" value="" id="txtPwd" name="password" placeholder="请输入密码" required pattern="\w{5,17}" />
-
-                        </div>
-
-                        <p class=" "><a class="fr" href="/forget?lang=cn">忘记密码?</a><input id="isRemember" type="checkbox"  name='remember' vlaue='1' /><label for="isRemember">记住密码</label></p>
-                        <p class="actionwd_same">使用<a href="javascript:;" class="usePhone">手机验证码登录</a></p>
-                    </div>
                     <!--常规登录end-->
-                    <div id="login" class="dr_Btns">
-                        <input type="submit" class="defaultBtn focus" id="mobile_log" value="登录" />
+                    <div id="logins" class="dr_Btns">
+                        <input type="submit" class="defaultBtn focus" id="mobile_log1" value="登录" />
                     </div>
                     <div class="dr_otherLogin">
                         <h4>第三方账户登录</h4>
@@ -245,4 +259,46 @@
     </div>
 </div>
 </body>
+<script th:inline="javascript">
+    $(function () {
+        var preurl = document.referrer;
+        alert(preurl);
+        if($.trim(preurl)==''){
+            $(".preurl").val("");
+        }else{
+            if(preurl.indexOf('regist')!=-1){		//来自注册页面
+                $(".preurl").val("");
+            }
+            $(".preurl").val(preurl.substring(31));
+            alert(preurl.substring(31));
+        }
+
+        $("#getSmsCode").click(function () {
+            Load();
+            $.post("getCode",{"phone":$("#cphone").val()},function (data) {
+                if (data=="true"){
+                    alert("获取验证码成功，请留意您的手机短信！");
+                } else{
+                    alert("获取验证码失败，请重试！");
+                }
+            })
+        });
+    })
+    var secs = 60; //倒计时的秒数
+    var t;
+    function Load() {
+        for (var i = secs; i >= 0; i--) {
+            t=window.setTimeout('doUpdate(' + i + ')', (secs - i) * 1000);
+        }
+    }
+    function doUpdate(num) {
+        document.getElementById('getSmsCode').innerHTML = '<i style="color:red">' + num + '秒</i>后重新获取';
+        $("#getSmsCode").attr("disabled",true).css("pointer-events","none");
+        if (num == 0) {
+            $("#getSmsCode").html("获取短信验证码");
+            clearTimeout(t);
+            $("#getSmsCode").attr("disabled",false).css("pointer-events","auto");
+        }
+    }
+</script>
 </html>

@@ -123,11 +123,11 @@
                 //分页控件
                 pagination:true,
                 pagePosition:'bottom',
-                pageSize:3,
-                pageList:[3,6,9,12],
+                pageSize:4,
+                pageList:[4,8,12,16],
                 //排序
                 sortName:'userId',
-                sortOrder:'desc',
+                sortOrder:'asc',
 
                 loadMsg:'正在加载数据...',
 
@@ -211,7 +211,7 @@
                             }
                         },
                     },
-                    {field:'loveWord',title:'真爱宣言',width:180,
+                    {field:'loveWord',title:'真爱宣言',width:280,
                         editor:{
                             type:'textbox',
                             options:{required:false}
@@ -299,11 +299,11 @@
                 }],
                 //结束编辑时触发,实现新增和修改到后台
                 onAfterEdit:function(rowIndex,rowData,change){
-                    //console.info(rowData);
+                    console.info(rowData);
                     //验证通过才会发该请求
                     $.ajax({
 
-                        url:'http://localhost:8080/kwx/upuser',
+                        url:'http://localhost:8080/darryring/updateUser',
                         data:rowData, //{id:11,username:'admin'} id=11&username=admin
                         dataType:'json',
                         type:'post',

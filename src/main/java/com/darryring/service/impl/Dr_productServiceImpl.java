@@ -1,6 +1,7 @@
 package com.darryring.service.impl;
 
 import com.darryring.dao.Dr_productMapper;
+import com.darryring.pojo.Dr_product;
 import com.darryring.service.Dr_productService;
 import com.darryring.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,5 +60,15 @@ public class Dr_productServiceImpl implements Dr_productService {
     @Override
     public int selectByOrder(String identityCode) {
         return dpm.selectByOrder(identityCode);
+    }
+
+    //(后台)统计系列下共有多少个商品
+    public int  selectSProduct(Dr_product dp){
+        return dpm.selectSProduct(dp);
+    }
+
+    //(后台)统计类型下共有多少个商品
+    public int  selectBProduct(Dr_product dp){
+        return dpm.selectBProduct(dp);
     }
 }

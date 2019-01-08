@@ -1,6 +1,5 @@
 package com.darryring.controller;
 
-import com.darryring.dao.DrUserDao;
 import com.darryring.pojo.DrUser;
 import com.darryring.pojo.Dr_user_address;
 import com.darryring.pojo.Dr_user_area;
@@ -8,8 +7,6 @@ import com.darryring.service.DrUserService;
 import com.darryring.service.Dr_user_addressService;
 import com.darryring.service.Dr_user_areaService;
 import com.darryring.util.ImageCreate;
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -144,7 +141,7 @@ public class DrUserController {
         du.setUserId(usr.getUserId());
         du.setUserName(realname);
         du.setLoginName(nickname);
-        du.setSex(Integer.parseInt(sex));
+        du.setSex((sex));
         du.setIdentityCode(identityCode);
         du.setEmail(email);
         du.setLoveWord(lovesign);
@@ -307,38 +304,74 @@ public class DrUserController {
         mav.setViewName("forward:/queryAddress");
         return mav;
     }
-    //(后台)获取页面信息
-    @GetMapping(value = "/hlogin")
-    public ModelAndView hlogin(ModelAndView modelAndView){
-        modelAndView.setViewName("hlogin.html");
-        return modelAndView;
-    }
-    ////(后台)根据用户名和密码登录后台
-    @RequestMapping(value = "/hlogin",method = RequestMethod.POST )
-    public String hlogin(String userName,String password,Model mo){
-        System.out.println("进入后台登录。。。。。");
-        DrUser user = dus.findAllUserByType(userName,password);
-        System.out.println("11"+user.getUserName());
-        System.out.println("后台user.............");
-        if(user!=null){
-            mo.addAttribute("user",user);
-            return "layout.html";
-        }
-      return "hlogin.html";
 
-    }
     //(后台)根据多条件带分页查询用户
-    @RequestMapping("/selectusers")
     @ResponseBody
-    public Object selectusers(DrUser drUser,Model model){
-        System.out.println("(后台)根据多条件带分页查询用户");
-        System.out.println("(后台Id::)"+drUser.getUserId());
-        System.out.println("(后台userName::)"+drUser.getUserName());
-        Map<String,Object> map = new HashMap<>();
-        map.put("drUser",drUser);
-        List<Map<String,Object>> map1 = dus.selectAllUser(map);
-        model.addAttribute("map1",map1);
-        return map1;
+    @RequestMapping("/selectusers")
+    public Object selectusers(DrUser drUser,Integer page,Integer  rows,String sort,String order){
+        System.out.println("后台用户名:"+drUser.getUserName());
+        DrUser drUser1 = new DrUser();
+        if(drUser.getUserName()!=null&&drUser.getUserName()!=""){
+            drUser1.setUserName(drUser.getUserName());
+        }
+
+        Map<String,Object> map =new HashMap<String,Object>();
+        drUser1.setPage((page-1)*rows);
+        System.out.println("页码："+page);
+        drUser1.setRows(rows);
+        drUser1.setSort(sort);
+        drUser1.setOrder(order);
+        map.put("total",dus.selectUser());
+        map.put("rows",dus.selectAllUserByCon(drUser));
+        return map;
+    }
+
+    //(后台)新增用户
+    @ResponseBody
+    @RequestMapping("/adduser")
+    public Object adduser(DrUser drUser){
+        dus.insertUser(drUser);
+        return drUser;
+    }
+    //(后台)更新用户
+    @ResponseBody
+    @RequestMapping("/updateUser")
+    public Object updateUser(DrUser drUser){
+        System.out.println("进入修改用户");
+        if(drUser.getSex()!=null && drUser.getSex()!="" && drUser.getSex().equals("1")) {
+              drUser.setSex("男");
+        }else{
+            drUser.setSex("女");
+        }
+        if(drUser.getUsertype()!=null && drUser.getUsertype()!="" && drUser.getUsertype().equals("0")) {
+            drUser.setUsertype("管理员");
+        }else{
+            drUser.setUsertype("普通用户");
+        }
+        System.out.println("用户名："+drUser.getUserName());
+        Map<String,Object> m = new HashMap<String,Object>();
+        boolean flag;
+        String message="";
+        if(drUser.getUserId()==null){
+            if (dus.insertUsers(drUser)) {
+                flag=true;
+                message="添加成功！";
+            } else {
+                flag=false;
+                message="添加失败！";
+            }
+        }else {
+            if (dus.updateUsers(drUser)) {
+                flag=true;
+                message="修改成功！";
+            } else {
+                flag=false;
+                message="修改失败！";
+            }
+        }
+        m.put("flag",flag);
+        m.put("message",message);
+        return m;
     }
 
 

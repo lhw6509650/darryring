@@ -3,6 +3,8 @@ package com.darryring.pojo;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.PrimitiveIterator;
+
 /*
  * 用户表
  */
@@ -10,7 +12,7 @@ import lombok.Setter;
 @Getter
 public class DrUser {
 
-	private int userId; // 用户id
+	private Integer userId; // 用户id
 
 	private String userName; // 真实姓名
 
@@ -18,7 +20,7 @@ public class DrUser {
 
 	private String password; // 密码
 
-	private int sex; // 性别
+	private String sex; // 性别
 
 	private String identityCode; // 身份证号码
 
@@ -30,6 +32,14 @@ public class DrUser {
 
 	private String loveWord; // 真爱宣言
 
-	private int usertype;//用户类型
+	private String usertype;//用户类型
+
+	private Integer page;//页码
+
+	private Integer rows;//行数
+
+	private String sort;//排序
+
+	private String order;//排序
 
 }

@@ -48,13 +48,13 @@
     });
     function isLogin(){
 		var productId= $(".isto_shopcart").val();
-		$.post("../UserServlet?action=islogin",callBack);
+		$.post("../addCart",callBack);
 		function callBack(data){
 			if(data=="false"){
 				alert("你还未登录，请先登录!");
 				location.href="login.html";
 			}else{
-				location.href="http://localhost:8080/DarryRings/Dr_ProductServlet?method=shop&pid="+productId;
+				location.href="http://localhost:8080/darryring/addCart&pid="+productId;
 			}
 		}
 	}
@@ -62,13 +62,13 @@
     function isLogin2(){
 		var productId= $(".isto_shopcart1").val();
 		var id= $(".isto_shopcart2").val();
-		$.post("../UserServlet?action=islogin",callBack);
+		$.post("../cart",callBack);
 		function callBack(data){
 			if(data=="false"){
 				alert("你还未登录，请先登录!");
 				location.href="login.html";
 			}else{
-				location.href="http://localhost:8080/DarryRings/AddressServlet?action=adds&id="+id+"&proid="+productId;
+				location.href="http://localhost:8080/darryring/cart&id="+id+"&proid="+productId;
 			}
 		}
 	}
@@ -1248,7 +1248,7 @@ ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br
                         <p><label for="queryNum" class="queryWord">身份证号码：</label><input id="queryNum" class="inputNum" type="text" placeholder="请输入身份证号验证真爱承诺"/></p>
                         <a class="docPrivacy" target="_blank" href="https://www.darryring.com/help/47">隐私声明 &gt;</a>
                         <div class="queryButton fix">
-                            <a class="queryBtn" href="javascript:;" id="query-turelove" data-id=0>DR 验证查询</a>
+                            <a class="queryBtn" style="cursor: pointer" id="query-turelove" data-id=0>DR 验证查询</a>
                         </div>
                         <!--报错提示-->
                         <div class="dr_yzwrong">
@@ -1295,7 +1295,7 @@ ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br
                 <span class="toright">恭喜您通过真爱验证</span>
                 <div class="Verifica_word">
                     <p>商品已成功加入购物车</p>
-                    <p id="countDown" timeData="3" toUrl="/cart"><i>3秒后</i>，自动跳转至购物车</p>
+                    <p id="countDown"><i>3秒后</i>，自动跳转至购物车</p>
                 </div>
             </div>
             <!--未购买过end-->
@@ -1649,43 +1649,41 @@ ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br
         $(".to_shopcart").click(function () {
             if ($("#HandSizes").val()==""){
                    alert("请选择合适的手寸！");
-            }else{
+            }else {
                 $(".dr_Verificase").show();
                 $(".dr_sametcborder").show();
-                var cnumber = $(".queryNum").val();
-                if (cnumber!=""){
-                    $.post("/VerifiCard",{"cnumber":cnumber},function (r) {
-                        if (r=="1"){
-                            $(".dr_Verificase").show();
-                            $(".dr_sametcborder").show();
-                            $(".Verifica_first").hide();
-                            $(".Verifica_buyit").show();
-                        }else{
-                            $.post("/VerifiQh",{"cid":$("#getcid").val()},function (data) {
-                                if (data=="1"){
-                                    $(".dr_Verificase").show();
-                                    $(".dr_sametcborder").show();
-                                    $(".Verifica_buyit").hide();
-                                    $(".Verifica_haveshop").show();
-                                }else{
-                                    $(".dr_Verificase").show();
-                                    $(".dr_sametcborder").show();
-                                    $(".Verifica_first").hide();
-                                    $(".Verifica_nobuy").show();
-                                }
-                            })
-                        }
-                    });
-                }
-               /* var productId = $(this).children("input").val();
-                location.href='/darryring/addCart/'+productId;*/
             }
+        });
 
-        })
+        $(".queryBtn").click(function () {
+            var cnumber = $("#queryNum").val();
+            if (cnumber!=""){
+                $.post("VerifiCard",{"cnumber":cnumber},function (r) {
+                    if (r=="1"){
+                        $(".dr_Verificase").show();
+                        $(".dr_sametcborder").show();
+                        $(".Verifica_first").hide();
+                        $(".Verifica_buyit").show();
+                    }else{
+                        $(".dr_Verificase").show();
+                        $(".dr_sametcborder").show();
+                        $(".Verifica_first").hide();
+                        $(".Verifica_nobuy").show();
+                        $.post("addCart",{"pdtId":$(".isto_shopcart").val()},function (r) {
+                            if (r == "true"){
+                                alert("dddd/..");
+                                Load("cart");
+                            }
+                        });
+                    }
+                });
+            }
+        });
+
         $(".Popup_close").click(function () {
             $(".dr_Verificase").hide();
             $(".dr_sametcborder").hide();
-        })
+        });
 
         /*
          show  //正常状态的框
@@ -1697,6 +1695,18 @@ ring珠宝实体旗舰店" alt="darry ring珠宝实体旗舰店"/></a></p><p><br
         var obj = new mag('.show', '.bigshow','.SmallRing-cort','.mask','.bigitem');
         obj.init();
     });
+    var secs = 3; //倒计时的秒数
+    var URL;
+    function Load(url) {
+        URL = url;
+        for (var i = secs; i >= 0; i--) {
+            window.setTimeout('doUpdate(' + i + ')', (secs - i) * 1000);
+        }
+    }
+    function doUpdate(num) {
+        document.getElementById('countDown').innerHTML = '<i style="color:red">' + num + '秒</i>后自动跳转至购物车';
+        if (num == 0) { window.location = URL; }
+    }
 
 </script>
 </body>
