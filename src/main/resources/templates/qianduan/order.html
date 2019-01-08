@@ -10,7 +10,7 @@
     <meta content="telephone=no" name="format-detection" />
     <meta name="Description" content="" />
     <meta name="Keywords" content="" />
-    <script type="text/javascript" src="<%=basePath %>qian/js/common.js" id='aws_mjs' aws-account='DarryRing-PC'></script>
+    <script type="text/javascript" src="js/common.js" id='aws_mjs' aws-account='DarryRing-PC'></script>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/drcarts.css" />
@@ -68,25 +68,30 @@
 <div class="w1360">
     <div class="cart_head fix">
         <div class="dr_logo fl">
-            <a th:href="@{index}">
-                <img src="//pkquutas9.bkt.clouddn.com/logo.png" alt="" /></a>
+            <a href="/"><img src="//res.darryring.com/webimg/common/logo.png" alt="" /></a>
         </div>
         <div class="dr_member fr">
             <div class="drmember_sec">
-                <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
-                    <a th:href="@{login}">登录</a>
-                    <a th:href="@{regist}" class="drtojoin">注册</a>
-                </div>
-                <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                    <a th:href="@{usershow}" class="userName">欢迎<span th:text="${session.user.loginName}"></span></a>
+                 <c:choose>
+                    <c:when test="${empty user}">
+                        <div class="dr_member-left fl" id="long_status">
+                            <a href="login.jsp">登录</a>
+                            <a href="register.jsp" class="drtojoin">注册</a>
+                        </div>
+                   </c:when>
+                   <c:otherwise>
+                   <div class="dr_member-left fl" id="loginInInfo">
+                    <a href="/user" class="userName">欢迎${user.loginName}</a>
                     <div class="loginIn fix" id="loginInaAtion">
-                        <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-                        <a th:href="@{cart}">购物车</a>
-                        <a th:href="@{myCollect}">我的收藏</a>
-                        <a th:href="@{usershow}">个人中心</a>
-                        <a th:href="@{logout}">退出</a>
+                        <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+                        <a href="usercart.html">购物车</a>
+                        <a href="/user/collect">我的收藏</a>
+                        <a href="user.html">个人中心</a>
+                        <a href="/logout?forword=">退出</a>
                     </div>
-                </div>
+                  </div>
+                  </c:otherwise>
+                  </c:choose>
                 <div class="dr_member-left fl">
                     <i>
                         <img src="//res.darryring.com/webimg/common/phone.png"/>
@@ -163,7 +168,7 @@
 			</div>
 			<!--添加地址end-->	
             <div class="address_lists address_lists02" style="display:block;">
-            <!--<c:forEach items="${addrList}" var="adds" end="0">
+            <c:forEach items="${addrList}" var="adds" end="0">
 				<div class="address_list address_lists02 select">
 					<span class="sendto">寄送至</span>
 					<div>
@@ -171,8 +176,8 @@
 						<p id='address' data-id="210973">${adds.address}（${adds.receiver}）<span class="address_phone">${adds.phone}</span></p>
 					</div>					
 				</div>
-			</c:forEach>-->c
-			<!--<c:forEach items="${addrList}" var="adds" begin="1">
+			</c:forEach>			
+			<c:forEach items="${addrList}" var="adds" begin="1">				
                 <div class="address_list address_lists02 address_hide">
 					<span class="sendto">寄送至</span>
 					<div>
@@ -180,7 +185,7 @@
 						<p id='address' data-id="210980">${adds.address}（${adds.receiver}）<span class="address_phone">${adds.phone}</span></p>
 					</div>									
 				</div>
-			</c:forEach>	-->
+			</c:forEach>				
 				<div class="address_option">
 					<a href="javascript:;" class="address_other">使用其他地址</a>	
 					<a href="javascript:;" class="address_new">添加新收货地址>></a>
@@ -193,7 +198,7 @@
                 <div class="order_info">
                     <h4>确认订单信息<span>预计发货时间: 20个工作日内（付款成功后）</span></h4>                   
                 </div>
-                <!--<c:forEach items="${orderList}" var="olist">
+                <c:forEach items="${orderList}" var="olist">
                 <table class="confirmInfo_table" cellpadding="20" border="1">
                     <thead>
                     <tr>
@@ -212,7 +217,7 @@
                     </tr>
                     <tr>
                         <td>
-                            <img src="<%=basePath %>qian/${olist.dp.imageRoute}" width="78" height="78" />
+                            <img src="${olist.dp.imageRoute}" width="78" height="78" />
                             <div>
                                ${olist.dp.shopName}
                                 <p></p>
@@ -243,7 +248,7 @@ ${olist.quantity}
                     </tr>
                     </tbody>
                 </table>
-                </c:forEach>-->
+                </c:forEach>
         <!--订单结算-->
         <div class="shoppingcart_pay clearfix pay_bottom">
             <div class="scfoot_right">
@@ -379,7 +384,7 @@ ${olist.quantity}
                     <div class="dr_decItem fr">
                         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934" target="_blank"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
                         <span><a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备11012085号-2</a>/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
-                        <img src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
+                        <img src="/bundles/acmefrontend/img/kxzd.png" alt="" />
                     </div>
                 </div>
             </div>
@@ -407,7 +412,7 @@ ${olist.quantity}
                 <p>亲爱的DR族，在春节和<br />情人节繁忙期间，为了<br />确保您定制的Darry <br />Ring可以及时送达，建<br />议您提前选购商品哦。<br />详情请咨询客服。</p>
             </div>-->
             <!--温馨提示(1228)end-->
-            <img src="//pkquutas9.bkt.clouddn.com/zxkf.gif" />
+            <img src="//res.darryring.com/webimg/common/zxkf.gif" />
             <span>
 			在线<br/>客服
 		</span>

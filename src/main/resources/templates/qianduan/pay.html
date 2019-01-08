@@ -37,7 +37,7 @@
     <style type="text/css">
     .pay_way li div.bank_selected{
         border: 2px solid #8b766c;
-        background: url(//pkquutas9.bkt.clouddn.com/right.png) right bottom no-repeat;
+        background: url(images/pay/right.png) right bottom no-repeat;
     }
 </style>
     <script type="text/javascript">
@@ -54,28 +54,33 @@
 <div class="w1360">
     <div class="cart_head fix">
         <div class="dr_logo fl">
-            <a th:href="@{index}">
-                <img src="//pkquutas9.bkt.clouddn.com/logo.png" alt="" /></a>
+            <a href="/"><img src="//res.darryring.com/webimg/common/logo.png" alt="" /></a>
         </div>
         <div class="dr_member fr">
             <div class="drmember_sec">
-                <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
-                    <a th:href="@{login}">登录</a>
-                    <a th:href="@{regist}" class="drtojoin">注册</a>
-                </div>
-                <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                    <a th:href="@{usershow}" class="userName">欢迎<span th:text="${session.user.loginName}"></span></a>
+                 <c:choose>
+                    <c:when test="${empty user}">
+                        <div class="dr_member-left fl" id="long_status">
+                            <a href="login.jsp">登录</a>
+                            <a href="register.jsp" class="drtojoin">注册</a>
+                        </div>
+                   </c:when>
+                   <c:otherwise>
+                   <div class="dr_member-left fl" id="loginInInfo">
+                    <a href="/user" class="userName">欢迎${user.loginName}</a>
                     <div class="loginIn fix" id="loginInaAtion">
-                        <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-                        <a th:href="@{cart}">购物车</a>
-                        <a th:href="@{myCollect}">我的收藏</a>
-                        <a th:href="@{usershow}">个人中心</a>
-                        <a th:href="@{logout}">退出</a>
+                        <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+                        <a href="usercart.sjp">购物车</a>
+                        <a href="/user/collect">我的收藏</a>
+                        <a href="user.html">个人中心</a>
+                        <a href="/logout?forword=">退出</a>
                     </div>
-                </div>
+                  </div>
+                  </c:otherwise>
+                  </c:choose>
                 <div class="dr_member-left fl">
                     <i>
-                        <img src="//pkquutas9.bkt.clouddn.com/phone.png"/>
+                        <img src="//res.darryring.com/webimg/common/phone.png"/>
                         400 01 13520
                     </i>
                 </div>
@@ -116,15 +121,15 @@
                 <h3>订单提交成功，请您尽快完成支付！</h3>
                 <p>请您在<span>72小时</span>内完成付款，过时系统将自动取消订单。<a href="javascript:;" class="toggle_detail">订单详情</a></p>
                 <div class="order_detailInfo">
-                    <p>下单时间：<!--<fmt:formatDate value="${order.createTime}" type="both"/>--></p>
-                    <!--<c:forEach items="${orderList}" var="oli">
+                    <p>下单时间：<fmt:formatDate value="${order.createTime}" type="both"/></p>
+                    <c:forEach items="${orderList}" var="oli">
                     <div class="detail_hide">
                         <p>收货地址：${addr.address}</p>
                         <p>收货人：${addr.receiver}      <span>手机号：${addr.phone}</span></p>
                         <p><span>${oli.dp.shopName}</span>
                         <span>&yen;${oli.dp.price}</span></p>
                     </div>
-                   </c:forEach>-->
+                   </c:forEach>
                 </div>
             </div>
             <div class="order_pay">
@@ -145,19 +150,19 @@
                         <label>请选择需要支付的方式：</label>
                         <ul>
                             <li>
-                                <a href="javascript:;"><div data-type="payInterface_alipay"><img src="<%=basePath %>qian/images/pay/bank_zfb.jpg" alt="支付宝" title="支付宝"></div></a>
+                                <a href="javascript:;"><div data-type="payInterface_alipay"><img src="images/pay/bank_zfb.jpg" alt="支付宝" title="支付宝"></div></a>
                             </li>
                             <li>
-                                <a href="javascript:;"><div data-type="payInterface_wx"><img src="<%=basePath %>qian/images/pay/bank_wx.jpg" alt="微信" title="微信"></div></a>
+                                <a href="javascript:;"><div data-type="payInterface_wx"><img src="images/pay/bank_wx.jpg" alt="微信" title="微信"></div></a>
                             </li>
                             <li>
-                                <a href="javascript:;"><div data-type="payInterface_qq"><img src="<%=basePath %>qian/images/pay/qq.jpg" alt="QQ钱包" title="QQ钱包"></div></a>
+                                <a href="javascript:;"><div data-type="payInterface_qq"><img src="images/pay/qq.jpg" alt="QQ钱包" title="QQ钱包"></div></a>
                             </li>
-                             <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_yl.jpg" alt="中国银联" title="中国银联"><p></p></div></a></li>
-                            <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_ny.jpg" alt="中国农业银行" title="中国农业银行"><p>金额大于3000元/日，<br/>请使用Key宝证书</p></div></a></li>
-                            <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_js.jpg" alt="中国建设银行" title="中国建设银行"><p>金额大于5000元/笔，<br/>请使用一代网银盾</p></div></a></li>
-                            <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_gs.jpg" alt="中国工商银行" title="中国工商银行"><p>金额大于2000元/笔，<br/>请使用USB Key</p></div></a></li>
-                            <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_zg.jpg" alt="中国银行" title="中国银行"><p>金额大于1000元/笔，<br/>累计5000元/日，请使用令牌</p></div></a></li>
+                             <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_yl.jpg" alt="中国银联" title="中国银联"><p></p></div></a></li>
+                            <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_ny.jpg" alt="中国农业银行" title="中国农业银行"><p>金额大于3000元/日，<br/>请使用Key宝证书</p></div></a></li>
+                            <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_js.jpg" alt="中国建设银行" title="中国建设银行"><p>金额大于5000元/笔，<br/>请使用一代网银盾</p></div></a></li>
+                            <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_gs.jpg" alt="中国工商银行" title="中国工商银行"><p>金额大于2000元/笔，<br/>请使用USB Key</p></div></a></li>
+                            <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_zg.jpg" alt="中国银行" title="中国银行"><p>金额大于1000元/笔，<br/>累计5000元/日，请使用令牌</p></div></a></li>
                         </ul>
                     </div>
                 </div>
@@ -293,10 +298,8 @@
                     <div class="dr_decItem fr">
                         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934" target="_blank"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
                         <span><a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备11012085号-2</a>/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
-                        <img src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
+                        <img src="/bundles/acmefrontend/img/kxzd.png" alt="" />
                     </div>
-
-
                 </div>
             </div>
             <!--中英文切换，网站声明end-->
