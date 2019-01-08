@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -360,6 +361,17 @@ public class DrUserController {
         else
             System.out.println("修改失败");
         mav.setViewName("forward:/queryAddress");
+        return mav;
+    }
+
+    //用户退出登录
+    @ResponseBody
+    @RequestMapping("/logout")
+    public ModelAndView logout(ModelAndView mav, Model mo, HttpServletRequest request, SessionStatus sessionStatus){
+        request.getSession().removeAttribute("user");
+        request.getSession().invalidate();
+        sessionStatus.setComplete();
+        mav.setViewName("redirect:/index");
         return mav;
     }
 
