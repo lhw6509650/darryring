@@ -3,10 +3,33 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.darryring.dao.Dr_collectMapper">
+
     <insert id="addCollect">
         insert into dr_collect(pid,uid) values (#{pid},#{uid})
     </insert>
+
     <select id="selPro" resultType="Dr_collect">
         select * from dr_collect where pid = #{pid} and uid = #{uid}
     </select>
+
+    <select id="queAllCollect" resultType="map">
+        SELECT dc.dscid dscid,dpc.cid cid,dp.productId productId,dp.imageRoute image,dp.dpaids dpaids FROM dr_collect dc
+                                             LEFT JOIN dr_product dp ON dc.pid=dp.productId
+                                             LEFT JOIN dr_pattern dpa ON dpa.sid = dp.psid
+                                             LEFT JOIN dr_product_series dps ON dps.sid = dpa.sid
+                                             LEFT JOIN dr_product_category dpc ON dpc.cid = dps.cid
+        WHERE dc.uid=#{uid}
+              <if test='cid!=null and cid==1'>
+                  and dpc.cid = 1
+              </if>
+              <if test="cid!=null and cid==2">
+                  and dpc.cid in (2,3)
+              </if>
+        GROUP BY dpaids
+    </select>
+
+    <delete id="removeCollect" parameterType="int">
+        delete from dr_collect where dscid = #{colId}
+    </delete>
+
 </mapper>
