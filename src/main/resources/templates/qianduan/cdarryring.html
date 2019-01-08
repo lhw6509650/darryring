@@ -97,21 +97,19 @@
                 <div class="dr_member fr">
                     <div class="drmember_sec">
                         <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
-                            <a th:href="@{/login}">登录</a>
-                            <a th:href="@{/regists}" class="drtojoin">注册</a>
+                            <a th:href="@{login}">登录</a>
+                            <a th:href="@{regist}" class="drtojoin">注册</a>
                         </div>
                         <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                            <a href="/user"  class="userName">你好！欢迎  <span  th:text="${session.user.loginName}">游客</span></a>
+                            <a th:href="@{usershow}" class="userName">欢迎<span th:text="${session.user.loginName}"></span></a>
                             <div class="loginIn fix" id="loginInaAtion">
-                                <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-                                <a href="qian/usercart.jsp">购物车</a>
-                                <a href="/user/collect">我的收藏</a>
-                                <a href="qian/user.jsp">个人中心</a>
-                                <a href="/logout?forword=">退出</a>
+                                <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+                                <a th:href="@{cart}">购物车</a>
+                                <a th:href="@{myCollect}">我的收藏</a>
+                                <a th:href="@{usershow}">个人中心</a>
+                                <a th:href="@{logout}">退出</a>
                             </div>
                         </div>
-                        <!--</c:otherwise>
-                        </c:choose>-->
                         <ul class="dr_member-right drLang fl" id="dr-country">
                             <li>
                                 <a href="/">中文(简体)</a>
@@ -758,14 +756,14 @@
         </div>
     </div>
     <div class="grayCort">
-	            <div class="noresult" style="display: block;" th:if="${ page.getResult().size()==0}">
+	    <div class="noresult" style="display: block;" th:if="${ page.getResult().size()==0}">
 		        <h4>对不起，未搜索到 : </h4>
 		        <p>您可以试着换个词再试试!</p>
-	            </div>
-        </c:when>
-        <c:otherwise>-->
+	    </div>
+
+
         <!--商品-->
-        <ul class="dring_thing">
+        <ul class="dring_thing" th:unless="${ page.getResult().size()==0}">
             <li th:each="pro:${page.getResult()}">
                 <a th:href="@{/proDetail(productId=${pro.productId})}"  target="_blank"><img th:src="${pro.imageRoute}" width="320" height="320" alt="" /></a>
                 <div class="dring_thing-cort">
@@ -796,6 +794,7 @@
             <a th:href="@{cdarryring(pageIndex=${page.getPages()},cid=${map.get('cid')},keyword=${map.get('sname')},price=${map.get('price')})}" class="nextPage">末页</a>
         </div>
     </div>
+
     <!--收藏弹窗-->
     <div class="dr_shopPopup">
         <div class="dr_shopPopup-border">
@@ -984,7 +983,7 @@
                     <div class="dr_decItem fr">
                         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
                         <span>粤ICP备11012085号-2/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
-                        <img src="/bundles/acmefrontend/img/kxzd.png" alt="" />
+                        <img src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
                     </div>
                 </div>
             </div>
@@ -1011,8 +1010,10 @@
                 <h3>温馨提示</h3>
                 <p>亲爱的DR族，在春节和<br />情人节繁忙期间，为了<br />确保您定制的Darry <br />Ring可以及时送达，建<br />议您提前选购商品哦。<br />详情请咨询客服。</p>
             </div>-->
+
+
             <!--温馨提示(1228)end-->
-            <img src="//res.darryring.com/webimg/common/zxkf.gif" />
+            <img src="//pkquutas9.bkt.clouddn.com/zxkf.gif" />
             <span>
 			在线<br/>客服
 		</span>

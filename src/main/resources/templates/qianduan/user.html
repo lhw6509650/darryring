@@ -1,15 +1,5 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
- 
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta name="baidu-site-verification" content="l0c5KddqRr" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,11 +10,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta content="telephone=no" name="format-detection" />
     <meta name="Description" content="" />
     <meta name="Keywords" content="" />
-	<script type="text/javascript" src="<%=basePath %>qian/js/common.js" id='aws_mjs' aws-account='DarryRing-PC'></script>
-    <link rel="stylesheet" href="<%=basePath %>qian/css/common.css" />
+	<script type="text/javascript" src="js/common.js" id='aws_mjs' aws-account='DarryRing-PC'></script>
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="<%=basePath %>qian/css/MyDr.css" />
-    <script type="text/javascript" src="<%=basePath %>qian/js/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" href="css/MyDr.css" />
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
      <script type="text/javascript">
     $(function(){
  	   //显示个人中心
@@ -54,8 +44,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div class="acitve_show w1360">
     <div class="leftLogo">
-        <a href="/">
-            <img src="<%=basePath %>qian/images/indexPic/logo.png"/>
+		<a th:href="@{index}">
+            <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
         </a>
     </div>
     <div class="rightNav">
@@ -65,14 +55,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>     
     	        <a href="/user">
             <div class="themeber fl"></div>
+				</a>
     	    </div>
 </div>
 <!--头部-->
 <div class="dr_header">
     <div class="fix">
         <div class="dr_logo fl">
-            <a href="/">
-                <img src="<%=basePath %>qian/images/indexPic/logo.png"/>
+			<a th:href="@{index}">
+                <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
             </a>
         </div>
         <!--店铺定位-->
@@ -83,26 +74,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <!--店铺定位 end-->
         <div class="dr_member fr">
             <div class="drmember_sec">
-                <c:choose>
-                    <c:when test="${empty user}">
-                        <div class="dr_member-left fl" id="long_status">
-                            <a href="<%=basePath %>qian/login.jsp">登录</a>
-                            <a href="<%=basePath %>qian/register.jsp" class="drtojoin">注册</a>
-                        </div>
-                   </c:when>
-                   <c:otherwise>
-                   <div class="dr_member-left fl" id="loginInInfo">
-                    <a href="/user" class="userName">欢迎${user.loginName}</a>
-                    <div class="loginIn fix" id="loginInaAtion">
-                        <a href="userorder.html">我的订单</a>
-                        <a href="usercart.sjp">购物车</a>
-                        <a href="/user/collect">我的收藏</a>
-                        <a href="user.html">个人中心</a>
-                        <a href="/logout?forword=">退出</a>
-                    </div>
-                  </div>
-                  </c:otherwise>
-                  </c:choose>
+				<div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
+					<a th:href="@{login}">登录</a>
+					<a th:href="@{regist}" class="drtojoin">注册</a>
+				</div>
+				<div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
+					<a th:href="@{usershow}" class="userName">欢迎<span th:text="${session.user.loginName}"></span></a>
+					<div class="loginIn fix" id="loginInaAtion">
+						<a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+						<a th:href="@{cart}">购物车</a>
+						<a th:href="@{myCollect}">我的收藏</a>
+						<a th:href="@{usershow}">个人中心</a>
+						<a th:href="@{logout}">退出</a>
+					</div>
+				</div>
                <div class="dr_member-left fl">
                     <a href="https://shequ.darryring.com/" target="_blank">DR社区</a>
                 </div>
@@ -118,7 +103,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </ul>
                 <div class="dr_member-left fl">
 					<i>
-						<img src="<%=basePath %>qian/images/indexPic/phone.png"/>
+						<img src="//pkquutas9.bkt.clouddn.com/phone.png"/>
 						400 01 13520
 					</i>
 				</div>
@@ -190,7 +175,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a href="/user/giftlist">我的礼物清单</a>
 				</li>
 				<li>
-					<a href="/user/collect" >我的收藏</a>
+					<a th:href="@{myCollect}" >我的收藏</a>
 				</li>
 				<li>
 					<a href="/user/pink/reserve" >我的粉钻预约</a>
@@ -791,10 +776,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="dr_decItem fr">
 					<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
 					<span>粤ICP备11012085号-2/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
-					<img src="/bundles/acmefrontend/img/kxzd.png" alt="" />
+					<img src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
 				</div>
 			</div>
 		</div>
+
+
 		<!--中英文切换，网站声明end-->
 	</div>
 	<!--黑色区域end-->

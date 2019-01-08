@@ -7,10 +7,14 @@ import com.darryring.service.DrUserService;
 import com.darryring.service.Dr_user_addressService;
 import com.darryring.service.Dr_user_areaService;
 import com.darryring.util.ImageCreate;
+import com.darryring.util.RedisUtil;
+import com.darryring.util.RondomNumUtil;
+import com.darryring.util.SendSMSValidate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,9 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @SessionAttributes({"user"})
 @Controller
@@ -37,6 +39,11 @@ public class DrUserController {
 
     @Autowired
     private Dr_user_areaService dua;
+
+    private String param;
+
+    @Autowired
+    RedisUtil redisUtil;
 
     @GetMapping(value = "/regist")
     public String regist(){
@@ -70,15 +77,67 @@ public class DrUserController {
 
     //登录
     @RequestMapping(value = "/login",method = RequestMethod.POST )
-    public String login(String phone, String password,Model mo){
+    public String login(String phone, String password,String preurl,Model mo){
         System.out.println("进入登陆。。。。。");
+        System.out.println("url:"+preurl);
         DrUser user = dus.findByNamePw(phone,password);
         if(user!=null){
-            System.out.println("user.............");
             mo.addAttribute("user",user);
-            return "redirect:/index";
+            if("".equals(preurl)){
+                return "redirect:/index";
+            }else{
+                return "redirect:"+preurl;
+            }
+
         }
         return "qianduan/login";
+    }
+
+    //短信验证
+    @ResponseBody
+    @RequestMapping(value = "/getCode",method = RequestMethod.POST )
+    public String getCode(String phone){
+          System.out.println("进入短信登陆验证。。。。。"+phone);
+          this.param = RondomNumUtil.createRandomVcode();
+          System.out.println("param..."+this.param);
+          Boolean flag = SendSMSValidate.sendSms(phone,this.param);
+          if(flag){
+              redisUtil.set("vcode",this.param,5L);
+              return "true";
+          }
+        return "false";
+    }
+
+
+    //短信验证登录
+    @RequestMapping(value = "/msglogin",method = RequestMethod.POST )
+    public String msglogin(String phone,String veryCode,Model mo){
+        System.out.println("进入短信登陆。。。。。"+veryCode);
+        DrUser user = null;
+        String params = (String) redisUtil.get("vcode");
+        user = dus.findUserByPhone(phone);
+        if(user!=null){
+            if(params.equals(veryCode)){
+                mo.addAttribute("user",user);
+                return "redirect:/index";
+            }else{
+                mo.addAttribute("msg","验证码错误，请重试！");
+                return "qianduan/login";
+            }
+        }else{
+            if(params.equals(veryCode)){
+                if(dus.registByPhone(phone)>0){
+                    user = dus.findUserByPhone(phone);
+                    mo.addAttribute("user",user);
+                    return "redirect:/index";
+                }else {
+                    return "qianduan/login";
+                }
+            }else{
+                mo.addAttribute("msg","验证码错误，请重试！");
+                return "qianduan/login";
+            }
+        }
     }
 
     //其他登录
@@ -141,7 +200,7 @@ public class DrUserController {
         du.setUserId(usr.getUserId());
         du.setUserName(realname);
         du.setLoginName(nickname);
-        du.setSex((sex));
+        du.setSex(Integer.parseInt(sex));
         du.setIdentityCode(identityCode);
         du.setEmail(email);
         du.setLoveWord(lovesign);
@@ -305,74 +364,17 @@ public class DrUserController {
         return mav;
     }
 
-    //(后台)根据多条件带分页查询用户
+    //用户退出登录
     @ResponseBody
-    @RequestMapping("/selectusers")
-    public Object selectusers(DrUser drUser,Integer page,Integer  rows,String sort,String order){
-        System.out.println("后台用户名:"+drUser.getUserName());
-        DrUser drUser1 = new DrUser();
-        if(drUser.getUserName()!=null&&drUser.getUserName()!=""){
-            drUser1.setUserName(drUser.getUserName());
-        }
-
-        Map<String,Object> map =new HashMap<String,Object>();
-        drUser1.setPage((page-1)*rows);
-        System.out.println("页码："+page);
-        drUser1.setRows(rows);
-        drUser1.setSort(sort);
-        drUser1.setOrder(order);
-        map.put("total",dus.selectUser());
-        map.put("rows",dus.selectAllUserByCon(drUser));
-        return map;
+    @RequestMapping("/logout")
+    public ModelAndView logout(ModelAndView mav, Model mo, HttpServletRequest request, SessionStatus sessionStatus){
+        request.getSession().removeAttribute("user");
+        request.getSession().invalidate();
+        sessionStatus.setComplete();
+        mav.setViewName("redirect:/index");
+        return mav;
     }
 
-    //(后台)新增用户
-    @ResponseBody
-    @RequestMapping("/adduser")
-    public Object adduser(DrUser drUser){
-        dus.insertUser(drUser);
-        return drUser;
-    }
-    //(后台)更新用户
-    @ResponseBody
-    @RequestMapping("/updateUser")
-    public Object updateUser(DrUser drUser){
-        System.out.println("进入修改用户");
-        if(drUser.getSex()!=null && drUser.getSex()!="" && drUser.getSex().equals("1")) {
-              drUser.setSex("男");
-        }else{
-            drUser.setSex("女");
-        }
-        if(drUser.getUsertype()!=null && drUser.getUsertype()!="" && drUser.getUsertype().equals("0")) {
-            drUser.setUsertype("管理员");
-        }else{
-            drUser.setUsertype("普通用户");
-        }
-        System.out.println("用户名："+drUser.getUserName());
-        Map<String,Object> m = new HashMap<String,Object>();
-        boolean flag;
-        String message="";
-        if(drUser.getUserId()==null){
-            if (dus.insertUsers(drUser)) {
-                flag=true;
-                message="添加成功！";
-            } else {
-                flag=false;
-                message="添加失败！";
-            }
-        }else {
-            if (dus.updateUsers(drUser)) {
-                flag=true;
-                message="修改成功！";
-            } else {
-                flag=false;
-                message="修改失败！";
-            }
-        }
-        m.put("flag",flag);
-        m.put("message",message);
-        return m;
-    }
 
 
 }

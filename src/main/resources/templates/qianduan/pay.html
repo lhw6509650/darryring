@@ -1,16 +1,5 @@
-<%@ page language="java" import="java.util.*,com.darryring.pojo.*" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta name="baidu-site-verification" content="l0c5KddqRr" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -21,12 +10,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta content="telephone=no" name="format-detection" />
     <meta name="Description" content="" />
     <meta name="Keywords" content="" />
-    <script type="text/javascript" src="<%=basePath %>qian/js/common.js" id='aws_mjs' aws-account='DarryRing-PC'></script>
-    <link rel="stylesheet" href="<%=basePath %>qian/css/common.css" />
+    <script type="text/javascript" src="js/common.js" id='aws_mjs' aws-account='DarryRing-PC'></script>
+    <link rel="stylesheet" href="css/common.css" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="<%=basePath %>qian/css/drcarts.css" />
-    <script type="text/javascript" src="<%=basePath %>qian/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="<%=basePath %>qian/js/indexJQ.js"></script>
+    <link rel="stylesheet" href="css/drcarts.css" />
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/indexJQ.js"></script>
     <script type="text/javascript">
     $(function(){
  	   //显示个人中心
@@ -72,8 +61,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                  <c:choose>
                     <c:when test="${empty user}">
                         <div class="dr_member-left fl" id="long_status">
-                            <a href="<%=basePath %>qian/login.jsp">登录</a>
-                            <a href="<%=basePath %>qian/register.jsp" class="drtojoin">注册</a>
+                            <a href="login.jsp">登录</a>
+                            <a href="register.jsp" class="drtojoin">注册</a>
                         </div>
                    </c:when>
                    <c:otherwise>
@@ -161,19 +150,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <label>请选择需要支付的方式：</label>
                         <ul>
                             <li>
-                                <a href="javascript:;"><div data-type="payInterface_alipay"><img src="<%=basePath %>qian/images/pay/bank_zfb.jpg" alt="支付宝" title="支付宝"></div></a>
+                                <a href="javascript:;"><div data-type="payInterface_alipay"><img src="images/pay/bank_zfb.jpg" alt="支付宝" title="支付宝"></div></a>
                             </li>
                             <li>
-                                <a href="javascript:;"><div data-type="payInterface_wx"><img src="<%=basePath %>qian/images/pay/bank_wx.jpg" alt="微信" title="微信"></div></a>
+                                <a href="javascript:;"><div data-type="payInterface_wx"><img src="images/pay/bank_wx.jpg" alt="微信" title="微信"></div></a>
                             </li>
                             <li>
-                                <a href="javascript:;"><div data-type="payInterface_qq"><img src="<%=basePath %>qian/images/pay/qq.jpg" alt="QQ钱包" title="QQ钱包"></div></a>
+                                <a href="javascript:;"><div data-type="payInterface_qq"><img src="images/pay/qq.jpg" alt="QQ钱包" title="QQ钱包"></div></a>
                             </li>
-                             <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_yl.jpg" alt="中国银联" title="中国银联"><p></p></div></a></li>
-                            <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_ny.jpg" alt="中国农业银行" title="中国农业银行"><p>金额大于3000元/日，<br/>请使用Key宝证书</p></div></a></li>
-                            <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_js.jpg" alt="中国建设银行" title="中国建设银行"><p>金额大于5000元/笔，<br/>请使用一代网银盾</p></div></a></li>
-                            <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_gs.jpg" alt="中国工商银行" title="中国工商银行"><p>金额大于2000元/笔，<br/>请使用USB Key</p></div></a></li>
-                            <li><a href="javascript:;"><div data-type="bank"><img src="<%=basePath %>qian/images/pay/bank_zg.jpg" alt="中国银行" title="中国银行"><p>金额大于1000元/笔，<br/>累计5000元/日，请使用令牌</p></div></a></li>
+                             <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_yl.jpg" alt="中国银联" title="中国银联"><p></p></div></a></li>
+                            <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_ny.jpg" alt="中国农业银行" title="中国农业银行"><p>金额大于3000元/日，<br/>请使用Key宝证书</p></div></a></li>
+                            <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_js.jpg" alt="中国建设银行" title="中国建设银行"><p>金额大于5000元/笔，<br/>请使用一代网银盾</p></div></a></li>
+                            <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_gs.jpg" alt="中国工商银行" title="中国工商银行"><p>金额大于2000元/笔，<br/>请使用USB Key</p></div></a></li>
+                            <li><a href="javascript:;"><div data-type="bank"><img src="images/pay/bank_zg.jpg" alt="中国银行" title="中国银行"><p>金额大于1000元/笔，<br/>累计5000元/日，请使用令牌</p></div></a></li>
                         </ul>
                     </div>
                 </div>

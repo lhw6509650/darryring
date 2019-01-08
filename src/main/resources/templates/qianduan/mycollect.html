@@ -6,7 +6,7 @@
     <meta itemprop="name" content="Darry Ring(DR)戒指|戴瑞珠宝|求婚钻戒-Darry Ring官网"/>
     <meta itemprop="image" content="http://static.darryring.com/comm/drlogo.png" />
     <meta name="renderer" content="webkit">
-    <title>地址管理</title>
+    <title>我的收藏</title>
     <meta content="telephone=no" name="format-detection" />
     <meta name="Description" content="" />
     <meta name="Keywords" content="" />
@@ -19,6 +19,8 @@
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
 
+        $(function () {
+
             //显示个人中心
             $(".dr_member-left").mouseover(function (){
                 $(".loginIn").show();
@@ -27,7 +29,7 @@
             });
 
             //登录验证
-            $.post("/islogin",callBack);
+            $.post("islogin",callBack);
             function callBack(data){
                 if(data=="false"){
                     alert("你还未登录，请先登录!");
@@ -38,6 +40,35 @@
                     loadaddr();
                 }
             }
+
+            $("#allCollect").click(function () {
+                $("#allCollect").addClass("activate" );
+                $("#all").css("display","block");
+                $("#spCollect").removeClass("activate");
+                $("#sp").css("display","none");
+                $("#zjCollect").removeClass("activate");
+                $("#zj").css("display","none");
+            });
+
+            $("#spCollect").click(function () {
+                $("#spCollect").addClass("activate" );
+                $("#sp").css("display","block");
+                $("#allCollect").removeClass("activate");
+                $("#all").css("display","none");
+                $("#zjCollect").removeClass("activate");
+                $("#zj").css("display","none");
+            });
+
+            $("#zjCollect").click(function () {
+                $("#zjCollect").addClass("activate" );
+                $("#zj").css("display","block");
+                $("#allCollect").removeClass("activate");
+                $("#all").css("display","none");
+                $("#spCollect").removeClass("activate");
+                $("#sp").css("display","none");
+            });
+        })
+
     </script>
 </head>
 <body>
@@ -271,101 +302,93 @@
             </ul>
         </div>	<!--左边公共区域end-->
         <!--右边部分-->
-        <div class="Mydata_cort pd20">
-            <h4>修改密码</h4>
-            <!--修改密码-->
+        <div class="mypassword_cort pd20">
 
-            <div class="mydr_r_concent">
-                <div class="mysame_input">
-                    <input type="text" class="mbicon_lock" id="oldPassword"placeholder="请输入旧密码"/>
-                    <p class="oldPassword">填写正确密码格式</p>
-                    <div class="errorMsg" id="prError3" style="width: 20%" ></div>
-                </div>
-                <div class="mysame_input">
-                    <input type="password" class="mbicon_lock" id="newPassword" placeholder="请输入长度6-20位数的新密码"/>
-                    <p class="newPassword">填写正确密码格式</p>
-                    <div class="errorMsg" id="prError2" style="width: 20%" ></div>
-                </div>
-                <div class="mysame_input">
-                    <input type="password" class="mbicon_lock" id="newPassword2" placeholder="请再次确认新密码"/>
-                    <p class="newPassword2">填写正确密码格式</p>
-                    <div class="errorMsg" id="prError" style="width: 20%" ></div>
-                </div>
-                <a href="javascript:;" class="button_sure" id="button_sure">确认修改</a>
-                <div class="forget_pw">
-                    <a href="https://passport.darryring.com/forget?lang=cn">忘记密码?</a>
+            <!--我的收藏区域-->
+            <div class="Mydata_cort pd20">
+                <h4>我的收藏</h4>
+                <!--切换导航-->
+                <ul class="Mymember_nav">
+                    <li class="activate"  id="allCollect">全部收藏(<span th:text="${dclist1.size()}"></span>)</li>
+                    <li id="zjCollect">求婚钻戒(<span th:text="${dclist2.size()}"></span>)</li>
+                    <li id="spCollect">对戒/饰品(<span th:text="${dclist3.size()}"></span>)</li>
+                </ul>
+                <!--切换导航end-->
+                <div class="myCollectList">
+                    <!-- 全部收藏列表 -->
+                    <div class="Mydetail_same" style="display:block" id="all">
+                        <ul class="dr_samesellers-ring" style="display:block;"/>
+                        <li th:each="dclist:${dclist1}">
+                            <a th:href="@{proDetail(productId=${dclist.productId})}"></a>
+                            <img th:src="${dclist.image}"/>
+
+                            <div class="dr_samesellers-word">
+                                <div class="dr_samesellers-top">
+                                    <i></i>
+                                    <span th:if="${dclist.cid==1}">求婚钻戒</span>
+                                    <span th:if="${dclist.cid==2}">对戒</span>
+                                    <span th:if="${dclist.cid==3}">饰品</span>
+                                    <i></i>
+                                </div>
+                                <p th:text="${dclist.dpaids}"></p>
+                            </div>
+                            <a class="actionBtn collect" th:href="@{removeCollect(colId=${dclist.dscid})}" data-id="102698">取消收藏</a>
+                        </li>
+
+                        </ul>
+                    </div>
+                    <!-- 全部收藏列表 end -->
+
+                    <!-- 钻戒收藏列表 -->
+                    <div class="Mydetail_same" id="zj">
+                        <ul class="dr_samesellers-ring" style="display:block;">
+                            <li th:each="dclist:${dclist2}">
+                                <a th:href="@{proDetail(productId=${dclist.productId})}"></a>
+                                <img th:src="${dclist.image}"/>
+
+                                <div class="dr_samesellers-word">
+                                    <div class="dr_samesellers-top">
+                                        <i></i>
+                                        <span>求婚钻戒</span>
+                                        <i></i>
+                                    </div>
+                                    <p th:text="${dclist.dpaids}"></p>
+                                </div>
+                                <a class="actionBtn collect" th:href="@{removeCollect(colId=${dclist.dscid})}" data-id="99722">取消收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 钻戒收藏列表 end -->
+
+                    <!-- 饰品收藏列表 -->
+                    <div class="Mydetail_same" id="sp">
+                        <ul class="dr_samesellers-ring" style="display:block;"/>
+                        <li th:each="dclist:${dclist3}">
+                            <a th:href="@{proDetail(productId=${dclist.productId})}"></a>
+                            <img th:src="${dclist.image}"/>
+                            <div class="dr_samesellers-word">
+                                <div class="dr_samesellers-top">
+                                    <i></i>
+                                    <span>饰品</span>
+                                    <i></i>
+                                </div>
+                                <p th:text="${dclist.dpaids}"></p>
+                            </div>
+                            <a class="actionBtn collect" th:href="@{removeCollect(colId=${dclist.dscid})}" data-id="102698">取消收藏</a>
+                        </li>
+
+                        </ul>
+                    </div>
+                    <!-- 饰品收藏列表 end -->
                 </div>
             </div>
-            <!--修改密码end-->
-            <!--修改密码成功-->
-            <div class="mypassword_sucess">
-                <span class="toright">密码重置成功</span>
-                <div class="Verifica_word">
-                    <p id="countDown" timeData="3" toUrl="/login"><i>3秒后</i>返回<a href="/login">重新登录</a></p>
-                </div>
-            </div>
-            <!--修改密码成功end-->
+            <!--我的收藏区域end-->
+
         </div>
         <!--右边部分end-->
     </div>
     <!--个人中心区域end-->
-    <!--弹框begin-->
-    <div class="dr_sametc">
-        <!--关闭按钮-->
-        <a href="javascript:;" class="Popup_close"></a>
-        <!--关闭按钮end-->
-        <div class="dr_sametcborder">
-            <!--确认收货弹窗-->
-            <div class="Thecomment" id="confirm_mdOK">
-                <img src="//res.darryring.com/webimg/ringbuy/dr_logo.png" />
-                <div class="Verifica_delTips">
-                    <p>确认收货成功！</p>
-                </div>
-            </div>
-            <!--确认收货弹窗end-->
-        </div>
-    </div>
 
-    <div class="dr_sametc" id="payTips">
-        <!--关闭按钮-->
-        <a href="javascript:;" class="Popup_close"></a>
-        <!--关闭按钮end-->
-        <div class="dr_sametcborder">
-            <!--请取消订单提示弹窗-->
-            <div class="Thecomment" id="confirm_cancelOrder">
-                <img src="//res.darryring.com/webimg/ringbuy/dr_logo.png" />
-                <div class="Verifica_delTips">
-                    <p>您已经购买过求婚钻戒，不可重复购买哦！请取消订单</p>
-                </div>
-            </div>
-            <!--请取消订单提示弹窗end-->
-        </div>
-    </div>
-    <!--弹框end-->
-
-    <!--弹框begin-->
-    <div class="dr_sametc" id="verTips">
-        <!--关闭按钮-->
-        <a href="javascript:;" class="Popup_close btn_cancle"></a>
-        <!--关闭按钮end-->
-        <div class="dr_sametcborder">
-            <!--确认删除订单-->
-            <div class="Verifica_all Verifica_delDay" id="delCOrderTips">
-                <img src="/bundles/acmefrontend/img/Ringbuy/dr_logo.png" />
-                <div class="Verifica_delTips">
-                    <p>是否确认删除此订单？</p>
-                </div>
-                <div class="Verifica_button">
-                    <a href="javascript:;" id="confirm_delCOrder">确认</a>
-                    <a href="javascript:;" class="btn_cancle">取消</a>
-                </div>
-            </div>
-            <!--确认删除订单end-->
-        </div>
-    </div>
-    <!--弹框end-->
-    <!--签字单据弹窗-->
-    <!--签字单据弹窗 end-->
 
     <!--底部-->
     <div class="dr_footer">
@@ -501,69 +524,14 @@
     <!--底部end-->
 </div>
 <script type="text/javascript">
+
     $(function() {
 
-    })
-
-    //原密码不能为空
-    $("#oldPassword").blur(function () {
-        var old = $("#oldPassword").val();
-        if (old==""){
-            $("#prError3").show().html("原密码不能为空！");
-        } else {
-            $("#prError3").hide().html("");
-        }
     });
 
-    //新密码不能为空
-    $("#newPassword").blur(function () {
-        var new1 = $("#newPassword").val();
-        if (new1==""){
-            $("#prError2").show().html("新密码不能为空！");
-        } else {
-            $("#prError2").hide().html("");
-        }
-    })
 
-    //判断确认密码与新密码是否相同
-    $("#newPassword2").blur(function () {
-        var new1 = $("#newPassword").val();
-        var new2 = $("#newPassword2").val();
-        if (new2==""){
-            $("#prError").show().html("确认密码不能为空！");
-        } else {
-            $("#prError").hide().html("");
-        }
-        if (new1 != new2) {
-            $("#prError").show().html("新密码前后输入不一致！");
-        } else {
-            $("#prError").hide().html("");
-        }
-    });
 
-    $("#button_sure").click(function () {
-        var oldpwd = $("#oldPassword").val();
-        var newpwd = $("#newPassword").val();
-        var newpwd2 = $("#newPassword2").val();
-        if (oldpwd=="" || newpwd=="" || newpwd2==""){
-            if(confirm("新旧密码输入不能为空"))
-                return;
-        }
-        if (newpwd2!=(newpwd)){
-            if(confirm("再次输入密码与新密码不一致"))
-                return;
-        }
 
-        $.post("/resetPwd", {"oldPwd":oldpwd,"resetPwd":newpwd}, function (data) {
-            if (data==1)
-                confirm("原密码输入错误");
-            else if (data==2)
-                confirm("密码修改成功，新密码为："+newpwd);
-            else if (data==3)
-                confirm("密码修改失败");
-        });
-
-    });
 </script>
 </body>
 </html>

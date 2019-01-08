@@ -61,8 +61,8 @@
 
 <div class="acitve_show w1360">
     <div class="leftLogo">
-        <a href="/">
-            <img src="images/indexPic/logo.png"/>
+		<a th:href="@{index}">
+            <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
         </a>
     </div>
     <div class="rightNav">
@@ -79,8 +79,8 @@
 <div class="dr_header">
     <div class="fix">
         <div class="dr_logo fl">
-            <a href="/">
-                <img src="images/indexPic/logo.png"/>
+			<a th:href="@{index}">
+                <img src="//pkquutas9.bkt.clouddn.com/logo.png"/>
             </a>
         </div>
         <!--店铺定位-->
@@ -92,19 +92,19 @@
         <div class="dr_member fr">
             <div class="drmember_sec">
                 <div class="dr_member-left fl" id="long_status" th:if="${session.user==null}">
-                    <a href="/login">登录</a>
-                    <a href="/regist" class="drtojoin">注册</a>
+					<a th:href="@{login}">登录</a>
+					<a th:href="@{regist}" class="drtojoin">注册</a>
                 </div>
-                   <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                       <a href="/user" class="userName">欢迎<span th:text="${user.loginName}"></span></a>
-                    <div class="loginIn fix" id="loginInaAtion">
-                        <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-                        <a href="usercart.html">购物车</a>
-                        <a href="/user/collect">我的收藏</a>
-                        <a href="user.html">个人中心</a>
-                        <a href="/logout?forword=">退出</a>
-                    </div>
-                  </div>
+				<div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
+					<a th:href="@{usershow}" class="userName">欢迎<span th:text="${session.user.loginName}"></span></a>
+					<div class="loginIn fix" id="loginInaAtion">
+						<a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+						<a th:href="@{cart}">购物车</a>
+						<a th:href="@{myCollect}">我的收藏</a>
+						<a th:href="@{usershow}">个人中心</a>
+						<a th:href="@{logout}">退出</a>
+					</div>
+				</div>
                 <ul class="dr_member-right drLang fl" id="dr-country">
                     <li>
                         <a href="/">中文(简体)</a>
@@ -116,7 +116,7 @@
                 </ul>
                 <div class="dr_member-left fl">
 					<i>
-						<img src="images/indexPic/phone.png"/>
+						<img src="//pkquutas9.bkt.clouddn.com/phone.png"/>
 						400 01 13520
 					</i>
 				</div>
@@ -188,7 +188,7 @@
 					<a href="/user/giftlist">我的礼物清单</a>
 				</li>
 				<li>
-					<a href="/user/collect" >我的收藏</a>
+					<a th:href="@{myCollect}">我的收藏</a>
 				</li>
 				<li>
 					<a href="/user/pink/reserve" >我的粉钻预约</a>
@@ -469,7 +469,7 @@
 				<h3>关注我们</h3>
 				<p>一个让你相信真爱的地方，给你实用的情感指南，为你的爱情终身服务。</p>
 				<a href="javascript:;" class="wechat">
-					<img src="//res.darryring.com/webimg/common/gzh_wx.png" />
+					<img src="//pkquutas9.bkt.clouddn.com/gzh_wx.png" />
 				</a>
 				<a href="https://weibo.com/2249451585/" class="weibo" target="_blank"></a>
 			</div>
@@ -493,7 +493,7 @@
 				<div class="dr_decItem fr">
 					<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030302000934" target="_blank"><img src="//res.darryring.com/webimg/common/icon_police.png"/>粤公网安备 44030302000934号/</a>
 					<span><a href="http://www.miitbeian.gov.cn" target="_blank">粤ICP备11012085号-2</a>/Copyright©2006-2018 www.darryring.com 戴瑞珠宝 All Rights Reserved. </span>
-					<img src="/bundles/acmefrontend/img/kxzd.png" alt="" />
+					<img src="//pkquutas9.bkt.clouddn.com/kxzd.png" alt="" />
 				</div>
 			</div>
 		</div>
@@ -501,6 +501,7 @@
 	</div>
 	<!--黑色区域end-->
 </div>
+
 <!--底部end-->
 <!--右边漂浮件-->
 <div class="dr_quickservice" id="dr-quickservice">

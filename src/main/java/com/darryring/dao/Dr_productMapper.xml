@@ -42,7 +42,7 @@
     </select>
 
     <select id="selProDetail" resultType="map">
-        SELECT pro.productId,ca.cid,ca.typename,se.sid,se.sname,pa.patternName,pro.price,
+        SELECT pro.productId,ca.cid,ca.typename,se.sid,se.sname,pa.patternName,pro.imageRoute,pro.price,
                we.dweight,co.dcid,co.dcolor,sh.shapename,
                cl.dcname,cu.cutname,fl.dfname,ma.mid,ma.mname,po.polishname,
                sy.symmetricname
