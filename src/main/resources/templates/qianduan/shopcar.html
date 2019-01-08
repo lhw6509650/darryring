@@ -30,12 +30,12 @@
                     <a th:href="@{/regists}">注册</a>
                 </div>
                 <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                    <a href="/user"  class="userName">你好！欢迎  <span  th:text="${session.user.loginName}">游客</span></a>
+                    <a th:href="@{usershow}" class="userName">欢迎<span th:text="${session.user.loginName}"></span></a>
                     <div class="loginIn fix" id="loginInaAtion">
-                        <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-                        <a href="qian/usercart.jsp">购物车</a>
-                        <a href="/user/collect">我的收藏</a>
-                        <a href="qian/user.jsp">个人中心</a>
+                        <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
+                        <a th:href="@{cart}">购物车</a>
+                        <a th:href="@{myCollect}">我的收藏</a>
+                        <a th:href="@{usershow}">个人中心</a>
                         <a href="/logout?forword=">退出</a>
                     </div>
                 </div>

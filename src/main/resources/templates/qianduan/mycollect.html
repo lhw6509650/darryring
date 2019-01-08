@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE >
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta name="baidu-site-verification" content="l0c5KddqRr" />
@@ -6,34 +6,69 @@
     <meta itemprop="name" content="Darry Ring(DR)戒指|戴瑞珠宝|求婚钻戒-Darry Ring官网"/>
     <meta itemprop="image" content="http://static.darryring.com/comm/drlogo.png" />
     <meta name="renderer" content="webkit">
-    <title>我的购物车</title>
+    <title>我的收藏</title>
     <meta content="telephone=no" name="format-detection" />
     <meta name="Description" content="" />
     <meta name="Keywords" content="" />
     <script type="text/javascript" src="js/common.js" id='aws_mjs' aws-account='DarryRing-PC'></script>
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="shortcut icon" type="images/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/MyDr.css" />
     <link rel="stylesheet" href="css/drcarts.css" />
+    <link rel="stylesheet" href="css/logAndReg.css">
     <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
-    $(function(){
- 	   //显示个人中心
-	    $(".dr_member-left").mouseover(function (){
-	    	$(".loginIn").show();
-	    }).mouseout(function () {
-	    	$(".loginIn").hide();
-	    });
- 	   
-	  //登录验证
-	   	 $.post("../UserServlet?action=islogin",callBack);
-			function callBack(data){
-				if(data=="false"){
-					alert("你还未登录，请先登录!");
-					location.href="login.html";
-				}
-			}
-    });
+
+        $(function () {
+
+            //显示个人中心
+            $(".dr_member-left").mouseover(function (){
+                $(".loginIn").show();
+            }).mouseout(function () {
+                $(".loginIn").hide();
+            });
+
+            //登录验证
+            $.post("islogin",callBack);
+            function callBack(data){
+                if(data=="false"){
+                    alert("你还未登录，请先登录!");
+                    location.href="login.html";
+                }else{
+
+                    //加载该用户下所有的地址
+                    loadaddr();
+                }
+            }
+
+            $("#allCollect").click(function () {
+                $("#allCollect").addClass("activate" );
+                $("#all").css("display","block");
+                $("#spCollect").removeClass("activate");
+                $("#sp").css("display","none");
+                $("#zjCollect").removeClass("activate");
+                $("#zj").css("display","none");
+            });
+
+            $("#spCollect").click(function () {
+                $("#spCollect").addClass("activate" );
+                $("#sp").css("display","block");
+                $("#allCollect").removeClass("activate");
+                $("#all").css("display","none");
+                $("#zjCollect").removeClass("activate");
+                $("#zj").css("display","none");
+            });
+
+            $("#zjCollect").click(function () {
+                $("#zjCollect").addClass("activate" );
+                $("#zj").css("display","block");
+                $("#allCollect").removeClass("activate");
+                $("#all").css("display","none");
+                $("#spCollect").removeClass("activate");
+                $("#sp").css("display","none");
+            });
+        })
+
     </script>
 </head>
 <body>
@@ -182,7 +217,7 @@
                     </h4>
                     <ul class="mydrnav_show">
                         <li>
-                            <a href="userorder.html" class = 'active'>我的订单</a>
+                            <a href="<%=basePath %>Dr_ProductServlet?method=findOr&value=1" class = 'active'>我的订单</a>
                         </li>
                         <li>
                             <a href="/user/comment" >评价/晒单</a>
@@ -237,19 +272,25 @@
                             <a href="javascript:;">账户设置</a>
                         </li> -->
                         <li >
-                            <a href="usershow.html" >个人资料</a>
+                            <a th:href="@{/usershow}" class = 'active'>个人资料</a>
                         </li>
                         <li style="display: none">
                             <a href="/user/account" >帐号管理</a>
                         </li>
+                        <!-- <li>
+                            <a href=" /user/bingMobile" >绑定手机</a>
+                        </li>
+                        <li>
+                            <a href="/user/bingEmail" >绑定邮箱</a>
+                        </li> -->
                         <li>
                             <a href="/user/account/protocols" >绑定账号</a>
                         </li>
                         <li >
-                            <a href="/user/resetPwd" >修改密码</a>
+                            <a th:href="@{/password}"  >修改密码</a>
                         </li>
                         <li>
-                            <a href="useraddress.html" >地址管理</a>
+                            <a  th:href="@{/queryAddress}">地址管理</a>
                         </li>
                     </ul>
                 </li>
@@ -261,182 +302,93 @@
             </ul>
         </div>	<!--左边公共区域end-->
         <!--右边部分-->
-        <div class="mydr_right fr">
-            <!--我的订单-->
-            <div class="Mydetail_cort pd20">
-                <h4>我的购物车</h4>
-                <div class="choosetime fix">
-                    <p class="detail_lxkf fr">
-                                                                            订单如需加急处理请联系 
-                        <a href="javascript:showxiaon('kf_9883_1402631963601');" class="drsqkfli">在线客服</a>
-                    </p>
-                </div>
-                <!--所有订单-->
-                
-                <div class="Mydetail_list">
-                    <div class="Mydetail_same"style="display:block;">
+        <div class="mypassword_cort pd20">
 
-        <div class="shoppingcart_none" th:if="${shops==null}">
-		<div>
-		<img src="//pkquutas9.bkt.clouddn.com/ico-cart.png" alt="" style="float:left;margin:20px 50px;"/>
-			<p>您的购物车内暂无商品,去看看心仪的商品吧!</p>
-			<a href="<%=basePath %>CategoryServlet?method=qianCategory" class="link_btn1">返回首页</a>
-		</div>
-	   </div>
+            <!--我的收藏区域-->
+            <div class="Mydata_cort pd20">
+                <h4>我的收藏</h4>
+                <!--切换导航-->
+                <ul class="Mymember_nav">
+                    <li class="activate"  id="allCollect">全部收藏(<span th:text="${dclist1.size()}"></span>)</li>
+                    <li id="zjCollect">求婚钻戒(<span th:text="${dclist2.size()}"></span>)</li>
+                    <li id="spCollect">对戒/饰品(<span th:text="${dclist3.size()}"></span>)</li>
+                </ul>
+                <!--切换导航end-->
+                <div class="myCollectList">
+                    <!-- 全部收藏列表 -->
+                    <div class="Mydetail_same" style="display:block" id="all">
+                        <ul class="dr_samesellers-ring" style="display:block;"/>
+                        <li th:each="dclist:${dclist1}">
+                            <a th:href="@{proDetail(productId=${dclist.productId})}"></a>
+                            <img th:src="${dclist.image}"/>
 
-        <!--购物车 无-->
-        <div class="shoppingcart_list" th:unless="${shops==null}">
-            <input type="hidden"  id="is_check_jewelry" value="1">
-            <table class="shoppingcart_table" border="1" cellpadding="10">
-                <thead>
-                <tr>
-                    <td width="150px" class="padleft_20"><input type="checkbox" name="" id="" value="" checked="checked" class="check_all" />全选</td>
-                    <td width="240px" align="center">商品</td>
-                    <td width="330px" align="center">价格</td>
-                    <td width="290px" align="center">数量</td>
-                    <td width="157px" align="center">小计</td>
-                    <td width="175px" align="center" class="padright_20">操作</td>
-                </tr>
-                </thead>
-            </table>
-            <!-- 人气组合 -->
-            <!--<c:forEach items="${shops}" var="sl">
-            <table class="shoppingcart_table shoppingcart_tbody" border="1" cellpadding="10">
-                <tbody>
-                <tr>
-                    <td width="30px" rowspan="2" class="padleft_20" valign="top"><input type="checkbox" name="" data-price="31219.00" data-id="67035" id="67035" value="1" checked="checked" class="cbox" /></td>
-                    <td width="120px" rowspan="2" valign="top"><img src="<%=basePath %>qian/${sl.dp.imageRoute}" alt="" width="100" height="100" /></td>
-                    <td width="245px" class="nopad_left border_dashed" align="center">
-                        <strong>
-                            <a href="/goods-jewelry-155">
-                                ${sl.dp.shopName}
-                            </a>
-                        </strong></td>
-                    <td width="330px" class="border_dashed pay_money" align="center"><span>&yen;${sl.dp.price}</span></td>
-                    <td width="294px" class="nopad_left border_dashed" align="center">
-                       <a href="<%=basePath %>Dr_ProductServlet?method=jian&pid=${sl.dp.productId}"><input type="button" class='jian' value="-"></a>
-                        <input type="text" class='quantity' value="${sl.number}" />
-                       <a href="<%=basePath %>Dr_ProductServlet?method=jia&pid=${sl.dp.productId}"><input type="button" class='jia' value="+"></a>
-                    </td>
-                    <td width="157px" class="border_dashed pay_money" align="center"><span>&yen;${sl.xTotal}</span></td>
-                    <td width="175px" class="border_dashed" align="center">
-                        <a href="<%=basePath %>Dr_ProductServlet?method=del&pid=${sl.dp.productId}" class="car-del" data-id="67035" onclick="return confirm('你确定要删除该商品吗？')">删除</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="nopad_left ring_detail" colspan="3">
-                        <strong>戒指信息</strong>
-                        <div class="ringdetail_hide">
-                            <p>戒托材质：分色18K金</p>
-                            <div>
-                                <p>手寸大小：客定</p>
-                                <p>主钻形状：圆形</p>
+                            <div class="dr_samesellers-word">
+                                <div class="dr_samesellers-top">
+                                    <i></i>
+                                    <span th:if="${dclist.cid==1}">求婚钻戒</span>
+                                    <span th:if="${dclist.cid==2}">对戒</span>
+                                    <span th:if="${dclist.cid==3}">饰品</span>
+                                    <i></i>
+                                </div>
+                                <p th:text="${dclist.dpaids}"></p>
                             </div>
-                        </div>
-                        <strong class="padleft_20">主石副石信息</strong>
-                        <div class="ringdetail_hide">
-                            <p>主钻净度：SI1</p>
-                            <div>
-                                <p>主钻切工：VG</p>
-                                <p>主石数量：1</p>
-                                <p>副石重量：22-28分</p>
-                                <p>副石数量：90</p>
-                            </div>
-                        </div>
-                    </td>
-                    <td align="center" valign="top" class="padright_20"></td>
-                    <td align="center" valign="top" class="padright_20"><a href="javascript:;" class="ringdetail_show">展开查看详情</a></td>
-                </tr>
-                </tbody>
-            </table>
-         </c:forEach>-->
-            <div class="shopping_security">
-                <span class="security1">支持全球配送，实体店取货</span>
-                <span class="security2">全程保价 无风险</span>
-                <span class="security3">支付安全保障 安全支付系统采用SSL加密</span>
-            </div>
-            <div class="shoppingcart_pay clearfix pay_bottom" style="width: 1125px;">
-                <div class="scfoot_left">
-                    <p><input type="checkbox" name="" id="" value="" checked="checked" class="check_all" />全选</p>
-                    <p><a href="<%=basePath %>CategoryServlet?method=qianCategory">继续购物</a></p>
-                    <p><a href="<%=basePath %>Dr_ProductServlet?method=clearAll" onclick="return confirm('你确定要清空所有商品吗？')">清空购物车</a></p>
-                </div>
-                <div class="scfoot_right">
-                    <p id="cart-number">已选<strong><!--${num}--></strong>件商品</p>
-                    <p id="cart-amount">总价：<strong>&yen;<!--${sumPrice}--></strong></p>
-                    <p>免运费</p>
-                    <a href="<%=basePath %>AddressServlet?action=adds" id="cart-post" class="link_btn2">立即结算</a>
-                </div>
-            </div>
-        </div>
+                            <a class="actionBtn collect" th:href="@{removeCollect(colId=${dclist.dscid})}" data-id="102698">取消收藏</a>
+                        </li>
 
+                        </ul>
                     </div>
+                    <!-- 全部收藏列表 end -->
+
+                    <!-- 钻戒收藏列表 -->
+                    <div class="Mydetail_same" id="zj">
+                        <ul class="dr_samesellers-ring" style="display:block;">
+                            <li th:each="dclist:${dclist2}">
+                                <a th:href="@{proDetail(productId=${dclist.productId})}"></a>
+                                <img th:src="${dclist.image}"/>
+
+                                <div class="dr_samesellers-word">
+                                    <div class="dr_samesellers-top">
+                                        <i></i>
+                                        <span>求婚钻戒</span>
+                                        <i></i>
+                                    </div>
+                                    <p th:text="${dclist.dpaids}"></p>
+                                </div>
+                                <a class="actionBtn collect" th:href="@{removeCollect(colId=${dclist.dscid})}" data-id="99722">取消收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 钻戒收藏列表 end -->
+
+                    <!-- 饰品收藏列表 -->
+                    <div class="Mydetail_same" id="sp">
+                        <ul class="dr_samesellers-ring" style="display:block;"/>
+                        <li th:each="dclist:${dclist3}">
+                            <a th:href="@{proDetail(productId=${dclist.productId})}"></a>
+                            <img th:src="${dclist.image}"/>
+                            <div class="dr_samesellers-word">
+                                <div class="dr_samesellers-top">
+                                    <i></i>
+                                    <span>饰品</span>
+                                    <i></i>
+                                </div>
+                                <p th:text="${dclist.dpaids}"></p>
+                            </div>
+                            <a class="actionBtn collect" th:href="@{removeCollect(colId=${dclist.dscid})}" data-id="102698">取消收藏</a>
+                        </li>
+
+                        </ul>
+                    </div>
+                    <!-- 饰品收藏列表 end -->
                 </div>
-                <!--所有订单end-->
-                
             </div>
-            <!--我的订单end-->
+            <!--我的收藏区域end-->
+
         </div>
         <!--右边部分end-->
     </div>
     <!--个人中心区域end-->
-    <!--弹框begin-->
-    <div class="dr_sametc">
-        <!--关闭按钮-->
-        <a href="javascript:;" class="Popup_close"></a>
-        <!--关闭按钮end-->
-        <div class="dr_sametcborder">
-            <!--确认收货弹窗-->
-            <div class="Thecomment" id="confirm_mdOK">
-                <img src="//res.darryring.com/webimg/ringbuy/dr_logo.png" />
-                <div class="Verifica_delTips">
-                    <p>确认收货成功！</p>
-                </div>
-            </div>
-            <!--确认收货弹窗end-->
-        </div>
-    </div>
 
-    <div class="dr_sametc" id="payTips">
-        <!--关闭按钮-->
-        <a href="javascript:;" class="Popup_close"></a>
-        <!--关闭按钮end-->
-        <div class="dr_sametcborder">
-            <!--请取消订单提示弹窗-->
-            <div class="Thecomment" id="confirm_cancelOrder">
-                <img src="//res.darryring.com/webimg/ringbuy/dr_logo.png" />
-                <div class="Verifica_delTips">
-                    <p>您已经购买过求婚钻戒，不可重复购买哦！请取消订单</p>
-                </div>
-            </div>
-            <!--请取消订单提示弹窗end-->
-        </div>
-    </div>
-    <!--弹框end-->
-
-    <!--弹框begin-->
-    <div class="dr_sametc" id="verTips">
-        <!--关闭按钮-->
-        <a href="javascript:;" class="Popup_close"></a>
-        <!--关闭按钮end-->
-        <div class="dr_sametcborder">
-            <!--确认删除订单-->
-            <div class="Verifica_all Verifica_delDay" id="delCOrderTips">
-                <img src="/bundles/acmefrontend/img/Ringbuy/dr_logo.png" />
-                <div class="Verifica_delTips">
-                    <p>是否确认删除此订单？</p>
-                </div>
-                <div class="Verifica_button">
-                    <a href="javascript:;" id="confirm_delCOrder">确认</a>
-                    <a href="javascript:;" class="btn_cancle">取消</a>
-                </div>
-            </div>
-            <!--确认删除订单end-->
-        </div>
-    </div>
-    <!--弹框end-->
-    <!--签字单据弹窗-->
-    <!--签字单据弹窗 end-->
 
     <!--底部-->
     <div class="dr_footer">
@@ -540,6 +492,7 @@
                     </a>
                     <a href="https://weibo.com/2249451585/" class="weibo" target="_blank"></a>
                 </div>
+
             </div>
             <!--中英文切换，网站声明-->
             <div class="dr_declare fix">
@@ -564,14 +517,22 @@
                     </div>
                 </div>
             </div>
-
-
             <!--中英文切换，网站声明end-->
         </div>
         <!--黑色区域end-->
     </div>
     <!--底部end-->
 </div>
+<script type="text/javascript">
+
+    $(function() {
+
+    });
+
+
+
+
+</script>
 </body>
 </html>
 

@@ -113,11 +113,11 @@
                         <a th:href="@{regist}" class="drtojoin">注册</a>
                     </div>
                     <div class="dr_member-left fl" id="loginInInfo" th:unless="${session.user==null}">
-                        <a th:href="@{usershow}" class="userName">欢迎<span th:text="${user.loginName}"></span></a>
+                        <a th:href="@{usershow}" class="userName">欢迎<span th:text="${session.user.loginName}"></span></a>
                         <div class="loginIn fix" id="loginInaAtion">
                             <a href="Dr_ProductServlet?method=findOr&value=1">我的订单</a>
-                            <a href="usercart.html">购物车</a>
-                            <a href="/user/collect">我的收藏</a>
+                            <a th:href="@{cart}">购物车</a>
+                            <a th:href="@{myCollect}">我的收藏</a>
                             <a th:href="@{usershow}">个人中心</a>
                             <a href="/logout?forword=">退出</a>
                         </div>
@@ -204,7 +204,7 @@
                             <a href="/user/giftlist">我的礼物清单</a>
                         </li>
                         <li>
-                            <a href="/user/collect" >我的收藏</a>
+                            <a th:href="@{myCollect}" >我的收藏</a>
                         </li>
                         <li>
                             <a href="/user/pink/reserve" >我的粉钻预约</a>
